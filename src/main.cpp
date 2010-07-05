@@ -37,6 +37,9 @@ int main(int argc, char** argv) {
 
 	QTranslator qt_translator;
 	qt_translator.load("qt_" + language, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+	if (qt_translator.isEmpty()) {
+		qt_translator.load(":/qt_" + language);
+	}
 	app.installTranslator(&qt_translator);
 
 	QTranslator translator_en;

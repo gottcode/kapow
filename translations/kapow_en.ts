@@ -15,7 +15,7 @@
 <context>
     <name>Window</name>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="674"/>
+        <location filename="../src/window.cpp" line="694"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n timer running</numerusform>

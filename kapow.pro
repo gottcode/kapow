@@ -39,7 +39,8 @@ SOURCES = src/data_model.cpp \
 	src/window.cpp
 
 TRANSLATIONS = translations/kapow_de.ts \
-	translations/kapow_en.ts
+	translations/kapow_en.ts \
+	translations/kapow_it.ts
 
 RESOURCES = icons/icons.qrc translations/translations.qrc
 macx {
