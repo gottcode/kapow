@@ -1,5 +1,4 @@
 TEMPLATE = app
-QT += xml
 CONFIG += warn_on
 macx {
 	# Uncomment the following line to compile on PowerPC Macs
