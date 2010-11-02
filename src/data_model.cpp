@@ -295,6 +295,9 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 
 	case Qt::ToolTipRole:
 		switch (index.column()) {
+		case 3:
+			result = session.task();
+			break;
 		case 4:
 			result = session.total(Session::Duration, !m_decimals, true);
 			break;
