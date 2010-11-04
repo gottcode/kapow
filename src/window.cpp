@@ -691,6 +691,7 @@ void Window::updateSessionButtons() {
 /*****************************************************************************/
 
 void Window::updateTrayIcon() {
+	m_tray_icon->setIcon(QIcon(m_active_timers ? ":/kapow.png" : ":/kapow-inactive.png"));
 	m_tray_icon->setToolTip(tr("%n timer(s) running", "", m_active_timers));
 }
 

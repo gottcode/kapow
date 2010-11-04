@@ -1,5 +1,6 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
 	<file>kapow.png</file>
+	<file>kapow-inactive.png</file>
 </qresource>
 </RCC>
