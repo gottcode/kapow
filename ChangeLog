@@ -1,0 +1,154 @@
+2010-01-28 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.3.2.
+
+2010-01-27 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Totals line didn't update when last session was billed.
+	* FIXED: Always showed decimal totals when launched.
+
+2010-01-26 Graeme Gott <graeme@gottcode.org>
+	* Remember scrolled position.
+
+2010-01-26 Swen-Peter Scheel
+	* Update German translation.
+
+2010-01-25 Graeme Gott <graeme@gottcode.org>
+	* Add filtering sessions.
+	* Scroll to bottom of projects by default.
+
+2010-01-23 Graeme Gott <graeme@gottcode.org>
+	* Add project name to window title.
+
+2009-11-24 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.3.1.
+
+2009-11-24 Swen-Peter Scheel
+	* Add German translation.
+
+2009-10-14 Graeme Gott <graeme@gottcode.org>
+	* Support more platforms.
+
+2009-10-09 Graeme Gott <graeme@gottcode.org>
+	* FIXED: User was not informed of all session conflicts.
+
+2009-09-29 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Window was not raised in Windows.
+
+2009-09-09 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Totals row was not always shown.
+	* FIXED: Timer column was not always wide enough.
+
+2009-09-06 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.3.0.
+
+2009-09-04 Graeme Gott <graeme@gottcode.org>
+	* Add billing information to reports.
+
+2009-09-02 Graeme Gott <graeme@gottcode.org>
+	* Add session class.
+	* Add back edit session dialog.
+	* Add total hours row.
+	* Move and rename note column.
+
+2009-09-01 Graeme Gott <graeme@gottcode.org>
+	* Add printable reports.
+
+2009-08-25 Graeme Gott <graeme@gottcode.org>
+	* Always have a project.
+
+2009-08-24 Graeme Gott <graeme@gottcode.org>
+	* Add hiding columns.
+	* Add total column.
+	* Add duration column.
+	* Add toggle between time and decimal based totals.
+
+2009-08-23 Graeme Gott <graeme@gottcode.org>
+	* Add menubar.
+	* Use localized dates and times for display.
+
+2009-08-15 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.2.0.
+
+2009-08-08 Graeme Gott <graeme@gottcode.org>
+	* Show multiple timers in projects sidebar.
+
+2009-08-07 Graeme Gott <graeme@gottcode.org>
+	* Add system tray icon.
+
+2009-08-05 Graeme Gott <graeme@gottcode.org>
+	* Add buttons to interact with treeviews.
+	* Add support for multiple timers.
+	* Add project class.
+
+2009-07-30 Graeme Gott <graeme@gottcode.org>
+	* Store autosave in data file.
+	* Remember which projects are expanded.
+
+2009-07-29 Graeme Gott <graeme@gottcode.org>
+	* Add tooltips to totals.
+	* Reduce calls to save function.
+	* Add support for subprojects.
+	* Add removing projects.
+	* Add renaming projects.
+	* Rearrange window layout.
+
+2009-06-19 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Added sessions had incorrect totals.
+
+2009-05-05 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.1.1.
+	* Stop forcing column widths.
+
+2008-11-17 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.1.0.
+
+2008-11-16 Graeme Gott <graeme@gottcode.org>
+	* Replace unnecessary QDateTimes.
+	* Remove edit session dialog.
+
+2008-11-14 Graeme Gott <graeme@gottcode.org>
+	* Improve inline date and time editing.
+	* Add inline editing.
+
+2008-11-13 Graeme Gott <graeme@gottcode.org>
+	* Add interface for changing notes.
+	* Add note column.
+
+2008-10-23 Graeme Gott <graeme@gottcode.org>
+	* Add application icon.
+
+2008-10-21 Graeme Gott <graeme@gottcode.org>
+	* Prevent duplicate projects from being added.
+
+2008-10-20 Graeme Gott <graeme@gottcode.org>
+	* Use checkboxes in billed column.
+	* Add menu to add, edit, or remove sessions.
+
+2008-10-19 Graeme Gott <graeme@gottcode.org>
+	* Allow for inserting sessions.
+	* Disable billed sessions.
+
+2008-10-18 Graeme Gott <graeme@gottcode.org>
+	* Put datafile in platform specific location.
+	* Add button for creating projects.
+
+2008-10-09 Graeme Gott <graeme@gottcode.org>
+	* Auto-save times in case of program close.
+
+2008-10-07 Graeme Gott <graeme@gottcode.org>
+	* Handle blank data file.
+	* Remember window geometry across runs.
+	* Remember active project across runs.
+	* Add creating projects.
+	* Add tracking time.
+	* Layout Window.
+	* Add project combo to Window.
+	* Read data from disk.
+
+2008-10-06 Graeme Gott <graeme@gottcode.org>
+	* Write data to disk.
+	* Gray out billed sessions.
+	* Add billed column.
+
+2008-10-05 Graeme Gott <graeme@gottcode.org>
+	* Add Window class.
+	* Add DataModel class.

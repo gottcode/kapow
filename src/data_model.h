@@ -1,0 +1,69 @@
+/***********************************************************************
+ *
+ * Copyright (C) 2008-2009 Graeme Gott <graeme@gottcode.org>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ ***********************************************************************/
+
+#ifndef DATA_MODEL_H
+#define DATA_MODEL_H
+
+#include "session.h"
+
+#include <QAbstractTableModel>
+#include <QXmlStreamWriter>
+
+class DataModel : public QAbstractTableModel {
+	Q_OBJECT
+public:
+	DataModel(QObject* parent = 0);
+
+	QList<int> billedRows() const {
+		return m_billed;
+	}
+
+	bool isBilled(int pos) const {
+		return (!m_billed.isEmpty() && pos <= m_billed.last());
+	}
+
+	Session session(int pos) const {
+		return m_data.value(pos);
+	}
+
+	bool add(const QDateTime& start, const QDateTime& stop);
+	bool add(const Session& session);
+	bool edit(int row, const Session& session);
+	bool remove(int row);
+	void setBilled(int row, bool billed);
+	void setDecimalTotals(bool decimals);
+	void toXml(QXmlStreamWriter& xml) const;
+
+	virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
+	virtual int columnCount(const QModelIndex& parent = QModelIndex()) const;
+	virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
+	virtual Qt::ItemFlags flags(const QModelIndex& index) const;
+	virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+	virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole);
+
+private:
+	void updateTotals();
+
+private:
+	QList<Session> m_data;
+	QList<int> m_billed;
+	bool m_decimals;
+};
+
+#endif
