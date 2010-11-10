@@ -36,7 +36,6 @@
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QInputDialog>
-#include <QItemDelegate>
 #include <QItemEditorFactory>
 #include <QLabel>
 #include <QMenu>
@@ -48,6 +47,7 @@
 #include <QSettings>
 #include <QSignalMapper>
 #include <QSplitter>
+#include <QStyledItemDelegate>
 #include <QTimer>
 #include <QTreeView>
 #include <QTreeWidget>
@@ -58,15 +58,15 @@
 /*****************************************************************************/
 
 namespace {
-	class Delegate : public QItemDelegate {
+	class Delegate : public QStyledItemDelegate {
 	public:
 		Delegate(QObject* parent = 0)
-		: QItemDelegate(parent) {
+		: QStyledItemDelegate(parent) {
 		}
 
 		QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const {
 			if (index.column() == 0) {
-				return QItemDelegate::createEditor(parent, option, index);
+				return QStyledItemDelegate::createEditor(parent, option, index);
 			} else {
 				return 0;
 			}
