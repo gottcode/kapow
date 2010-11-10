@@ -26,7 +26,8 @@
 class DataModel;
 class FilterModel;
 
-class Project : public QTreeWidgetItem {
+class Project : public QObject, public QTreeWidgetItem {
+	Q_OBJECT
 public:
 	Project(QTreeWidget* parent, const QString& project);
 	Project(QTreeWidgetItem* parent, const QString& project);
@@ -52,6 +53,9 @@ public:
 	QString time() const;
 
 	void toXml(QXmlStreamWriter& xml) const;
+
+private slots:
+	void billedStatusChanged(bool billed);
 
 private:
 	void init();

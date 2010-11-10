@@ -461,6 +461,7 @@ void DataModel::updateTotals() {
 		previous = current;
 	}
 	emit dataChanged(index(0, 0), index(rowCount(), columnCount()));
+	emit billedStatusChanged(current.isBilled());
 }
 
 /*****************************************************************************/

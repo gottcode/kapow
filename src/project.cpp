@@ -22,6 +22,7 @@
 #include "data_model.h"
 #include "filter_model.h"
 
+#include <QApplication>
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
@@ -101,15 +102,18 @@ void Project::start(const QDateTime& current) {
 	m_start_time = current;
 	m_active = true;
 	setText(1, "00:00:00");
+	billedStatusChanged(false);
 }
 
 /*****************************************************************************/
 
 void Project::stop(const QDateTime& current) {
+	m_active = false;
 	if (current.isValid()) {
 		m_model->add(m_start_time, current);
+	} else {
+		billedStatusChanged(m_model->isBilled(m_model->rowCount() - 2));
 	}
-	m_active = false;
 	setText(1, "");
 }
 
@@ -134,11 +138,18 @@ void Project::updateTime(const QDateTime& current) {
 
 /*****************************************************************************/
 
+void Project::billedStatusChanged(bool billed) {
+	setForeground(0, QApplication::palette().color((billed && !m_active) ? QPalette::Disabled : QPalette::Normal, QPalette::Text));
+}
+
+/*****************************************************************************/
+
 void Project::init() {
 	setFlags(flags() | Qt::ItemIsEditable);
 	setTextAlignment(1, Qt::AlignRight | Qt::AlignVCenter);
 
-	m_model = new DataModel(treeWidget());
+	m_model = new DataModel(this);
+	connect(m_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(billedStatusChanged(bool)));
 	m_filter_model = new FilterModel(m_model, treeWidget());
 	m_active = false;
 	m_scroll_value = -1;
