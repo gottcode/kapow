@@ -1,4 +1,5 @@
 2010-11-10 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Decimal totals didn't add up.
 	* FIXED: Projects appearance did not match sessions.
 	* Change project color when all items are billed.
 

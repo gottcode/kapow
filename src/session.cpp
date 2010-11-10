@@ -42,14 +42,14 @@ QString Session::total(Time time, bool decimals, bool unit) const {
 	QString result;
 	int seconds = d->m_totals[time];
 	if (decimals) {
-		float hours = qRound(d->m_totals[time] / 360.0f) * 0.1f;
+		double hours = d->m_totals[time] / 3600.0;
 		if (!unit) {
 			result = QLocale().toString(hours, 'f', 1);
 		} else {
 			if (hours == std::floor(hours)) {
 				result = tr("%n hour(s)", "", hours);
 			} else {
-				result = tr("%1 hours").arg(hours);
+				result = tr("%1 hours").arg(hours, 0, 'f', 1);
 			}
 		}
 	} else {
