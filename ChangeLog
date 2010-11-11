@@ -1,4 +1,5 @@
 2010-11-11 Graeme Gott <graeme@gottcode.org>
+	* Prevent removing projects with running timers.
 	* FIXED: Report currencies were not translated.
 
 2010-11-10 Graeme Gott <graeme@gottcode.org>

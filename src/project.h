@@ -36,6 +36,10 @@ public:
 	void stop(const QDateTime& current = QDateTime());
 	void updateTime(const QDateTime& current);
 
+	bool isActive() const {
+		return m_active;
+	}
+
 	DataModel* model() const {
 		return m_model;
 	}

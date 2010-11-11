@@ -378,6 +378,7 @@ void Window::setInlineEditing(bool edit) {
 void Window::start() {
 	m_active_project->start(m_current_time);
 	m_active_timers++;
+	m_remove_project->setEnabled(false);
 	updateDetails();
 }
 
@@ -386,6 +387,7 @@ void Window::start() {
 void Window::stop() {
 	m_active_project->stop(m_current_time);
 	m_active_timers--;
+	m_remove_project->setEnabled(true);
 	updateDetails();
 }
 
@@ -395,6 +397,7 @@ void Window::cancel() {
 	if (QMessageBox::question(this, tr("Question"), tr("Cancel this session?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_active_project->stop();
 		m_active_timers--;
+		m_remove_project->setEnabled(true);
 		updateDetails();
 	}
 }
@@ -478,7 +481,7 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	updateSessionButtons();
 	m_details->setModel(m_active_project->filterModel());
 	m_filter->setCurrentIndex(m_filter->findData(m_active_project->filterModel()->type()));
-	m_remove_project->setEnabled(true);
+	m_remove_project->setEnabled(!project->isActive());
 	m_edit_session->setEnabled(false);
 	m_remove_session->setEnabled(false);
 
