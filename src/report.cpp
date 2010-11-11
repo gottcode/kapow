@@ -277,7 +277,7 @@ void Report::generateText() {
 	html += "<tr><td colspan=\"4\"></td><td colspan=\"2\"><hr></td>\n";
 	html += "<tr><td colspan=\"4\"></td><td>" + tr("Hours") + "</td><td align=\"right\">" + hours + "</td></tr>\n";
 	double hourly_rate = m_hourly_rate->value();
-	QString currency(m_hourly_rate->prefix() + "%1" + m_hourly_rate->suffix());
+	QString currency(m_hourly_rate->prefix() + "%L1" + m_hourly_rate->suffix());
 	if (hourly_rate) {
 		value *= hourly_rate;
 		double tax_rate = m_tax_rate->value() * 0.01;
