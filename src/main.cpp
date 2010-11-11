@@ -35,11 +35,14 @@ int main(int argc, char** argv) {
 
 	QString language = QLocale::system().name();
 
+	QTranslator translator_it;
+	if (language.startsWith("it")) {
+		translator_it.load(":/qt_it");
+		app.installTranslator(&translator_it);
+	}
+
 	QTranslator qt_translator;
 	qt_translator.load("qt_" + language, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-	if (qt_translator.isEmpty()) {
-		qt_translator.load(":/qt_" + language);
-	}
 	app.installTranslator(&qt_translator);
 
 	QTranslator translator_en;

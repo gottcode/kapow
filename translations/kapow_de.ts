@@ -5,66 +5,66 @@
     <name>DataModel</name>
     <message>
         <location filename="../src/data_model.cpp" line="225"/>
-        <location filename="../src/data_model.cpp" line="400"/>
+        <location filename="../src/data_model.cpp" line="403"/>
         <source>Total</source>
         <translation>Summe</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="384"/>
+        <location filename="../src/data_model.cpp" line="387"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="386"/>
+        <location filename="../src/data_model.cpp" line="389"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="388"/>
+        <location filename="../src/data_model.cpp" line="391"/>
         <source>Stop</source>
         <translation>Ende</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="390"/>
+        <location filename="../src/data_model.cpp" line="393"/>
         <source>Task</source>
         <translation>Aufgabe</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="392"/>
+        <location filename="../src/data_model.cpp" line="395"/>
         <source>Hours</source>
         <translation>Stunden</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="394"/>
+        <location filename="../src/data_model.cpp" line="397"/>
         <source>Daily</source>
         <translation>Täglich</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="396"/>
+        <location filename="../src/data_model.cpp" line="399"/>
         <source>Weekly</source>
         <translation>Wöchentlich</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="398"/>
+        <location filename="../src/data_model.cpp" line="401"/>
         <source>Monthly</source>
         <translation>Monatlich</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="402"/>
+        <location filename="../src/data_model.cpp" line="405"/>
         <source>Billed</source>
         <translation>Abgerechnet</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="440"/>
+        <location filename="../src/data_model.cpp" line="443"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="440"/>
+        <location filename="../src/data_model.cpp" line="443"/>
         <source>Session conflicts with other sessions.</source>
         <translation>Überschneidung mit anderem Eintrag.</translation>
     </message>
@@ -197,13 +197,13 @@
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n Stunde</numerusform>
-            <numerusform>%n.Stunden</numerusform>
+            <numerusform>%n Stunden</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/session.cpp" line="52"/>
-        <source>%1 hours</source>
-        <translation>%1.Stunden</translation>
+        <source>%L1 hours</source>
+        <translation>%L1 Stunden</translation>
     </message>
 </context>
 <context>
@@ -242,7 +242,7 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="700"/>
+        <location filename="../src/window.cpp" line="701"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Zeiterfassung</translation>
     </message>
@@ -405,7 +405,7 @@
         <translation>Veröffentlicht unter &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; Lizenz.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="694"/>
+        <location filename="../src/window.cpp" line="695"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n Zeiterfassung läuft</numerusform>

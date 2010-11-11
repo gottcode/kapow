@@ -6,65 +6,65 @@
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="440"/>
+        <location filename="../src/data_model.cpp" line="443"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="440"/>
+        <location filename="../src/data_model.cpp" line="443"/>
         <source>Session conflicts with other sessions.</source>
         <translation>La sessione è in conflitto con altre sessioni.</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="225"/>
-        <location filename="../src/data_model.cpp" line="400"/>
+        <location filename="../src/data_model.cpp" line="403"/>
         <source>Total</source>
         <translation>Totale</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="384"/>
+        <location filename="../src/data_model.cpp" line="387"/>
         <source>Date</source>
         <translation>Data</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="386"/>
+        <location filename="../src/data_model.cpp" line="389"/>
         <source>Start</source>
         <translation>Inizio</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="388"/>
+        <location filename="../src/data_model.cpp" line="391"/>
         <source>Stop</source>
         <translation>Fine</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="390"/>
+        <location filename="../src/data_model.cpp" line="393"/>
         <source>Task</source>
         <translation>Compito</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="392"/>
+        <location filename="../src/data_model.cpp" line="395"/>
         <source>Hours</source>
         <translation>Ore</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="394"/>
+        <location filename="../src/data_model.cpp" line="397"/>
         <source>Daily</source>
         <translation>Giornaliero</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="396"/>
+        <location filename="../src/data_model.cpp" line="399"/>
         <source>Weekly</source>
         <translation>Settimanale</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="398"/>
+        <location filename="../src/data_model.cpp" line="401"/>
         <source>Monthly</source>
         <translation>Mensile</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="402"/>
+        <location filename="../src/data_model.cpp" line="405"/>
         <source>Billed</source>
         <translation>Fatturato</translation>
     </message>
@@ -195,14 +195,14 @@
         <location filename="../src/session.cpp" line="50"/>
         <source>%n hour(s)</source>
         <translation>
-            <numerusform>%n ora(e)</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n ora</numerusform>
+            <numerusform>%n ore</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/session.cpp" line="52"/>
-        <source>%1 hours</source>
-        <translation>%1 ore</translation>
+        <source>%L1 hours</source>
+        <translation>%L1 ore</translation>
     </message>
 </context>
 <context>
@@ -446,15 +446,15 @@
         <translation>Rimuovi la sessione selezionata?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="694"/>
+        <location filename="../src/window.cpp" line="695"/>
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>%n orologio(i) partito</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n orologio partito</numerusform>
+            <numerusform>%n orologi partito</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="700"/>
+        <location filename="../src/window.cpp" line="701"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>

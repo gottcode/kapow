@@ -49,7 +49,7 @@ QString Session::total(Time time, bool decimals, bool unit) const {
 			if (hours == std::floor(hours)) {
 				result = tr("%n hour(s)", "", hours);
 			} else {
-				result = tr("%1 hours").arg(hours, 0, 'f', 1);
+				result = tr("%L1 hours").arg(hours, 0, 'f', 1);
 			}
 		}
 	} else {
