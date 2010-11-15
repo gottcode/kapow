@@ -29,7 +29,7 @@
 int main(int argc, char** argv) {
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
-	app.setApplicationVersion("1.3.2");
+	app.setApplicationVersion("1.3.3");
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
