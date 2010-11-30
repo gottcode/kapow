@@ -73,7 +73,7 @@
     <name>Report</name>
     <message>
         <location filename="../src/report.cpp" line="45"/>
-        <location filename="../src/report.cpp" line="197"/>
+        <location filename="../src/report.cpp" line="200"/>
         <source>Time Sheet Report</source>
         <translation>Zeiterfassungsbericht</translation>
     </message>
@@ -160,32 +160,32 @@
         <translation>Drucken</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="215"/>
+        <location filename="../src/report.cpp" line="218"/>
         <source>Phone: %1</source>
         <translation>Tel.: %1</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="219"/>
+        <location filename="../src/report.cpp" line="222"/>
         <source>Fax: %1</source>
         <translation>Fax: %1</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="278"/>
+        <location filename="../src/report.cpp" line="281"/>
         <source>Hours</source>
         <translation>Stunden</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="285"/>
+        <location filename="../src/report.cpp" line="288"/>
         <source>Subtotal</source>
         <translation>Zwischensumme</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="287"/>
+        <location filename="../src/report.cpp" line="290"/>
         <source>Taxes</source>
         <translation>MwSt.</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="290"/>
+        <location filename="../src/report.cpp" line="293"/>
         <source>Total</source>
         <translation>Endsumme</translation>
     </message>
@@ -242,7 +242,7 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="701"/>
+        <location filename="../src/window.cpp" line="704"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Zeiterfassung</translation>
     </message>
@@ -380,7 +380,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="296"/>
-        <location filename="../src/window.cpp" line="466"/>
+        <location filename="../src/window.cpp" line="469"/>
         <source>Untitled</source>
         <translation>Ohne Titel</translation>
     </message>
@@ -405,7 +405,7 @@
         <translation>Veröffentlicht unter &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; Lizenz.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="695"/>
+        <location filename="../src/window.cpp" line="698"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n Zeiterfassung läuft</numerusform>
@@ -418,44 +418,44 @@
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="395"/>
-        <location filename="../src/window.cpp" line="447"/>
-        <location filename="../src/window.cpp" line="584"/>
+        <location filename="../src/window.cpp" line="397"/>
+        <location filename="../src/window.cpp" line="450"/>
+        <location filename="../src/window.cpp" line="587"/>
         <source>Question</source>
         <translation>Frage</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="395"/>
+        <location filename="../src/window.cpp" line="397"/>
         <source>Cancel this session?</source>
         <translation>Eintrag abbrechen?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="424"/>
+        <location filename="../src/window.cpp" line="427"/>
         <source>Add Project</source>
         <translation>Projekt hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="424"/>
+        <location filename="../src/window.cpp" line="427"/>
         <source>Enter project name:</source>
         <translation>Projektname eingeben:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="430"/>
+        <location filename="../src/window.cpp" line="433"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="430"/>
+        <location filename="../src/window.cpp" line="433"/>
         <source>A project with that name already exists.</source>
         <translation>Ein Projekt dieses Namens besteht bereits.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="447"/>
+        <location filename="../src/window.cpp" line="450"/>
         <source>Remove selected project?</source>
         <translation>Ausgewähltes Projekt löschen?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="584"/>
+        <location filename="../src/window.cpp" line="587"/>
         <source>Remove selected session?</source>
         <translation>Ausgewählten Eintrag löschen?</translation>
     </message>

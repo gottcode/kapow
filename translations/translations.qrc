@@ -1,5 +1,6 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
+	<file>kapow_cs.qm</file>
 	<file>kapow_de.qm</file>
 	<file>kapow_en.qm</file>
 	<file>kapow_it.qm</file>

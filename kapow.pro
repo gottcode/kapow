@@ -37,7 +37,8 @@ SOURCES = src/data_model.cpp \
 	src/time_editor.cpp \
 	src/window.cpp
 
-TRANSLATIONS = translations/kapow_de.ts \
+TRANSLATIONS = translations/kapow_cs.ts \
+	translations/kapow_de.ts \
 	translations/kapow_en.ts \
 	translations/kapow_it.ts
 
