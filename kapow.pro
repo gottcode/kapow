@@ -43,7 +43,7 @@ TRANSLATIONS = translations/kapow_cs.ts \
 	translations/kapow_fr.ts \
 	translations/kapow_it.ts
 
-RESOURCES = icons/icons.qrc translations/translations.qrc
+RESOURCES = icons/icons.qrc
 macx {
 	ICON = icons/kapow.icns
 }
@@ -56,13 +56,16 @@ unix: !macx {
 		PREFIX = /usr/local
 	}
 
+	target.path = $$PREFIX/bin/
+
 	icon.files = icons/kapow.png
 	icon.path = $$PREFIX/share/icons/hicolor/48x48/apps
 
 	desktop.files = icons/kapow.desktop
 	desktop.path = $$PREFIX/share/applications/
 
-	target.path = $$PREFIX/bin/
+	qm.files = translations/*.qm
+	qm.path = $$PREFIX/share/kapow/translations
 
-	INSTALLS += target icon desktop
+	INSTALLS += target icon desktop qm
 }

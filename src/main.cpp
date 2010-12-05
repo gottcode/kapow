@@ -33,11 +33,26 @@ int main(int argc, char** argv) {
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
+	QString translator_path;
+	{
+		QString appdir = app.applicationDirPath();
+		QStringList paths;
+		paths.append(appdir + "/translations/");
+		paths.append(appdir + "/../share/kapow/translations/");
+		paths.append(appdir + "/../Resources/translations");
+		foreach (const QString& path, paths) {
+			if (QFile::exists(path)) {
+				translator_path = path;
+				break;
+			}
+		}
+	}
+
 	QString language = QLocale::system().name();
 
 	QTranslator translator_it;
 	if (language.startsWith("it")) {
-		translator_it.load(":/qt_it");
+		translator_it.load("qt_it", translator_path);
 		app.installTranslator(&translator_it);
 	}
 
@@ -45,14 +60,10 @@ int main(int argc, char** argv) {
 	qt_translator.load("qt_" + language, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 	app.installTranslator(&qt_translator);
 
-	QTranslator translator_en;
-	if (!language.startsWith("en")) {
-		translator_en.load(":/kapow_en");
-		app.installTranslator(&translator_en);
-	}
-
 	QTranslator translator;
-	translator.load(":/kapow_" + language);
+	if (!translator.load("kapow_" + language, translator_path)) {
+		translator.load("kapow_en", translator_path);
+	}
 	app.installTranslator(&translator);
 
 	QDir dir = QDir::home();
