@@ -40,6 +40,7 @@ SOURCES = src/data_model.cpp \
 TRANSLATIONS = translations/kapow_cs.ts \
 	translations/kapow_de.ts \
 	translations/kapow_en.ts \
+	translations/kapow_fr.ts \
 	translations/kapow_it.ts
 
 RESOURCES = icons/icons.qrc translations/translations.qrc
