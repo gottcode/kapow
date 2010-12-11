@@ -61,8 +61,8 @@ int main(int argc, char** argv) {
 	app.installTranslator(&qt_translator);
 
 	QTranslator translator;
-	if (!translator.load("kapow_" + language, translator_path)) {
-		translator.load("kapow_en", translator_path);
+	if (!translator.load(language, translator_path)) {
+		translator.load("en_US", translator_path);
 	}
 	app.installTranslator(&translator);
 
