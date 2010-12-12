@@ -19,6 +19,7 @@ unix: !macx {
 HEADERS = src/data_model.h \
 	src/date_editor.h \
 	src/filter_model.h \
+	src/locale_dialog.h \
 	src/project.h \
 	src/report.h \
 	src/session.h \
@@ -29,6 +30,7 @@ HEADERS = src/data_model.h \
 SOURCES = src/data_model.cpp \
 	src/date_editor.cpp \
 	src/filter_model.cpp \
+	src/locale_dialog.cpp \
 	src/main.cpp \
 	src/project.cpp \
 	src/report.cpp \

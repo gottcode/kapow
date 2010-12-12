@@ -22,6 +22,7 @@
 #include "data_model.h"
 #include "date_editor.h"
 #include "filter_model.h"
+#include "locale_dialog.h"
 #include "project.h"
 #include "report.h"
 #include "session.h"
@@ -142,6 +143,8 @@ Window::Window(const QString& filename, QWidget* parent)
 	action->setCheckable(true);
 	action->setChecked(m_inline);
 	connect(action, SIGNAL(toggled(bool)), this, SLOT(setInlineEditing(bool)));
+	menu->addSeparator();
+	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
 
 	menu = menuBar()->addMenu(tr("&Help"));
 	menu->addAction(tr("&About"), this, SLOT(about()));
@@ -371,6 +374,13 @@ void Window::setInlineEditing(bool edit) {
 		m_details->closePersistentEditor(m_details->currentIndex());
 	}
 	QSettings().setValue("InlineEditing", edit);
+}
+
+/*****************************************************************************/
+
+void Window::setLocaleClicked() {
+	LocaleDialog dialog(this);
+	dialog.exec();
 }
 
 /*****************************************************************************/

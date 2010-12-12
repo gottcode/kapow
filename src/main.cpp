@@ -17,6 +17,7 @@
  *
  ***********************************************************************/
 
+#include "locale_dialog.h"
 #include "window.h"
 
 #include <QApplication>
@@ -33,38 +34,7 @@ int main(int argc, char** argv) {
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
-	QString translator_path;
-	{
-		QString appdir = app.applicationDirPath();
-		QStringList paths;
-		paths.append(appdir + "/translations/");
-		paths.append(appdir + "/../share/kapow/translations/");
-		paths.append(appdir + "/../Resources/translations");
-		foreach (const QString& path, paths) {
-			if (QFile::exists(path)) {
-				translator_path = path;
-				break;
-			}
-		}
-	}
-
-	QString language = QLocale::system().name();
-
-	QTranslator translator_it;
-	if (language.startsWith("it")) {
-		translator_it.load("qt_it", translator_path);
-		app.installTranslator(&translator_it);
-	}
-
-	QTranslator qt_translator;
-	qt_translator.load("qt_" + language, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-	app.installTranslator(&qt_translator);
-
-	QTranslator translator;
-	if (!translator.load(language, translator_path)) {
-		translator.load("en_US", translator_path);
-	}
-	app.installTranslator(&translator);
+	LocaleDialog::loadTranslator();
 
 	QDir dir = QDir::home();
 #if defined(Q_OS_MAC)
