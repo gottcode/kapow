@@ -53,6 +53,7 @@ LocaleDialog::LocaleDialog(QWidget* parent)
 	display_texts.insert("cs", tr("Czech"));
 	display_texts.insert("de", tr("German"));
 	display_texts.insert("en_US", tr("American English"));
+	display_texts.insert("es", tr("Spanish"));
 	display_texts.insert("fr", tr("French"));
 	display_texts.insert("it", tr("Italian"));
 	foreach (const QString& translation, translations) {

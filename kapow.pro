@@ -1,5 +1,5 @@
 TEMPLATE = app
-CONFIG += warn_on
+CONFIG += warn_on release
 macx {
 	# Uncomment the following line to compile on PowerPC Macs
 	# QMAKE_MAC_SDK = /Developer/SDKs/MacOSX10.4u.sdk
@@ -42,6 +42,7 @@ SOURCES = src/data_model.cpp \
 TRANSLATIONS = translations/cs.ts \
 	translations/de.ts \
 	translations/en_US.ts \
+	translations/es.ts \
 	translations/fr.ts \
 	translations/it.ts
 

@@ -93,21 +93,26 @@
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="56"/>
-        <source>French</source>
+        <source>Spanish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="57"/>
+        <source>French</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/locale_dialog.cpp" line="58"/>
         <source>Italian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="152"/>
+        <location filename="../src/locale_dialog.cpp" line="153"/>
         <source>Note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="152"/>
+        <location filename="../src/locale_dialog.cpp" line="153"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="it_IT" sourcelanguage="en">
+<TS version="2.0" language="it" sourcelanguage="en">
 <context>
     <name>DataModel</name>
     <message>
@@ -93,21 +93,26 @@
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="56"/>
+        <source>Spanish</source>
+        <translation>Spagnolo</translation>
+    </message>
+    <message>
+        <location filename="../src/locale_dialog.cpp" line="57"/>
         <source>French</source>
         <translation>Francese</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="57"/>
+        <location filename="../src/locale_dialog.cpp" line="58"/>
         <source>Italian</source>
         <translation>Italiano</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="152"/>
+        <location filename="../src/locale_dialog.cpp" line="153"/>
         <source>Note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="152"/>
+        <location filename="../src/locale_dialog.cpp" line="153"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
