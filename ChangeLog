@@ -1,4 +1,5 @@
 2011-04-07 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Could sometimes edit sessions that were billed.
 	* FIXED: Totals did not reflect billed status.
 	* FIXED: Quit was not causing a close event.
 	* Prompt before quitting if there are timers running.

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,6 +26,8 @@ class DataModel;
 class FilterModel : public QSortFilterProxyModel {
 public:
 	FilterModel(DataModel* model, QObject* parent = 0);
+
+	QModelIndex mapUnbilledToSource(const QModelIndex& proxy_index) const;
 
 	enum FilterType {
 		All,

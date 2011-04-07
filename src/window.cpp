@@ -402,6 +402,7 @@ void Window::setInlineEditing(bool edit) {
 	if (!edit) {
 		m_details->closePersistentEditor(m_details->currentIndex());
 	}
+	sessionPressed(m_details->currentIndex());
 	QSettings().setValue("InlineEditing", edit);
 }
 
@@ -510,10 +511,12 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	}
 
 	if (m_active_model) {
+		disconnect(m_active_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(modelBilledStatusChanged()));
 		disconnect(m_active_model, SIGNAL(rowsInserted(const QModelIndex&, int, int)), this, SLOT(sessionsInserted(const QModelIndex&, int, int)));
 	}
 	m_active_project = project;
 	m_active_model = m_active_project->model();
+	connect(m_active_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(modelBilledStatusChanged()));
 	connect(m_active_model, SIGNAL(rowsInserted(const QModelIndex&, int, int)), this, SLOT(sessionsInserted(const QModelIndex&, int, int)));
 
 	updateDisplay();
@@ -552,10 +555,16 @@ void Window::filterChanged(int index) {
 
 /*****************************************************************************/
 
+void Window::modelBilledStatusChanged() {
+	sessionPressed(m_details->currentIndex());
+}
+
+/*****************************************************************************/
+
 void Window::sessionPressed(const QModelIndex& index) {
-	int row = m_active_project->filterModel()->mapToSource(index).row();
-	bool enabled = !m_active_model->isBilled(row) && (row + 1 < m_active_model->rowCount());
-	m_edit_session->setEnabled(enabled && (index.column() < 4));
+	QModelIndex session = m_active_project->filterModel()->mapUnbilledToSource(index);
+	bool enabled = session.isValid();
+	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
 	m_remove_session->setEnabled(enabled);
 }
 
@@ -595,14 +604,12 @@ void Window::addSession() {
 
 void Window::editSession() {
 	Q_ASSERT(m_active_model != 0);
-	QModelIndex index = m_active_project->filterModel()->mapToSource(m_details->currentIndex());
-	if (!(m_active_model->flags(index) & Qt::ItemIsEditable)) {
+	QModelIndex index = m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex());
+	if (!index.isValid()) {
 		return;
 	}
 
-	if (m_inline) {
-		m_details->edit(m_details->currentIndex());
-	} else {
+	if (!m_inline) {
 		int pos = index.row();
 		SessionDialog dialog(this);
 		dialog.setSession(m_active_model->session(pos));
@@ -616,6 +623,8 @@ void Window::editSession() {
 				break;
 			}
 		}
+	} else if (m_active_model->flags(index) & Qt::ItemIsEditable) {
+		m_details->edit(m_details->currentIndex());
 	}
 }
 

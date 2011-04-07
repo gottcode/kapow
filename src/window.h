@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,6 +59,7 @@ private slots:
 	void projectActivated(QTreeWidgetItem* item);
 	void projectChanged(QTreeWidgetItem* item, int column);
 	void filterChanged(int index);
+	void modelBilledStatusChanged();
 	void sessionPressed(const QModelIndex& index);
 	void sessionsInserted(const QModelIndex& parent, int start, int end);
 	void sessionsScrolled(int value);

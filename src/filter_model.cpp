@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,6 +30,17 @@ FilterModel::FilterModel(DataModel* model, QObject* parent)
 : QSortFilterProxyModel(parent), m_model(model), m_type(All) {
 	setSourceModel(model);
 	connect(model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), this, SLOT(invalidate()));
+}
+
+/*****************************************************************************/
+
+QModelIndex FilterModel::mapUnbilledToSource(const QModelIndex& proxy_index) const {
+	QModelIndex index = mapToSource(proxy_index);
+	if (!m_model->isBilled(index.row()) && (index.row() + 1 < m_model->rowCount())) {
+		return index;
+	} else {
+		return QModelIndex();
+	}
 }
 
 /*****************************************************************************/
