@@ -1,3 +1,6 @@
+2011-04-07 Graeme Gott <graeme@gottcode.org>
+	* Prompt before quitting if there are timers running.
+
 2010-12-15 Ricardo A. Hermosilla Carrillo
 	* Add Spanish translation.
 

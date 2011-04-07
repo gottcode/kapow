@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@
 
 #include <QAction>
 #include <QApplication>
+#include <QCloseEvent>
 #include <QComboBox>
 #include <QDateTime>
 #include <QFile>
@@ -337,8 +338,36 @@ void Window::closeEvent(QCloseEvent* event) {
 	QSettings settings;
 	settings.setValue("WindowGeometry", saveGeometry());
 	settings.setValue("SplitterSizes", m_contents->saveState());
+
+	if (m_active_timers) {
+		// Show window
+		bool visible = isVisible();
+		if (!visible) {
+			show();
+		}
+		raise();
+		activateWindow();
+
+		// Prompt user about running timers
+		if (QMessageBox::question(this, tr("Question"), tr("There are timers running. Stop timers and quit?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
+			int count = m_projects->topLevelItemCount();
+			for (int i = 0; i < count; ++i) {
+				Project* project = dynamic_cast<Project*>(m_projects->topLevelItem(i));
+				if (project && project->isActive()) {
+					project->stop(m_current_time);
+				}
+			}
+		} else {
+			event->ignore();
+			if (!visible) {
+				hide();
+			}
+			return;
+		}
+	}
+
 	save();
-	QMainWindow::closeEvent(event);
+	event->accept();
 }
 
 /*****************************************************************************/
