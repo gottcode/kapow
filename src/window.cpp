@@ -125,7 +125,7 @@ Window::Window(const QString& filename, QWidget* parent)
 	menu->addSeparator();
 	menu->addAction(tr("&Report"), this, SLOT(showReport()));
 	menu->addSeparator();
-	menu->addAction(tr("&Quit"), qApp, SLOT(quit()), tr("Ctrl+Q"));
+	menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
 
 	menu = menuBar()->addMenu(tr("&Session"));
 	m_add_session = menu->addAction(tr("&Add"), this, SLOT(addSession()));
