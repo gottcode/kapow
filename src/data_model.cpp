@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -222,39 +222,71 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 		case Qt::DisplayRole:
 			switch(index.column()) {
 			case 0:
-				return tr("Total");
+				result = tr("Total");
+				break;
 			case 1:
 			case 2:
 			case 3:
-				return QString();
+				result = QString();
+				break;
 			case 4:
-				return session.total(Session::Total, m_decimals);
+				result = session.total(Session::Total, m_decimals);
+				break;
+			case 5:
+				result = session.total(Session::Daily, m_decimals);
+				break;
+			case 6:
+				result = session.total(Session::Weekly, m_decimals);
+				break;
+			case 7:
+				result = session.total(Session::Monthly, m_decimals);
+				break;
+			case 8:
+				result = session.total(Session::Total, m_decimals);
+				break;
 			default:
 				break;
 			}
 			break;
 
 		case Qt::ToolTipRole:
-			if (index.column() == 4) {
-				return session.total(Session::Total, !m_decimals, true);
+			switch(index.column()) {
+			case 4:
+				result = session.total(Session::Total, !m_decimals, true);
+				break;
+			case 5:
+				result = session.total(Session::Daily, !m_decimals, true);
+				break;
+			case 6:
+				result = session.total(Session::Weekly, !m_decimals, true);
+				break;
+			case 7:
+				result = session.total(Session::Monthly, !m_decimals, true);
+				break;
+			case 8:
+				result = session.total(Session::Total, !m_decimals, true);
+				break;
+			default:
+				break;
 			}
 			break;
 
 		case Qt::TextAlignmentRole:
 			if (index.column() == 0) {
-				return static_cast<int>(Qt::AlignLeft | Qt::AlignVCenter);
+				result = static_cast<int>(Qt::AlignLeft | Qt::AlignVCenter);
+			} else if (index.column() != 3) {
+				result = static_cast<int>(Qt::AlignRight | Qt::AlignVCenter);
 			}
 			break;
 
 		case Qt::FontRole:
-			return font;
-
-		case Qt::CheckStateRole:
-			return QVariant();
+			result = font;
+			break;
 
 		default:
 			break;
 		}
+		return result;
 	}
 
 	Session session = m_data.value(pos);
