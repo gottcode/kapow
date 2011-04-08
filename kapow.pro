@@ -41,7 +41,7 @@ SOURCES = src/data_model.cpp \
 
 TRANSLATIONS = translations/cs.ts \
 	translations/de.ts \
-	translations/en_US.ts \
+	translations/en.ts \
 	translations/es.ts \
 	translations/fr.ts \
 	translations/it.ts

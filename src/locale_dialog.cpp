@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,12 +50,12 @@ LocaleDialog::LocaleDialog(QWidget* parent)
 	m_translations = new QComboBox(this);
 	QStringList translations = findTranslations();
 	QHash<QString, QString> display_texts;
-	display_texts.insert("cs", tr("Czech"));
-	display_texts.insert("de", tr("German"));
-	display_texts.insert("en_US", tr("American English"));
-	display_texts.insert("es", tr("Spanish"));
-	display_texts.insert("fr", tr("French"));
-	display_texts.insert("it", tr("Italian"));
+	display_texts.insert("cs", QString::fromUtf8("\304\214esky (cs)"));
+	display_texts.insert("de", QLatin1String("Deutsch (de)"));
+	display_texts.insert("en", QLatin1String("English (en)"));
+	display_texts.insert("es", QString::fromUtf8("Espa\303\261ol (es)"));
+	display_texts.insert("fr", QString::fromUtf8("Fran\303\247ais (fr)"));
+	display_texts.insert("it", QLatin1String("Italiano (it)"));
 	foreach (const QString& translation, translations) {
 		if (translation.startsWith("qt")) {
 			continue;
@@ -63,13 +63,10 @@ LocaleDialog::LocaleDialog(QWidget* parent)
 		QString display = display_texts.value(translation);
 		if (display.isEmpty()) {
 			QLocale locale(translation);
-			QString country = QLocale::countryToString(locale.country());
-			QString language = QLocale::languageToString(locale.language());
-			display = (translation.length() == 2) ? language : QString("%1 (%2)").arg(language, country);
+			display = QString("%1 (%2)").arg(QLocale::languageToString(locale.language())).arg(translation);
 		}
 		m_translations->addItem(display, translation);
 	}
-	m_translations->model()->sort(0);
 	int index = qMax(0, m_translations->findData(m_current));
 	m_translations->setCurrentIndex(index);
 
@@ -114,14 +111,12 @@ void LocaleDialog::loadTranslator()
 	QLocale::setDefault(m_current);
 
 	// Load translators
-	if (translations.contains("qt_" + m_current) || translations.contains("qt_" + m_current.left(2))) {
-		static QTranslator local_qt_translator;
-		local_qt_translator.load("qt_" + m_current, m_path);
-		QCoreApplication::installTranslator(&local_qt_translator);
-	}
-
 	static QTranslator qt_translator;
-	qt_translator.load("qt_" + m_current, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+	if (translations.contains("qt_" + m_current) || translations.contains("qt_" + m_current.left(2))) {
+		qt_translator.load("qt_" + m_current, m_path);
+	} else {
+		qt_translator.load("qt_" + m_current, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+	}
 	QCoreApplication::installTranslator(&qt_translator);
 
 	static QTranslator translator;

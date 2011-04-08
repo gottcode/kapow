@@ -6,65 +6,65 @@
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="443"/>
+        <location filename="../src/data_model.cpp" line="475"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="443"/>
+        <location filename="../src/data_model.cpp" line="475"/>
         <source>Session conflicts with other sessions.</source>
         <translation>La sessione è in conflitto con altre sessioni.</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="225"/>
-        <location filename="../src/data_model.cpp" line="403"/>
+        <location filename="../src/data_model.cpp" line="435"/>
         <source>Total</source>
         <translation>Totale</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="387"/>
+        <location filename="../src/data_model.cpp" line="419"/>
         <source>Date</source>
         <translation>Data</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="389"/>
+        <location filename="../src/data_model.cpp" line="421"/>
         <source>Start</source>
         <translation>Inizio</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="391"/>
+        <location filename="../src/data_model.cpp" line="423"/>
         <source>Stop</source>
         <translation>Fine</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="393"/>
+        <location filename="../src/data_model.cpp" line="425"/>
         <source>Task</source>
         <translation>Compito</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="395"/>
+        <location filename="../src/data_model.cpp" line="427"/>
         <source>Hours</source>
         <translation>Ore</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="397"/>
+        <location filename="../src/data_model.cpp" line="429"/>
         <source>Daily</source>
         <translation>Giornaliero</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="399"/>
+        <location filename="../src/data_model.cpp" line="431"/>
         <source>Weekly</source>
         <translation>Settimanale</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="401"/>
+        <location filename="../src/data_model.cpp" line="433"/>
         <source>Monthly</source>
         <translation>Mensile</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="405"/>
+        <location filename="../src/data_model.cpp" line="437"/>
         <source>Billed</source>
         <translation>Fatturato</translation>
     </message>
@@ -74,47 +74,17 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="48"/>
         <source>Select application language:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="53"/>
-        <source>Czech</source>
-        <translation>Ceco</translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="54"/>
-        <source>German</source>
-        <translation>Tedesco</translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="55"/>
-        <source>American English</source>
-        <translation>Inglese americano</translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="56"/>
-        <source>Spanish</source>
-        <translation>Spagnolo</translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="57"/>
-        <source>French</source>
-        <translation>Francese</translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="58"/>
-        <source>Italian</source>
-        <translation>Italiano</translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="153"/>
+        <location filename="../src/locale_dialog.cpp" line="148"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="153"/>
+        <location filename="../src/locale_dialog.cpp" line="148"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -373,7 +343,7 @@
     <message>
         <location filename="../src/window.cpp" line="148"/>
         <source>Application &amp;Language...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -427,7 +397,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="300"/>
-        <location filename="../src/window.cpp" line="508"/>
+        <location filename="../src/window.cpp" line="509"/>
         <source>Untitled</source>
         <translation>Senza titolo</translation>
     </message>
@@ -463,49 +433,49 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="352"/>
-        <location filename="../src/window.cpp" line="436"/>
-        <location filename="../src/window.cpp" line="489"/>
-        <location filename="../src/window.cpp" line="626"/>
+        <location filename="../src/window.cpp" line="437"/>
+        <location filename="../src/window.cpp" line="490"/>
+        <location filename="../src/window.cpp" line="635"/>
         <source>Question</source>
         <translation>Domande</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="436"/>
+        <location filename="../src/window.cpp" line="437"/>
         <source>Cancel this session?</source>
         <translation>Cancella questa sessione?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="466"/>
+        <location filename="../src/window.cpp" line="467"/>
         <source>Add Project</source>
         <translation>Aggiungi Progetto</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="466"/>
+        <location filename="../src/window.cpp" line="467"/>
         <source>Enter project name:</source>
         <translation>Inserisci nome progetto:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="472"/>
+        <location filename="../src/window.cpp" line="473"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="472"/>
+        <location filename="../src/window.cpp" line="473"/>
         <source>A project with that name already exists.</source>
         <translation>Un progetto con quel nome esiste già.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="489"/>
+        <location filename="../src/window.cpp" line="490"/>
         <source>Remove selected project?</source>
         <translation>Rimuovi il progetto selezionato?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="626"/>
+        <location filename="../src/window.cpp" line="635"/>
         <source>Remove selected session?</source>
         <translation>Rimuovi la sessione selezionata?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="737"/>
+        <location filename="../src/window.cpp" line="746"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n orologio partito</numerusform>
@@ -513,7 +483,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="743"/>
+        <location filename="../src/window.cpp" line="752"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>

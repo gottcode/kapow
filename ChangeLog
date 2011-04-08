@@ -1,3 +1,6 @@
+2011-04-08 Graeme Gott <graeme@gottcode.org>
+	* Update translation files.
+
 2011-04-07 Graeme Gott <graeme@gottcode.org>
 	* FIXED: Could sometimes edit sessions that were billed.
 	* FIXED: Totals did not reflect billed status.
