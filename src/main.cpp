@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
-	LocaleDialog::loadTranslator();
+	LocaleDialog::loadTranslator("kapow_");
 
 	QDir dir = QDir::home();
 #if defined(Q_OS_MAC)

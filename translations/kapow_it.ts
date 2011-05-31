@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs" sourcelanguage="en">
+<TS version="2.0" language="it" sourcelanguage="en">
 <context>
     <name>DataModel</name>
     <message>
@@ -8,83 +8,88 @@
         <location filename="../src/data_model.cpp" line="75"/>
         <location filename="../src/data_model.cpp" line="475"/>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
         <location filename="../src/data_model.cpp" line="475"/>
         <source>Session conflicts with other sessions.</source>
-        <translation>Überschneidung mit anderem Eintrag.</translation>
+        <translation>La sessione è in conflitto con altre sessioni.</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="225"/>
         <location filename="../src/data_model.cpp" line="435"/>
         <source>Total</source>
-        <translation>Součet</translation>
+        <translation>Totale</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="419"/>
         <source>Date</source>
-        <translation>Datum</translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="421"/>
         <source>Start</source>
-        <translation>Spustit</translation>
+        <translation>Inizio</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="423"/>
         <source>Stop</source>
-        <translation>Zastavit</translation>
+        <translation>Fine</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="425"/>
         <source>Task</source>
-        <translation>Úkol</translation>
+        <translation>Compito</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="427"/>
         <source>Hours</source>
-        <translation>Hodiny</translation>
+        <translation>Ore</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="429"/>
         <source>Daily</source>
-        <translation>Denní</translation>
+        <translation>Giornaliero</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="431"/>
         <source>Weekly</source>
-        <translation>Týdenní</translation>
+        <translation>Settimanale</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="433"/>
         <source>Monthly</source>
-        <translation>Měsíční</translation>
+        <translation>Mensile</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="437"/>
         <source>Billed</source>
-        <translation>Odpočítané</translation>
+        <translation>Fatturato</translation>
     </message>
 </context>
 <context>
     <name>LocaleDialog</name>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="48"/>
+        <location filename="../src/locale_dialog.cpp" line="98"/>
         <source>Select application language:</source>
-        <translation>Vybrat jazyk programu:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="148"/>
+        <location filename="../src/locale_dialog.cpp" line="101"/>
+        <source>&lt;System Language&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/locale_dialog.cpp" line="195"/>
         <source>Note</source>
-        <translation>Notiz</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="148"/>
+        <location filename="../src/locale_dialog.cpp" line="195"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Spusťte, prosí, tento program znovu, aby se změna jazyka projevila.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -93,27 +98,27 @@
         <location filename="../src/report.cpp" line="45"/>
         <location filename="../src/report.cpp" line="200"/>
         <source>Time Sheet Report</source>
-        <translation>Pracovní výkaz</translation>
+        <translation>Rapporto ore lavorate</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="65"/>
         <source>Name:</source>
-        <translation>Název:</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="66"/>
         <source>Company:</source>
-        <translation>Společnost:</translation>
+        <translation>Ditta:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="67"/>
         <source>Address:</source>
-        <translation>Adresa:</translation>
+        <translation>Indirizzo:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="68"/>
         <source>Phone:</source>
-        <translation>Telefon:</translation>
+        <translation>Telefono:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="69"/>
@@ -123,12 +128,12 @@
     <message>
         <location filename="../src/report.cpp" line="70"/>
         <source>Email:</source>
-        <translation>E-mail:</translation>
+        <translation>Email:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="71"/>
         <source>Website:</source>
-        <translation>Stránky:</translation>
+        <translation>Sito web:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="97"/>
@@ -139,47 +144,47 @@
     <message>
         <location filename="../src/report.cpp" line="105"/>
         <source>Prepend currency symbol</source>
-        <translation>Uvést na začátku měnový symbol</translation>
+        <translation>Anteponi simbolo valuta</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="112"/>
         <source>Hourly rate:</source>
-        <translation>Hodinová sazba:</translation>
+        <translation>Tasso orario:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="113"/>
         <source>Tax rate:</source>
-        <translation>Daňová sazba:</translation>
+        <translation>percentuale di tasse:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="114"/>
         <source>Currency symbol:</source>
-        <translation>Měnový symbol:</translation>
+        <translation>Simbolo valuta:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="129"/>
         <source>Contact Information</source>
-        <translation>Informace o spojení</translation>
+        <translation>Informazioni contatto</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="130"/>
         <source>Data</source>
-        <translation>Datový formát</translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="131"/>
         <source>Preview</source>
-        <translation>Náhled</translation>
+        <translation>Anteprima</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="135"/>
         <source>Print</source>
-        <translation>Tisk</translation>
+        <translation>Stampa</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="218"/>
         <source>Phone: %1</source>
-        <translation>Telefon: %1</translation>
+        <translation>Telefono: %1</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="222"/>
@@ -189,22 +194,22 @@
     <message>
         <location filename="../src/report.cpp" line="281"/>
         <source>Hours</source>
-        <translation>Hodiny</translation>
+        <translation>Ore</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="288"/>
         <source>Subtotal</source>
-        <translation>Mezisoučet</translation>
+        <translation>Subtotale</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="290"/>
         <source>Taxes</source>
-        <translation>Daně</translation>
+        <translation>Tasse</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="293"/>
         <source>Total</source>
-        <translation>Úhrn</translation>
+        <translation>Totale</translation>
     </message>
 </context>
 <context>
@@ -213,15 +218,14 @@
         <location filename="../src/session.cpp" line="50"/>
         <source>%n hour(s)</source>
         <translation>
-            <numerusform>Jedna hodina</numerusform>
-            <numerusform>%n hodiny</numerusform>
-            <numerusform>%n hodin</numerusform>
+            <numerusform>%n ora</numerusform>
+            <numerusform>%n ore</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/session.cpp" line="52"/>
         <source>%L1 hours</source>
-        <translation>%L1 hodin</translation>
+        <translation>%L1 ore</translation>
     </message>
 </context>
 <context>
@@ -229,32 +233,32 @@
     <message>
         <location filename="../src/session_dialog.cpp" line="33"/>
         <source>Add Session</source>
-        <translation>Přidat sezení</translation>
+        <translation>Aggiungi sessione</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="52"/>
         <source>Date:</source>
-        <translation>Datum:</translation>
+        <translation>Data:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="53"/>
         <source>Start:</source>
-        <translation>Začátek:</translation>
+        <translation>Inizio:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="54"/>
         <source>Stop:</source>
-        <translation>Konec:</translation>
+        <translation>Fine:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="55"/>
         <source>Task:</source>
-        <translation>Úkol:</translation>
+        <translation>Compito:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="68"/>
         <source>Edit Session</source>
-        <translation>Upravit sezení</translation>
+        <translation>Modifica sessione</translation>
     </message>
 </context>
 <context>
@@ -267,44 +271,44 @@
     <message>
         <location filename="../src/window.cpp" line="104"/>
         <source>Start</source>
-        <translation>Spustit</translation>
+        <translation>Inizio</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="107"/>
         <source>Stop</source>
-        <translation>Zastavit</translation>
+        <translation>Fine</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="111"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Cancella</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="121"/>
         <source>&amp;Project</source>
-        <translation>&amp;Projekt</translation>
+        <translation>&amp;Progetto</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="122"/>
         <location filename="../src/window.cpp" line="131"/>
         <source>&amp;Add</source>
-        <translation>&amp;Přidat</translation>
+        <translation>&amp;Aggiungi</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="123"/>
         <location filename="../src/window.cpp" line="134"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Odstranit</translation>
+        <translation>&amp;Rimuovi</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="126"/>
         <source>&amp;Report</source>
-        <translation>&amp;Zpráva</translation>
+        <translation>&amp;Rapporto</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="128"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation>&amp;Esci</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="128"/>
@@ -314,93 +318,93 @@
     <message>
         <location filename="../src/window.cpp" line="130"/>
         <source>&amp;Session</source>
-        <translation>&amp;Sezení</translation>
+        <translation>&amp;Sessione</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="132"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Úpravy</translation>
+        <translation>&amp;Modifica</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="137"/>
         <source>S&amp;ettings</source>
-        <translation>&amp;Nastavení</translation>
+        <translation>&amp;Impostazioni</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="138"/>
         <source>Columns</source>
-        <translation>Sloupce</translation>
+        <translation>Colonne</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="139"/>
         <source>&amp;Decimal Totals</source>
-        <translation>&amp;Desetinné zobrazení času</translation>
+        <translation>Totali &amp;Decimali</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="143"/>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Přímé zpracování hodnot</translation>
+        <translation>Modifica in linea</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="148"/>
         <source>Application &amp;Language...</source>
-        <translation>Jazyk &amp;programu...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
         <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
+        <translation>&amp;Aiuto</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="151"/>
         <source>&amp;About</source>
-        <translation>&amp;O programu</translation>
+        <translation>&amp;A proposito</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="152"/>
         <source>About &amp;Qt</source>
-        <translation>O &amp;Qt</translation>
+        <translation>A proposito delle &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>Project</source>
-        <translation>Projekt</translation>
+        <translation>Progetto</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>Timer</source>
-        <translation>Časomíra</translation>
+        <translation>Tempo</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="188"/>
         <source>Show all</source>
-        <translation>Ukázat vše</translation>
+        <translation>Mostra tutto</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="189"/>
         <source>Show only unbilled</source>
-        <translation>Ukázat pouze neodpočítané</translation>
+        <translation>Mostra solo occorrenze non fatturate</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="190"/>
         <source>Show only this year</source>
-        <translation>Ukázat pouze tento rok</translation>
+        <translation>Mostra solo occorrenze di quest&apos;anno</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="191"/>
         <source>Show only this month</source>
-        <translation>Ukázat pouze tento měsíc</translation>
+        <translation>Mostra solo occorrenze di questo mese</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="192"/>
         <source>Show only this week</source>
-        <translation>Ukázat pouze tento týden</translation>
+        <translation>Mostra solo occorrenze di questa settimana</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="300"/>
         <location filename="../src/window.cpp" line="509"/>
         <source>Untitled</source>
-        <translation>Bez názvu</translation>
+        <translation>Senza titolo</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="352"/>
@@ -410,27 +414,27 @@
     <message>
         <location filename="../src/window.cpp" line="376"/>
         <source>About</source>
-        <translation>O</translation>
+        <translation>A proposito</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="378"/>
         <source>Kapow Punch Clock %1</source>
-        <translation>Evidence pracovní doby Kapow %1</translation>
+        <translation>Kapow Punch Clock %1</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="379"/>
         <source>A program to help track spent time</source>
-        <translation>Program pro evidenci pracovní doby na počítači, který vám pomůže sledovat vámi strávený čas.</translation>
+        <translation>Un programma per aiutarvi a tenere traccia del tempo speso</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="380"/>
         <source>Copyright &amp;copy; 2008-2010 Graeme Gott</source>
-        <translation>Autorské právo &amp;copy; 2008-2010 Graeme Gott.</translation>
+        <translation>Copyright &amp;copy; 2008-2010 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="381"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Zveřejněno pod povolením &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;.</translation>
+        <translation>Rilasciato sotto i termini della licenza &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="352"/>
@@ -438,56 +442,55 @@
         <location filename="../src/window.cpp" line="490"/>
         <location filename="../src/window.cpp" line="635"/>
         <source>Question</source>
-        <translation>Otázka</translation>
+        <translation>Domande</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="437"/>
         <source>Cancel this session?</source>
-        <translation>Zrušit toto sezení?</translation>
+        <translation>Cancella questa sessione?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="467"/>
         <source>Add Project</source>
-        <translation>Přidat projekt</translation>
+        <translation>Aggiungi Progetto</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="467"/>
         <source>Enter project name:</source>
-        <translation>Zadat název projektu:</translation>
+        <translation>Inserisci nome progetto:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="473"/>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="473"/>
         <source>A project with that name already exists.</source>
-        <translation>Projekt s tímto názvem již existuje.</translation>
+        <translation>Un progetto con quel nome esiste già.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="490"/>
         <source>Remove selected project?</source>
-        <translation>Odstranit vybraný projekt?</translation>
+        <translation>Rimuovi il progetto selezionato?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="635"/>
         <source>Remove selected session?</source>
-        <translation>Odstranit vybrané sezení?</translation>
+        <translation>Rimuovi la sessione selezionata?</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/window.cpp" line="746"/>
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>Běží %n časomíra</numerusform>
-            <numerusform>Běží %n časomíry</numerusform>
-            <numerusform>Běží %n časomír</numerusform>
+            <numerusform>%n orologio partito</numerusform>
+            <numerusform>%n orologi partito</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="752"/>
         <source>Kapow Punch Clock</source>
-        <translation>Evidence pracovní doby Kapow</translation>
+        <translation>Kapow Punch Clock</translation>
     </message>
 </context>
 </TS>

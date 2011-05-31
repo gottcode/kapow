@@ -39,12 +39,12 @@ SOURCES = src/data_model.cpp \
 	src/time_editor.cpp \
 	src/window.cpp
 
-TRANSLATIONS = translations/cs.ts \
-	translations/de.ts \
-	translations/en.ts \
-	translations/es.ts \
-	translations/fr.ts \
-	translations/it.ts
+TRANSLATIONS = translations/kapow_cs.ts \
+	translations/kapow_de.ts \
+	translations/kapow_en.ts \
+	translations/kapow_es.ts \
+	translations/kapow_fr.ts \
+	translations/kapow_it.ts
 
 RESOURCES = icons/icons.qrc
 macx {
