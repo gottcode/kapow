@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,11 +35,13 @@ SessionDialog::SessionDialog(QWidget* parent)
 	m_date = new QDateEdit(QDate::currentDate(), this);
 	m_date->setCalendarPopup(true);
 
+	QString format = QLocale().timeFormat(QLocale::LongFormat).contains("AP", Qt::CaseInsensitive) ? "h:mm:ss AP" : "HH:mm:ss";
+
 	m_start = new QTimeEdit(QTime::currentTime(), this);
-	m_start->setDisplayFormat(QLocale().timeFormat(QLocale::LongFormat));
+	m_start->setDisplayFormat(format);
 
 	m_stop = new QTimeEdit(QTime::currentTime(), this);
-	m_stop->setDisplayFormat(QLocale().timeFormat(QLocale::LongFormat));
+	m_stop->setDisplayFormat(format);
 
 	m_task = new QLineEdit(this);
 
