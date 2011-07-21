@@ -94,9 +94,11 @@ Report::Report(DataModel* data, QWidget* parent)
 	}
 
 	m_hourly_rate = new QDoubleSpinBox(data_tab);
+	m_hourly_rate->setRange(0.0, 100000.0);
 	m_hourly_rate->setSpecialValueText(tr("N/A"));
 	connect(m_hourly_rate, SIGNAL(valueChanged(double)), this, SLOT(generateText()));
 	m_tax_rate = new QDoubleSpinBox(data_tab);
+	m_tax_rate->setRange(0.0, 100.0);
 	m_tax_rate->setSuffix(QLocale().percent());
 	m_tax_rate->setSpecialValueText(tr("N/A"));
 	connect(m_tax_rate, SIGNAL(valueChanged(double)), this, SLOT(generateText()));
