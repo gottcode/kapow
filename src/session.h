@@ -26,7 +26,7 @@
 #include <QXmlStreamWriter>
 
 class Session {
-	Q_DECLARE_TR_FUNCTIONS(Session);
+	Q_DECLARE_TR_FUNCTIONS(Session)
 
 public:
 	Session();
@@ -75,7 +75,7 @@ private:
 	class SessionData: public QSharedData {
 	public:
 		SessionData(const QDate& date, const QTime& start, const QTime& stop, const QString& task, bool billed)
-		: m_date(date), m_start(start), m_stop(stop), m_task(task), m_billed(billed), m_totals(Total + 1) {
+		: m_date(date), m_start(start.addMSecs(-start.msec())), m_stop(stop.addMSecs(-stop.msec())), m_task(task), m_billed(billed), m_totals(Total + 1) {
 		}
 
 		QDate m_date;
