@@ -72,22 +72,22 @@
 <context>
     <name>LocaleDialog</name>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="98"/>
+        <location filename="../src/locale_dialog.cpp" line="99"/>
         <source>Select application language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="101"/>
+        <location filename="../src/locale_dialog.cpp" line="102"/>
         <source>&lt;System Language&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="195"/>
+        <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="195"/>
+        <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -96,7 +96,7 @@
     <name>Report</name>
     <message>
         <location filename="../src/report.cpp" line="45"/>
-        <location filename="../src/report.cpp" line="200"/>
+        <location filename="../src/report.cpp" line="202"/>
         <source>Time Sheet Report</source>
         <translation>Zeiterfassungsbericht</translation>
     </message>
@@ -136,78 +136,78 @@
         <translation>Website:</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="97"/>
-        <location filename="../src/report.cpp" line="101"/>
+        <location filename="../src/report.cpp" line="98"/>
+        <location filename="../src/report.cpp" line="103"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="105"/>
+        <location filename="../src/report.cpp" line="107"/>
         <source>Prepend currency symbol</source>
         <translation>Währungssymbol voranstellen</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="112"/>
+        <location filename="../src/report.cpp" line="114"/>
         <source>Hourly rate:</source>
         <translation>Stundensatz:</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="113"/>
+        <location filename="../src/report.cpp" line="115"/>
         <source>Tax rate:</source>
         <translation>MwSt.-Satz:</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="114"/>
+        <location filename="../src/report.cpp" line="116"/>
         <source>Currency symbol:</source>
         <translation>Währungssymbol:</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="129"/>
+        <location filename="../src/report.cpp" line="131"/>
         <source>Contact Information</source>
         <translation>Kontaktdaten</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="130"/>
+        <location filename="../src/report.cpp" line="132"/>
         <source>Data</source>
         <translation>Zeiterfassungsdaten</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="131"/>
+        <location filename="../src/report.cpp" line="133"/>
         <source>Preview</source>
         <translation>Vorschau</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="135"/>
+        <location filename="../src/report.cpp" line="137"/>
         <source>Print</source>
         <translation>Drucken</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="218"/>
+        <location filename="../src/report.cpp" line="220"/>
         <source>Phone: %1</source>
         <translation>Tel.: %1</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="222"/>
+        <location filename="../src/report.cpp" line="224"/>
         <source>Fax: %1</source>
         <translation>Fax: %1</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="281"/>
+        <location filename="../src/report.cpp" line="283"/>
         <source>Hours</source>
         <translation>Stunden</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="288"/>
+        <location filename="../src/report.cpp" line="290"/>
         <source>Subtotal</source>
         <translation>Zwischensumme</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="290"/>
+        <location filename="../src/report.cpp" line="292"/>
         <source>Taxes</source>
         <translation>MwSt.</translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="293"/>
+        <location filename="../src/report.cpp" line="295"/>
         <source>Total</source>
         <translation>Endsumme</translation>
     </message>
@@ -236,27 +236,27 @@
         <translation>Eintrag hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/session_dialog.cpp" line="52"/>
+        <location filename="../src/session_dialog.cpp" line="54"/>
         <source>Date:</source>
         <translation>Datum:</translation>
     </message>
     <message>
-        <location filename="../src/session_dialog.cpp" line="53"/>
+        <location filename="../src/session_dialog.cpp" line="55"/>
         <source>Start:</source>
         <translation>Start:</translation>
     </message>
     <message>
-        <location filename="../src/session_dialog.cpp" line="54"/>
+        <location filename="../src/session_dialog.cpp" line="56"/>
         <source>Stop:</source>
         <translation>Ende:</translation>
     </message>
     <message>
-        <location filename="../src/session_dialog.cpp" line="55"/>
+        <location filename="../src/session_dialog.cpp" line="57"/>
         <source>Task:</source>
         <translation>Aufgabe:</translation>
     </message>
     <message>
-        <location filename="../src/session_dialog.cpp" line="68"/>
+        <location filename="../src/session_dialog.cpp" line="70"/>
         <source>Edit Session</source>
         <translation>Eintrag bearbeiten</translation>
     </message>

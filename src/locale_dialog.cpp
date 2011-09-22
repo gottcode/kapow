@@ -41,6 +41,7 @@ namespace
 	{
 		LocaleNames()
 		{
+			m_names["bg"] = QString::fromUtf8("\320\261\321\212\320\273\320\263\320\260\321\200\321\201\320\272\320\270 \320\265\320\267\320\270\320\272");
 			m_names["ca"] = QString::fromUtf8("Catal\303\240");
 			m_names["cs"] = QString::fromUtf8("\304\214esky");
 			m_names["de"] = QLatin1String("Deutsch");
