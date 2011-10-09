@@ -4,6 +4,20 @@
 <context>
     <name>DataModel</name>
     <message>
+        <location filename="../src/data_model.cpp" line="68"/>
+        <location filename="../src/data_model.cpp" line="75"/>
+        <location filename="../src/data_model.cpp" line="475"/>
+        <source>Error</source>
+        <translation>Грешка</translation>
+    </message>
+    <message>
+        <location filename="../src/data_model.cpp" line="68"/>
+        <location filename="../src/data_model.cpp" line="75"/>
+        <location filename="../src/data_model.cpp" line="475"/>
+        <source>Session conflicts with other sessions.</source>
+        <translation>Сесията е в конфликт с други сесии.</translation>
+    </message>
+    <message>
         <location filename="../src/data_model.cpp" line="225"/>
         <location filename="../src/data_model.cpp" line="435"/>
         <source>Total</source>
@@ -54,42 +68,28 @@
         <source>Billed</source>
         <translation>Платена</translation>
     </message>
-    <message>
-        <location filename="../src/data_model.cpp" line="68"/>
-        <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="475"/>
-        <source>Error</source>
-        <translation>Грешка</translation>
-    </message>
-    <message>
-        <location filename="../src/data_model.cpp" line="68"/>
-        <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="475"/>
-        <source>Session conflicts with other sessions.</source>
-        <translation>Сесията е в конфликт с други сесии.</translation>
-    </message>
 </context>
 <context>
     <name>LocaleDialog</name>
     <message>
         <location filename="../src/locale_dialog.cpp" line="99"/>
         <source>Select application language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете език за програмата:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="102"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Системен език&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Бележка</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Моля, рестартирайте програмата за да влезе в сила избраният език.</translation>
     </message>
 </context>
 <context>
@@ -217,9 +217,9 @@
     <message numerus="yes">
         <location filename="../src/session.cpp" line="50"/>
         <source>%n hour(s)</source>
-        <translation type="unfinished">
-            <numerusform>%n час(а)</numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n час</numerusform>
+            <numerusform>%n часа</numerusform>
         </translation>
     </message>
     <message>
@@ -263,11 +263,6 @@
 </context>
 <context>
     <name>Window</name>
-    <message>
-        <location filename="../src/window.cpp" line="752"/>
-        <source>Kapow Punch Clock</source>
-        <translation></translation>
-    </message>
     <message>
         <location filename="../src/window.cpp" line="88"/>
         <source>00:00:00</source>
@@ -343,12 +338,17 @@
     <message>
         <location filename="../src/window.cpp" line="139"/>
         <source>&amp;Decimal Totals</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Времена с десетична точка</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="143"/>
         <source>&amp;Inline Editing</source>
         <translation>&amp;Директно редактиране</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="148"/>
+        <source>Application &amp;Language...</source>
+        <translation>Език на &amp;програмата...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -407,9 +407,19 @@
         <translation>Неозаглавена</translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="352"/>
+        <source>There are timers running. Stop timers and quit?</source>
+        <translation>Има активни таймери. Искате ли да ги спрете и да излезете от програмата?</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="376"/>
+        <source>About</source>
+        <translation>Информация</translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="378"/>
         <source>Kapow Punch Clock %1</source>
-        <translation></translation>
+        <translation>Kapow Punch Clock %1</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="379"/>
@@ -425,19 +435,6 @@
         <location filename="../src/window.cpp" line="381"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
         <translation>Разпространява се под &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; лиценз.</translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../src/window.cpp" line="746"/>
-        <source>%n timer(s) running</source>
-        <translation type="unfinished">
-            <numerusform>%n активни часовника</numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="376"/>
-        <source>About</source>
-        <translation>Информация</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="352"/>
@@ -482,15 +479,18 @@
         <source>Remove selected session?</source>
         <translation>Премахване на избраната сесия?</translation>
     </message>
-    <message>
-        <location filename="../src/window.cpp" line="148"/>
-        <source>Application &amp;Language...</source>
-        <translation type="unfinished"></translation>
+    <message numerus="yes">
+        <location filename="../src/window.cpp" line="746"/>
+        <source>%n timer(s) running</source>
+        <translation>
+            <numerusform>%n активен таймер</numerusform>
+            <numerusform>%n активни таймери</numerusform>
+        </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="352"/>
-        <source>There are timers running. Stop timers and quit?</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/window.cpp" line="752"/>
+        <source>Kapow Punch Clock</source>
+        <translation>Kapow Punch Clock</translation>
     </message>
 </context>
 </TS>
