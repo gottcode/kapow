@@ -79,7 +79,7 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="102"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Jazyk systému&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
@@ -410,7 +410,7 @@
     <message>
         <location filename="../src/window.cpp" line="352"/>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Běží časomíry. Zastavit časomíry a ukončit?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="376"/>
