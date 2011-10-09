@@ -79,7 +79,7 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="102"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Langue du système&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
@@ -409,7 +409,7 @@
     <message>
         <location filename="../src/window.cpp" line="352"/>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Des minuteurs sont toujours en cours d&apos;exécution. Voulez-vousles arrêter et quitter ?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="376"/>
