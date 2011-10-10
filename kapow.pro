@@ -1,9 +1,10 @@
 TEMPLATE = app
 CONFIG += warn_on release
 macx {
-	# Uncomment the following line to compile on PowerPC Macs
+	CONFIG += x86_64
+	# Comment the above line and uncomment the following lines to compile Universal for 10.4+
 	# QMAKE_MAC_SDK = /Developer/SDKs/MacOSX10.4u.sdk
-	CONFIG += x86 ppc
+	# CONFIG += x86 ppc
 }
 
 MOC_DIR = build
