@@ -1,0 +1,19 @@
+About
+=====
+
+Kapow is a punch clock program designed to easily keep track of your hours,
+whether you're working on one project or many. Simply clock in and out with
+the Start/Stop button. If you make a mistake in your hours, you can go back
+and edit any of the entries by double-clicking on the session in question.
+Kapow also allows you to easily keep track of the hours since you last
+billed a client, by providing a helpful "Billed" checkbox--the totals will
+reflect your work after the last billed session.
+
+
+Portable Mode
+=============
+
+Create a folder named "Data" in the same folder as the executable (the
+application bundle if using Mac OS X) to run this program from a USB drive.
+Simply rename or delete the "Data" folder if you later decide you want it
+to start storing its settings and related files on the host computer.

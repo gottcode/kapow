@@ -23,9 +23,7 @@
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDir>
-#include <QLibraryInfo>
-#include <QLocale>
-#include <QTranslator>
+#include <QSettings>
 
 int main(int argc, char** argv) {
 	QApplication app(argc, argv);
@@ -33,25 +31,41 @@ int main(int argc, char** argv) {
 	app.setApplicationVersion("1.3.3");
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
+	QString appdir = app.applicationDirPath();
 
 	LocaleDialog::loadTranslator("kapow_");
 
-	QDir dir = QDir::home();
 #if defined(Q_OS_MAC)
+	QFileInfo portable(appdir + "/../../../Data");
 	QString path = QDir::homePath() + "/Library/Application Support/GottCode/Kapow/";
 #elif defined(Q_OS_UNIX)
+	QFileInfo portable(appdir + "/Data");
 	QString path = getenv("$XDG_DATA_HOME");
 	if (path.isEmpty()) {
 		path = QDir::homePath() + "/.local/share/";
 	}
 	path += "/gottcode/kapow/";
 #elif defined(Q_OS_WIN32)
+	QFileInfo portable(appdir + "/Data");
 	QString path = QDir::homePath() + "/Application Data/GottCode/Kapow/";
 #else
+	QFileInfo portable(appdir + "/Data");
 	QString path = QDesktopServices::storageLocation(QDesktopSettings::Data) + "/Kapow/";
 #endif
-	dir.mkpath(path);
 
-	Window window(path + "data.xml");
+	// Handle portability
+	if (portable.exists() && portable.isWritable()) {
+		path = portable.absoluteFilePath();
+		QSettings::setDefaultFormat(QSettings::IniFormat);
+		QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path + "/Settings");
+	}
+
+	// Create base data path
+	if (!QFile::exists(path)) {
+		QDir dir = QDir::home();
+		dir.mkpath(path);
+	}
+
+	Window window(path + "/data.xml");
 	return app.exec();
 }

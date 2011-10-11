@@ -19,6 +19,7 @@ mkdir "$APP"
 cp -Rpf "$BUNDLE" "$APP/"
 cp COPYING "$APP/License.txt"
 cp CREDITS "$APP/Credits.txt"
+cp README "$APP/Read Me.txt"
 echo 'Done'
 
 # Copy translations
@@ -102,8 +103,9 @@ echo '
 
 			set position of item "'${BUNDLE}'" of container window to {90, 90}
 			set position of item "Applications" of container window to {310, 90}
-			set position of item "Credits.txt" of container window to {140, 215}
-			set position of item "License.txt" of container window to {260, 215}
+			set position of item "Credits.txt" of container window to {100, 215}
+			set position of item "License.txt" of container window to {200, 215}
+			set position of item "Read Me.txt" of container window to {300, 215}
 			close
 			open
 
