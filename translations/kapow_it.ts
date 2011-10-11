@@ -74,22 +74,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="99"/>
         <source>Select application language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona la lingua dell&apos;applicazione:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="102"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Lingua di sistema&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Note</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per favore è necessario riavviare l&apos;applicazione affinché il cambio di lingua abbia effetto.</translation>
     </message>
 </context>
 <context>
@@ -343,12 +343,12 @@
     <message>
         <location filename="../src/window.cpp" line="143"/>
         <source>&amp;Inline Editing</source>
-        <translation>Modifica in linea</translation>
+        <translation>&amp;Modifica in linea</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="148"/>
         <source>Application &amp;Language...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lingua...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -409,7 +409,7 @@
     <message>
         <location filename="../src/window.cpp" line="352"/>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ci sono dei timer in esecuzione. Fermare i timer e chiudere l&apos;applicazione?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="376"/>
