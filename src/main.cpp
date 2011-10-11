@@ -33,8 +33,6 @@ int main(int argc, char** argv) {
 	app.setOrganizationName("GottCode");
 	QString appdir = app.applicationDirPath();
 
-	LocaleDialog::loadTranslator("kapow_");
-
 #if defined(Q_OS_MAC)
 	QFileInfo portable(appdir + "/../../../Data");
 	QString path = QDir::homePath() + "/Library/Application Support/GottCode/Kapow/";
@@ -65,6 +63,8 @@ int main(int argc, char** argv) {
 		QDir dir = QDir::home();
 		dir.mkpath(path);
 	}
+
+	LocaleDialog::loadTranslator("kapow_");
 
 	Window window(path + "/data.xml");
 	return app.exec();
