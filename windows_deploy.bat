@@ -15,6 +15,7 @@ ECHO Copying translations
 SET TRANSLATIONS=%APP%\translations
 MKDIR %TRANSLATIONS%
 COPY translations\*.qm %TRANSLATIONS% >nul
+COPY %QTDIR%\translations\qt_*.qm %TRANSLATIONS% >nul
 
 ECHO Copying Qt libraries
 COPY %QTDIR%\bin\libgcc_s_dw2-1.dll %APP% >nul
