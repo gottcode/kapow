@@ -74,22 +74,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="99"/>
         <source>Select application language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmsprache auswählen</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="102"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Betriebssystemsprache&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtung!</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Programm neu starten, um die Sprachänderung wirksam werden zu lassen.</translation>
     </message>
 </context>
 <context>
@@ -348,7 +348,7 @@
     <message>
         <location filename="../src/window.cpp" line="148"/>
         <source>Application &amp;Language...</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmsprache</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -409,7 +409,7 @@
     <message>
         <location filename="../src/window.cpp" line="352"/>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeiterfassung läuft. Stoppen und Programm beenden?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="376"/>
