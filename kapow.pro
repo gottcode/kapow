@@ -63,14 +63,17 @@ unix: !macx {
 
 	target.path = $$PREFIX/bin/
 
-	icon.files = icons/kapow.png
-	icon.path = $$PREFIX/share/icons/hicolor/48x48/apps
+	icon.files = icons/hicolor/*
+	icon.path = $$PREFIX/share/icons/hicolor/
+
+	pixmap.files = icons/kapow.xpm
+	pixmap.path = $$PREFIX/share/pixmaps/
 
 	desktop.files = icons/kapow.desktop
 	desktop.path = $$PREFIX/share/applications/
 
 	qm.files = translations/*.qm
-	qm.path = $$PREFIX/share/kapow/translations
+	qm.path = $$PREFIX/share/kapow/translations/
 
-	INSTALLS += target icon desktop qm
+	INSTALLS += target icon pixmap desktop qm
 }

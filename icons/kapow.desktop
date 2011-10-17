@@ -6,4 +6,4 @@ Exec=kapow
 Icon=kapow
 Terminal=false
 Type=Application
-Categories=Qt;Office;
+Categories=Qt;Office;Calendar;

@@ -31,6 +31,17 @@ int main(int argc, char** argv) {
 	app.setApplicationVersion("1.3.3");
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
+	{
+		QIcon fallback(":/hicolor/256x256/apps/kapow.png");
+		fallback.addFile(":/hicolor/128x128/apps/kapow.png");
+		fallback.addFile(":/hicolor/64x64/apps/kapow.png");
+		fallback.addFile(":/hicolor/48x48/apps/kapow.png");
+		fallback.addFile(":/hicolor/32x32/apps/kapow.png");
+		fallback.addFile(":/hicolor/24x24/apps/kapow.png");
+		fallback.addFile(":/hicolor/22x22/apps/kapow.png");
+		fallback.addFile(":/hicolor/16x16/apps/kapow.png");
+		app.setWindowIcon(QIcon::fromTheme("kapow", fallback));
+	}
 	QString appdir = app.applicationDirPath();
 
 #if defined(Q_OS_MAC)

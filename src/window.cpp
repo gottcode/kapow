@@ -80,8 +80,6 @@ namespace {
 
 Window::Window(const QString& filename, QWidget* parent)
 : QMainWindow(parent), m_filename(filename), m_decimals(true), m_inline(true), m_active_project(0), m_active_model(0), m_active_timers(0) {
-	setWindowIcon(QIcon(":/kapow.png"));
-
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
 
@@ -742,7 +740,7 @@ void Window::updateSessionButtons() {
 /*****************************************************************************/
 
 void Window::updateTrayIcon() {
-	m_tray_icon->setIcon(QIcon(m_active_timers ? ":/kapow.png" : ":/kapow-inactive.png"));
+	m_tray_icon->setIcon(m_active_timers ? windowIcon() : windowIcon().pixmap(256, 256, QIcon::Disabled));
 	m_tray_icon->setToolTip(tr("%n timer(s) running", "", m_active_timers));
 }
 
