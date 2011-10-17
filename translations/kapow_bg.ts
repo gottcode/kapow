@@ -264,99 +264,99 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="88"/>
+        <location filename="../src/window.cpp" line="86"/>
         <source>00:00:00</source>
         <translation>00:00:00</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="104"/>
+        <location filename="../src/window.cpp" line="102"/>
         <source>Start</source>
         <translation>Начало</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="107"/>
+        <location filename="../src/window.cpp" line="105"/>
         <source>Stop</source>
         <translation>Край</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="111"/>
+        <location filename="../src/window.cpp" line="109"/>
         <source>Cancel</source>
         <translation>Прекъсване</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="121"/>
+        <location filename="../src/window.cpp" line="119"/>
         <source>&amp;Project</source>
         <translation>&amp;Проект</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="122"/>
-        <location filename="../src/window.cpp" line="131"/>
+        <location filename="../src/window.cpp" line="120"/>
+        <location filename="../src/window.cpp" line="130"/>
         <source>&amp;Add</source>
         <translation>&amp;Добавяне</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="123"/>
-        <location filename="../src/window.cpp" line="134"/>
+        <location filename="../src/window.cpp" line="121"/>
+        <location filename="../src/window.cpp" line="133"/>
         <source>&amp;Remove</source>
         <translation>&amp;Премахване</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="126"/>
+        <location filename="../src/window.cpp" line="124"/>
         <source>&amp;Report</source>
         <translation>&amp;Доклад</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="128"/>
+        <location filename="../src/window.cpp" line="126"/>
         <source>&amp;Quit</source>
         <translation>&amp;Изход</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="128"/>
+        <location filename="../src/window.cpp" line="126"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="130"/>
+        <location filename="../src/window.cpp" line="129"/>
         <source>&amp;Session</source>
         <translation>&amp;Сесия</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="132"/>
+        <location filename="../src/window.cpp" line="131"/>
         <source>&amp;Edit</source>
         <translation>&amp;Редактиране</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="137"/>
+        <location filename="../src/window.cpp" line="136"/>
         <source>S&amp;ettings</source>
         <translation>&amp;Настройки</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="138"/>
+        <location filename="../src/window.cpp" line="137"/>
         <source>Columns</source>
         <translation>Колони</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="139"/>
+        <location filename="../src/window.cpp" line="138"/>
         <source>&amp;Decimal Totals</source>
         <translation>&amp;Времена с десетична точка</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="143"/>
+        <location filename="../src/window.cpp" line="142"/>
         <source>&amp;Inline Editing</source>
         <translation>&amp;Директно редактиране</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="148"/>
+        <location filename="../src/window.cpp" line="147"/>
         <source>Application &amp;Language...</source>
         <translation>Език на &amp;програмата...</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="150"/>
+        <location filename="../src/window.cpp" line="149"/>
         <source>&amp;Help</source>
         <translation>&amp;Помощ</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="151"/>
+        <location filename="../src/window.cpp" line="150"/>
         <source>&amp;About</source>
         <translation>&amp;Относно</translation>
     </message>
@@ -366,121 +366,121 @@
         <translation>Относно &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>Project</source>
         <translation>Проект</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>Timer</source>
         <translation>Таймер</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="188"/>
+        <location filename="../src/window.cpp" line="189"/>
         <source>Show all</source>
         <translation>Показване на всички</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="189"/>
+        <location filename="../src/window.cpp" line="190"/>
         <source>Show only unbilled</source>
         <translation>Неплатени</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="190"/>
+        <location filename="../src/window.cpp" line="191"/>
         <source>Show only this year</source>
         <translation>Само от тази година</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="191"/>
+        <location filename="../src/window.cpp" line="192"/>
         <source>Show only this month</source>
         <translation>Само от този месец</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="192"/>
+        <location filename="../src/window.cpp" line="193"/>
         <source>Show only this week</source>
         <translation>Само от тази седмица</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="300"/>
-        <location filename="../src/window.cpp" line="509"/>
+        <location filename="../src/window.cpp" line="301"/>
+        <location filename="../src/window.cpp" line="510"/>
         <source>Untitled</source>
         <translation>Неозаглавена</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="352"/>
+        <location filename="../src/window.cpp" line="353"/>
         <source>There are timers running. Stop timers and quit?</source>
         <translation>Има активни таймери. Искате ли да ги спрете и да излезете от програмата?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="376"/>
+        <location filename="../src/window.cpp" line="377"/>
         <source>About</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="378"/>
+        <location filename="../src/window.cpp" line="379"/>
         <source>Kapow Punch Clock %1</source>
         <translation>Kapow Punch Clock %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="379"/>
+        <location filename="../src/window.cpp" line="380"/>
         <source>A program to help track spent time</source>
         <translation>Програма за отчитане на изразходваното време</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="380"/>
-        <source>Copyright &amp;copy; 2008-2010 Graeme Gott</source>
-        <translation>Авторски права &amp;copy; 2008-2010 Graeme Gott.</translation>
+        <location filename="../src/window.cpp" line="381"/>
+        <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
+        <translation>Авторски права &amp;copy; 2008-2011 Graeme Gott.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="381"/>
+        <location filename="../src/window.cpp" line="382"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
         <translation>Разпространява се под &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; лиценз.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="352"/>
-        <location filename="../src/window.cpp" line="437"/>
-        <location filename="../src/window.cpp" line="490"/>
-        <location filename="../src/window.cpp" line="635"/>
+        <location filename="../src/window.cpp" line="353"/>
+        <location filename="../src/window.cpp" line="438"/>
+        <location filename="../src/window.cpp" line="491"/>
+        <location filename="../src/window.cpp" line="636"/>
         <source>Question</source>
         <translation>Въпрос</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="437"/>
+        <location filename="../src/window.cpp" line="438"/>
         <source>Cancel this session?</source>
         <translation>Прекъсване на тази сесия?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="467"/>
+        <location filename="../src/window.cpp" line="468"/>
         <source>Add Project</source>
         <translation>Добавяне на проект</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="467"/>
+        <location filename="../src/window.cpp" line="468"/>
         <source>Enter project name:</source>
         <translation>Име на проекта:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="473"/>
+        <location filename="../src/window.cpp" line="474"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="473"/>
+        <location filename="../src/window.cpp" line="474"/>
         <source>A project with that name already exists.</source>
         <translation>Вече съществува проект с това име.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="490"/>
+        <location filename="../src/window.cpp" line="491"/>
         <source>Remove selected project?</source>
         <translation>Премахване на избрания проект?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="635"/>
+        <location filename="../src/window.cpp" line="636"/>
         <source>Remove selected session?</source>
         <translation>Премахване на избраната сесия?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="746"/>
+        <location filename="../src/window.cpp" line="747"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n активен таймер</numerusform>
@@ -488,7 +488,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="752"/>
+        <location filename="../src/window.cpp" line="753"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>

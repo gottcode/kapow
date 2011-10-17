@@ -375,7 +375,7 @@ void Window::about() {
 		QString("<p><center><big><b>%1</b></big><br/>%2<br/><small>%3</small><br/><small>%4</small></center></p>")
 		.arg(tr("Kapow Punch Clock %1").arg(QCoreApplication::applicationVersion()))
 		.arg(tr("A program to help track spent time"))
-		.arg(tr("Copyright &copy; 2008-2010 Graeme Gott"))
+		.arg(tr("Copyright &copy; 2008-2011 Graeme Gott"))
 		.arg(tr("Released under the <a href=\"http://www.gnu.org/licenses/gpl.html\">GPL 3</a> license")));
 }
 
