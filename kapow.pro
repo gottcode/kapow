@@ -46,7 +46,8 @@ TRANSLATIONS = translations/kapow_bg.ts \
 	translations/kapow_en.ts \
 	translations/kapow_es.ts \
 	translations/kapow_fr.ts \
-	translations/kapow_it.ts
+	translations/kapow_it.ts \
+	translations/kapow_uk.ts
 
 RESOURCES = icons/icons.qrc
 macx {
