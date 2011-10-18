@@ -219,7 +219,12 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_contents->setStretchFactor(1, 1);
 
 	// Add tray icon
-	m_tray_icon = new QSystemTrayIcon(QIcon(":/kapow.png"), this);
+	m_active_icon = windowIcon();
+	QList<QSize> sizes = m_active_icon.availableSizes();
+	foreach (const QSize& size, sizes) {
+		m_inactive_icon.addPixmap(m_active_icon.pixmap(size, QIcon::Disabled));
+	}
+	m_tray_icon = new QSystemTrayIcon(m_inactive_icon, this);
 	updateTrayIcon();
 	connect(m_tray_icon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
 	m_tray_icon->show();
@@ -740,7 +745,7 @@ void Window::updateSessionButtons() {
 /*****************************************************************************/
 
 void Window::updateTrayIcon() {
-	m_tray_icon->setIcon(m_active_timers ? windowIcon() : windowIcon().pixmap(256, 256, QIcon::Disabled));
+	m_tray_icon->setIcon(m_active_timers ? m_active_icon : m_inactive_icon);
 	m_tray_icon->setToolTip(tr("%n timer(s) running", "", m_active_timers));
 }
 

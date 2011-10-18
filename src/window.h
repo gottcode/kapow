@@ -106,6 +106,8 @@ private:
 	QAction* m_remove_session;
 
 	QSystemTrayIcon* m_tray_icon;
+	QIcon m_active_icon;
+	QIcon m_inactive_icon;
 };
 
 #endif
