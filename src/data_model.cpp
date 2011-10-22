@@ -33,15 +33,15 @@ DataModel::DataModel(QObject* parent)
 
 /*****************************************************************************/
 
-bool DataModel::add(const QDateTime& start, const QDateTime& stop) {
+bool DataModel::add(const QDateTime& start, const QDateTime& stop, const QString& task) {
 	if (stop < start) {
 		return false;
 	}
 
 	if (start.date() == stop.date()) {
-		return add(Session(start.date(), start.time(), stop.time(), QString(), false));
+		return add(Session(start.date(), start.time(), stop.time(), task, false));
 	} else {
-		return add(Session(start.date(), start.time(), QTime(23, 59, 59), QString(), false)) && add(Session(stop.date(), QTime(0, 0, 0), stop.time(), QString(), false));
+		return add(Session(start.date(), start.time(), QTime(23, 59, 59), task, false)) && add(Session(stop.date(), QTime(0, 0, 0), stop.time(), task, false));
 	}
 }
 

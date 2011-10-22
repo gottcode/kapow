@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ public:
 		return m_data.value(pos);
 	}
 
-	bool add(const QDateTime& start, const QDateTime& stop);
+	bool add(const QDateTime& start, const QDateTime& stop, const QString& task = QString());
 	bool add(const Session& session);
 	bool edit(int row, const Session& session);
 	bool remove(int row);

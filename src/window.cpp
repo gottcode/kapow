@@ -40,6 +40,7 @@
 #include <QInputDialog>
 #include <QItemEditorFactory>
 #include <QLabel>
+#include <QLineEdit>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
@@ -99,14 +100,22 @@ Window::Window(const QString& filename, QWidget* parent)
 	connect(save_timer, SIGNAL(timeout()), this, SLOT(save()));
 	save_timer->start();
 
+	m_task = new QLineEdit(contents);
+	m_task->setPlaceholderText(DataModel::tr("Task"));
+	connect(m_task, SIGNAL(textChanged(QString)), this, SLOT(taskChanged(QString)));
+
 	m_start = new QPushButton(tr("Start"), contents);
+	m_start->setAutoDefault(true);
+	m_start->setFocus();
 	connect(m_start, SIGNAL(clicked()), this, SLOT(start()));
 
 	m_stop = new QPushButton(tr("Stop"), contents);
+	m_stop->setAutoDefault(true);
 	m_stop->hide();
 	connect(m_stop, SIGNAL(clicked()), this, SLOT(stop()));
 
 	m_cancel = new QPushButton(tr("Cancel"), contents);
+	m_cancel->setAutoDefault(true);
 	m_cancel->setEnabled(false);
 	connect(m_cancel, SIGNAL(clicked()), this, SLOT(cancel()));
 
@@ -230,23 +239,29 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_tray_icon->show();
 
 	// Lay out window
-	QVBoxLayout* session_buttons = new QVBoxLayout;
+	QHBoxLayout* session_buttons = new QHBoxLayout;
 	session_buttons->setMargin(0);
 	session_buttons->setSpacing(0);
+	session_buttons->addStretch(1);
+	session_buttons->addWidget(m_task, 1);
+	session_buttons->addSpacing(12);
 	session_buttons->addWidget(m_start);
 	session_buttons->addWidget(m_stop);
+	session_buttons->addSpacing(6);
 	session_buttons->addWidget(m_cancel);
+	session_buttons->addStretch(1);
 
-	QHBoxLayout* session_layout = new QHBoxLayout;
+	QVBoxLayout* session_layout = new QVBoxLayout;
 	session_layout->setMargin(0);
-	session_layout->addStretch();
-	session_layout->addWidget(m_display);
+	session_layout->setSpacing(0);
+	session_layout->addWidget(m_display, 0, Qt::AlignCenter);
 	session_layout->addLayout(session_buttons);
-	session_layout->addStretch();
 
 	QVBoxLayout* layout = new QVBoxLayout(contents);
-	layout->addLayout(session_layout);
-	layout->addWidget(m_contents);
+	layout->setMargin(0);
+	layout->addLayout(session_layout, 0);
+	layout->addSpacing(6);
+	layout->addWidget(m_contents, 1);
 
 	// Restore window geometry
 	resize(800, 600);
@@ -423,6 +438,7 @@ void Window::start() {
 	m_active_timers++;
 	m_remove_project->setEnabled(false);
 	updateDetails();
+	m_stop->setFocus();
 }
 
 /*****************************************************************************/
@@ -432,6 +448,8 @@ void Window::stop() {
 	m_active_timers--;
 	m_remove_project->setEnabled(true);
 	updateDetails();
+	m_start->setFocus();
+	m_task->clear();
 }
 
 /*****************************************************************************/
@@ -442,7 +460,15 @@ void Window::cancel() {
 		m_active_timers--;
 		m_remove_project->setEnabled(true);
 		updateDetails();
+		m_start->setFocus();
+		m_task->clear();
 	}
+}
+
+/*****************************************************************************/
+
+void Window::taskChanged(const QString& task) {
+	m_active_project->setTask(task);
 }
 
 /*****************************************************************************/

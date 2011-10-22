@@ -25,6 +25,7 @@
 #include <QSystemTrayIcon>
 class QComboBox;
 class QLabel;
+class QLineEdit;
 class QModelIndex;
 class QPushButton;
 class QSplitter;
@@ -51,6 +52,7 @@ private slots:
 	void start();
 	void stop();
 	void cancel();
+	void taskChanged(const QString& task);
 	void updateTime();
 	void addProject();
 	void editProject();
@@ -84,6 +86,7 @@ private:
 	QSplitter* m_contents;
 	QTreeWidget* m_projects;
 	QLabel* m_display;
+	QLineEdit* m_task;
 	QPushButton* m_start;
 	QPushButton* m_stop;
 	QPushButton* m_cancel;
