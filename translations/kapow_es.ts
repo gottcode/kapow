@@ -401,86 +401,86 @@
         <translation>Mostrar sólo esta semana</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="301"/>
-        <location filename="../src/window.cpp" line="510"/>
+        <location filename="../src/window.cpp" line="306"/>
+        <location filename="../src/window.cpp" line="515"/>
         <source>Untitled</source>
         <translation>Sin título</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="353"/>
+        <location filename="../src/window.cpp" line="358"/>
         <source>There are timers running. Stop timers and quit?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="377"/>
+        <location filename="../src/window.cpp" line="382"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="379"/>
+        <location filename="../src/window.cpp" line="384"/>
         <source>Kapow Punch Clock %1</source>
         <translation>Kapow Punch Clock %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="380"/>
+        <location filename="../src/window.cpp" line="385"/>
         <source>A program to help track spent time</source>
         <translation>Un programa para ayudar a rastrear tiempo consumido</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="381"/>
+        <location filename="../src/window.cpp" line="386"/>
         <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
         <translation>Copyright &amp;copy; 2008-2011 Graeme Gott</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="382"/>
+        <location filename="../src/window.cpp" line="387"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
         <translation>Liberado bajo la licencia &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="353"/>
-        <location filename="../src/window.cpp" line="438"/>
-        <location filename="../src/window.cpp" line="491"/>
-        <location filename="../src/window.cpp" line="636"/>
+        <location filename="../src/window.cpp" line="358"/>
+        <location filename="../src/window.cpp" line="443"/>
+        <location filename="../src/window.cpp" line="496"/>
+        <location filename="../src/window.cpp" line="641"/>
         <source>Question</source>
         <translation>Pregunta</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="438"/>
+        <location filename="../src/window.cpp" line="443"/>
         <source>Cancel this session?</source>
         <translation>¿Cancelar esta sesión?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="468"/>
+        <location filename="../src/window.cpp" line="473"/>
         <source>Add Project</source>
         <translation>Agregar proyecto</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="468"/>
+        <location filename="../src/window.cpp" line="473"/>
         <source>Enter project name:</source>
         <translation>Escriba el nombre del proyecto:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="474"/>
+        <location filename="../src/window.cpp" line="479"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="474"/>
+        <location filename="../src/window.cpp" line="479"/>
         <source>A project with that name already exists.</source>
         <translation>Un proyecto con ese nombre ya existe.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="491"/>
+        <location filename="../src/window.cpp" line="496"/>
         <source>Remove selected project?</source>
         <translation>¿Remover proyecto seleccionado?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="636"/>
+        <location filename="../src/window.cpp" line="641"/>
         <source>Remove selected session?</source>
         <translation>¿Remover sesión seleccionada?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="747"/>
+        <location filename="../src/window.cpp" line="752"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n temporizador ejecutándose</numerusform>
@@ -488,7 +488,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="753"/>
+        <location filename="../src/window.cpp" line="758"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>
