@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -199,7 +199,7 @@ void Report::generateText() {
 		return;
 	}
 
-	QString html = "<p><center><b><big>" + tr("Time Sheet Report") + "</big><br />\n" + m_groups->currentText() + "</b>\n<small>";
+	QString html = "<head><style type=\"text/css\">td, th {white-space: pre;}</style></head>\n<p><center><b><big>" + tr("Time Sheet Report") + "</big><br />\n" + m_groups->currentText() + "</b>\n<small>";
 
 	// Add contact information
 	QString info = m_name->text().simplified();
@@ -271,7 +271,7 @@ void Report::generateText() {
 			"<td width=\"0%\" align=\"right\">%1</td>"
 			"<td width=\"0%\" align=\"right\">%2</td>"
 			"<td width=\"0%\" align=\"right\">%3</td>"
-			"<td width=\"100%\" colspan=\"2\">%4</td>"
+			"<td width=\"100%\" colspan=\"2\" style=\"white-space: normal;\">%4</td>"
 			"<td width=\"0%\" align=\"right\">%5</td>"
 			"</tr>\n").arg(columns[0]).arg(columns[1]).arg(columns[2]).arg(columns[3]).arg(columns[4]);
 	}
