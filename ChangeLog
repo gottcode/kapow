@@ -1,4 +1,5 @@
 2011-11-07 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Print button always had icon.
 	* FIXED: Report columns were wrapped.
 
 2011-10-25 Pavel Fric <pavelfric@seznam.cz>
