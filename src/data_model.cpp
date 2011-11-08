@@ -353,6 +353,8 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 	case Qt::TextAlignmentRole:
 		if (index.column() != 3) {
 			result = static_cast<int>(Qt::AlignRight | Qt::AlignVCenter);
+		} else {
+			result = static_cast<int>(Qt::AlignLeft | Qt::AlignVCenter);
 		}
 		break;
 
@@ -438,6 +440,8 @@ QVariant DataModel::headerData(int section, Qt::Orientation orientation, int rol
 		default:
 			return QVariant();
 		}
+	} else if (role == Qt::TextAlignmentRole) {
+		return Qt::AlignCenter;
 	} else {
 		return QVariant();
 	}
