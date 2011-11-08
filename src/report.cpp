@@ -136,7 +136,9 @@ Report::Report(DataModel* data, QWidget* parent)
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Reset, Qt::Horizontal, this);
 	QPushButton* print_button = buttons->addButton(tr("Print"), QDialogButtonBox::ActionRole);
 #if (QT_VERSION >= QT_VERSION_CHECK(4, 6, 0))
-	print_button->setIcon(QIcon::fromTheme("document-print"));
+	if (print_button->style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
+		print_button->setIcon(QIcon::fromTheme("document-print"));
+	}
 #endif
 	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
 	connect(buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()), this, SLOT(reset()));
