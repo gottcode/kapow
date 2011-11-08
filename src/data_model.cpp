@@ -294,13 +294,13 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 	case Qt::DisplayRole:
 		switch (index.column()) {
 		case 0:
-			result = session.date().toString(Qt::SystemLocaleShortDate);
+			result = session.date().toString(Qt::DefaultLocaleShortDate);
 			break;
 		case 1:
-			result = session.start().toString(Qt::SystemLocaleShortDate);
+			result = session.start().toString(Qt::DefaultLocaleShortDate);
 			break;
 		case 2:
-			result = session.stop().toString(Qt::SystemLocaleShortDate);
+			result = session.stop().toString(Qt::DefaultLocaleShortDate);
 			break;
 		case 3:
 			result = session.task();
