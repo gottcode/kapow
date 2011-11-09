@@ -42,6 +42,7 @@ SOURCES = src/data_model.cpp \
 
 TRANSLATIONS = translations/kapow_bg.ts \
 	translations/kapow_cs.ts \
+	translations/kapow_da.ts \
 	translations/kapow_de.ts \
 	translations/kapow_en.ts \
 	translations/kapow_es.ts \
