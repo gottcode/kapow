@@ -6,65 +6,66 @@
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="475"/>
+        <location filename="../src/data_model.cpp" line="479"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
-        <location filename="../src/data_model.cpp" line="475"/>
+        <location filename="../src/data_model.cpp" line="479"/>
         <source>Session conflicts with other sessions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="225"/>
-        <location filename="../src/data_model.cpp" line="435"/>
+        <location filename="../src/data_model.cpp" line="437"/>
         <source>Total</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="419"/>
+        <location filename="../src/data_model.cpp" line="421"/>
         <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="421"/>
+        <location filename="../src/data_model.cpp" line="423"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="423"/>
+        <location filename="../src/data_model.cpp" line="425"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="425"/>
+        <location filename="../src/data_model.cpp" line="427"/>
+        <location filename="../src/window.cpp" line="104"/>
         <source>Task</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="427"/>
+        <location filename="../src/data_model.cpp" line="429"/>
         <source>Hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="429"/>
+        <location filename="../src/data_model.cpp" line="431"/>
         <source>Daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="431"/>
+        <location filename="../src/data_model.cpp" line="433"/>
         <source>Weekly</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="433"/>
+        <location filename="../src/data_model.cpp" line="435"/>
         <source>Monthly</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="437"/>
+        <location filename="../src/data_model.cpp" line="439"/>
         <source>Billed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -96,7 +97,7 @@
     <name>Report</name>
     <message>
         <location filename="../src/report.cpp" line="45"/>
-        <location filename="../src/report.cpp" line="202"/>
+        <location filename="../src/report.cpp" line="204"/>
         <source>Time Sheet Report</source>
         <translation type="unfinished"></translation>
     </message>
@@ -182,32 +183,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="220"/>
+        <location filename="../src/report.cpp" line="222"/>
         <source>Phone: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="224"/>
+        <location filename="../src/report.cpp" line="226"/>
         <source>Fax: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="283"/>
+        <location filename="../src/report.cpp" line="285"/>
         <source>Hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="290"/>
+        <location filename="../src/report.cpp" line="292"/>
         <source>Subtotal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="292"/>
+        <location filename="../src/report.cpp" line="294"/>
         <source>Taxes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/report.cpp" line="295"/>
+        <location filename="../src/report.cpp" line="297"/>
         <source>Total</source>
         <translation type="unfinished"></translation>
     </message>
@@ -264,139 +265,139 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="86"/>
+        <location filename="../src/window.cpp" line="87"/>
         <source>00:00:00</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="102"/>
+        <location filename="../src/window.cpp" line="107"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="105"/>
+        <location filename="../src/window.cpp" line="112"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="109"/>
+        <location filename="../src/window.cpp" line="117"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="119"/>
+        <location filename="../src/window.cpp" line="128"/>
         <source>&amp;Project</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="120"/>
-        <location filename="../src/window.cpp" line="130"/>
+        <location filename="../src/window.cpp" line="129"/>
+        <location filename="../src/window.cpp" line="139"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="121"/>
-        <location filename="../src/window.cpp" line="133"/>
+        <location filename="../src/window.cpp" line="130"/>
+        <location filename="../src/window.cpp" line="142"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="124"/>
+        <location filename="../src/window.cpp" line="133"/>
         <source>&amp;Report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="126"/>
+        <location filename="../src/window.cpp" line="135"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="126"/>
+        <location filename="../src/window.cpp" line="135"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="129"/>
+        <location filename="../src/window.cpp" line="138"/>
         <source>&amp;Session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="131"/>
+        <location filename="../src/window.cpp" line="140"/>
         <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="136"/>
+        <location filename="../src/window.cpp" line="145"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="137"/>
+        <location filename="../src/window.cpp" line="146"/>
         <source>Columns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="138"/>
+        <location filename="../src/window.cpp" line="147"/>
         <source>&amp;Decimal Totals</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="142"/>
+        <location filename="../src/window.cpp" line="151"/>
         <source>&amp;Inline Editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="147"/>
+        <location filename="../src/window.cpp" line="156"/>
         <source>Application &amp;Language...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="149"/>
+        <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="150"/>
+        <location filename="../src/window.cpp" line="159"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="152"/>
+        <location filename="../src/window.cpp" line="161"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="169"/>
         <source>Project</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="169"/>
         <source>Timer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="189"/>
+        <location filename="../src/window.cpp" line="198"/>
         <source>Show all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="190"/>
+        <location filename="../src/window.cpp" line="199"/>
         <source>Show only unbilled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="191"/>
+        <location filename="../src/window.cpp" line="200"/>
         <source>Show only this year</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="192"/>
+        <location filename="../src/window.cpp" line="201"/>
         <source>Show only this month</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="193"/>
+        <location filename="../src/window.cpp" line="202"/>
         <source>Show only this week</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk" sourcelanguage="en">
+<TS version="2.0" language="da" sourcelanguage="en">
 <context>
     <name>DataModel</name>
     <message>
@@ -8,66 +8,66 @@
         <location filename="../src/data_model.cpp" line="75"/>
         <location filename="../src/data_model.cpp" line="479"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="68"/>
         <location filename="../src/data_model.cpp" line="75"/>
         <location filename="../src/data_model.cpp" line="479"/>
         <source>Session conflicts with other sessions.</source>
-        <translation>Сеанс конфліктує з іншими сеансами.</translation>
+        <translation>Sessionen er i konflikt med andre sessioner.</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="225"/>
         <location filename="../src/data_model.cpp" line="437"/>
         <source>Total</source>
-        <translation>Загалом</translation>
+        <translation>Total</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="421"/>
         <source>Date</source>
-        <translation>Дата</translation>
+        <translation>Dato</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="423"/>
         <source>Start</source>
-        <translation>Початок</translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="425"/>
         <source>Stop</source>
-        <translation>Зупинка</translation>
+        <translation>Slut</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="427"/>
         <location filename="../src/window.cpp" line="104"/>
         <source>Task</source>
-        <translation>Завдання</translation>
+        <translation>Opgave</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="429"/>
         <source>Hours</source>
-        <translation>Час</translation>
+        <translation>Timer</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="431"/>
         <source>Daily</source>
-        <translation>Щодня</translation>
+        <translation>Daglig</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="433"/>
         <source>Weekly</source>
-        <translation>Щотижня</translation>
+        <translation>Ugentlig</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="435"/>
         <source>Monthly</source>
-        <translation>Щомісяця</translation>
+        <translation>Månedlig</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="439"/>
         <source>Billed</source>
-        <translation>Оголошений</translation>
+        <translation>Faktureret</translation>
     </message>
 </context>
 <context>
@@ -75,22 +75,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="99"/>
         <source>Select application language:</source>
-        <translation>Вибрати мову програми:</translation>
+        <translation>Vælg sprog:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="102"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Системна мова&gt;</translation>
+        <translation>&lt;Systemsprog&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Note</source>
-        <translation>Примітка</translation>
+        <translation>Bemærk</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="196"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Перезапустіть програму, щоб нова мова вступила в дію.</translation>
+        <translation>Programmet skal genstartes før ændringen træder i kraft.</translation>
     </message>
 </context>
 <context>
@@ -99,118 +99,118 @@
         <location filename="../src/report.cpp" line="45"/>
         <location filename="../src/report.cpp" line="204"/>
         <source>Time Sheet Report</source>
-        <translation>Облік робочого часу</translation>
+        <translation>Timeseddel</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="65"/>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="66"/>
         <source>Company:</source>
-        <translation>Компанія:</translation>
+        <translation>Firma:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="67"/>
         <source>Address:</source>
-        <translation>Адреса:</translation>
+        <translation>Adresse:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="68"/>
         <source>Phone:</source>
-        <translation>Телефон:</translation>
+        <translation>Telefon:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="69"/>
         <source>Fax:</source>
-        <translation>Факс:</translation>
+        <translation>Fax:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="70"/>
         <source>Email:</source>
-        <translation>Електронна пошта:</translation>
+        <translation>E-mail:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="71"/>
         <source>Website:</source>
-        <translation>Веб-сайт:</translation>
+        <translation>Hjemmeside:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="98"/>
         <location filename="../src/report.cpp" line="103"/>
         <source>N/A</source>
-        <translation>Не доступно</translation>
+        <translation>Ikke tilgængelig</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="107"/>
         <source>Prepend currency symbol</source>
-        <translation>Додавати символ валюти</translation>
+        <translation>Tilføj valutasymbol i begyndelsen</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="114"/>
         <source>Hourly rate:</source>
-        <translation>Погодинна оплата:</translation>
+        <translation>Timeløn:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="115"/>
         <source>Tax rate:</source>
-        <translation>Податкова ставка:</translation>
+        <translation>Skatteprocent:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="116"/>
         <source>Currency symbol:</source>
-        <translation>Символ валюти:</translation>
+        <translation>Valutasymbol:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="131"/>
         <source>Contact Information</source>
-        <translation>Контактні дані</translation>
+        <translation>Kontaktinformation</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="132"/>
         <source>Data</source>
-        <translation>Дані</translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="133"/>
         <source>Preview</source>
-        <translation>Огляд</translation>
+        <translation>Forhåndsvisning</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="137"/>
         <source>Print</source>
-        <translation>Друк</translation>
+        <translation>Udskriv</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="222"/>
         <source>Phone: %1</source>
-        <translation>Телефон: %1</translation>
+        <translation>Telefon: %1</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="226"/>
         <source>Fax: %1</source>
-        <translation>Факс: %1</translation>
+        <translation>Fax: %1</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="285"/>
         <source>Hours</source>
-        <translation>Час</translation>
+        <translation>Timer</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="292"/>
         <source>Subtotal</source>
-        <translation>Проміжний підсумок</translation>
+        <translation>Subtotal</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="294"/>
         <source>Taxes</source>
-        <translation>Податки</translation>
+        <translation>Skatter</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="297"/>
         <source>Total</source>
-        <translation>Загалом</translation>
+        <translation>Total</translation>
     </message>
 </context>
 <context>
@@ -219,15 +219,14 @@
         <location filename="../src/session.cpp" line="50"/>
         <source>%n hour(s)</source>
         <translation>
-            <numerusform>%n година</numerusform>
-            <numerusform>%n години</numerusform>
-            <numerusform>%n годин</numerusform>
+            <numerusform>one: %n time</numerusform>
+            <numerusform>other: %n timer</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/session.cpp" line="52"/>
         <source>%L1 hours</source>
-        <translation>%L1 год.</translation>
+        <translation>%L1 timer</translation>
     </message>
 </context>
 <context>
@@ -235,32 +234,32 @@
     <message>
         <location filename="../src/session_dialog.cpp" line="33"/>
         <source>Add Session</source>
-        <translation>Додати сеанс</translation>
+        <translation>Tilføj session</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="54"/>
         <source>Date:</source>
-        <translation>Дата:</translation>
+        <translation>Dato:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="55"/>
         <source>Start:</source>
-        <translation>Початок:</translation>
+        <translation>Start:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="56"/>
         <source>Stop:</source>
-        <translation>Зупинка:</translation>
+        <translation>Slut:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="57"/>
         <source>Task:</source>
-        <translation>Завдання:</translation>
+        <translation>Opgave:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="70"/>
         <source>Edit Session</source>
-        <translation>Змінити сеанс</translation>
+        <translation>Rediger session</translation>
     </message>
 </context>
 <context>
@@ -273,44 +272,44 @@
     <message>
         <location filename="../src/window.cpp" line="107"/>
         <source>Start</source>
-        <translation>Початок</translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="112"/>
         <source>Stop</source>
-        <translation>Зупинка</translation>
+        <translation>Slut</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="117"/>
         <source>Cancel</source>
-        <translation>Скасувати</translation>
+        <translation>Annuller</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="128"/>
         <source>&amp;Project</source>
-        <translation>&amp;Проект</translation>
+        <translation>&amp;Projekt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="129"/>
         <location filename="../src/window.cpp" line="139"/>
         <source>&amp;Add</source>
-        <translation>&amp;Додати</translation>
+        <translation>&amp;Tilføj</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="130"/>
         <location filename="../src/window.cpp" line="142"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Вилучити</translation>
+        <translation>&amp;Fjern</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="133"/>
         <source>&amp;Report</source>
-        <translation>&amp;Звіт</translation>
+        <translation>&amp;Rapport</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="135"/>
         <source>&amp;Quit</source>
-        <translation>В&amp;ийти</translation>
+        <translation>&amp;Afslut</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="135"/>
@@ -320,178 +319,177 @@
     <message>
         <location filename="../src/window.cpp" line="138"/>
         <source>&amp;Session</source>
-        <translation>&amp;Сеанс</translation>
+        <translation>&amp;Session</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="140"/>
         <source>&amp;Edit</source>
-        <translation>З&amp;міни</translation>
+        <translation>&amp;Rediger</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="145"/>
         <source>S&amp;ettings</source>
-        <translation>П&amp;араметри</translation>
+        <translation>I&amp;ndstillinger</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="146"/>
         <source>Columns</source>
-        <translation>Стовпчики</translation>
+        <translation>Kolonner</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="147"/>
         <source>&amp;Decimal Totals</source>
-        <translation>Д&amp;есятичний підсумок</translation>
+        <translation>&amp;Timer i decimaler</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="151"/>
         <source>&amp;Inline Editing</source>
-        <translation>Редагування в &amp;один рядок</translation>
+        <translation>&amp;Direkte redigering</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="156"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Мова програми...</translation>
+        <translation>&amp;Sprog...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Help</source>
-        <translation>&amp;Довідка</translation>
+        <translation>&amp;Hjælp</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>&amp;About</source>
-        <translation>&amp;Про програму</translation>
+        <translation>&amp;Om</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="161"/>
         <source>About &amp;Qt</source>
-        <translation>Про &amp;Qt</translation>
+        <translation>Om &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
         <source>Project</source>
-        <translation>Проект</translation>
+        <translation>Projekt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
         <source>Timer</source>
-        <translation>Таймер</translation>
+        <translation>Timer</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="198"/>
         <source>Show all</source>
-        <translation>Показати все</translation>
+        <translation>Vis alt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="199"/>
         <source>Show only unbilled</source>
-        <translation>Показувати лише невідфактуровані</translation>
+        <translation>Vis kun ubetalte</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="200"/>
         <source>Show only this year</source>
-        <translation>Показувати лише за цей рік</translation>
+        <translation>Vis kun dette år</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="201"/>
         <source>Show only this month</source>
-        <translation>Показувати лише за цей місяць</translation>
+        <translation>Vis kun denne måned</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="202"/>
         <source>Show only this week</source>
-        <translation>Показувати лише за цей тиждень</translation>
+        <translation>Vis kun denne uge</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="306"/>
-        <location filename="../src/window.cpp" line="515"/>
+        <location filename="../src/window.cpp" line="321"/>
+        <location filename="../src/window.cpp" line="541"/>
         <source>Untitled</source>
-        <translation>Без назви</translation>
+        <translation>Unavngivet</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="358"/>
+        <location filename="../src/window.cpp" line="373"/>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Таймери працюють. Зупинити їх і вийти?</translation>
+        <translation>Timere kører. Stop timere og afslut?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="382"/>
+        <location filename="../src/window.cpp" line="397"/>
         <source>About</source>
-        <translation>Про</translation>
+        <translation>Om</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="384"/>
+        <location filename="../src/window.cpp" line="399"/>
         <source>Kapow Punch Clock %1</source>
         <translation>Kapow Punch Clock %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="385"/>
+        <location filename="../src/window.cpp" line="400"/>
         <source>A program to help track spent time</source>
-        <translation>Програма для відстежування витраченого часу</translation>
+        <translation>Et program til at holde styr på tidsforbruget</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="386"/>
+        <location filename="../src/window.cpp" line="401"/>
         <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
-        <translation>Авторське право &amp;copy; 2008-2011 Graeme Gott</translation>
+        <translation>Copyright &amp;copy; 2008-2011 Graeme Gott</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="387"/>
+        <location filename="../src/window.cpp" line="402"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Випущено за умовами ліцензії &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Udgivet under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; licens</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="358"/>
-        <location filename="../src/window.cpp" line="443"/>
-        <location filename="../src/window.cpp" line="496"/>
-        <location filename="../src/window.cpp" line="641"/>
+        <location filename="../src/window.cpp" line="373"/>
+        <location filename="../src/window.cpp" line="461"/>
+        <location filename="../src/window.cpp" line="522"/>
+        <location filename="../src/window.cpp" line="667"/>
         <source>Question</source>
-        <translation>Запитання</translation>
+        <translation>Spørgsmål</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="443"/>
+        <location filename="../src/window.cpp" line="461"/>
         <source>Cancel this session?</source>
-        <translation>Скасувати цей сеанс?</translation>
+        <translation>Annuller denne session?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="473"/>
+        <location filename="../src/window.cpp" line="499"/>
         <source>Add Project</source>
-        <translation>Додати проект</translation>
+        <translation>Tilføj projekt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="473"/>
+        <location filename="../src/window.cpp" line="499"/>
         <source>Enter project name:</source>
-        <translation>Введіть назву проекту:</translation>
+        <translation>Angiv projektnavn:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="479"/>
+        <location filename="../src/window.cpp" line="505"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="479"/>
+        <location filename="../src/window.cpp" line="505"/>
         <source>A project with that name already exists.</source>
-        <translation>Проект з такою назвою вже є.</translation>
+        <translation>Et projekt med dette navn eksisterer allerede.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="496"/>
+        <location filename="../src/window.cpp" line="522"/>
         <source>Remove selected project?</source>
-        <translation>Вилучити вибраний проект?</translation>
+        <translation>Fjern valgte projekt?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="641"/>
+        <location filename="../src/window.cpp" line="667"/>
         <source>Remove selected session?</source>
-        <translation>Вилучити вибраний сеанс?</translation>
+        <translation>Fjern valgte session?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="752"/>
+        <location filename="../src/window.cpp" line="778"/>
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>Працює %n таймер</numerusform>
-            <numerusform>Працюють %n таймери</numerusform>
-            <numerusform>Працюють %n таймерів</numerusform>
+            <numerusform>%n timer kører</numerusform>
+            <numerusform>%n timere kører</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="758"/>
+        <location filename="../src/window.cpp" line="784"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>
