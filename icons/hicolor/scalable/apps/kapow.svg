@@ -12,6 +12,8 @@
    width="48"
    height="48"
    id="svg2">
+  <title
+     id="title3047">Kapow icon</title>
   <defs
      id="defs4">
     <linearGradient
@@ -193,7 +195,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>Kapow icon</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Graeme Gott</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://www.gnu.org/licenses/gpl-3.0.txt" />
+        <dc:date>2011-10-17</dc:date>
       </cc:Work>
     </rdf:RDF>
   </metadata>
