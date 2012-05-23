@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,6 +35,7 @@
 #include <QComboBox>
 #include <QDateTime>
 #include <QFile>
+#include <QFileInfo>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QInputDialog>
@@ -50,6 +51,7 @@
 #include <QSignalMapper>
 #include <QSplitter>
 #include <QStyledItemDelegate>
+#include <QTextDocument>
 #include <QTimer>
 #include <QTreeView>
 #include <QTreeWidget>
@@ -79,7 +81,7 @@ namespace {
 /*****************************************************************************/
 
 Window::Window(const QString& filename, QWidget* parent)
-: QMainWindow(parent), m_filename(filename), m_decimals(true), m_inline(true), m_active_project(0), m_active_model(0), m_active_timers(0) {
+: QMainWindow(parent), m_filename(filename), m_valid(true), m_decimals(true), m_inline(true), m_active_project(0), m_active_model(0), m_active_timers(0) {
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
 
@@ -257,46 +259,67 @@ Window::Window(const QString& filename, QWidget* parent)
 	// Load details of all projects
 	QTreeWidgetItem* current = 0;
 	QFile file(m_filename);
-	if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-		Project* project = 0;
-		int filter = 0;
-		QTreeWidgetItem* item = 0;
+	if (file.exists()) {
+		if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+			Project* project = 0;
+			int filter = 0;
+			QTreeWidgetItem* item = 0;
 
-		QXmlStreamReader xml(&file);
-		while (!xml.atEnd()) {
-			xml.readNext();
-			if (xml.isStartElement()) {
-				QXmlStreamAttributes attributes = xml.attributes();
-				if (xml.name() == QLatin1String("session")) {
-					QDate date = QDate::fromString(attributes.value("date").toString(), Qt::ISODate);
-					QTime start = QTime::fromString(attributes.value("start").toString(), Qt::ISODate);
-					QTime stop = QTime::fromString(attributes.value("stop").toString(), Qt::ISODate);
-					bool billed = attributes.value("billed").toString().toInt();
-					QString task = attributes.value("note").toString();
-					project->model()->add(Session(date, start, stop, task, billed));
-				} else if (xml.name() == QLatin1String("project")) {
-					m_projects->blockSignals(true);
-					QString name = attributes.value("name").toString();
-					if (item == 0) {
-						project = new Project(m_projects, name);
-					} else {
-						project = new Project(item, name);
+			QXmlStreamReader xml(&file);
+			while (!xml.atEnd()) {
+				xml.readNext();
+				if (xml.isStartElement()) {
+					QXmlStreamAttributes attributes = xml.attributes();
+					if (xml.name() == QLatin1String("session")) {
+						QDate date = QDate::fromString(attributes.value("date").toString(), Qt::ISODate);
+						QTime start = QTime::fromString(attributes.value("start").toString(), Qt::ISODate);
+						QTime stop = QTime::fromString(attributes.value("stop").toString(), Qt::ISODate);
+						bool billed = attributes.value("billed").toString().toInt();
+						QString task = attributes.value("note").toString();
+						project->model()->add(Session(date, start, stop, task, billed));
+					} else if (xml.name() == QLatin1String("project")) {
+						m_projects->blockSignals(true);
+						QString name = attributes.value("name").toString();
+						if (item == 0) {
+							project = new Project(m_projects, name);
+						} else {
+							project = new Project(item, name);
+						}
+						project->setExpanded(attributes.value("expanded") == "1");
+						current = (attributes.value("current") == "1") ? project : current;
+						filter = attributes.value("filter").toString().toInt();
+						item = project;
+						project->model()->setDecimalTotals(m_decimals);
+						m_projects->blockSignals(false);
+					} else if (xml.name() == QLatin1String("autosave")) {
+						QDateTime start = QDateTime::fromString(attributes.value("start").toString(), Qt::ISODate);
+						QDateTime stop = QDateTime::fromString(attributes.value("stop").toString(), Qt::ISODate);
+						project->model()->add(start, stop);
 					}
-					project->setExpanded(attributes.value("expanded") == "1");
-					current = (attributes.value("current") == "1") ? project : current;
-					filter = attributes.value("filter").toString().toInt();
-					item = project;
-					project->model()->setDecimalTotals(m_decimals);
-					m_projects->blockSignals(false);
-				} else if (xml.name() == QLatin1String("autosave")) {
-					QDateTime start = QDateTime::fromString(attributes.value("start").toString(), Qt::ISODate);
-					QDateTime stop = QDateTime::fromString(attributes.value("stop").toString(), Qt::ISODate);
-					project->model()->add(start, stop);
+				} else if (xml.isEndElement() && xml.name() == QLatin1String("project")) {
+					project->filterModel()->setType(filter);
+					item = item->parent();
 				}
-			} else if (xml.isEndElement() && xml.name() == QLatin1String("project")) {
-				project->filterModel()->setType(filter);
-				item = item->parent();
 			}
+
+			// Abort if data is corrupt
+			if (xml.hasError()) {
+				m_valid = false;
+				QMessageBox message(QMessageBox::Critical, tr("Error"), tr("Unable to read time data."), QMessageBox::Ok, this);
+				message.setInformativeText(QString("%1:%2:%3: %4")
+					.arg(QFileInfo(file).canonicalFilePath())
+					.arg(xml.lineNumber())
+					.arg(xml.columnNumber())
+					.arg(Qt::escape(xml.errorString()))
+				);
+				message.exec();
+				return;
+			}
+		} else {
+			// Abort if data is unreadable
+			m_valid = false;
+			QMessageBox::critical(this, tr("Error"), tr("Unable to read time data."));
+			return;
 		}
 	}
 	if (m_projects->topLevelItemCount() == 0) {
@@ -333,6 +356,18 @@ Window::Window(const QString& filename, QWidget* parent)
 		m_details->setColumnHidden(i, true);
 		column_actions[i - 3]->setChecked(false);
 	}
+
+	// Abort if data file is not writable
+	if (m_valid && file.exists() && !QFileInfo(file).isWritable()) {
+		m_valid = false;
+		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
+	}
+}
+
+/*****************************************************************************/
+
+bool Window::isValid() const {
+	return m_valid;
 }
 
 /*****************************************************************************/
@@ -658,6 +693,10 @@ void Window::toggleColumnHidden(int column) {
 /*****************************************************************************/
 
 void Window::save() {
+	if (!m_valid) {
+		return;
+	}
+
 	QFile file(m_filename);
 	file.open(QIODevice::WriteOnly | QIODevice::Text);
 	QXmlStreamWriter xml(&file);
