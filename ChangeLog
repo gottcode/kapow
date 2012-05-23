@@ -1,3 +1,6 @@
+2012-05-23 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Could overwrite unreadable data file.
+
 2011-11-12 Graeme Gott <graeme@gottcode.org>
 	* Add scalable icon.
 

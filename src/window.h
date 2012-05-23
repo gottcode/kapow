@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,6 +40,8 @@ class Window : public QMainWindow {
 	Q_OBJECT
 public:
 	Window(const QString& filename, QWidget* parent = 0);
+
+	bool isValid() const;
 
 protected:
 	virtual void closeEvent(QCloseEvent* event);
@@ -83,6 +85,8 @@ private:
 
 private:
 	QString m_filename;
+	bool m_valid;
+
 	QSplitter* m_contents;
 	QTreeWidget* m_projects;
 	QLabel* m_display;
