@@ -23,6 +23,7 @@
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDir>
+#include <QMessageBox>
 #include <QSettings>
 
 int main(int argc, char** argv) {
@@ -44,38 +45,53 @@ int main(int argc, char** argv) {
 	}
 	QString appdir = app.applicationDirPath();
 
-#if defined(Q_OS_MAC)
-	QFileInfo portable(appdir + "/../../../Data");
-	QString path = QDir::homePath() + "/Library/Application Support/GottCode/Kapow/";
-#elif defined(Q_OS_UNIX)
-	QFileInfo portable(appdir + "/Data");
-	QString path = getenv("$XDG_DATA_HOME");
-	if (path.isEmpty()) {
-		path = QDir::homePath() + "/.local/share/";
-	}
-	path += "/gottcode/kapow/";
-#elif defined(Q_OS_WIN32)
-	QFileInfo portable(appdir + "/Data");
-	QString path = QDir::homePath() + "/Application Data/GottCode/Kapow/";
-#else
-	QFileInfo portable(appdir + "/Data");
-	QString path = QDesktopServices::storageLocation(QDesktopSettings::Data) + "/Kapow/";
-#endif
+	LocaleDialog::loadTranslator("kapow_");
 
 	// Handle portability
+#if defined(Q_OS_MAC)
+	QFileInfo portable(appdir + "/../../../Data");
+#else
+	QFileInfo portable(appdir + "/Data");
+#endif
+	QString path;
 	if (portable.exists() && portable.isWritable()) {
 		path = portable.absoluteFilePath();
 		QSettings::setDefaultFormat(QSettings::IniFormat);
 		QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path + "/Settings");
 	}
 
-	// Create base data path
-	if (!QFile::exists(path)) {
-		QDir dir = QDir::home();
-		dir.mkpath(path);
-	}
+	// Make sure data location exists
+	if (path.isEmpty()) {
+		path = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
 
-	LocaleDialog::loadTranslator("kapow_");
+		// Update data location
+		if (!QFile::exists(path)) {
+#if defined(Q_OS_MAC)
+			QString oldpath = QDir::homePath() + "/Library/Application Support/GottCode/Kapow/";
+#elif defined(Q_OS_UNIX)
+			QString oldpath = getenv("$XDG_DATA_HOME");
+			if (oldpath.isEmpty()) {
+				oldpath = QDir::homePath() + "/.local/share/";
+			}
+			oldpath += "/gottcode/kapow/";
+#elif defined(Q_OS_WIN32)
+			QString oldpath = QDir::homePath() + "/Application Data/GottCode/Kapow/";
+#endif
+
+			// Create data location if old data location doesn't exist
+			if (!QFile::exists(oldpath)) {
+				QDir dir(path);
+				if (!dir.mkpath(dir.absolutePath())) {
+					QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to create time data location."));
+					return 1;
+				}
+			// Otherwise, move old data location
+			} else if (!QFile::rename(oldpath, path)) {
+				QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to move time data location."));
+				return 1;
+			}
+		}
+	}
 
 	Window window(path + "/data.xml");
 	if (window.isValid()) {
