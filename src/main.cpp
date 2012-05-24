@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
 	// Check for command-line data location
 	{
 		QFileInfo override(app.arguments().back());
-		if (override.exists() && override.isDir() && override.isWritable()) {
+		if (override.exists() && override.isWritable() && (override.isDir() || (override.suffix() == "xml"))) {
 			path = override.absoluteFilePath();
 		}
 	}
@@ -103,7 +103,10 @@ int main(int argc, char** argv) {
 		}
 	}
 
-	Window window(path + "/data.xml");
+	if (!path.endsWith(".xml")) {
+		path += "/data.xml";
+	}
+	Window window(path);
 	if (window.isValid()) {
 		return app.exec();
 	} else {
