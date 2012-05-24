@@ -103,9 +103,15 @@ int main(int argc, char** argv) {
 		}
 	}
 
+	// Find data file
 	if (!path.endsWith(".xml")) {
-		path += "/data.xml";
+		if (QFile::exists(path + "/data.xml") && !QFile::rename(path + "/data.xml", path + "/kapow.xml")) {
+			path += "/data.xml";
+		} else {
+			path += "/kapow.xml";
+		}
 	}
+
 	Window window(path);
 	if (window.isValid()) {
 		return app.exec();

@@ -1,4 +1,5 @@
 2012-05-24 Graeme Gott <graeme@gottcode.org>
+	* Change data file name.
 	* Allow user to specify data file.
 	* Improve loading time data.
 	* Allow user to specify data location.
