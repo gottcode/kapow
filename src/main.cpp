@@ -48,16 +48,26 @@ int main(int argc, char** argv) {
 	LocaleDialog::loadTranslator("kapow_");
 
 	// Handle portability
-#if defined(Q_OS_MAC)
-	QFileInfo portable(appdir + "/../../../Data");
-#else
-	QFileInfo portable(appdir + "/Data");
-#endif
 	QString path;
-	if (portable.exists() && portable.isWritable()) {
-		path = portable.absoluteFilePath();
-		QSettings::setDefaultFormat(QSettings::IniFormat);
-		QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path + "/Settings");
+	{
+#if defined(Q_OS_MAC)
+		QFileInfo portable(appdir + "/../../../Data");
+#else
+		QFileInfo portable(appdir + "/Data");
+#endif
+		if (portable.exists() && portable.isWritable()) {
+			path = portable.absoluteFilePath();
+			QSettings::setDefaultFormat(QSettings::IniFormat);
+			QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path + "/Settings");
+		}
+	}
+
+	// Check for command-line data location
+	{
+		QFileInfo override(app.arguments().back());
+		if (override.exists() && override.isDir() && override.isWritable()) {
+			path = override.absoluteFilePath();
+		}
 	}
 
 	// Make sure data location exists

@@ -1,4 +1,5 @@
 2012-05-24 Graeme Gott <graeme@gottcode.org>
+	* Allow user to specify data location.
 	* Use dataLocation() for storing data file.
 
 2012-05-23 Graeme Gott <graeme@gottcode.org>
