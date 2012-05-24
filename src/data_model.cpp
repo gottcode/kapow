@@ -28,7 +28,30 @@
 /*****************************************************************************/
 
 DataModel::DataModel(QObject* parent)
-: QAbstractTableModel(parent), m_decimals(true) {
+: QAbstractTableModel(parent), m_decimals(true), m_loaded(true) {
+}
+
+/*****************************************************************************/
+
+void DataModel::beginLoad() {
+	m_loaded = false;
+}
+
+/*****************************************************************************/
+
+void DataModel::endLoad() {
+	m_loaded = true;
+
+	// Store billed status
+	for (int pos = 0, count = m_data.count(); pos < count; ++pos) {
+		const Session& session = m_data.at(pos);
+		if (session.isBilled()) {
+			m_billed.append(pos);
+		}
+	}
+
+	// Find totals for sessions
+	updateTotals();
 }
 
 /*****************************************************************************/
@@ -54,12 +77,13 @@ bool DataModel::add(const Session& session) {
 
 	// Find session position
 	int pos = 0;
-	foreach (const Session& current, m_data) {
-		if (session.date() < current.date() || (session.date() == current.date() && session.start() < current.start())) {
+	for (pos = m_data.count(); pos > 0; --pos) {
+		const Session& current = m_data.at(pos - 1);
+		if (session.date() > current.date() || (session.date() == current.date() && session.stop() > current.stop())) {
 			break;
 		}
-		pos++;
 	}
+	pos = qMax(pos, 0);
 
 	// Prevent intersecting sessions
 	if (pos > 0) {
@@ -78,6 +102,10 @@ bool DataModel::add(const Session& session) {
 	}
 
 	// Insert session
+	if (!m_loaded) {
+		m_data.insert(pos, session);
+		return true;
+	}
 	beginInsertRows(QModelIndex(), pos, pos);
 	m_data.insert(pos, session);
 	endInsertRows();

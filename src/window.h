@@ -75,6 +75,7 @@ private slots:
 	void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
 
 private:
+	void loadData();
 	void addProject(const QString& name);
 	void removeProject(QTreeWidgetItem* item);
 	void updateDetails();

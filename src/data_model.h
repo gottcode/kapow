@@ -42,6 +42,9 @@ public:
 		return m_data.value(pos);
 	}
 
+	void beginLoad();
+	void endLoad();
+
 	bool add(const QDateTime& start, const QDateTime& stop, const QString& task = QString());
 	bool add(const Session& session);
 	bool edit(int row, const Session& session);
@@ -67,6 +70,7 @@ private:
 	QList<Session> m_data;
 	QList<int> m_billed;
 	bool m_decimals;
+	bool m_loaded;
 };
 
 #endif
