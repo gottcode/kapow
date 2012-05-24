@@ -735,7 +735,8 @@ void Window::loadData() {
 			} else if (xml.name() == QLatin1String("autosave")) {
 				QDateTime start = QDateTime::fromString(attributes.value(QLatin1String("start")).toString(), Qt::ISODate);
 				QDateTime stop = QDateTime::fromString(attributes.value(QLatin1String("stop")).toString(), Qt::ISODate);
-				project->model()->add(start, stop);
+				QString task = attributes.value(QLatin1String("note")).toString();
+				project->model()->add(start, stop, task);
 			}
 		// Finish adding project
 		} else if (xml.isEndElement() && xml.name() == QLatin1String("project")) {

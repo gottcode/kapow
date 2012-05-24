@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -81,6 +81,7 @@ void Project::toXml(QXmlStreamWriter& xml) const {
 		xml.writeEmptyElement("autosave");
 		xml.writeAttribute("start", m_start_time.toString(Qt::ISODate));
 		xml.writeAttribute("stop", QDateTime::currentDateTime().toString(Qt::ISODate));
+		xml.writeAttribute("note", m_task);
 	}
 
 	m_model->toXml(xml);
