@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,9 +43,12 @@ private slots:
 	void groupSelected(int group);
 	void print();
 	void reset();
+	void save();
 
 private:
 	void findGroups();
+	QString generateHtml() const;
+	void writeHtml(QString filename);
 
 private:
 	QTextEdit* m_preview;

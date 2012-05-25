@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,8 +23,10 @@
 
 #include <QCheckBox>
 #include <QComboBox>
+#include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QDoubleSpinBox>
+#include <QFileDialog>
 #include <QFormLayout>
 #include <QHBoxLayout>
 #include <QHeaderView>
@@ -35,6 +37,7 @@
 #include <QSettings>
 #include <QTabWidget>
 #include <QTextEdit>
+#include <QTextStream>
 #include <QTreeView>
 #include <QVBoxLayout>
 
@@ -133,7 +136,7 @@ Report::Report(DataModel* data, QWidget* parent)
 	tabs->addTab(m_preview, tr("Preview"));
 
 	// Create dialog actions
-	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Reset, Qt::Horizontal, this);
+	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Reset | QDialogButtonBox::Save, Qt::Horizontal, this);
 	QPushButton* print_button = buttons->addButton(tr("Print"), QDialogButtonBox::ActionRole);
 #if (QT_VERSION >= QT_VERSION_CHECK(4, 6, 0))
 	if (print_button->style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
@@ -142,6 +145,7 @@ Report::Report(DataModel* data, QWidget* parent)
 #endif
 	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
 	connect(buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()), this, SLOT(reset()));
+	connect(buttons->button(QDialogButtonBox::Save), SIGNAL(clicked()), this, SLOT(save()));
 	connect(print_button, SIGNAL(clicked()), this, SLOT(print()));
 
 	// Lay out dialog
@@ -196,110 +200,8 @@ void Report::currencyChanged() {
 /*****************************************************************************/
 
 void Report::generateText() {
-	if (!m_data->rowCount()) {
-		m_preview->clear();
-		return;
-	}
 
-	QString html = "<head><style type=\"text/css\">td, th {white-space: pre;}</style></head>\n<p><center><b><big>" + tr("Time Sheet Report") + "</big><br />\n" + m_groups->currentText() + "</b>\n<small>";
-
-	// Add contact information
-	QString info = m_name->text().simplified();
-	if (!info.isEmpty()) {
-		html += "<br />\n" + info;
-	}
-	info = m_company->text().simplified();
-	if (!info.isEmpty()) {
-		html += "<br />\n" + info;
-	}
-	info = m_address->toPlainText().simplified();
-	if (!info.isEmpty()) {
-		info.replace("\n", "<br />\n");
-		html += "<br />\n" + info;
-	}
-	info = m_phone->text().simplified();
-	if (!info.isEmpty()) {
-		html += "<br />\n" + tr("Phone: %1").arg(info);
-	}
-	info = m_fax->text().simplified();
-	if (!info.isEmpty()) {
-		html += "<br />\n" + tr("Fax: %1").arg(info);
-	}
-	info = m_email->text().simplified();
-	if (!info.isEmpty()) {
-		html += "<br />\n" + info;
-	}
-	info = m_website->text().simplified();
-	if (!info.isEmpty()) {
-		html += "<br />\n" + info;
-	}
-
-	// Finish header
-	html += "<br />\n</small></center></p>\n";
-
-	// Add data
-	html += "<table width=\"100%\">\n";
-
-	QString header("<tr>"
-		"<th align=\"left\">%1</th>"
-		"<th align=\"left\">%2</th>"
-		"<th align=\"left\">%3</th>"
-		"<th align=\"center\" colspan=\"2\">%4</th>"
-		"<th align=\"right\">%5</th>"
-		"</tr>\n");
-	for (int column = 0; column < 5; ++column) {
-		header = header.arg(m_data->headerData(column, Qt::Horizontal).toString());
-	}
-	html += header;
-
-	int last = 0;
-	int rows = m_data->rowCount();
-	for (int row = 0; row < rows; ++row) {
-		if (m_details->isRowHidden(row, QModelIndex())) {
-			continue;
-		}
-		last = row;
-
-		QStringList columns;
-		for (int column = 0; column < 5; ++column) {
-			QModelIndex index = m_data->index(row, column);
-			QString data = m_data->data(index).toString().simplified();
-			if (column != 3) {
-				data.replace(" ", "&nbsp;");
-			}
-			columns.append(data);
-		}
-		html += QString("<tr>"
-			"<td width=\"0%\" align=\"right\">%1</td>"
-			"<td width=\"0%\" align=\"right\">%2</td>"
-			"<td width=\"0%\" align=\"right\">%3</td>"
-			"<td width=\"100%\" colspan=\"2\" style=\"white-space: normal;\">%4</td>"
-			"<td width=\"0%\" align=\"right\">%5</td>"
-			"</tr>\n").arg(columns[0]).arg(columns[1]).arg(columns[2]).arg(columns[3]).arg(columns[4]);
-	}
-
-	// Add billing information
-	QString hours = m_data->session(last).total(Session::Total, true);
-	double value = hours.toDouble();
-	html += "<tr><td colspan=\"4\"></td><td colspan=\"2\"><hr></td>\n";
-	html += "<tr><td colspan=\"4\"></td><td>" + tr("Hours") + "</td><td align=\"right\">" + hours + "</td></tr>\n";
-	double hourly_rate = m_hourly_rate->value();
-	QString currency(m_hourly_rate->prefix() + "%L1" + m_hourly_rate->suffix());
-	if (hourly_rate) {
-		value *= hourly_rate;
-		double tax_rate = m_tax_rate->value() * 0.01;
-		if (tax_rate) {
-			html += "<tr><td colspan=\"4\"</td><td>" + tr("Subtotal") + "</td><td align=\"right\">" + QString(currency).arg(value, 0, 'f', 2) + "</td></tr>\n";
-			double tax = tax_rate * value;
-			html += "<tr><td colspan=\"4\"></td><td>" + tr("Taxes") + "</td><td align=\"right\">" + QString(currency).arg(tax, 0, 'f', 2) + "</td></tr>\n";
-			value += tax;
-		}
-		html += "<tr><td colspan=\"4\"></td><td><b>" + tr("Total") + "</b></td><td align=\"right\"><b>" + QString(currency).arg(value, 0, 'f', 2) + "</b></td></tr>\n";
-	}
-
-	html += "</table>\n";
-
-	m_preview->setHtml(html);
+	m_preview->setHtml(generateHtml());
 }
 
 /*****************************************************************************/
@@ -355,6 +257,18 @@ void Report::reset() {
 
 /*****************************************************************************/
 
+void Report::save() {
+	QString filename = QFileDialog::getSaveFileName(this,
+		tr("Save Report"),
+		QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation),
+		tr("HTML (*.html)"));
+	if (!filename.isEmpty()) {
+		writeHtml(filename);
+	}
+}
+
+/*****************************************************************************/
+
 void Report::findGroups() {
 	int count = m_data->rowCount();
 	QList<int> billed = m_data->billedRows();
@@ -374,6 +288,136 @@ void Report::findGroups() {
 	count = m_groups->count();
 	if (count > 0) {
 		m_groups->setCurrentIndex(count - 1);
+	}
+}
+
+/*****************************************************************************/
+
+QString Report::generateHtml() const {
+	if (!m_data->rowCount()) {
+		m_preview->clear();
+		return QString();
+	}
+
+	QString title = tr("Time Sheet Report");
+	QString html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n   \"http://www.w3.org/TR/html4/loose.dtd\">\n"
+		"<html>\n"
+		"<head>\n"
+		"<title>" + title + "</title>\n"
+		"<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n"
+		"<style type=\"text/css\">td, th {white-space:pre}</style>\n"
+		"</head>\n"
+		"<body>\n"
+		"<p align=\"center\"><b><big>" + title + "</big><br>\n" + m_groups->currentText() + "</b>\n<small>";
+
+	// Add contact information
+	QString info = m_name->text().simplified();
+	if (!info.isEmpty()) {
+		html += "<br>\n" + info;
+	}
+	info = m_company->text().simplified();
+	if (!info.isEmpty()) {
+		html += "<br>\n" + info;
+	}
+	info = m_address->toPlainText().simplified();
+	if (!info.isEmpty()) {
+		info.replace("\n", "<br>\n");
+		html += "<br>\n" + info;
+	}
+	info = m_phone->text().simplified();
+	if (!info.isEmpty()) {
+		html += "<br>\n" + tr("Phone: %1").arg(info);
+	}
+	info = m_fax->text().simplified();
+	if (!info.isEmpty()) {
+		html += "<br>\n" + tr("Fax: %1").arg(info);
+	}
+	info = m_email->text().simplified();
+	if (!info.isEmpty()) {
+		html += "<br>\n" + info;
+	}
+	info = m_website->text().simplified();
+	if (!info.isEmpty()) {
+		html += "<br>\n" + info;
+	}
+
+	// Finish header
+	html += "<br>\n</small></p>\n";
+
+	// Add data
+	html += "<table width=\"100%\">\n";
+
+	QString header("<tr>"
+		"<th align=\"left\">%1</th>"
+		"<th align=\"left\">%2</th>"
+		"<th align=\"left\">%3</th>"
+		"<th align=\"center\" colspan=\"2\">%4</th>"
+		"<th align=\"right\">%5</th>"
+		"</tr>\n");
+	for (int column = 0; column < 5; ++column) {
+		header = header.arg(m_data->headerData(column, Qt::Horizontal).toString());
+	}
+	html += header;
+
+	int last = 0;
+	int rows = m_data->rowCount();
+	for (int row = 0; row < rows; ++row) {
+		if (m_details->isRowHidden(row, QModelIndex())) {
+			continue;
+		}
+		last = row;
+
+		QStringList columns;
+		for (int column = 0; column < 5; ++column) {
+			QModelIndex index = m_data->index(row, column);
+			QString data = m_data->data(index).toString().simplified();
+			columns.append(data);
+		}
+		html += QString("<tr>"
+			"<td width=\"0%\" align=\"right\">%1</td>"
+			"<td width=\"0%\" align=\"right\">%2</td>"
+			"<td width=\"0%\" align=\"right\">%3</td>"
+			"<td width=\"100%\" colspan=\"2\" style=\"white-space: normal;\">%4</td>"
+			"<td width=\"0%\" align=\"right\">%5</td>"
+			"</tr>\n").arg(columns[0], columns[1], columns[2], columns[3], columns[4]);
+	}
+
+	// Add billing information
+	QString hours = m_data->session(last).total(Session::Total, true);
+	double value = hours.toDouble();
+	html += "<tr><td colspan=\"4\"></td><td colspan=\"2\"><hr></td>\n";
+	html += "<tr><td colspan=\"4\"></td><td>" + tr("Hours") + "</td><td align=\"right\">" + hours + "</td></tr>\n";
+	double hourly_rate = m_hourly_rate->value();
+	QString currency(m_hourly_rate->prefix() + "%L1" + m_hourly_rate->suffix());
+	if (hourly_rate) {
+		value *= hourly_rate;
+		double tax_rate = m_tax_rate->value() * 0.01;
+		if (tax_rate) {
+			html += "<tr><td colspan=\"4\"</td><td>" + tr("Subtotal") + "</td><td align=\"right\">" + QString(currency).arg(value, 0, 'f', 2) + "</td></tr>\n";
+			double tax = tax_rate * value;
+			html += "<tr><td colspan=\"4\"></td><td>" + tr("Taxes") + "</td><td align=\"right\">" + QString(currency).arg(tax, 0, 'f', 2) + "</td></tr>\n";
+			value += tax;
+		}
+		html += "<tr><td colspan=\"4\"></td><td><b>" + tr("Total") + "</b></td><td align=\"right\"><b>" + QString(currency).arg(value, 0, 'f', 2) + "</b></td></tr>\n";
+	}
+
+	html += "</table>\n</body>\n</html>\n";
+
+	return html;
+}
+
+/*****************************************************************************/
+
+void Report::writeHtml(QString filename) {
+	if (!filename.endsWith(".html")) {
+		filename.append(".html");
+	}
+	QFile file(filename);
+	if (file.open(QFile::WriteOnly | QFile::Text)) {
+		QTextStream stream(&file);
+		stream.setCodec("UTF-8");
+		stream << generateHtml();
+		file.close();
 	}
 }
 
