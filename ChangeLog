@@ -1,4 +1,5 @@
 2012-05-25 Graeme Gott <graeme@gottcode.org>
+	* Add command-line arguments for data and home paths.
 	* Simplify path of settings in portable mode.
 
 2012-05-24 Graeme Gott <graeme@gottcode.org>

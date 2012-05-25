@@ -41,18 +41,33 @@ int main(int argc, char** argv) {
 		fallback.addFile(":/hicolor/16x16/apps/kapow.png");
 		app.setWindowIcon(QIcon::fromTheme("kapow", fallback));
 	}
-	QString appdir = app.applicationDirPath();
 
 	LocaleDialog::loadTranslator("kapow_");
 
-	// Handle portability
 	QString path;
 	{
+		// Check for command-line paths
+		QStringList args = app.arguments();
+		QString appdir = app.applicationDirPath();
 #if defined(Q_OS_MAC)
-		QFileInfo portable(appdir + "/../../../Data");
+		QString home_path = appdir + "/../../../Data";
 #else
-		QFileInfo portable(appdir + "/Data");
+		QString home_path = appdir + "/Data";
 #endif
+		QString data_path;
+		foreach (const QString& arg, args) {
+			if (arg.startsWith("--home=")) {
+				home_path = arg.mid(7);
+			} else if (arg.startsWith("--data=")) {
+				data_path = arg.mid(7);
+			}
+		}
+		if (args.back().endsWith(".xml")) {
+			data_path = args.back();
+		}
+
+		// Handle portability
+		QFileInfo portable(home_path);
 		if (portable.exists() && portable.isWritable()) {
 			path = portable.absoluteFilePath();
 			QSettings::setDefaultFormat(QSettings::IniFormat);
@@ -68,17 +83,15 @@ int main(int argc, char** argv) {
 			app.setOrganizationDomain("gottcode.org");
 			app.setOrganizationName("GottCode");
 		}
-	}
 
-	// Check for command-line data location
-	{
-		QFileInfo override(app.arguments().back());
+		// Handle command-line data path
+		QFileInfo override(data_path);
 		if (override.exists() && override.isWritable() && (override.isDir() || (override.suffix() == "xml"))) {
 			path = override.absoluteFilePath();
 		}
 	}
 
-	// Make sure data location exists
+	// Make sure data path exists
 	if (path.isEmpty()) {
 		path = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
 
