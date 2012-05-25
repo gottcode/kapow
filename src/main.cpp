@@ -30,8 +30,6 @@ int main(int argc, char** argv) {
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
 	app.setApplicationVersion("1.3.4");
-	app.setOrganizationDomain("gottcode.org");
-	app.setOrganizationName("GottCode");
 	{
 		QIcon fallback(":/hicolor/256x256/apps/kapow.png");
 		fallback.addFile(":/hicolor/128x128/apps/kapow.png");
@@ -58,7 +56,17 @@ int main(int argc, char** argv) {
 		if (portable.exists() && portable.isWritable()) {
 			path = portable.absoluteFilePath();
 			QSettings::setDefaultFormat(QSettings::IniFormat);
-			QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path + "/Settings");
+			if (QFile::exists(path + "/Settings/GottCode/Kapow.ini") &&
+					!QFile::rename(path + "/Settings/GottCode/Kapow.ini", path + "/Settings/Kapow.ini")) {
+				QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path + "/Settings");
+				app.setOrganizationName("GottCode");
+			} else {
+				QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path);
+				app.setOrganizationName("Settings");
+			}
+		} else {
+			app.setOrganizationDomain("gottcode.org");
+			app.setOrganizationName("GottCode");
 		}
 	}
 
