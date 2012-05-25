@@ -49,6 +49,7 @@ private:
 	void findGroups();
 	QString generateHtml() const;
 	void writeHtml(QString filename);
+	void writeICalendar(QString filename);
 
 private:
 	QTextEdit* m_preview;

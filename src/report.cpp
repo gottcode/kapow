@@ -30,6 +30,7 @@
 #include <QFormLayout>
 #include <QHBoxLayout>
 #include <QHeaderView>
+#include <QHostInfo>
 #include <QLineEdit>
 #include <QPrintDialog>
 #include <QPrinter>
@@ -258,12 +259,29 @@ void Report::reset() {
 /*****************************************************************************/
 
 void Report::save() {
+	QString filter;
+	QString html_filter = tr("HTML (*.html)");
+	QString ical_filter = tr("iCalendar (*.ics)");
+	QSettings settings;
+	if (settings.value("Report/Filter") == "iCalendar") {
+		filter = ical_filter + ";;" + html_filter;
+	} else {
+		filter = html_filter + ";;" + ical_filter;
+	}
+
+	QString selected_filter;
 	QString filename = QFileDialog::getSaveFileName(this,
 		tr("Save Report"),
 		QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation),
-		tr("HTML (*.html)"));
+		filter,
+		&selected_filter);
 	if (!filename.isEmpty()) {
-		writeHtml(filename);
+		if (selected_filter == html_filter) {
+			writeHtml(filename);
+		} else if (selected_filter == ical_filter) {
+			writeICalendar(filename);
+			settings.setValue("Report/Filter", "iCalendar");
+		}
 	}
 }
 
@@ -417,6 +435,90 @@ void Report::writeHtml(QString filename) {
 		QTextStream stream(&file);
 		stream.setCodec("UTF-8");
 		stream << generateHtml();
+		file.close();
+	}
+}
+
+/*****************************************************************************/
+
+static void writeWrappedLine(const QByteArray& line, QIODevice* device) {
+	int end = line.count();
+	int start = 0;
+	int pos = 0;
+	while (true) {
+		pos = start + 74;
+		if (pos >= end) {
+			// Write unwrapped line or end of wrapped line
+			device->write(&line.constData()[start], end - start);
+			device->write("\r\n");
+			break;
+		} else {
+			// Don't split UTF-8 characters
+			while ((line[pos] & 0x80) && !(line[pos] & 0x40)) {
+				pos--;
+			}
+
+			// Write wrapped text
+			device->write(&line.constData()[start], pos - start);
+			device->write("\r\n ");
+			start = pos;
+		}
+	}
+}
+
+void Report::writeICalendar(QString filename) {
+	if (!filename.endsWith(".ics")) {
+		filename.append(".ics");
+	}
+	QFile file(filename);
+	if (file.open(QFile::WriteOnly)) {
+		file.write("BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//GottCode//Kapow//EN\r\n");
+
+		QByteArray uid_suffix;
+		uid_suffix += '-';
+		uid_suffix += QByteArray::number(QCoreApplication::applicationPid());
+		uid_suffix += '@';
+		uid_suffix += QHostInfo::localHostName().toUtf8();
+
+		QString current;
+		int dup = 0;
+		int rows = m_data->rowCount();
+		for (int row = 0; row < rows; ++row) {
+			if (m_details->isRowHidden(row, QModelIndex())) {
+				continue;
+			}
+
+			QString now = QDateTime::currentDateTimeUtc().toString("yyyyMMddThhmmssZ");
+			if (current == now) {
+				dup++;
+			} else {
+				current = now;
+				dup = 0;
+			}
+
+			Session session = m_data->session(row);
+
+			file.write("BEGIN:VEVENT\r\n");
+
+			QByteArray uid("UID:Kapow-");
+			uid += current.toUtf8();
+			uid += QByteArray::number(dup);
+			uid += uid_suffix;
+			writeWrappedLine(uid, &file);
+
+			QDateTime start(session.date(), session.start());
+			file.write(QByteArray("DTSTART:") + start.toUTC().toString("yyyyMMddThhmmssZ").toUtf8() + QByteArray("\r\n"));
+			QDateTime stop(session.date(), session.stop());
+			file.write(QByteArray("DTEND:") + stop.toUTC().toString("yyyyMMddThhmmssZ").toUtf8() + QByteArray("\r\n"));
+
+			if (!session.task().isEmpty()) {
+				writeWrappedLine(QByteArray("SUMMARY:") + session.task().toUtf8(), &file);
+			}
+
+			file.write("END:VEVENT\r\n");
+		}
+
+		file.write("END:VCALENDAR\r\n");
 		file.close();
 	}
 }

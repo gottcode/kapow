@@ -6,6 +6,7 @@ macx {
 	# QMAKE_MAC_SDK = /Developer/SDKs/MacOSX10.4u.sdk
 	# CONFIG += x86 ppc
 }
+QT += network
 
 MOC_DIR = build
 OBJECTS_DIR = build
