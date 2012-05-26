@@ -259,14 +259,14 @@ void Report::reset() {
 /*****************************************************************************/
 
 void Report::save() {
-	QString filter;
+	QSettings settings;
+	QString filter = settings.value("ReportDialog/Filter").toString();
 	QString html_filter = tr("Web Page (*.html *.htm)");
 	QString ical_filter = tr("iCalendar (*.ics)");
 	QString outlook_filter = tr("Outlook CSV (*.csv)");
-	QSettings settings;
-	if (settings.value("Report/Filter") == "iCalendar") {
+	if ("iCalendar" == filter) {
 		filter = ical_filter + ";;" + html_filter + ";;" + outlook_filter;
-	} else if (settings.value("Report/Filter") == "Outlook") {
+	} else if ("Outlook" == filter) {
 		filter = outlook_filter + ";;" + html_filter + ";;" + ical_filter;
 	} else {
 		filter = html_filter + ";;" + ical_filter + ";;" + outlook_filter;
@@ -280,14 +280,14 @@ void Report::save() {
 		&selected_filter);
 	if (!filename.isEmpty()) {
 		if (selected_filter == html_filter) {
+			settings.remove("ReportDialog/Filter");
 			writeHtml(filename);
-			settings.remove("Report/Filter");
 		} else if (selected_filter == ical_filter) {
+			settings.setValue("ReportDialog/Filter", "iCalendar");
 			writeICalendar(filename);
-			settings.setValue("Report/Filter", "iCalendar");
 		} else if (selected_filter == outlook_filter) {
+			settings.setValue("ReportDialog/Filter", "Outlook");
 			writeOutlookCsv(filename);
-			settings.setValue("Report/Filter", "Outlook");
 		}
 	}
 }
