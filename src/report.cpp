@@ -260,7 +260,7 @@ void Report::reset() {
 
 void Report::save() {
 	QString filter;
-	QString html_filter = tr("HTML (*.html)");
+	QString html_filter = tr("Web Page (*.html *.htm)");
 	QString ical_filter = tr("iCalendar (*.ics)");
 	QString outlook_filter = tr("Outlook CSV (*.csv)");
 	QSettings settings;
@@ -281,6 +281,7 @@ void Report::save() {
 	if (!filename.isEmpty()) {
 		if (selected_filter == html_filter) {
 			writeHtml(filename);
+			settings.remove("Report/Filter");
 		} else if (selected_filter == ical_filter) {
 			writeICalendar(filename);
 			settings.setValue("Report/Filter", "iCalendar");
@@ -433,7 +434,7 @@ QString Report::generateHtml() const {
 /*****************************************************************************/
 
 void Report::writeHtml(QString filename) {
-	if (!filename.endsWith(".html")) {
+	if (!filename.endsWith(".html") && !filename.endsWith(".htm")) {
 		filename.append(".html");
 	}
 	QFile file(filename);
