@@ -19,7 +19,9 @@
 
 #include "report.h"
 
+#include "contact.h"
 #include "data_model.h"
+#include "rates.h"
 
 #include <QCheckBox>
 #include <QComboBox>
@@ -44,8 +46,9 @@
 
 /*****************************************************************************/
 
-Report::Report(DataModel* data, QWidget* parent)
-: QDialog(parent), m_data(data) {
+Report::Report(DataModel* data, Contact* contact, Rates* rates, QWidget* parent) :
+	QDialog(parent), m_data(data), m_contact(contact), m_rates(rates)
+{
 	setWindowTitle(tr("Time Sheet Report"));
 
 	// Create contact information widgets
@@ -164,22 +167,21 @@ Report::Report(DataModel* data, QWidget* parent)
 /*****************************************************************************/
 
 void Report::hideEvent(QHideEvent* event) {
-	QString address = m_address->toPlainText();
-	address.replace("\n", "\\n");
+	m_contact->setName(m_name->text());
+	m_contact->setCompany(m_company->text());
+	m_contact->setAddress(m_address->toPlainText());
+	m_contact->setPhone(m_phone->text());
+	m_contact->setFax(m_fax->text());
+	m_contact->setEmail(m_email->text());
+	m_contact->setWebsite(m_website->text());
+
+	m_rates->setHourly(m_hourly_rate->value());
+	m_rates->setTax(m_tax_rate->value());
+	m_rates->setCurrencySymbol(m_currency_symbol->text().simplified());
+	m_rates->setPrependSymbol(m_prepend_symbol->isChecked());
 
 	QSettings settings;
 	settings.setValue("ReportDialog/Size", size());
-	settings.setValue("ReportDialog/HourlyRate", m_hourly_rate->value());
-	settings.setValue("ReportDialog/TaxRate", m_tax_rate->value());
-	settings.setValue("ReportDialog/Currency", m_currency_symbol->text().simplified());
-	settings.setValue("ReportDialog/PrependCurrency", m_prepend_symbol->isChecked());
-	settings.setValue("Contact/Name", m_name->text());
-	settings.setValue("Contact/Company", m_company->text());
-	settings.setValue("Contact/Address", address);
-	settings.setValue("Contact/Phone", m_phone->text());
-	settings.setValue("Contact/Fax", m_fax->text());
-	settings.setValue("Contact/Email", m_email->text());
-	settings.setValue("Contact/Website", m_website->text());
 
 	QDialog::hideEvent(event);
 }
@@ -238,22 +240,18 @@ void Report::print() {
 /*****************************************************************************/
 
 void Report::reset() {
-	QSettings settings;
+	m_name->setText(m_contact->name());
+	m_company->setText(m_contact->company());
+	m_address->setPlainText(m_contact->address());
+	m_phone->setText(m_contact->phone());
+	m_fax->setText(m_contact->fax());
+	m_email->setText(m_contact->email());
+	m_website->setText(m_contact->website());
 
-	QString address = settings.value("Contact/Address").toString();
-	address.replace("\\n", "\n");
-
-	m_hourly_rate->setValue(settings.value("ReportDialog/HourlyRate").toDouble());
-	m_tax_rate->setValue(settings.value("ReportDialog/TaxRate").toDouble());
-	m_currency_symbol->setText(settings.value("ReportDialog/Currency", "$").toString());
-	m_prepend_symbol->setChecked(settings.value("ReportDialog/PrependCurrency", true).toBool());
-	m_name->setText(settings.value("Contact/Name").toString());
-	m_company->setText(settings.value("Contact/Company").toString());
-	m_address->setPlainText(address);
-	m_phone->setText(settings.value("Contact/Phone").toString());
-	m_fax->setText(settings.value("Contact/Fax").toString());
-	m_email->setText(settings.value("Contact/Email").toString());
-	m_website->setText(settings.value("Contact/Website").toString());
+	m_hourly_rate->setValue(m_rates->hourly());
+	m_tax_rate->setValue(m_rates->tax());
+	m_currency_symbol->setText(m_rates->currencySymbol());
+	m_prepend_symbol->setChecked(m_rates->prependSymbol());
 }
 
 /*****************************************************************************/

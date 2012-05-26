@@ -18,23 +18,27 @@ unix: !macx {
 	TARGET = Kapow
 }
 
-HEADERS = src/data_model.h \
+HEADERS = src/contact.h \
+	src/data_model.h \
 	src/date_editor.h \
 	src/filter_model.h \
 	src/locale_dialog.h \
 	src/project.h \
+	src/rates.h \
 	src/report.h \
 	src/session.h \
 	src/session_dialog.h \
 	src/time_editor.h \
 	src/window.h
 
-SOURCES = src/data_model.cpp \
+SOURCES = src/contact.cpp \
+	src/data_model.cpp \
 	src/date_editor.cpp \
 	src/filter_model.cpp \
 	src/locale_dialog.cpp \
 	src/main.cpp \
 	src/project.cpp \
+	src/rates.cpp \
 	src/report.cpp \
 	src/session.cpp \
 	src/session_dialog.cpp \

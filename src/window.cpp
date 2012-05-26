@@ -19,6 +19,7 @@
 
 #include "window.h"
 
+#include "contact.h"
 #include "data_model.h"
 #include "date_editor.h"
 #include "filter_model.h"
@@ -485,7 +486,7 @@ void Window::removeProject() {
 /*****************************************************************************/
 
 void Window::showReport() {
-	Report report(m_active_model, this);
+	Report report(m_active_model, &m_contact, &m_rates, this);
 	report.exec();
 }
 
@@ -648,11 +649,19 @@ void Window::save() {
 	}
 
 	QFile file(m_filename);
-	file.open(QIODevice::WriteOnly | QIODevice::Text);
+	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
+		return;
+	}
+
 	QXmlStreamWriter xml(&file);
 	xml.setAutoFormatting(true);
 	xml.writeStartDocument();
 	xml.writeStartElement("kapow");
+
+	m_contact.toXml(xml);
+	m_rates.toXml(xml);
+
 	int count = m_projects->topLevelItemCount();
 	for (int i = 0; i < count; ++i) {
 		Project* project = dynamic_cast<Project*>(m_projects->topLevelItem(i));
@@ -660,6 +669,7 @@ void Window::save() {
 			project->toXml(xml);
 		}
 	}
+
 	xml.writeEndDocument();
 }
 
@@ -731,6 +741,12 @@ void Window::loadData() {
 				project->model()->setDecimalTotals(m_decimals);
 				project->model()->beginLoad();
 				m_projects->blockSignals(false);
+			// Read contact information
+			} else if (xml.name() == QLatin1String("contact")) {
+				m_contact.fromXml(xml);
+			// Read rates
+			} else if (xml.name() == QLatin1String("rates")) {
+				m_rates.fromXml(xml);
 			// Add autosaved time as new session to current project
 			} else if (xml.name() == QLatin1String("autosave")) {
 				QDateTime start = QDateTime::fromString(attributes.value(QLatin1String("start")).toString(), Qt::ISODate);

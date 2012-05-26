@@ -20,6 +20,11 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#include "contact.h"
+#include "rates.h"
+class DataModel;
+class Project;
+
 #include <QDateTime>
 #include <QMainWindow>
 #include <QSystemTrayIcon>
@@ -33,8 +38,6 @@ class QTimer;
 class QTreeView;
 class QTreeWidget;
 class QTreeWidgetItem;
-class DataModel;
-class Project;
 
 class Window : public QMainWindow {
 	Q_OBJECT
@@ -99,6 +102,8 @@ private:
 	QTreeView* m_details;
 	bool m_decimals;
 	bool m_inline;
+	Contact m_contact;
+	Rates m_rates;
 
 	QTimer* m_timer;
 	QDateTime m_current_time;

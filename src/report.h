@@ -20,6 +20,10 @@
 #ifndef REPORT_H
 #define REPORT_H
 
+class Contact;
+class DataModel;
+class Rates;
+
 #include <QDialog>
 class QCheckBox;
 class QComboBox;
@@ -27,12 +31,11 @@ class QDoubleSpinBox;
 class QLineEdit;
 class QTextEdit;
 class QTreeView;
-class DataModel;
 
 class Report : public QDialog {
 	Q_OBJECT
 public:
-	Report(DataModel* data, QWidget* parent = 0);
+	Report(DataModel* data, Contact* contact, Rates* rates, QWidget* parent = 0);
 
 protected:
 	virtual void hideEvent(QHideEvent* event);
@@ -70,6 +73,9 @@ private:
 	QLineEdit* m_fax;
 	QLineEdit* m_email;
 	QLineEdit* m_website;
+
+	Contact* m_contact;
+	Rates* m_rates;
 };
 
 #endif
