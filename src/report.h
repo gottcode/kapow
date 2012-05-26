@@ -50,6 +50,7 @@ private:
 	QString generateHtml() const;
 	void writeHtml(QString filename);
 	void writeICalendar(QString filename);
+	void writeOutlookCsv(QString filename);
 
 private:
 	QTextEdit* m_preview;

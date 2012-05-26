@@ -262,11 +262,14 @@ void Report::save() {
 	QString filter;
 	QString html_filter = tr("HTML (*.html)");
 	QString ical_filter = tr("iCalendar (*.ics)");
+	QString outlook_filter = tr("Outlook CSV (*.csv)");
 	QSettings settings;
 	if (settings.value("Report/Filter") == "iCalendar") {
-		filter = ical_filter + ";;" + html_filter;
+		filter = ical_filter + ";;" + html_filter + ";;" + outlook_filter;
+	} else if (settings.value("Report/Filter") == "Outlook") {
+		filter = outlook_filter + ";;" + html_filter + ";;" + ical_filter;
 	} else {
-		filter = html_filter + ";;" + ical_filter;
+		filter = html_filter + ";;" + ical_filter + ";;" + outlook_filter;
 	}
 
 	QString selected_filter;
@@ -281,6 +284,9 @@ void Report::save() {
 		} else if (selected_filter == ical_filter) {
 			writeICalendar(filename);
 			settings.setValue("Report/Filter", "iCalendar");
+		} else if (selected_filter == outlook_filter) {
+			writeOutlookCsv(filename);
+			settings.setValue("Report/Filter", "Outlook");
 		}
 	}
 }
@@ -519,6 +525,33 @@ void Report::writeICalendar(QString filename) {
 		}
 
 		file.write("END:VCALENDAR\r\n");
+		file.close();
+	}
+}
+
+/*****************************************************************************/
+
+void Report::writeOutlookCsv(QString filename) {
+	if (!filename.endsWith(".csv")) {
+		filename.append(".csv");
+	}
+	QFile file(filename);
+	if (file.open(QFile::WriteOnly)) {
+		QTextStream stream(&file);
+		stream << QLatin1String("\"Title\",\"Start Date\",\"Start Time\",\"End Date\",\"End Time\"\r\n");
+		int rows = m_data->rowCount();
+		for (int row = 0; row < rows; ++row) {
+			if (m_details->isRowHidden(row, QModelIndex())) {
+				continue;
+			}
+
+			Session session = m_data->session(row);
+			stream << '"' << session.task() << QLatin1String("\",\"")
+				<< session.date().toString("MM/dd/yy") << QLatin1String("\",\"")
+				<< session.start().toString("hh:mm:ss AP") << QLatin1String("\",\"")
+				<< session.date().toString("MM/dd/yy") << QLatin1String("\",\"")
+				<< session.stop().toString("hh:mm:ss AP") << QLatin1String("\"\r\n");
+		}
 		file.close();
 	}
 }
