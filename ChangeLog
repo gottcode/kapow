@@ -1,4 +1,5 @@
 2012-05-26 Graeme Gott <graeme@gottcode.org>
+	* Only save settings when they are changed.
 	* Move billing information into data file.
 
 2012-05-25 Graeme Gott <graeme@gottcode.org>
