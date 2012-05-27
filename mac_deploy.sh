@@ -2,7 +2,7 @@
 
 APP='Kapow'
 BUNDLE="$APP.app"
-VERSION='1.3.4'
+VERSION='1.3.5'
 
 # Remove any previous disk folder or DMG
 echo -n 'Preparing... '
