@@ -404,7 +404,7 @@
         <location filename="../src/window.cpp" line="311"/>
         <location filename="../src/window.cpp" line="324"/>
         <source>Unable to read time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lecture impossible des données d&apos;heure. </translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="329"/>
@@ -414,13 +414,14 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="366"/>
+        <location filename="../src/window.cpp" line="705"/>
         <source>Unable to write time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Écriture impossible des données d&apos;heure. </translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="393"/>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Des minuteurs sont toujours en cours d&apos;exécution. Voulez-vousles arrêter et quitter ?</translation>
+        <translation>Des minuteurs sont toujours en cours d&apos;exécution. Voulez-vous les arrêter et quitter ?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="417"/>
@@ -475,6 +476,7 @@
         <location filename="../src/window.cpp" line="324"/>
         <location filename="../src/window.cpp" line="366"/>
         <location filename="../src/window.cpp" line="514"/>
+        <location filename="../src/window.cpp" line="705"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
@@ -494,7 +496,7 @@
         <translation>Supprimer la session sélectionnée ? </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="791"/>
+        <location filename="../src/window.cpp" line="794"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n minuteur en cours</numerusform>
@@ -502,7 +504,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="797"/>
+        <location filename="../src/window.cpp" line="800"/>
         <source>Kapow Punch Clock</source>
         <translation>Pointeuse Kapow</translation>
     </message>

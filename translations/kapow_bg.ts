@@ -414,6 +414,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="366"/>
+        <location filename="../src/window.cpp" line="705"/>
         <source>Unable to write time data.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -475,6 +476,7 @@
         <location filename="../src/window.cpp" line="324"/>
         <location filename="../src/window.cpp" line="366"/>
         <location filename="../src/window.cpp" line="514"/>
+        <location filename="../src/window.cpp" line="705"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
@@ -494,7 +496,7 @@
         <translation>Премахване на избраната сесия?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="791"/>
+        <location filename="../src/window.cpp" line="794"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n активен таймер</numerusform>
@@ -502,7 +504,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="797"/>
+        <location filename="../src/window.cpp" line="800"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>
