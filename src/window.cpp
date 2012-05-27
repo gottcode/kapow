@@ -698,7 +698,10 @@ void Window::save() {
 	}
 
 	QFile file(m_filename);
-	file.open(QIODevice::WriteOnly | QIODevice::Text);
+	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
+		return;
+	}
 	QXmlStreamWriter xml(&file);
 	xml.setAutoFormatting(true);
 	xml.writeStartDocument();

@@ -1,3 +1,6 @@
+2012-05-26 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Did not warn user when unable to save.
+
 2012-05-23 Graeme Gott <graeme@gottcode.org>
 	* FIXED: Could overwrite unreadable data file.
 
