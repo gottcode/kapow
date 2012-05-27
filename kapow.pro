@@ -12,6 +12,12 @@ MOC_DIR = build
 OBJECTS_DIR = build
 RCC_DIR = build
 
+VERSION = $$system(git rev-parse --short HEAD)
+isEmpty(VERSION) {
+	VERSION = 0
+}
+DEFINES += VERSIONSTR=\\\"git.$${VERSION}\\\"
+
 unix: !macx {
 	TARGET = kapow
 } else {

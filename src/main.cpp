@@ -29,7 +29,7 @@
 int main(int argc, char** argv) {
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
-	app.setApplicationVersion("1.3.4");
+	app.setApplicationVersion(VERSIONSTR);
 	{
 		QIcon fallback(":/hicolor/256x256/apps/kapow.png");
 		fallback.addFile(":/hicolor/128x128/apps/kapow.png");

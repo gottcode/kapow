@@ -2,7 +2,7 @@
 
 APP='Kapow'
 BUNDLE="$APP.app"
-VERSION='1.3.4'
+VERSION=$(git rev-parse --short HEAD)
 
 # Remove any previous disk folder or DMG
 echo -n 'Preparing... '
