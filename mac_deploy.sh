@@ -61,11 +61,6 @@ rm -Rf "$APP/$BUNDLE/Contents/Frameworks/QtXmlPatterns.framework"
 rm -Rf "$APP/$BUNDLE/Contents/PlugIns/qmltooling"
 echo 'Done'
 
-# Create link to Applications folder
-echo -n 'Creating Applications link... '
-ln -s '/Applications' "${APP}/Applications"
-echo 'Done'
-
 # Copy background
 echo -n 'Copying background... '
 mkdir "${APP}/.background"
@@ -102,6 +97,7 @@ echo '
 			end tell
 			set background picture of viewOptions to file ".background:background.png"
 
+			make new alias file at container window to POSIX file "/Applications" with properties {name:"Applications"}
 			set position of item "'${BUNDLE}'" of container window to {90, 90}
 			set position of item "Applications" of container window to {310, 90}
 			set position of item "Credits.txt" of container window to {100, 215}
