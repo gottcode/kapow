@@ -422,6 +422,16 @@
         <translation>Само от тази седмица</translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="368"/>
+        <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
+        <translation type="unfinished">Авторски права &amp;copy; 2008-2011 Graeme Gott. {2008-%1 ?}</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="369"/>
+        <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="728"/>
         <location filename="../src/window.cpp" line="785"/>
         <source>Unable to read time data.</source>
@@ -451,24 +461,21 @@
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="367"/>
         <source>Kapow Punch Clock %1</source>
-        <translation>Kapow Punch Clock %1</translation>
+        <translation type="obsolete">Kapow Punch Clock %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="368"/>
+        <location filename="../src/window.cpp" line="367"/>
         <source>A program to help track spent time</source>
         <translation>Програма за отчитане на изразходваното време</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="369"/>
         <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
-        <translation>Авторски права &amp;copy; 2008-2011 Graeme Gott.</translation>
+        <translation type="obsolete">Авторски права &amp;copy; 2008-2011 Graeme Gott.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="370"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Разпространява се под &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; лиценз.</translation>
+        <translation type="obsolete">Разпространява се под &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; лиценз.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="332"/>
@@ -538,6 +545,7 @@
         </translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="366"/>
         <location filename="../src/window.cpp" line="874"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>

@@ -422,6 +422,16 @@
         <translation>Nur diese Woche anzeigen</translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="368"/>
+        <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
+        <translation type="unfinished">Copyright &amp;copy; 2008-2011 Graeme Gott. {2008-%1 ?}</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="369"/>
+        <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="728"/>
         <location filename="../src/window.cpp" line="785"/>
         <source>Unable to read time data.</source>
@@ -451,24 +461,21 @@
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="367"/>
         <source>Kapow Punch Clock %1</source>
-        <translation>Kapow Zeiterfassung %1</translation>
+        <translation type="obsolete">Kapow Zeiterfassung %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="368"/>
+        <location filename="../src/window.cpp" line="367"/>
         <source>A program to help track spent time</source>
         <translation>Ein Programm zur Zeiterfassung am Rechner.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="369"/>
         <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2008-2011 Graeme Gott.</translation>
+        <translation type="obsolete">Copyright &amp;copy; 2008-2011 Graeme Gott.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="370"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Veröffentlicht unter &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; Lizenz.</translation>
+        <translation type="obsolete">Veröffentlicht unter &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; Lizenz.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="332"/>
@@ -538,6 +545,7 @@
         </translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="366"/>
         <location filename="../src/window.cpp" line="874"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Zeiterfassung</translation>
