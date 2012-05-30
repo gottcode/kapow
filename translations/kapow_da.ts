@@ -94,6 +94,14 @@
     </message>
 </context>
 <context>
+    <name>Rates</name>
+    <message>
+        <location filename="../src/rates.cpp" line="35"/>
+        <source>$</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Report</name>
     <message>
         <location filename="../src/report.cpp" line="52"/>

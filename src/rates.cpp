@@ -32,7 +32,7 @@ Rates::Rates()
 	m_currency_symbol = locale.currencySymbol();
 	m_prepend_symbol = locale.toCurrencyString(1, m_currency_symbol).at(0) != '1';
 #else
-	m_currency_symbol = "$";
+	m_currency_symbol = tr("$");
 	m_prepend_symbol = true;
 #endif
 

@@ -42,8 +42,6 @@ int main(int argc, char** argv) {
 		app.setWindowIcon(QIcon::fromTheme("kapow", fallback));
 	}
 
-	LocaleDialog::loadTranslator("kapow_");
-
 	QString path;
 	{
 		// Check for command-line paths
@@ -90,6 +88,8 @@ int main(int argc, char** argv) {
 			path = override.absoluteFilePath();
 		}
 	}
+
+	LocaleDialog::loadTranslator("kapow_");
 
 	// Make sure data path exists
 	if (path.isEmpty()) {
