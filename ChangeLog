@@ -1,3 +1,6 @@
+2012-05-31 Alberto Negri <alberto.negri@gmail.com>
+	* Update Italian translation.
+
 2012-05-26 Graeme Gott <graeme@gottcode.org>
 	* Only save settings when they are changed.
 	* Move billing information into data file.
