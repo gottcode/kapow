@@ -1,10 +1,7 @@
 TEMPLATE = app
-CONFIG += warn_on release
+CONFIG += warn_on
 macx {
 	CONFIG += x86_64
-	# Comment the above line and uncomment the following lines to compile Universal for 10.4+
-	# QMAKE_MAC_SDK = /Developer/SDKs/MacOSX10.4u.sdk
-	# CONFIG += x86 ppc
 }
 QT += network
 
@@ -59,6 +56,7 @@ TRANSLATIONS = translations/kapow_bg.ts \
 	translations/kapow_es.ts \
 	translations/kapow_fr.ts \
 	translations/kapow_it.ts \
+	translations/kapow_nl.ts \
 	translations/kapow_uk.ts
 
 RESOURCES = icons/icons.qrc
