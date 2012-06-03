@@ -106,6 +106,7 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_task = new QLineEdit(contents);
 	m_task->setPlaceholderText(DataModel::tr("Task"));
 	connect(m_task, SIGNAL(textChanged(QString)), this, SLOT(taskChanged(QString)));
+	connect(m_task, SIGNAL(returnPressed()), this, SLOT(taskStart()));
 
 	m_start = new QPushButton(tr("Start"), contents);
 	m_start->setAutoDefault(true);
@@ -440,6 +441,14 @@ void Window::cancel() {
 
 void Window::taskChanged(const QString& task) {
 	m_active_project->setTask(task);
+}
+
+/*****************************************************************************/
+
+void Window::taskStart() {
+	if (m_start->isEnabled()) {
+		start();
+	}
 }
 
 /*****************************************************************************/

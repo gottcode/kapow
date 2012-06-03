@@ -59,6 +59,7 @@ private slots:
 	void stop();
 	void cancel();
 	void taskChanged(const QString& task);
+	void taskStart();
 	void updateTime();
 	void addProject();
 	void editProject();
