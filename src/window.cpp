@@ -105,12 +105,12 @@ Window::Window(const QString& filename, QWidget* parent)
 
 	m_task = new QLineEdit(contents);
 	m_task->setPlaceholderText(DataModel::tr("Task"));
+	m_task->setFocus();
 	connect(m_task, SIGNAL(textChanged(QString)), this, SLOT(taskChanged(QString)));
 	connect(m_task, SIGNAL(returnPressed()), this, SLOT(taskStart()));
 
 	m_start = new QPushButton(tr("Start"), contents);
 	m_start->setAutoDefault(true);
-	m_start->setFocus();
 	connect(m_start, SIGNAL(clicked()), this, SLOT(start()));
 
 	m_stop = new QPushButton(tr("Stop"), contents);
@@ -247,7 +247,7 @@ Window::Window(const QString& filename, QWidget* parent)
 	session_buttons->setMargin(0);
 	session_buttons->setSpacing(0);
 	session_buttons->addStretch(1);
-	session_buttons->addWidget(m_task, 1);
+	session_buttons->addWidget(m_task, 2);
 	session_buttons->addSpacing(12);
 	session_buttons->addWidget(m_start);
 	session_buttons->addWidget(m_stop);
@@ -420,8 +420,8 @@ void Window::stop() {
 	m_active_timers--;
 	m_remove_project->setEnabled(true);
 	updateDetails();
-	m_start->setFocus();
 	m_task->clear();
+	m_task->setFocus();
 }
 
 /*****************************************************************************/
@@ -432,8 +432,8 @@ void Window::cancel() {
 		m_active_timers--;
 		m_remove_project->setEnabled(true);
 		updateDetails();
-		m_start->setFocus();
 		m_task->clear();
+		m_task->setFocus();
 	}
 }
 
