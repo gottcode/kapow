@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2010, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,7 +54,7 @@ void FilterModel::setType(int type) {
 
 bool FilterModel::filterAcceptsRow(int row, const QModelIndex& parent) const {
 	Q_UNUSED(parent);
-	if (row < sourceModel()->rowCount() - 1) {
+	if (!parent.isValid() && (row < sourceModel()->rowCount() - 1)) {
 		QDate current = QDate::currentDate();
 		QDate date = m_model->session(row).date();
 		int week1, year1, week2, year2;

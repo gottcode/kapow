@@ -213,6 +213,8 @@ void DataModel::toXml(QXmlStreamWriter& xml) const {
 int DataModel::rowCount(const QModelIndex& parent) const {
 	if (!parent.isValid()) {
 		return m_data.count() + 1;
+	} else if (m_billed.contains(parent.row())) {
+		return 1;
 	} else {
 		return 0;
 	}
@@ -220,12 +222,8 @@ int DataModel::rowCount(const QModelIndex& parent) const {
 
 /*****************************************************************************/
 
-int DataModel::columnCount(const QModelIndex& parent) const {
-	if (!parent.isValid()) {
-		return 10;
-	} else {
-		return 0;
-	}
+int DataModel::columnCount(const QModelIndex&) const {
+	return 10;
 }
 
 /*****************************************************************************/
@@ -235,15 +233,20 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 	QVariant result;
 
 	int pos = index.row();
-	if (pos == m_data.count()) {
+	if (index.parent().isValid() || (pos == m_data.count())) {
 
 		QFont font;
 		font.setWeight(QFont::Bold);
 
-		pos--;
-		Session session = m_data.value(pos);
-		if (session.isBilled()) {
-			session = Session();
+		Session session;
+		if (!index.parent().isValid()) {
+			--pos;
+			session = m_data.value(pos);
+			if (session.isBilled()) {
+				session = Session();
+			}
+		} else {
+			session = m_data.value(index.parent().row());
 		}
 
 		switch (role) {
@@ -309,6 +312,12 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 
 		case Qt::FontRole:
 			result = font;
+			break;
+
+		case Qt::ForegroundRole:
+			if (index.parent().isValid()) {
+				result = QApplication::palette().color(QPalette::Disabled, QPalette::Text);
+			}
 			break;
 
 		default:
@@ -428,9 +437,11 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 
 Qt::ItemFlags DataModel::flags(const QModelIndex& index) const {
 	Qt::ItemFlags result = QAbstractItemModel::flags(index);
-	if (index.column() == 9) {
+	if (index.parent().isValid() || (index.row() == m_data.count())) {
+		result = Qt::ItemIsEnabled;
+	} else if (index.column() == 9) {
 		result |= Qt::ItemIsUserCheckable;
-	} else if (!isBilled(index.row()) && (index.row() < m_data.count()) && (index.column() <= 3)) {
+	} else if (!isBilled(index.row()) && (index.column() <= 3)) {
 		result |= Qt::ItemIsEditable;
 	}
 	return result;
@@ -478,13 +489,30 @@ QVariant DataModel::headerData(int section, Qt::Orientation orientation, int rol
 /*****************************************************************************/
 
 QModelIndex DataModel::index(int row, int column, const QModelIndex& parent) const {
-	return hasIndex(row, column, parent) ? createIndex(row, column, 0) : QModelIndex();
+	if (!hasIndex(row, column, parent)) {
+		return QModelIndex();
+	}
+
+	if (!parent.isValid()) {
+		return createIndex(row, column, -1);
+	} else {
+		return createIndex(row, column, parent.row());
+	}
 }
 
 /*****************************************************************************/
 
-QModelIndex DataModel::parent(const QModelIndex&) const {
-	return QModelIndex();
+QModelIndex DataModel::parent(const QModelIndex& child) const {
+	if (!child.isValid()) {
+		return QModelIndex();
+	}
+
+	qint64 row = child.internalId();
+	if (row == -1) {
+		return QModelIndex();
+	} else {
+		return createIndex(row, 0, -1);
+	}
 }
 
 /*****************************************************************************/
