@@ -205,6 +205,7 @@ Window::Window(const QString& filename, QWidget* parent)
 
 	m_details = new QTreeView(details);
 	m_details->setRootIsDecorated(false);
+	m_details->setItemsExpandable(false);
 	m_details->setSelectionMode(QAbstractItemView::SingleSelection);
 	m_details->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_details->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
@@ -531,6 +532,7 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	updateDisplay();
 	updateSessionButtons();
 	m_details->setModel(m_active_project->filterModel());
+	m_details->expandAll();
 	m_filter->setCurrentIndex(m_filter->findData(m_active_project->filterModel()->type()));
 	m_remove_project->setEnabled(!project->isActive());
 	m_edit_session->setEnabled(false);
@@ -559,6 +561,7 @@ void Window::projectChanged(QTreeWidgetItem* item, int column) {
 
 void Window::filterChanged(int index) {
 	m_active_project->filterModel()->setType(m_filter->itemData(index).toInt());
+	m_details->expandAll();
 	m_details->scrollToBottom();
 }
 
@@ -566,6 +569,7 @@ void Window::filterChanged(int index) {
 
 void Window::modelBilledStatusChanged() {
 	sessionPressed(m_details->currentIndex());
+	m_details->expandAll();
 }
 
 /*****************************************************************************/

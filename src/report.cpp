@@ -86,6 +86,7 @@ Report::Report(DataModel* data, Contact* contact, Rates* rates, QWidget* parent)
 	m_details = new QTreeView(data_tab);
 	m_details->setEditTriggers(QAbstractItemView::NoEditTriggers);
 	m_details->setRootIsDecorated(false);
+	m_details->setItemsExpandable(false);
 	m_details->setSelectionMode(QAbstractItemView::SingleSelection);
 	m_details->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_details->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
