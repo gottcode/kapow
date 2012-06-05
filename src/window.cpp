@@ -27,6 +27,7 @@
 #include "project.h"
 #include "report.h"
 #include "session.h"
+#include "session_delegate.h"
 #include "session_dialog.h"
 #include "time_editor.h"
 
@@ -206,6 +207,8 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_details = new QTreeView(details);
 	m_details->setRootIsDecorated(false);
 	m_details->setItemsExpandable(false);
+	m_details->setItemDelegate(new SessionDelegate(m_details));
+	m_details->setIndentation(0);
 	m_details->setSelectionMode(QAbstractItemView::SingleSelection);
 	m_details->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_details->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);

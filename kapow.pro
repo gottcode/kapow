@@ -30,6 +30,7 @@ HEADERS = src/contact.h \
 	src/rates.h \
 	src/report.h \
 	src/session.h \
+	src/session_delegate.h \
 	src/session_dialog.h \
 	src/time_editor.h \
 	src/window.h
@@ -44,6 +45,7 @@ SOURCES = src/contact.cpp \
 	src/rates.cpp \
 	src/report.cpp \
 	src/session.cpp \
+	src/session_delegate.cpp \
 	src/session_dialog.cpp \
 	src/time_editor.cpp \
 	src/window.cpp
