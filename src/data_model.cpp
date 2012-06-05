@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 /*****************************************************************************/
 
 DataModel::DataModel(QObject* parent)
-: QAbstractTableModel(parent), m_decimals(true), m_loaded(true) {
+: QAbstractItemModel(parent), m_decimals(true), m_loaded(true) {
 }
 
 /*****************************************************************************/
@@ -427,13 +427,13 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 /*****************************************************************************/
 
 Qt::ItemFlags DataModel::flags(const QModelIndex& index) const {
+	Qt::ItemFlags result = QAbstractItemModel::flags(index);
 	if (index.column() == 9) {
-		return QAbstractTableModel::flags(index) |  Qt::ItemIsUserCheckable;
-	} else if (isBilled(index.row()) || (index.row() == m_data.count()) || (index.column() > 3 && index.column() < 9)) {
-		return QAbstractTableModel::flags(index);
-	} else {
-		return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
+		result |= Qt::ItemIsUserCheckable;
+	} else if (!isBilled(index.row()) && (index.row() < m_data.count()) && (index.column() <= 3)) {
+		result |= Qt::ItemIsEditable;
 	}
+	return result;
 }
 
 /*****************************************************************************/
@@ -477,6 +477,18 @@ QVariant DataModel::headerData(int section, Qt::Orientation orientation, int rol
 
 /*****************************************************************************/
 
+QModelIndex DataModel::index(int row, int column, const QModelIndex& parent) const {
+	return hasIndex(row, column, parent) ? createIndex(row, column, 0) : QModelIndex();
+}
+
+/*****************************************************************************/
+
+QModelIndex DataModel::parent(const QModelIndex&) const {
+	return QModelIndex();
+}
+
+/*****************************************************************************/
+
 bool DataModel::setData(const QModelIndex& index, const QVariant& value, int role) {
 	if (!isBilled(index.row()) && role == Qt::EditRole) {
 		Session session = m_data.at(index.row());
@@ -511,7 +523,7 @@ bool DataModel::setData(const QModelIndex& index, const QVariant& value, int rol
 		setBilled(index.row(), value.toInt() == Qt::Checked);
 		return true;
 	} else {
-		return QAbstractTableModel::setData(index, value, role);
+		return QAbstractItemModel::setData(index, value, role);
 	}
 }
 
