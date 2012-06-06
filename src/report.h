@@ -35,7 +35,7 @@ class QTreeView;
 class Report : public QDialog {
 	Q_OBJECT
 public:
-	Report(DataModel* data, Contact* contact, Rates* rates, QWidget* parent = 0);
+	Report(DataModel* data, int current, Contact* contact, Rates* rates, QWidget* parent = 0);
 
 protected:
 	void hideEvent(QHideEvent* event);
@@ -62,6 +62,7 @@ private:
 	QComboBox* m_groups;
 	QTreeView* m_details;
 	DataModel* m_data;
+	int m_current_row;
 	QDoubleSpinBox* m_hourly_rate;
 	QDoubleSpinBox* m_tax_rate;
 	QLineEdit* m_currency_symbol;

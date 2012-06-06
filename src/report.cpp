@@ -46,8 +46,8 @@
 
 /*****************************************************************************/
 
-Report::Report(DataModel* data, Contact* contact, Rates* rates, QWidget* parent) :
-	QDialog(parent), m_data(data), m_contact(contact), m_rates(rates)
+Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWidget* parent) :
+	QDialog(parent), m_data(data), m_current_row(current), m_contact(contact), m_rates(rates)
 {
 	setWindowTitle(tr("Time Sheet Report"));
 
@@ -139,6 +139,7 @@ Report::Report(DataModel* data, Contact* contact, Rates* rates, QWidget* parent)
 	tabs->addTab(contact_info_tab, tr("Contact Information"));
 	tabs->addTab(data_tab, tr("Data"));
 	tabs->addTab(m_preview, tr("Preview"));
+	tabs->setCurrentIndex(1);
 
 	// Create dialog actions
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Reset | QDialogButtonBox::Save, Qt::Horizontal, this);
@@ -307,25 +308,34 @@ void Report::save() {
 /*****************************************************************************/
 
 void Report::findGroups() {
+	int current_group = -1;
+
 	int count = m_data->rowCount();
 	QList<int> billed = m_data->billedRows();
 	if (!billed.contains(count - 2)) {
 		billed.append(count - 2);
 	}
+
 	QList<QVariant> rows;
 	for (int i = 0; i < count; ++i) {
 		rows.append(i);
 		if (billed.contains(i)) {
 			QString from = m_data->data(m_data->index(rows.first().toInt(), 0)).toString();
 			QString to = m_data->data(m_data->index(rows.last().toInt(), 0)).toString();
-			m_groups->addItem(QString("%1 - %2").arg(from).arg(to), rows);
+			m_groups->insertItem(0, QString("%1 - %2").arg(from).arg(to), rows);
+			if ((i >= m_current_row) && (m_current_row >= rows.first().toInt())) {
+				current_group = m_groups->count();
+			}
 			rows.clear();
 		}
 	}
-	count = m_groups->count();
-	if (count > 0) {
-		m_groups->setCurrentIndex(count - 1);
+
+	if (current_group != -1) {
+		current_group = m_groups->count() - current_group;
+	} else {
+		current_group = 0;
 	}
+	m_groups->setCurrentIndex(current_group);
 }
 
 /*****************************************************************************/

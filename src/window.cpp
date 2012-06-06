@@ -510,7 +510,12 @@ void Window::removeProject() {
 /*****************************************************************************/
 
 void Window::showReport() {
-	Report report(m_active_model, &m_contact, &m_rates, this);
+	QModelIndex session = m_details->currentIndex();
+	if (session.parent().isValid()) {
+		session = session.parent();
+	}
+	session = m_active_project->filterModel()->mapToSource(session);
+	Report report(m_active_model, session.isValid() ? session.row() : -1, &m_contact, &m_rates, this);
 	report.exec();
 }
 
