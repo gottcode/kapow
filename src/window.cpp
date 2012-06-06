@@ -113,16 +113,23 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_start = new QPushButton(tr("Start"), contents);
 	m_start->setAutoDefault(true);
 	connect(m_start, SIGNAL(clicked()), this, SLOT(start()));
+	int button_width = m_start->sizeHint().width();
 
 	m_stop = new QPushButton(tr("Stop"), contents);
 	m_stop->setAutoDefault(true);
 	m_stop->hide();
 	connect(m_stop, SIGNAL(clicked()), this, SLOT(stop()));
+	button_width = qMax(m_stop->sizeHint().width(), button_width);
 
 	m_cancel = new QPushButton(tr("Cancel"), contents);
 	m_cancel->setAutoDefault(true);
 	m_cancel->setEnabled(false);
 	connect(m_cancel, SIGNAL(clicked()), this, SLOT(cancel()));
+	button_width = qMax(m_cancel->sizeHint().width(), button_width);
+
+	m_start->setMinimumWidth(button_width);
+	m_stop->setMinimumWidth(button_width);
+	m_cancel->setMinimumWidth(button_width);
 
 	// Load settings
 	QSettings settings;
