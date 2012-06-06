@@ -142,16 +142,18 @@ Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWi
 	tabs->setCurrentIndex(1);
 
 	// Create dialog actions
-	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Reset | QDialogButtonBox::Save, Qt::Horizontal, this);
+	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Reset, Qt::Horizontal, this);
+	QPushButton* export_button = buttons->addButton(tr("Export"), QDialogButtonBox::ActionRole);
 	QPushButton* print_button = buttons->addButton(tr("Print"), QDialogButtonBox::ActionRole);
 #if (QT_VERSION >= QT_VERSION_CHECK(4, 6, 0))
-	if (print_button->style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
+	if (style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
+		export_button->setIcon(QIcon::fromTheme("document-export"));
 		print_button->setIcon(QIcon::fromTheme("document-print"));
 	}
 #endif
 	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
 	connect(buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()), this, SLOT(reset()));
-	connect(buttons->button(QDialogButtonBox::Save), SIGNAL(clicked()), this, SLOT(save()));
+	connect(export_button, SIGNAL(clicked()), this, SLOT(save()));
 	connect(print_button, SIGNAL(clicked()), this, SLOT(print()));
 
 	// Lay out dialog
@@ -287,7 +289,7 @@ void Report::save() {
 
 	QString selected_filter;
 	QString filename = QFileDialog::getSaveFileName(this,
-		tr("Save Report"),
+		tr("Export Report"),
 		QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation),
 		filter,
 		&selected_filter);
