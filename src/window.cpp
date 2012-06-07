@@ -127,9 +127,16 @@ Window::Window(const QString& filename, QWidget* parent)
 	connect(m_cancel, SIGNAL(clicked()), this, SLOT(cancel()));
 	button_width = qMax(m_cancel->sizeHint().width(), button_width);
 
+	m_bill = new QPushButton(tr("Bill..."), contents);
+	m_bill->setAutoDefault(true);
+	m_bill->setEnabled(false);
+	connect(m_bill, SIGNAL(clicked()), this, SLOT(bill()));
+	button_width = qMax(m_bill->sizeHint().width(), button_width);
+
 	m_start->setMinimumWidth(button_width);
 	m_stop->setMinimumWidth(button_width);
 	m_cancel->setMinimumWidth(button_width);
+	m_bill->setMinimumWidth(button_width);
 
 	// Load settings
 	QSettings settings;
@@ -142,7 +149,7 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_remove_project = menu->addAction(tr("&Remove"), this, SLOT(removeProject()));
 	m_remove_project->setEnabled(false);
 	menu->addSeparator();
-	menu->addAction(tr("&Report"), this, SLOT(showReport()));
+	menu->addAction(tr("R&eports"), this, SLOT(showReport()));
 	menu->addSeparator();
 	menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
 
@@ -264,6 +271,8 @@ Window::Window(const QString& filename, QWidget* parent)
 	session_buttons->addWidget(m_stop);
 	session_buttons->addSpacing(6);
 	session_buttons->addWidget(m_cancel);
+	session_buttons->addSpacing(12);
+	session_buttons->addWidget(m_bill);
 	session_buttons->addStretch(1);
 
 	QVBoxLayout* session_layout = new QVBoxLayout;
@@ -450,6 +459,18 @@ void Window::cancel() {
 
 /*****************************************************************************/
 
+void Window::bill() {
+	int current = currentRow();
+	if (current == -1) {
+		return;
+	}
+	m_active_model->setBilled(current, true);
+	Report report(m_active_model, current, &m_contact, &m_rates, this);
+	report.exec();
+}
+
+/*****************************************************************************/
+
 void Window::taskChanged(const QString& task) {
 	m_active_project->setTask(task);
 }
@@ -517,12 +538,11 @@ void Window::removeProject() {
 /*****************************************************************************/
 
 void Window::showReport() {
-	QModelIndex session = m_details->currentIndex();
-	if (session.parent().isValid()) {
-		session = session.parent();
+	int current = currentRow();
+	if ((current == (m_active_model->rowCount() - 1)) || !m_active_model->isBilled(current)) {
+		current = -1;
 	}
-	session = m_active_project->filterModel()->mapToSource(session);
-	Report report(m_active_model, session.isValid() ? session.row() : -1, &m_contact, &m_rates, this);
+	Report report(m_active_model, current, &m_contact, &m_rates, this);
 	report.exec();
 }
 
@@ -594,6 +614,7 @@ void Window::sessionPressed(const QModelIndex& index) {
 	bool enabled = session.isValid();
 	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
 	m_remove_session->setEnabled(enabled);
+	m_bill->setEnabled(enabled);
 }
 
 /*****************************************************************************/
@@ -730,6 +751,17 @@ void Window::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
 
 void Window::projectTreeResized() {
 	QSettings().setValue("SplitterSizes", m_contents->saveState());
+}
+
+/*****************************************************************************/
+
+int Window::currentRow() {
+	QModelIndex session = m_details->currentIndex();
+	if (session.parent().isValid()) {
+		session = session.parent();
+	}
+	session = m_active_project->filterModel()->mapToSource(session);
+	return session.isValid() ? session.row() : -1;
 }
 
 /*****************************************************************************/
@@ -882,10 +914,12 @@ void Window::updateSessionButtons() {
 		m_start->hide();
 		m_stop->show();
 		m_cancel->setEnabled(true);
+		m_bill->setEnabled(false);
 	} else {
 		m_stop->hide();
 		m_start->show();
 		m_cancel->setEnabled(false);
+		m_bill->setEnabled(m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex()).isValid());
 	}
 }
 

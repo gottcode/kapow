@@ -58,6 +58,7 @@ private slots:
 	void start();
 	void stop();
 	void cancel();
+	void bill();
 	void taskChanged(const QString& task);
 	void taskStart();
 	void updateTime();
@@ -81,6 +82,7 @@ private slots:
 	void projectTreeResized();
 
 private:
+	int currentRow();
 	void loadData();
 	void addProject(const QString& name);
 	void removeProject(QTreeWidgetItem* item);
@@ -101,6 +103,7 @@ private:
 	QPushButton* m_start;
 	QPushButton* m_stop;
 	QPushButton* m_cancel;
+	QPushButton* m_bill;
 	QComboBox* m_filter;
 	QTreeView* m_details;
 	bool m_decimals;
