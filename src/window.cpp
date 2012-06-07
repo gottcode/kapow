@@ -464,7 +464,6 @@ void Window::bill() {
 	if (current == -1) {
 		return;
 	}
-	m_active_model->setBilled(current, true);
 	Report report(m_active_model, current, &m_contact, &m_rates, this);
 	report.exec();
 }

@@ -142,9 +142,17 @@ Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWi
 	tabs->setCurrentIndex(1);
 
 	// Create dialog actions
-	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Reset, Qt::Horizontal, this);
+	QDialogButtonBox* buttons = new QDialogButtonBox(this);
+	QPushButton* reset_button = buttons->addButton(QDialogButtonBox::Reset);
 	QPushButton* export_button = buttons->addButton(tr("Export"), QDialogButtonBox::ActionRole);
 	QPushButton* print_button = buttons->addButton(tr("Print"), QDialogButtonBox::ActionRole);
+	if (m_data->isBilled(m_current_row)) {
+		buttons->addButton(QDialogButtonBox::Close);
+	} else {
+		buttons->addButton(QDialogButtonBox::Cancel);
+		QPushButton* ok_button = buttons->addButton(QDialogButtonBox::Ok);
+		connect(ok_button, SIGNAL(clicked()), this, SLOT(bill()));
+	}
 #if (QT_VERSION >= QT_VERSION_CHECK(4, 6, 0))
 	if (style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
 		export_button->setIcon(QIcon::fromTheme("document-export"));
@@ -152,7 +160,7 @@ Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWi
 	}
 #endif
 	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
-	connect(buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()), this, SLOT(reset()));
+	connect(reset_button, SIGNAL(clicked()), this, SLOT(reset()));
 	connect(export_button, SIGNAL(clicked()), this, SLOT(save()));
 	connect(print_button, SIGNAL(clicked()), this, SLOT(print()));
 
@@ -309,29 +317,45 @@ void Report::save() {
 
 /*****************************************************************************/
 
+void Report::bill() {
+	m_data->setBilled(m_current_row, true);
+	QDialog::accept();
+}
+
+/*****************************************************************************/
+
 void Report::findGroups() {
 	int current_group = -1;
 
 	int count = m_data->rowCount();
 	QList<int> billed = m_data->billedRows();
-	if (!billed.contains(count - 2)) {
-		billed.append(count - 2);
-	}
 
 	QList<QVariant> rows;
-	for (int i = 0; i < count; ++i) {
-		rows.append(i);
-		if (billed.contains(i)) {
-			QString from = m_data->data(m_data->index(rows.first().toInt(), 0)).toString();
-			QString to = m_data->data(m_data->index(rows.last().toInt(), 0)).toString();
-			m_groups->insertItem(0, QString("%1 - %2").arg(from).arg(to), rows);
-			if ((i >= m_current_row) && (m_current_row >= rows.first().toInt())) {
-				current_group = m_groups->count();
+	if (m_data->isBilled(m_current_row)) {
+		// Find groups of billed sessions
+		for (int i = 0; i < count; ++i) {
+			rows.append(i);
+			if (billed.contains(i)) {
+				QString from = m_data->data(m_data->index(rows.first().toInt(), 0)).toString();
+				QString to = m_data->data(m_data->index(rows.last().toInt(), 0)).toString();
+				m_groups->insertItem(0, QString("%1 - %2").arg(from).arg(to), rows);
+				if ((i >= m_current_row) && (m_current_row >= rows.first().toInt())) {
+					current_group = m_groups->count();
+				}
+				rows.clear();
 			}
-			rows.clear();
 		}
+	} else {
+		// Find unbilled data through current row
+		for (int i = billed.last() + 1; i <= m_current_row; ++i) {
+			rows.append(i);
+		}
+		m_groups->addItem(QString(), rows);
+		m_groups->hide();
+		rows.clear();
 	}
 
+	// Select group of sessions with current row
 	if (current_group != -1) {
 		current_group = m_groups->count() - current_group;
 	} else {

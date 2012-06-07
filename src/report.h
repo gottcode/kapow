@@ -48,6 +48,7 @@ private slots:
 	void print();
 	void reset();
 	void save();
+	void bill();
 
 private:
 	void findGroups();
