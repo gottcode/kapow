@@ -19,6 +19,8 @@
 
 #include "session_delegate.h"
 
+#include <QDateEdit>
+#include <QLineEdit>
 #include <QPainter>
 
 //-----------------------------------------------------------------------------
@@ -26,6 +28,7 @@
 SessionDelegate::SessionDelegate(QObject* parent) :
 	QStyledItemDelegate(parent)
 {
+	m_height = qMax(QDateEdit().sizeHint().height(), QLineEdit().sizeHint().height());
 }
 
 //-----------------------------------------------------------------------------
@@ -80,6 +83,8 @@ QSize SessionDelegate::sizeHint(const QStyleOptionViewItem& option, const QModel
 	QSize size = QStyledItemDelegate::sizeHint(option, index);
 	if (index.parent().isValid() || (index.model()->rowCount() - 1) == index.row()) {
 		size.setHeight(size.height() + 3);
+	} else {
+		size.setHeight(m_height);
 	}
 	return size;
 }

@@ -69,6 +69,7 @@ namespace {
 	public:
 		Delegate(QObject* parent = 0)
 		: QStyledItemDelegate(parent) {
+			m_height = QLineEdit().sizeHint().height();
 		}
 
 		QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const {
@@ -78,6 +79,16 @@ namespace {
 				return 0;
 			}
 		}
+
+		QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
+		{
+			QSize size = QStyledItemDelegate::sizeHint(option, index);
+			size.setHeight(m_height);
+			return size;
+		}
+
+	private:
+		int m_height;
 	};
 }
 
