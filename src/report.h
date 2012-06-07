@@ -38,8 +38,7 @@ public:
 	Report(DataModel* data, int current, Contact* contact, Rates* rates, QWidget* parent = 0);
 
 protected:
-	void hideEvent(QHideEvent* event);
-	void resizeEvent(QResizeEvent* event);
+	virtual void hideEvent(QHideEvent* event);
 
 private slots:
 	void currencyChanged();

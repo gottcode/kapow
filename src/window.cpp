@@ -303,8 +303,6 @@ Window::Window(const QString& filename, QWidget* parent)
 	restoreGeometry(settings.value("WindowGeometry").toByteArray());
 	m_contents->restoreState(settings.value("SplitterSizes").toByteArray());
 	show();
-	setAttribute(Qt::WA_Resized, false);
-	connect(m_contents, SIGNAL(splitterMoved(int,int)), this, SLOT(projectTreeResized()));
 
 	// Load details of all projects
 	loadData();
@@ -347,9 +345,9 @@ bool Window::isValid() const {
 /*****************************************************************************/
 
 void Window::closeEvent(QCloseEvent* event) {
-	if (testAttribute(Qt::WA_Moved) || testAttribute(Qt::WA_Resized)) {
-		QSettings().setValue("WindowGeometry", saveGeometry());
-	}
+	QSettings settings;
+	settings.setValue("WindowGeometry", saveGeometry());
+	settings.setValue("SplitterSizes", m_contents->saveState());
 
 	if (m_active_timers) {
 		// Show window
@@ -380,15 +378,6 @@ void Window::closeEvent(QCloseEvent* event) {
 
 	save();
 	event->accept();
-}
-
-/*****************************************************************************/
-
-void Window::resizeEvent(QResizeEvent* event) {
-	if (isVisible()) {
-		setAttribute(Qt::WA_Resized, true);
-	}
-	QMainWindow::resizeEvent(event);
 }
 
 /*****************************************************************************/
@@ -755,12 +744,6 @@ void Window::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
 			activateWindow();
 		}
 	}
-}
-
-/*****************************************************************************/
-
-void Window::projectTreeResized() {
-	QSettings().setValue("SplitterSizes", m_contents->saveState());
 }
 
 /*****************************************************************************/

@@ -174,9 +174,6 @@ Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWi
 	// Load data
 	findGroups();
 	reset();
-
-	show();
-	setAttribute(Qt::WA_Resized, false);
 }
 
 /*****************************************************************************/
@@ -195,20 +192,10 @@ void Report::hideEvent(QHideEvent* event) {
 	m_rates->setCurrencySymbol(m_currency_symbol->text().simplified());
 	m_rates->setPrependSymbol(m_prepend_symbol->isChecked());
 
-	if (testAttribute(Qt::WA_Resized)) {
-		QSettings().setValue("ReportDialog/Size", size());
-	}
+	QSettings settings;
+	settings.setValue("ReportDialog/Size", size());
 
 	QDialog::hideEvent(event);
-}
-
-/*****************************************************************************/
-
-void Report::resizeEvent(QResizeEvent* event) {
-	if (isVisible()) {
-		setAttribute(Qt::WA_Resized, true);
-	}
-	QDialog::resizeEvent(event);
 }
 
 /*****************************************************************************/

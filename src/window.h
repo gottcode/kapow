@@ -47,8 +47,7 @@ public:
 	bool isValid() const;
 
 protected:
-	void closeEvent(QCloseEvent* event);
-	void resizeEvent(QResizeEvent* event);
+	virtual void closeEvent(QCloseEvent* event);
 
 private slots:
 	void about();
@@ -79,7 +78,6 @@ private slots:
 	void toggleColumnHidden(int column);
 	void save();
 	void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
-	void projectTreeResized();
 
 private:
 	int currentRow();
