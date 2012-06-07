@@ -35,27 +35,28 @@ SessionDelegate::SessionDelegate(QObject* parent) :
 
 void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
+	QStyleOptionViewItemV4 opt = option;
+	initStyleOption(&opt, index);
+
 	if (!index.parent().isValid()) {
 		if ((index.model()->rowCount() - 1) > index.row()) {
-			QStyledItemDelegate::paint(painter, option, index);
+			// Set up drawing of billed rows
+			if (index.data(Qt::UserRole).toBool()) {
+				opt.palette.setBrush(QPalette::Text, opt.palette.brush(QPalette::Disabled, QPalette::Text));
+			}
 		} else {
 			// Set up drawing of unbilled totals row
-			QStyleOptionViewItemV4 opt = option;
-			initStyleOption(&opt, index);
 			opt.features |= QStyleOptionViewItemV2::Alternate;
 			opt.state &= ~QStyle::State_HasFocus;
-
-			// Draw text
-			QStyledItemDelegate::paint(painter, opt, index);
 		}
+
+		// Draw text
+		QStyledItemDelegate::paint(painter, opt, index);
 	} else {
 		// Set up drawing of totals row
-		QStyleOptionViewItemV4 opt = option;
-		initStyleOption(&opt, index);
 		opt.features |= QStyleOptionViewItemV2::Alternate;
-		opt.palette.setColor(QPalette::Active, QPalette::AlternateBase, opt.palette.color(QPalette::Disabled, QPalette::AlternateBase));
-		opt.palette.setColor(QPalette::Inactive, QPalette::AlternateBase, opt.palette.color(QPalette::Disabled, QPalette::AlternateBase));
-		opt.palette.setColor(QPalette::Normal, QPalette::AlternateBase, opt.palette.color(QPalette::Disabled, QPalette::AlternateBase));
+		opt.palette.setBrush(QPalette::Text, opt.palette.brush(QPalette::Disabled, QPalette::Text));
+		opt.palette.setBrush(QPalette::AlternateBase, opt.palette.brush(QPalette::Disabled, QPalette::AlternateBase));
 		opt.state &= ~QStyle::State_HasFocus;
 
 		// Draw text

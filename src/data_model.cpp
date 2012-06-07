@@ -314,12 +314,6 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 			result = font;
 			break;
 
-		case Qt::ForegroundRole:
-			if (index.parent().isValid()) {
-				result = QApplication::palette().color(QPalette::Disabled, QPalette::Text);
-			}
-			break;
-
 		default:
 			break;
 		}
@@ -395,12 +389,6 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 		}
 		break;
 
-	case Qt::ForegroundRole:
-		if (isBilled(index.row())) {
-			result = QApplication::palette().color(QPalette::Disabled, QPalette::Text);
-		}
-		break;
-
 	case Qt::CheckStateRole:
 		if (index.column() == 9) {
 			result = m_data.at(index.row()).isBilled() ? Qt::Checked : Qt::Unchecked;
@@ -425,6 +413,10 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 		default:
 			break;
 		}
+		break;
+
+	case Qt::UserRole:
+		result = isBilled(index.row());
 		break;
 
 	default:
