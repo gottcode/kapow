@@ -319,7 +319,7 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_details->header()->setStretchLastSection(false);
 
 	// Restore hidden columns
-	QStringList hidden = QSettings().value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8").toStringList();
+	QStringList hidden = QSettings().value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8" << "9").toStringList();
 	foreach (const QString& column, hidden) {
 		int i = column.toInt();
 		m_details->setColumnHidden(i, true);
