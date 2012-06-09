@@ -44,7 +44,8 @@ QString LocaleDialog::m_appname;
 LocaleDialog::LocaleDialog(QWidget* parent)
 	: QDialog(parent, Qt::WindowTitleHint | Qt::MSWindowsFixedSizeDialogHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint)
 {
-	setWindowTitle(QCoreApplication::applicationName());
+	QString title = parent ? parent->window()->windowTitle() : QString();
+	setWindowTitle(!title.isEmpty() ? title : QCoreApplication::applicationName());
 
 	QLabel* text = new QLabel(tr("Select application language:"), this);
 
@@ -138,6 +139,9 @@ QString LocaleDialog::languageName(const QString& language)
 		}
 	} else {
 		name = locale.nativeLanguageName();
+	}
+	if (locale.textDirection() == Qt::RightToLeft) {
+		name.prepend(QChar(0x202b));
 	}
 #else
 	if (lang_code.length() > 2) {
