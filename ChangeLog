@@ -1,4 +1,5 @@
 2012-06-13 Graeme Gott <graeme@gottcode.org>
+	* Rename report dialog depending on what it is showing.
 	* Force time data to disk.
 
 2012-06-07 Graeme Gott <graeme@gottcode.org>

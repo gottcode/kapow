@@ -49,8 +49,6 @@
 Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWidget* parent) :
 	QDialog(parent), m_data(data), m_current_row(current), m_contact(contact), m_rates(rates)
 {
-	setWindowTitle(tr("Time Sheet Report"));
-
 	// Create contact information widgets
 	QWidget* contact_info_tab = new QWidget(this);
 	m_name = new QLineEdit(contact_info_tab);
@@ -319,6 +317,8 @@ void Report::findGroups() {
 
 	QList<QVariant> rows;
 	if (m_data->isBilled(m_current_row)) {
+		setWindowTitle(tr("View Reports"));
+
 		// Find groups of billed sessions
 		for (int i = 0; i < count; ++i) {
 			rows.append(i);
@@ -333,6 +333,8 @@ void Report::findGroups() {
 			}
 		}
 	} else {
+		setWindowTitle(tr("Create Report"));
+
 		// Find unbilled data through current row
 		for (int i = billed.last() + 1; i <= m_current_row; ++i) {
 			rows.append(i);
