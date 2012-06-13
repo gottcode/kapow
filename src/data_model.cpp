@@ -467,7 +467,7 @@ QVariant DataModel::headerData(int section, Qt::Orientation orientation, int rol
 		case 8:
 			return tr("Total");
 		case 9:
-			return tr("Billed");
+			return tr("Report");
 		default:
 			return QVariant();
 		}
