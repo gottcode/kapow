@@ -62,6 +62,15 @@
 #include <QVBoxLayout>
 #include <QXmlStreamReader>
 
+#if defined(Q_OS_MAC)
+#include <sys/fcntl.h>
+#elif defined(Q_OS_UNIX)
+#include <unistd.h>
+#elif defined(Q_OS_WIN)
+#include <windows.h>
+#include <io.h>
+#endif
+
 /*****************************************************************************/
 
 namespace {
@@ -707,12 +716,14 @@ void Window::save() {
 		return;
 	}
 
-	QFile file(m_filename);
+	// Open temporary file for writing
+	QFile file(m_filename + ".tmp");
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
 		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
 		return;
 	}
 
+	// Write time data
 	QXmlStreamWriter xml(&file);
 	xml.setAutoFormatting(true);
 	xml.writeStartDocument();
@@ -730,6 +741,29 @@ void Window::save() {
 	}
 
 	xml.writeEndDocument();
+
+	// Force time data to disk
+	bool saved = true;
+	if (file.isOpen()) {
+#if defined(Q_OS_MAC)
+		saved &= (fcntl(file.handle(), F_FULLFSYNC, NULL) == 0);
+#elif defined(Q_OS_UNIX)
+		saved &= (fsync(file.handle()) == 0);
+#elif defined(Q_OS_WIN)
+		saved &= (FlushFileBuffers(reinterpret_cast<HANDLE>(_get_osfhandle(file.handle()))) != 0);
+#endif
+		saved &= (file.error() == QFile::NoError);
+		file.close();
+	}
+
+	// Replace data file with temporary file
+	if (saved) {
+		saved &= QFile::remove(m_filename);
+		saved &= QFile::rename(m_filename + ".tmp", m_filename);
+	}
+	if (!saved) {
+		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
+	}
 }
 
 /*****************************************************************************/

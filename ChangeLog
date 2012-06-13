@@ -1,3 +1,6 @@
+2012-06-13 Graeme Gott <graeme@gottcode.org>
+	* Force time data to disk.
+
 2012-06-07 Graeme Gott <graeme@gottcode.org>
 	* Allow canceling billing current session.
 
