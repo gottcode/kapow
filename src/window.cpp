@@ -147,16 +147,9 @@ Window::Window(const QString& filename, QWidget* parent)
 	connect(m_cancel, SIGNAL(clicked()), this, SLOT(cancel()));
 	button_width = qMax(m_cancel->sizeHint().width(), button_width);
 
-	m_bill = new QPushButton(tr("Bill..."), contents);
-	m_bill->setAutoDefault(true);
-	m_bill->setEnabled(false);
-	connect(m_bill, SIGNAL(clicked()), this, SLOT(bill()));
-	button_width = qMax(m_bill->sizeHint().width(), button_width);
-
 	m_start->setMinimumWidth(button_width);
 	m_stop->setMinimumWidth(button_width);
 	m_cancel->setMinimumWidth(button_width);
-	m_bill->setMinimumWidth(button_width);
 
 	// Load settings
 	QSettings settings;
@@ -169,7 +162,9 @@ Window::Window(const QString& filename, QWidget* parent)
 	m_remove_project = menu->addAction(tr("&Remove"), this, SLOT(removeProject()));
 	m_remove_project->setEnabled(false);
 	menu->addSeparator();
-	menu->addAction(tr("R&eports"), this, SLOT(showReport()));
+	m_create_report = menu->addAction(tr("&Create Report..."), this, SLOT(createReport()));
+	m_create_report->setEnabled(false);
+	menu->addAction(tr("View R&eports"), this, SLOT(viewReports()));
 	menu->addSeparator();
 	menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
 
@@ -291,8 +286,6 @@ Window::Window(const QString& filename, QWidget* parent)
 	session_buttons->addWidget(m_stop);
 	session_buttons->addSpacing(6);
 	session_buttons->addWidget(m_cancel);
-	session_buttons->addSpacing(12);
-	session_buttons->addWidget(m_bill);
 	session_buttons->addStretch(1);
 
 	QVBoxLayout* session_layout = new QVBoxLayout;
@@ -468,17 +461,6 @@ void Window::cancel() {
 
 /*****************************************************************************/
 
-void Window::bill() {
-	int current = currentRow();
-	if (current == -1) {
-		return;
-	}
-	Report report(m_active_model, current, &m_contact, &m_rates, this);
-	report.exec();
-}
-
-/*****************************************************************************/
-
 void Window::taskChanged(const QString& task) {
 	m_active_project->setTask(task);
 }
@@ -545,7 +527,18 @@ void Window::removeProject() {
 
 /*****************************************************************************/
 
-void Window::showReport() {
+void Window::createReport() {
+	int current = currentRow();
+	if (current == -1) {
+		return;
+	}
+	Report report(m_active_model, current, &m_contact, &m_rates, this);
+	report.exec();
+}
+
+/*****************************************************************************/
+
+void Window::viewReports() {
 	int current = currentRow();
 	if ((current == (m_active_model->rowCount() - 1)) || !m_active_model->isBilled(current)) {
 		current = -1;
@@ -622,7 +615,7 @@ void Window::sessionPressed(const QModelIndex& index) {
 	bool enabled = session.isValid();
 	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
 	m_remove_session->setEnabled(enabled);
-	m_bill->setEnabled(enabled);
+	m_create_report->setEnabled(enabled);
 }
 
 /*****************************************************************************/
@@ -941,12 +934,12 @@ void Window::updateSessionButtons() {
 		m_start->hide();
 		m_stop->show();
 		m_cancel->setEnabled(true);
-		m_bill->setEnabled(false);
+		m_create_report->setEnabled(false);
 	} else {
 		m_stop->hide();
 		m_start->show();
 		m_cancel->setEnabled(false);
-		m_bill->setEnabled(m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex()).isValid());
+		m_create_report->setEnabled(m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex()).isValid());
 	}
 }
 

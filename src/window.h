@@ -57,14 +57,14 @@ private slots:
 	void start();
 	void stop();
 	void cancel();
-	void bill();
 	void taskChanged(const QString& task);
 	void taskStart();
 	void updateTime();
 	void addProject();
 	void editProject();
 	void removeProject();
-	void showReport();
+	void createReport();
+	void viewReports();
 	void projectActivated(QTreeWidgetItem* item);
 	void projectChanged(QTreeWidgetItem* item, int column);
 	void filterChanged(int index);
@@ -101,7 +101,6 @@ private:
 	QPushButton* m_start;
 	QPushButton* m_stop;
 	QPushButton* m_cancel;
-	QPushButton* m_bill;
 	QComboBox* m_filter;
 	QTreeView* m_details;
 	bool m_decimals;
@@ -118,6 +117,7 @@ private:
 
 	QAction* m_add_project;
 	QAction* m_remove_project;
+	QAction* m_create_report;
 	QAction* m_add_session;
 	QAction* m_edit_session;
 	QAction* m_remove_session;

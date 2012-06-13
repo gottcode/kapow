@@ -1,4 +1,5 @@
 2012-06-13 Graeme Gott <graeme@gottcode.org>
+	* Replace bill button with menu item.
 	* Rename report dialog depending on what it is showing.
 	* Force time data to disk.
 
