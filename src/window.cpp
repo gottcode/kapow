@@ -158,8 +158,8 @@ Window::Window(const QString& filename, QWidget* parent)
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Project"));
-	m_add_project = menu->addAction(tr("&Add"), this, SLOT(addProject()));
-	m_remove_project = menu->addAction(tr("&Remove"), this, SLOT(removeProject()));
+	m_add_project = menu->addAction(tr("&Add"), this, SLOT(addProject()), tr("Ctrl+Shift+N"));
+	m_remove_project = menu->addAction(tr("&Remove"), this, SLOT(removeProject()), tr("Ctrl+Shift+Delete"));
 	m_remove_project->setEnabled(false);
 	menu->addSeparator();
 	m_create_report = menu->addAction(tr("&Create Report..."), this, SLOT(createReport()));
@@ -169,10 +169,10 @@ Window::Window(const QString& filename, QWidget* parent)
 	menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
 
 	menu = menuBar()->addMenu(tr("&Session"));
-	m_add_session = menu->addAction(tr("&Add"), this, SLOT(addSession()));
+	m_add_session = menu->addAction(tr("&Add"), this, SLOT(addSession()), QKeySequence::New);
 	m_edit_session = menu->addAction(tr("&Edit"), this, SLOT(editSession()));
 	m_edit_session->setEnabled(false);
-	m_remove_session = menu->addAction(tr("&Remove"), this, SLOT(removeSession()));
+	m_remove_session = menu->addAction(tr("&Remove"), this, SLOT(removeSession()), tr("Ctrl+Delete"));
 	m_remove_session->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
