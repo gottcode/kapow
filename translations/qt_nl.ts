@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="it" sourcelanguage="en">
+<TS version="2.0" language="nl" sourcelanguage="en">
 <context>
     <name>QDialogButtonBox</name>
     <message>
         <source>Close</source>
-        <translation>Chiudi</translation>
+        <translation>Sluiten</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation>&amp;Chiudi</translation>
+        <translation>&amp;Sluiten</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Ripristina</translation>
+        <translation type="unfinished"></translation>
     </message>
-    <message>
+     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;Ripristina</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;Ok</translation>
+        <translation>&amp;OK</translation>
     </message>
-    <message>
+   <message>
         <source>Cancel</source>
-        <translation>Annulla</translation>
+        <translation>Annuleer</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>&amp;Annulla</translation>
+        <translation>&amp;Annuleer</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Si</translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <source>&amp;Yes</source>
-        <translation>&amp;Si</translation>
+        <translation>&amp;Ja</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>No</translation>
+        <translation>Nee</translation>
     </message>
     <message>
         <source>&amp;No</source>
-        <translation>&amp;No</translation>
+        <translation>&amp;Nee</translation>
     </message>
 </context>
 </TS>
