@@ -8,7 +8,15 @@
         <translation>Sluiten</translation>
     </message>
     <message>
+        <source>&amp;Close</source>
+        <translation>&amp;Sluiten</translation>
+    </message>
+    <message>
         <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+     <message>
+        <source>&amp;Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -16,20 +24,32 @@
         <translation>OK</translation>
     </message>
     <message>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+   <message>
         <source>Cancel</source>
         <translation>Annuleer</translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Annuleer</translation>
     </message>
     <message>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
+        <source>&amp;Yes</source>
+        <translation>&amp;Ja</translation>
+    </message>
+    <message>
         <source>No</source>
         <translation>Nee</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Sla op</translation>
+        <source>&amp;No</source>
+        <translation>&amp;Nee</translation>
     </message>
 </context>
 </TS>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en" sourcelanguage="en">
+<TS version="2.0" language="nl" sourcelanguage="en">
 <context>
     <name>DataModel</name>
     <message>
@@ -68,10 +68,6 @@
         <location filename="../src/data_model.cpp" line="470"/>
         <source>Report</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Billed</source>
-        <translation type="obsolete">Betaald</translation>
     </message>
 </context>
 <context>
@@ -229,10 +225,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save Report</source>
-        <translation type="obsolete">Rapport Opslaan</translation>
-    </message>
-    <message>
         <location filename="../src/report.cpp" line="391"/>
         <source>Phone: %1</source>
         <translation>Telefoon: %1</translation>
@@ -346,14 +338,20 @@
         <translation>&amp;Toevoegen</translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="161"/>
+        <source>Ctrl+Shift+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="162"/>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Remove</source>
         <translation>&amp;Verwijderen</translation>
     </message>
     <message>
-        <source>&amp;Report</source>
-        <translation type="obsolete">&amp;Rapport</translation>
+        <location filename="../src/window.cpp" line="162"/>
+        <source>Ctrl+Shift+Delete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
@@ -374,6 +372,11 @@
         <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bewerk</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="175"/>
+        <source>Ctrl+Delete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="178"/>
@@ -474,16 +477,6 @@
         <translation>Naamloos</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="165"/>
-        <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="167"/>
-        <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="715"/>
         <location filename="../src/window.cpp" line="758"/>
         <location filename="../src/window.cpp" line="801"/>
@@ -501,21 +494,9 @@
         <translation>Over</translation>
     </message>
     <message>
-        <source>Kapow Punch Clock %1</source>
-        <translation type="obsolete">Kapow Stempel klok %1</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="390"/>
         <source>A program to help track spent time</source>
         <translation>Een programma dat de tijd bij houdt</translation>
-    </message>
-    <message>
-        <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
-        <translation type="obsolete">Auteursrecht &amp;copy; 2008 2012 Graeme Gott</translation>
-    </message>
-    <message>
-        <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="obsolete">Uitgebracht onder het  &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; licentie</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="364"/>
@@ -524,6 +505,16 @@
         <location filename="../src/window.cpp" line="685"/>
         <source>Question</source>
         <translation>Vraag</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="165"/>
+        <source>&amp;Create Report...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="167"/>
+        <source>View R&amp;eports</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="452"/>

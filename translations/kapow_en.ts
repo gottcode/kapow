@@ -338,9 +338,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="161"/>
+        <source>Ctrl+Shift+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="162"/>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="162"/>
+        <source>Ctrl+Shift+Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -361,6 +371,11 @@
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="175"/>
+        <source>Ctrl+Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

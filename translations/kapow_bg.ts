@@ -69,10 +69,6 @@
         <source>Report</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Billed</source>
-        <translation type="obsolete">Платена</translation>
-    </message>
 </context>
 <context>
     <name>LocaleDialog</name>
@@ -342,14 +338,20 @@
         <translation>&amp;Добавяне</translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="161"/>
+        <source>Ctrl+Shift+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="162"/>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Remove</source>
         <translation>&amp;Премахване</translation>
     </message>
     <message>
-        <source>&amp;Report</source>
-        <translation type="obsolete">&amp;Доклад</translation>
+        <location filename="../src/window.cpp" line="162"/>
+        <source>Ctrl+Shift+Delete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
@@ -370,6 +372,11 @@
         <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Edit</source>
         <translation>&amp;Редактиране</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="175"/>
+        <source>Ctrl+Delete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="178"/>
@@ -449,7 +456,7 @@
     <message>
         <location filename="../src/window.cpp" line="391"/>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation type="unfinished">Авторски права &amp;copy; 2008-2011 Graeme Gott. {2008-%1 ?}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="392"/>
@@ -470,16 +477,6 @@
         <translation>Неозаглавена</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="165"/>
-        <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="167"/>
-        <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="715"/>
         <location filename="../src/window.cpp" line="758"/>
         <location filename="../src/window.cpp" line="801"/>
@@ -497,21 +494,9 @@
         <translation>Информация</translation>
     </message>
     <message>
-        <source>Kapow Punch Clock %1</source>
-        <translation type="obsolete">Kapow Punch Clock %1</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="390"/>
         <source>A program to help track spent time</source>
         <translation>Програма за отчитане на изразходваното време</translation>
-    </message>
-    <message>
-        <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
-        <translation type="obsolete">Авторски права &amp;copy; 2008-2011 Graeme Gott.</translation>
-    </message>
-    <message>
-        <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="obsolete">Разпространява се под &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; лиценз.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="364"/>
@@ -520,6 +505,16 @@
         <location filename="../src/window.cpp" line="685"/>
         <source>Question</source>
         <translation>Въпрос</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="165"/>
+        <source>&amp;Create Report...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="167"/>
+        <source>View R&amp;eports</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="452"/>

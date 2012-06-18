@@ -69,10 +69,6 @@
         <source>Report</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Billed</source>
-        <translation type="obsolete">Odečet</translation>
-    </message>
 </context>
 <context>
     <name>LocaleDialog</name>
@@ -102,7 +98,7 @@
     <message>
         <location filename="../src/rates.cpp" line="35"/>
         <source>$</source>
-        <translation type="unfinished"></translation>
+        <translation>$</translation>
     </message>
 </context>
 <context>
@@ -201,17 +197,17 @@
     <message>
         <location filename="../src/report.cpp" line="272"/>
         <source>Web Page (*.html *.htm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stránka (*.html *.htm)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="273"/>
         <source>iCalendar (*.ics)</source>
-        <translation type="unfinished"></translation>
+        <translation>iCalendar (*.ics)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="274"/>
         <source>Outlook CSV (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Outlook CSV (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="285"/>
@@ -343,14 +339,20 @@
         <translation>&amp;Přidat</translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="161"/>
+        <source>Ctrl+Shift+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="162"/>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Remove</source>
         <translation>&amp;Odstranit</translation>
     </message>
     <message>
-        <source>&amp;Report</source>
-        <translation type="obsolete">&amp;Zpráva</translation>
+        <location filename="../src/window.cpp" line="162"/>
+        <source>Ctrl+Shift+Delete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
@@ -371,6 +373,11 @@
         <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Edit</source>
         <translation>&amp;Upravit</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="175"/>
+        <source>Ctrl+Delete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="178"/>
@@ -450,18 +457,18 @@
     <message>
         <location filename="../src/window.cpp" line="391"/>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation type="unfinished">Autorské právo &amp;amp;copy; 2008-2011 Graeme Gott. {2008-%1 ?}</translation>
+        <translation>Autorské právo &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="392"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>Vydáno pod licencí &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="808"/>
         <location filename="../src/window.cpp" line="865"/>
         <source>Unable to read time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze přečíst data času.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="555"/>
@@ -471,21 +478,11 @@
         <translation>Bez názvu</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="165"/>
-        <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="167"/>
-        <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="715"/>
         <location filename="../src/window.cpp" line="758"/>
         <location filename="../src/window.cpp" line="801"/>
         <source>Unable to write time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zapsat data času.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="364"/>
@@ -498,21 +495,9 @@
         <translation>O programu</translation>
     </message>
     <message>
-        <source>Kapow Punch Clock %1</source>
-        <translation type="obsolete">Evidence pracovní doby Kapow %1</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="390"/>
         <source>A program to help track spent time</source>
         <translation>Program pro evidenci pracovní doby na počítači, který vám pomůže sledovat vámi strávený čas.</translation>
-    </message>
-    <message>
-        <source>Copyright &amp;copy; 2008-2011 Graeme Gott</source>
-        <translation type="obsolete">Autorské právo &amp;amp;copy; 2008-2011 Graeme Gott.</translation>
-    </message>
-    <message>
-        <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="obsolete">Zveřejněno pod povolením &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="364"/>
@@ -521,6 +506,16 @@
         <location filename="../src/window.cpp" line="685"/>
         <source>Question</source>
         <translation>Otázka</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="165"/>
+        <source>&amp;Create Report...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="167"/>
+        <source>View R&amp;eports</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="452"/>
@@ -552,12 +547,12 @@
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>Unable to create time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze vytvořit umístění pro data času.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="121"/>
         <source>Unable to move time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze přesunout umístění pro data času.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="504"/>
