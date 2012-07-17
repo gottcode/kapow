@@ -432,7 +432,9 @@ Qt::ItemFlags DataModel::flags(const QModelIndex& index) const {
 	if (index.parent().isValid() || (index.row() == m_data.count())) {
 		result = Qt::ItemIsEnabled;
 	} else if (index.column() == 9) {
-		result |= Qt::ItemIsUserCheckable;
+		if (!isBilled(index.row()) || (index.row() == m_billed.last())) {
+			result |= Qt::ItemIsUserCheckable;
+		}
 	} else if (!isBilled(index.row()) && (index.column() <= 3)) {
 		result |= Qt::ItemIsEditable;
 	}
