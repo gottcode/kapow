@@ -173,7 +173,8 @@ Window::Window(const QString& filename, QWidget* parent) :
 	menu->addSeparator();
 	m_create_report = menu->addAction(tr("&Create Report..."), this, SLOT(createReport()));
 	m_create_report->setEnabled(false);
-	menu->addAction(tr("View R&eports"), this, SLOT(viewReports()));
+	m_view_reports = menu->addAction(tr("View R&eports"), this, SLOT(viewReports()));
+	m_view_reports->setEnabled(false);
 	menu->addSeparator();
 	menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
 
@@ -598,6 +599,7 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	m_details->expandAll();
 	m_filter->setCurrentIndex(m_filter->findData(m_active_project->filterModel()->type()));
 	m_remove_project->setEnabled(!project->isActive());
+	m_view_reports->setEnabled(m_active_model->isBilled(0));
 	m_edit_session->setEnabled(false);
 	m_remove_session->setEnabled(false);
 
@@ -632,6 +634,7 @@ void Window::filterChanged(int index) {
 
 void Window::modelBilledStatusChanged() {
 	sessionPressed(m_details->currentIndex());
+	m_view_reports->setEnabled(m_active_model->isBilled(0));
 	m_details->expandAll();
 }
 

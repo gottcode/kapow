@@ -121,6 +121,7 @@ private:
 	QAction* m_add_project;
 	QAction* m_remove_project;
 	QAction* m_create_report;
+	QAction* m_view_reports;
 	QAction* m_add_session;
 	QAction* m_edit_session;
 	QAction* m_remove_session;
