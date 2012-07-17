@@ -213,7 +213,7 @@ void DataModel::toXml(QXmlStreamWriter& xml) const {
 int DataModel::rowCount(const QModelIndex& parent) const {
 	if (!parent.isValid()) {
 		return m_data.count() + 1;
-	} else if (m_billed.contains(parent.row())) {
+	} else if ((parent.internalId() == -1) && m_billed.contains(parent.row())) {
 		return 1;
 	} else {
 		return 0;

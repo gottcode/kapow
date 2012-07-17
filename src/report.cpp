@@ -336,7 +336,7 @@ void Report::findGroups() {
 		setWindowTitle(tr("Create Report"));
 
 		// Find unbilled data through current row
-		for (int i = billed.last() + 1; i <= m_current_row; ++i) {
+		for (int i = !billed.isEmpty() ? (billed.last() + 1) : 0; i <= m_current_row; ++i) {
 			rows.append(i);
 		}
 		m_groups->addItem(QString(), rows);
