@@ -1,4 +1,5 @@
 2012-07-17 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Didn't take filter into for creating reports.
 	* FIXED: Crash when creating report on first row.
 	* Only enable view reports action when there are reports.
 	* Don't hide window when if blocked.

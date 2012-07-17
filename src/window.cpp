@@ -626,6 +626,7 @@ void Window::projectChanged(QTreeWidgetItem* item, int column) {
 
 void Window::filterChanged(int index) {
 	m_active_project->filterModel()->setType(m_filter->itemData(index).toInt());
+	m_create_report->setEnabled(m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex()).isValid());
 	m_details->expandAll();
 	m_details->scrollToBottom();
 }
