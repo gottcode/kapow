@@ -111,8 +111,7 @@ Window::Window(const QString& filename, QWidget* parent) :
 	m_decimals(true),
 	m_inline(true),
 	m_active_project(0),
-	m_active_model(0),
-	m_active_timers(0)
+	m_active_model(0)
 {
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
@@ -372,7 +371,7 @@ void Window::closeEvent(QCloseEvent* event) {
 	settings.setValue("WindowGeometry", saveGeometry());
 	settings.setValue("SplitterSizes", m_contents->saveState());
 
-	if (m_active_timers) {
+	if (!m_active_timers.isEmpty()) {
 		// Show window
 		bool visible = isVisible();
 		if (!visible) {
@@ -457,7 +456,7 @@ void Window::setLocaleClicked() {
 
 void Window::start() {
 	m_active_project->start(m_current_time);
-	m_active_timers++;
+	m_active_timers += m_active_project;
 	m_remove_project->setEnabled(false);
 	updateDetails();
 	m_stop->setFocus();
@@ -467,7 +466,7 @@ void Window::start() {
 
 void Window::stop() {
 	m_active_project->stop(m_current_time);
-	m_active_timers--;
+	m_active_timers.removeAll(m_active_project);
 	m_remove_project->setEnabled(true);
 	updateDetails();
 	m_task->clear();
@@ -479,7 +478,7 @@ void Window::stop() {
 void Window::cancel() {
 	if (QMessageBox::question(this, tr("Question"), tr("Cancel this session?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_active_project->stop();
-		m_active_timers--;
+		m_active_timers.removeAll(m_active_project);
 		m_remove_project->setEnabled(true);
 		updateDetails();
 		m_task->clear();
@@ -514,6 +513,9 @@ void Window::updateTime() {
 	}
 	if (m_active_project) {
 		updateDisplay();
+	}
+	if (m_active_timers.count() == 1) {
+		m_tray_icon->setToolTip(m_active_timers.first()->time());
 	}
 }
 
@@ -977,8 +979,17 @@ void Window::updateSessionButtons() {
 /*****************************************************************************/
 
 void Window::updateTrayIcon() {
-	m_tray_icon->setIcon(m_active_timers ? m_active_icon : m_inactive_icon);
-	m_tray_icon->setToolTip(tr("%n timer(s) running", "", m_active_timers));
+	int count = m_active_timers.count();
+	if (count == 1) {
+		m_tray_icon->setIcon(m_active_icon);
+		m_tray_icon->setToolTip(m_active_timers.first()->time());
+	} else if (count == 0) {
+		m_tray_icon->setIcon(m_inactive_icon);
+		m_tray_icon->setToolTip(tr("Kapow Punch Clock"));
+	} else {
+		m_tray_icon->setIcon(m_active_icon);
+		m_tray_icon->setToolTip(tr("%n timer(s) running", "", count));
+	}
 }
 
 /*****************************************************************************/

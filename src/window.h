@@ -116,7 +116,7 @@ private:
 
 	Project* m_active_project;
 	DataModel* m_active_model;
-	int m_active_timers;
+	QList<Project*> m_active_timers;
 
 	QAction* m_add_project;
 	QAction* m_remove_project;
