@@ -103,8 +103,17 @@ namespace {
 
 /*****************************************************************************/
 
-Window::Window(const QString& filename, QWidget* parent)
-: QMainWindow(parent), m_filename(filename), m_valid(true), m_decimals(true), m_inline(true), m_active_project(0), m_active_model(0), m_active_timers(0) {
+Window::Window(const QString& filename, QWidget* parent) :
+	QMainWindow(parent),
+	m_filename(filename),
+	m_valid(true),
+	m_blocked(false),
+	m_decimals(true),
+	m_inline(true),
+	m_active_project(0),
+	m_active_model(0),
+	m_active_timers(0)
+{
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
 
@@ -342,6 +351,17 @@ Window::Window(const QString& filename, QWidget* parent)
 
 bool Window::isValid() const {
 	return m_valid;
+}
+
+/*****************************************************************************/
+
+bool Window::event(QEvent* event) {
+	if (event->type() == QEvent::WindowBlocked) {
+		m_blocked = true;
+	} else if (event->type() == QEvent::WindowUnblocked) {
+		m_blocked = false;
+	}
+	return QMainWindow::event(event);
 }
 
 /*****************************************************************************/
@@ -770,7 +790,7 @@ void Window::save() {
 
 void Window::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
 	if (reason == QSystemTrayIcon::Trigger) {
-		if (isVisible()) {
+		if (isVisible() && !m_blocked) {
 			hide();
 		} else {
 			show();

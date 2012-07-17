@@ -47,6 +47,7 @@ public:
 	bool isValid() const;
 
 protected:
+	virtual bool event(QEvent* event);
 	virtual void closeEvent(QCloseEvent* event);
 	virtual void showEvent(QShowEvent* event);
 
@@ -94,6 +95,7 @@ private:
 private:
 	QString m_filename;
 	bool m_valid;
+	bool m_blocked;
 
 	QSplitter* m_contents;
 	QTreeWidget* m_projects;
