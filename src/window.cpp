@@ -384,6 +384,13 @@ void Window::closeEvent(QCloseEvent* event) {
 
 /*****************************************************************************/
 
+void Window::showEvent(QShowEvent* event) {
+	QMainWindow::showEvent(event);
+	m_task->setFocus();
+}
+
+/*****************************************************************************/
+
 void Window::about() {
 	QMessageBox::about(this, tr("About"), QString("<p align='center'><big><b>%1 %2</b></big><br/>%3<br/><small>%4</small><br/><small>%5</small></p>")
 		.arg(tr("Kapow Punch Clock"), QCoreApplication::applicationVersion(),

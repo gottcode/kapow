@@ -48,6 +48,7 @@ public:
 
 protected:
 	virtual void closeEvent(QCloseEvent* event);
+	virtual void showEvent(QShowEvent* event);
 
 private slots:
 	void about();
