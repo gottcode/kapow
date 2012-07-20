@@ -784,8 +784,12 @@ void Window::save() {
 
 	// Replace data file with temporary file
 	if (saved) {
-		saved &= QFile::remove(m_filename);
-		saved &= QFile::rename(m_filename + ".tmp", m_filename);
+		if (QFile::exists(m_filename)) {
+			saved &= QFile::remove(m_filename);
+		}
+		if (saved) {
+			saved &= QFile::rename(m_filename + ".tmp", m_filename);
+		}
 	}
 	if (!saved) {
 		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
