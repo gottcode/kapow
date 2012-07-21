@@ -1,4 +1,8 @@
 TEMPLATE = app
+greaterThan(QT_MAJOR_VERSION, 4) {
+	QT += widgets
+	QT += printsupport
+}
 CONFIG += warn_on
 macx {
 	CONFIG += x86_64

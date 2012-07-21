@@ -1,3 +1,6 @@
+2012-07-20 Graeme Gott <graeme@gottcode.org>
+	* Make it compile with Qt 5.
+
 2012-07-17 Graeme Gott <graeme@gottcode.org>
 	* Show time in tooltip if only one timer is running.
 	* Only allow unbilling last report.

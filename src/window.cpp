@@ -401,6 +401,10 @@ void Window::closeEvent(QCloseEvent* event) {
 
 	save();
 	event->accept();
+
+	// Remove tray icon so that app will quit
+	delete m_tray_icon;
+	m_tray_icon = 0;
 }
 
 /*****************************************************************************/
