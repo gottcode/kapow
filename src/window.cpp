@@ -243,6 +243,7 @@ Window::Window(const QString& filename, QWidget* parent) :
 	connect(m_filter, SIGNAL(activated(int)), this, SLOT(filterChanged(int)));
 
 	m_details = new QTreeView(details);
+	m_details->setUniformRowHeights(true);
 	m_details->setRootIsDecorated(false);
 	m_details->setItemsExpandable(false);
 	m_details->setItemDelegate(new SessionDelegate(m_details));
