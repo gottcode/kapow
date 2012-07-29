@@ -6,68 +6,68 @@
     <message>
         <location filename="../src/data_model.cpp" line="92"/>
         <location filename="../src/data_model.cpp" line="99"/>
-        <location filename="../src/data_model.cpp" line="539"/>
+        <location filename="../src/data_model.cpp" line="541"/>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="92"/>
         <location filename="../src/data_model.cpp" line="99"/>
-        <location filename="../src/data_model.cpp" line="539"/>
+        <location filename="../src/data_model.cpp" line="541"/>
         <source>Session conflicts with other sessions.</source>
         <translation>Sessionen er i konflikt med andre sessioner.</translation>
     </message>
     <message>
         <location filename="../src/data_model.cpp" line="256"/>
-        <location filename="../src/data_model.cpp" line="468"/>
+        <location filename="../src/data_model.cpp" line="470"/>
         <source>Total</source>
         <translation>Total</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="452"/>
+        <location filename="../src/data_model.cpp" line="454"/>
         <source>Date</source>
         <translation>Dato</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="454"/>
+        <location filename="../src/data_model.cpp" line="456"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="456"/>
+        <location filename="../src/data_model.cpp" line="458"/>
         <source>Stop</source>
         <translation>Slut</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="458"/>
-        <location filename="../src/window.cpp" line="128"/>
+        <location filename="../src/data_model.cpp" line="460"/>
+        <location filename="../src/window.cpp" line="136"/>
         <source>Task</source>
         <translation>Opgave</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="460"/>
+        <location filename="../src/data_model.cpp" line="462"/>
         <source>Hours</source>
         <translation>Timer</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="462"/>
+        <location filename="../src/data_model.cpp" line="464"/>
         <source>Daily</source>
         <translation>Daglig</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="464"/>
+        <location filename="../src/data_model.cpp" line="466"/>
         <source>Weekly</source>
         <translation>Ugentlig</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="466"/>
+        <location filename="../src/data_model.cpp" line="468"/>
         <source>Monthly</source>
         <translation>Månedlig</translation>
     </message>
     <message>
-        <location filename="../src/data_model.cpp" line="470"/>
+        <location filename="../src/data_model.cpp" line="472"/>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapportér</translation>
     </message>
 </context>
 <context>
@@ -187,7 +187,7 @@
     <message>
         <location filename="../src/report.cpp" line="145"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportér</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="146"/>
@@ -212,17 +212,17 @@
     <message>
         <location filename="../src/report.cpp" line="285"/>
         <source>Export Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporteret rapport</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="320"/>
         <source>View Reports</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis rapporter</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="336"/>
         <source>Create Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Opret rapport</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="391"/>
@@ -307,239 +307,239 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="111"/>
+        <location filename="../src/window.cpp" line="119"/>
         <source>00:00:00</source>
         <translation>00:00:00</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="133"/>
+        <location filename="../src/window.cpp" line="141"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="138"/>
+        <location filename="../src/window.cpp" line="146"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="144"/>
+        <location filename="../src/window.cpp" line="152"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Project</source>
         <translation>&amp;Projekt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
-        <location filename="../src/window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="169"/>
+        <location filename="../src/window.cpp" line="181"/>
         <source>&amp;Add</source>
         <translation>&amp;Tilføj</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="169"/>
         <source>Ctrl+Shift+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="162"/>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="170"/>
+        <location filename="../src/window.cpp" line="184"/>
         <source>&amp;Remove</source>
         <translation>&amp;Fjern</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="170"/>
         <source>Ctrl+Shift+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+Delete</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="169"/>
+        <location filename="../src/window.cpp" line="178"/>
         <source>&amp;Quit</source>
         <translation>&amp;Afslut</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="169"/>
+        <location filename="../src/window.cpp" line="178"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="171"/>
+        <location filename="../src/window.cpp" line="180"/>
         <source>&amp;Session</source>
         <translation>&amp;Session</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="173"/>
+        <location filename="../src/window.cpp" line="182"/>
         <source>&amp;Edit</source>
         <translation>&amp;Rediger</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="184"/>
         <source>Ctrl+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Delete</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="178"/>
+        <location filename="../src/window.cpp" line="187"/>
         <source>S&amp;ettings</source>
         <translation>I&amp;ndstillinger</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="179"/>
+        <location filename="../src/window.cpp" line="188"/>
         <source>Columns</source>
         <translation>Kolonner</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="180"/>
+        <location filename="../src/window.cpp" line="189"/>
         <source>&amp;Decimal Totals</source>
         <translation>&amp;Timer i decimaler</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="184"/>
+        <location filename="../src/window.cpp" line="193"/>
         <source>&amp;Inline Editing</source>
         <translation>&amp;Direkte redigering</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="189"/>
+        <location filename="../src/window.cpp" line="198"/>
         <source>Application &amp;Language...</source>
         <translation>&amp;Sprog...</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="191"/>
+        <location filename="../src/window.cpp" line="200"/>
         <source>&amp;Help</source>
         <translation>&amp;Hjælp</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="192"/>
+        <location filename="../src/window.cpp" line="201"/>
         <source>&amp;About</source>
         <translation>&amp;Om</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="193"/>
+        <location filename="../src/window.cpp" line="202"/>
         <source>About &amp;Qt</source>
         <translation>Om &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="200"/>
+        <location filename="../src/window.cpp" line="209"/>
         <source>Project</source>
         <translation>Projekt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="200"/>
+        <location filename="../src/window.cpp" line="209"/>
         <source>Timer</source>
         <translation>Timer</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="229"/>
+        <location filename="../src/window.cpp" line="238"/>
         <source>Show all</source>
         <translation>Vis alt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="230"/>
+        <location filename="../src/window.cpp" line="239"/>
         <source>Show only unbilled</source>
         <translation>Vis kun ubetalte</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="231"/>
+        <location filename="../src/window.cpp" line="240"/>
         <source>Show only this year</source>
         <translation>Vis kun dette år</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="232"/>
+        <location filename="../src/window.cpp" line="241"/>
         <source>Show only this month</source>
         <translation>Vis kun denne måned</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="233"/>
+        <location filename="../src/window.cpp" line="242"/>
         <source>Show only this week</source>
         <translation>Vis kun denne uge</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="391"/>
+        <location filename="../src/window.cpp" line="423"/>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
         <translation>Copyright &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="392"/>
+        <location filename="../src/window.cpp" line="424"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
         <translation>Frigivet under &lt;a href=%1&gt;GPL 3&lt;/a&gt;-licens</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="808"/>
-        <location filename="../src/window.cpp" line="865"/>
+        <location filename="../src/window.cpp" line="850"/>
+        <location filename="../src/window.cpp" line="907"/>
         <source>Unable to read time data.</source>
         <translation>Kan ikke aflæse tidsdata.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="555"/>
-        <location filename="../src/window.cpp" line="793"/>
-        <location filename="../src/window.cpp" line="879"/>
+        <location filename="../src/window.cpp" line="590"/>
+        <location filename="../src/window.cpp" line="835"/>
+        <location filename="../src/window.cpp" line="921"/>
         <source>Untitled</source>
         <translation>Unavngivet</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="715"/>
-        <location filename="../src/window.cpp" line="758"/>
-        <location filename="../src/window.cpp" line="801"/>
+        <location filename="../src/window.cpp" line="753"/>
+        <location filename="../src/window.cpp" line="800"/>
+        <location filename="../src/window.cpp" line="843"/>
         <source>Unable to write time data.</source>
         <translation>Kan ikke opgøre tidsdata.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="364"/>
+        <location filename="../src/window.cpp" line="385"/>
         <source>There are timers running. Stop timers and quit?</source>
         <translation>Timere kører. Stop timere og afslut?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="388"/>
+        <location filename="../src/window.cpp" line="420"/>
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="390"/>
+        <location filename="../src/window.cpp" line="422"/>
         <source>A program to help track spent time</source>
         <translation>Et program til at holde styr på tidsforbruget</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="364"/>
-        <location filename="../src/window.cpp" line="452"/>
-        <location filename="../src/window.cpp" line="521"/>
-        <location filename="../src/window.cpp" line="685"/>
+        <location filename="../src/window.cpp" line="385"/>
+        <location filename="../src/window.cpp" line="484"/>
+        <location filename="../src/window.cpp" line="556"/>
+        <location filename="../src/window.cpp" line="723"/>
         <source>Question</source>
         <translation>Spørgsmål</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="165"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Opret rapport...</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="167"/>
+        <location filename="../src/window.cpp" line="175"/>
         <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis R&amp;apporter</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="452"/>
+        <location filename="../src/window.cpp" line="484"/>
         <source>Cancel this session?</source>
         <translation>Annuller denne session?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="498"/>
+        <location filename="../src/window.cpp" line="533"/>
         <source>Add Project</source>
         <translation>Tilføj projekt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="498"/>
+        <location filename="../src/window.cpp" line="533"/>
         <source>Enter project name:</source>
         <translation>Angiv projektnavn:</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <location filename="../src/main.cpp" line="121"/>
-        <location filename="../src/window.cpp" line="504"/>
-        <location filename="../src/window.cpp" line="715"/>
-        <location filename="../src/window.cpp" line="758"/>
-        <location filename="../src/window.cpp" line="801"/>
-        <location filename="../src/window.cpp" line="808"/>
-        <location filename="../src/window.cpp" line="865"/>
+        <location filename="../src/window.cpp" line="539"/>
+        <location filename="../src/window.cpp" line="753"/>
+        <location filename="../src/window.cpp" line="800"/>
+        <location filename="../src/window.cpp" line="843"/>
+        <location filename="../src/window.cpp" line="850"/>
+        <location filename="../src/window.cpp" line="907"/>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
@@ -554,22 +554,22 @@
         <translation>Kunne ikke flytte placering.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="504"/>
+        <location filename="../src/window.cpp" line="539"/>
         <source>A project with that name already exists.</source>
         <translation>Et projekt med dette navn eksisterer allerede.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="521"/>
+        <location filename="../src/window.cpp" line="556"/>
         <source>Remove selected project?</source>
         <translation>Fjern valgte projekt?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="685"/>
+        <location filename="../src/window.cpp" line="723"/>
         <source>Remove selected session?</source>
         <translation>Fjern valgte session?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="950"/>
+        <location filename="../src/window.cpp" line="1000"/>
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n timer kører</numerusform>
@@ -577,8 +577,9 @@
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="389"/>
-        <location filename="../src/window.cpp" line="956"/>
+        <location filename="../src/window.cpp" line="421"/>
+        <location filename="../src/window.cpp" line="997"/>
+        <location filename="../src/window.cpp" line="1007"/>
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>
