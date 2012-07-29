@@ -405,7 +405,7 @@
         <location filename="../src/window.cpp" line="308"/>
         <location filename="../src/window.cpp" line="321"/>
         <source>Unable to read time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze přečíst data času.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="326"/>
@@ -417,7 +417,7 @@
         <location filename="../src/window.cpp" line="363"/>
         <location filename="../src/window.cpp" line="702"/>
         <source>Unable to write time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zapsat data času.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="390"/>
