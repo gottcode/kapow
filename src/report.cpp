@@ -151,12 +151,10 @@ Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWi
 		QPushButton* ok_button = buttons->addButton(QDialogButtonBox::Ok);
 		connect(ok_button, SIGNAL(clicked()), this, SLOT(bill()));
 	}
-#if (QT_VERSION >= QT_VERSION_CHECK(4, 6, 0))
 	if (style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
 		export_button->setIcon(QIcon::fromTheme("document-export"));
 		print_button->setIcon(QIcon::fromTheme("document-print"));
 	}
-#endif
 	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
 	connect(reset_button, SIGNAL(clicked()), this, SLOT(reset()));
 	connect(export_button, SIGNAL(clicked()), this, SLOT(save()));
@@ -532,7 +530,11 @@ void Report::writeICalendar(QString filename) {
 				continue;
 			}
 
+#if (QT_VERSION >= QT_VERSION_CHECK(4,7,0))
 			QString now = QDateTime::currentDateTimeUtc().toString("yyyyMMddThhmmssZ");
+#else
+			QString now = QDateTime::currentDateTime().toUTC().toString("yyyyMMddThhmmssZ");
+#endif
 			if (current == now) {
 				dup++;
 			} else {

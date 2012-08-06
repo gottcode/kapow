@@ -26,7 +26,7 @@
 
 Rates::Rates()
 {
-#if (QT_VERSION >= QT_VERSION_CHECK(4, 8, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(4,8,0))
 	// Use currency symbol of locale
 	QLocale locale;
 	m_currency_symbol = locale.currencySymbol();

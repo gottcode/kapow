@@ -20,10 +20,13 @@
 #ifndef RATES_H
 #define RATES_H
 
+#include <QCoreApplication>
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>
 
 class Rates {
+	Q_DECLARE_TR_FUNCTIONS(Rates)
+
 public:
 	Rates();
 

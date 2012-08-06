@@ -1,3 +1,6 @@
+2012-08-06 Graeme Gott <graeme@gottcode.org>
+	* Make it compile with Qt 4.6.
+
 2012-07-20 Graeme Gott <graeme@gottcode.org>
 	* Make it compile with Qt 5.
 

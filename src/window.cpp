@@ -133,7 +133,9 @@ Window::Window(const QString& filename, QWidget* parent) :
 	save_timer->start();
 
 	m_task = new QLineEdit(contents);
+#if (QT_VERSION >= QT_VERSION_CHECK(4,7,0))
 	m_task->setPlaceholderText(DataModel::tr("Task"));
+#endif
 	m_task->setFocus();
 	connect(m_task, SIGNAL(textChanged(QString)), this, SLOT(taskChanged(QString)));
 	connect(m_task, SIGNAL(returnPressed()), this, SLOT(taskStart()));
