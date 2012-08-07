@@ -1,3 +1,6 @@
+2012-08-07 Graeme Gott <graeme@gottcode.org>
+	* Add missing dependency on Windows.
+
 2012-08-06 Graeme Gott <graeme@gottcode.org>
 	* FIXED: Was not finishing loading of parent projects.
 	* Tag version 1.4.0.
