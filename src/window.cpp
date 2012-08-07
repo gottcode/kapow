@@ -53,6 +53,7 @@
 #include <QSettings>
 #include <QSignalMapper>
 #include <QSplitter>
+#include <QStack>
 #include <QStyledItemDelegate>
 #include <QTextDocument>
 #include <QTimer>
@@ -854,7 +855,8 @@ void Window::loadData() {
 	}
 
 	// Parse data file
-	Project* project = 0;
+	QStack<Project*> projects;
+	DataModel* model = 0;
 	int filter = 0;
 	QTreeWidgetItem* item = m_projects->invisibleRootItem();
 	QTreeWidgetItem* current = 0;
@@ -865,22 +867,24 @@ void Window::loadData() {
 		if (xml.isStartElement()) {
 			QXmlStreamAttributes attributes = xml.attributes();
 			// Add session
-			if (xml.name() == QLatin1String("session")) {
+			if ((xml.name() == QLatin1String("session")) && model) {
 				QDate date = QDate::fromString(attributes.value(QLatin1String("date")).toString(), Qt::ISODate);
 				QTime start = QTime::fromString(attributes.value(QLatin1String("start")).toString(), Qt::ISODate);
 				QTime stop = QTime::fromString(attributes.value(QLatin1String("stop")).toString(), Qt::ISODate);
 				QString task = attributes.value(QLatin1String("note")).toString();
 				bool billed = attributes.value(QLatin1String("billed")).toString().toInt();
-				project->model()->add(Session(date, start, stop, task, billed));
+				model->add(Session(date, start, stop, task, billed));
 			// Start adding project
 			} else if (xml.name() == QLatin1String("project")) {
 				m_projects->blockSignals(true);
-				item = project = new Project(item, attributes.value(QLatin1String("name")).toString());
-				project->setExpanded(attributes.value(QLatin1String("expanded")) == "1");
-				current = (attributes.value(QLatin1String("current")) == "1") ? project : current;
+				projects.push(new Project(item, attributes.value(QLatin1String("name")).toString()));
+				item = projects.top();
+				item->setExpanded(attributes.value(QLatin1String("expanded")) == "1");
+				current = (attributes.value(QLatin1String("current")) == "1") ? projects.top() : current;
 				filter = attributes.value(QLatin1String("filter")).toString().toInt();
-				project->model()->setDecimalTotals(m_decimals);
-				project->model()->beginLoad();
+				model = projects.top()->model();
+				model->setDecimalTotals(m_decimals);
+				model->beginLoad();
 				m_projects->blockSignals(false);
 			// Read contact information
 			} else if (xml.name() == QLatin1String("contact")) {
@@ -889,17 +893,24 @@ void Window::loadData() {
 			} else if (xml.name() == QLatin1String("rates")) {
 				m_rates.fromXml(xml);
 			// Add autosaved time as new session to current project
-			} else if (xml.name() == QLatin1String("autosave")) {
+			} else if ((xml.name() == QLatin1String("autosave")) && model) {
 				QDateTime start = QDateTime::fromString(attributes.value(QLatin1String("start")).toString(), Qt::ISODate);
 				QDateTime stop = QDateTime::fromString(attributes.value(QLatin1String("stop")).toString(), Qt::ISODate);
 				QString task = attributes.value(QLatin1String("note")).toString();
-				project->model()->add(start, stop, task);
+				model->add(start, stop, task);
 			}
 		// Finish adding project
 		} else if (xml.isEndElement() && xml.name() == QLatin1String("project")) {
-			project->model()->endLoad();
-			project->filterModel()->setType(filter);
-			item = item->parent() ? item->parent() : m_projects->invisibleRootItem();
+			model->endLoad();
+			projects.top()->filterModel()->setType(filter);
+			projects.pop();
+			if (!projects.isEmpty()) {
+				model = projects.top()->model();
+				item = projects.top();
+			} else {
+				model = 0;
+				item = m_projects->invisibleRootItem();
+			}
 		}
 	}
 
