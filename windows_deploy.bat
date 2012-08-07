@@ -22,6 +22,7 @@ COPY %QTDIR%\bin\libgcc_s_dw2-1.dll %APP% >nul
 COPY %QTDIR%\bin\mingwm10.dll %APP% >nul
 COPY %QTDIR%\bin\QtCore4.dll %APP% >nul
 COPY %QTDIR%\bin\QtGui4.dll %APP% >nul
+COPY %QTDIR%\bin\QtNetwork4.dll %APP% >nul
 
 ECHO Creating compressed file
 CD %APP%
