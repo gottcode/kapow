@@ -67,7 +67,7 @@
     <message>
         <location filename="../src/data_model.cpp" line="472"/>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapporteer</translation>
     </message>
 </context>
 <context>
@@ -187,7 +187,7 @@
     <message>
         <location filename="../src/report.cpp" line="145"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteer</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="146"/>
@@ -212,17 +212,17 @@
     <message>
         <location filename="../src/report.cpp" line="285"/>
         <source>Export Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteer Raport</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="320"/>
         <source>View Reports</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk Rapporten</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="336"/>
         <source>Create Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Maak Rapport</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="391"/>
@@ -340,7 +340,7 @@
     <message>
         <location filename="../src/window.cpp" line="169"/>
         <source>Ctrl+Shift+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/window.cpp" line="170"/>
         <source>Ctrl+Shift+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+Delete</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="178"/>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../src/window.cpp" line="184"/>
         <source>Ctrl+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Delete</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="187"/>
@@ -509,12 +509,12 @@
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Maak Rapport...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="175"/>
         <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk R&amp;apporten</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="484"/>
