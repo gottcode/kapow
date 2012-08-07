@@ -13,11 +13,11 @@
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Terugzetten</translation>
     </message>
-     <message>
+    <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Terugzetten</translation>
     </message>
     <message>
         <source>OK</source>
@@ -27,7 +27,7 @@
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
     </message>
-   <message>
+    <message>
         <source>Cancel</source>
         <translation>Annuleer</translation>
     </message>
