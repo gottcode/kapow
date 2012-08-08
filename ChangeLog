@@ -1,3 +1,6 @@
+2012-08-08 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Was not migrating data.
+
 2012-08-07 Graeme Gott <graeme@gottcode.org>
 	* Add missing dependency on Windows.
 
