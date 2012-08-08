@@ -117,9 +117,16 @@ int main(int argc, char** argv) {
 					return 1;
 				}
 			// Otherwise, move old data location
-			} else if (!QFile::rename(oldpath, path)) {
-				QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to move time data location."));
-				return 1;
+			} else {
+				QDir dir(path + "/../");
+				if (!dir.mkpath(dir.absolutePath())) {
+					QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to create time data location."));
+					return 1;
+				}
+				if (!QFile::rename(oldpath, path)) {
+					QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to move time data location."));
+					return 1;
+				}
 			}
 		}
 	}
