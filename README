@@ -17,3 +17,19 @@ Create a folder named "Data" in the same folder as the executable (the
 application bundle if using Mac OS X) to run this program from a USB drive.
 Simply rename or delete the "Data" folder if you later decide you want it
 to start storing its settings and related files on the host computer.
+
+
+Command-Line Help
+=================
+
+Usage: Kapow [OPTION] [FILE]
+
+If you pass a FILE as the last argument, Kapow will use it instead of
+the default file. The FILE must end with ".xml".
+
+Windows arguments:
+  -ini  store settings in an INI file instead of the Registry
+
+Exit status:
+ 0  if OK,
+ 1  if unable to work with time data
