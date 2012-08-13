@@ -26,7 +26,8 @@
 #include <QMessageBox>
 #include <QSettings>
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
 	app.setApplicationVersion(VERSIONSTR);
@@ -44,28 +45,22 @@ int main(int argc, char** argv) {
 
 	QString path;
 	{
-		// Check for command-line paths
 		QStringList args = app.arguments();
-		QString appdir = app.applicationDirPath();
-#if defined(Q_OS_MAC)
-		QString home_path = appdir + "/../../../Data";
-#else
-		QString home_path = appdir + "/Data";
+
+#if defined(Q_OS_WIN)
+		// Handle command-line argument to use INI files
+		if (args.contains("-ini")) {
+			QSettings::setDefaultFormat(QSettings::IniFormat);
+		}
 #endif
-		QString data_path;
-		foreach (const QString& arg, args) {
-			if (arg.startsWith("--home=")) {
-				home_path = arg.mid(7);
-			} else if (arg.startsWith("--data=")) {
-				data_path = arg.mid(7);
-			}
-		}
-		if (args.back().endsWith(".xml")) {
-			data_path = args.back();
-		}
 
 		// Handle portability
-		QFileInfo portable(home_path);
+		QString appdir = app.applicationDirPath();
+#if defined(Q_OS_MAC)
+		QFileInfo portable(appdir + "/../../../Data");
+#else
+		QFileInfo portable(appdir + "/Data");
+#endif
 		if (portable.exists() && portable.isWritable()) {
 			path = portable.absoluteFilePath();
 			QSettings::setDefaultFormat(QSettings::IniFormat);
@@ -83,9 +78,11 @@ int main(int argc, char** argv) {
 		}
 
 		// Handle command-line data path
-		QFileInfo override(data_path);
-		if (override.exists() && override.isWritable() && (override.isDir() || (override.suffix() == "xml"))) {
-			path = override.absoluteFilePath();
+		if (args.back().endsWith(".xml")) {
+			QFileInfo override(args.back());
+			if (override.suffix().toLower() == "xml") {
+				path = override.absoluteFilePath();
+			}
 		}
 	}
 
@@ -128,6 +125,13 @@ int main(int argc, char** argv) {
 					return 1;
 				}
 			}
+		}
+	// Make sure command-line data path exists
+	} else if (!QFile::exists(path + "/../")) {
+		QDir dir(path + "/../");
+		if (!dir.mkpath(dir.absolutePath())) {
+			QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to create time data location."));
+			return 1;
 		}
 	}
 

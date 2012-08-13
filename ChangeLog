@@ -1,3 +1,6 @@
+2012-08-13 Graeme Gott <graeme@gottcode.org>
+	* Replace broken command-line arguments.
+
 2012-08-08 Graeme Gott <graeme@gottcode.org>
 	* FIXED: Was not migrating data.
 
