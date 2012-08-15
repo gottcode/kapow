@@ -503,7 +503,7 @@ void Window::taskChanged(const QString& task) {
 /*****************************************************************************/
 
 void Window::taskStart() {
-	if (m_start->isEnabled()) {
+	if (m_start->isVisible()) {
 		start();
 	}
 }

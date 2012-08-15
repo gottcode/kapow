@@ -1,3 +1,6 @@
+2012-08-14 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Restarted timer if enter was pressed in task.
+
 2012-08-13 Graeme Gott <graeme@gottcode.org>
 	* FIXED: Did not use new file when unable to remove old file.
 	* Replace broken command-line arguments.
