@@ -22,6 +22,7 @@
 #include "contact.h"
 #include "data_model.h"
 #include "rates.h"
+#include "settings.h"
 
 #include <QCheckBox>
 #include <QComboBox>
@@ -37,7 +38,6 @@
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QPushButton>
-#include <QSettings>
 #include <QTabWidget>
 #include <QTextEdit>
 #include <QTextStream>
@@ -165,7 +165,7 @@ Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWi
 	layout->addWidget(tabs, 1);
 	layout->addWidget(buttons);
 
-	resize(QSettings().value("ReportDialog/Size", QSize(700, 500)).toSize());
+	resize(Settings().value("ReportDialog/Size", QSize(700, 500)).toSize());
 
 	// Load data
 	findGroups();
@@ -188,8 +188,7 @@ void Report::hideEvent(QHideEvent* event) {
 	m_rates->setCurrencySymbol(m_currency_symbol->text().simplified());
 	m_rates->setPrependSymbol(m_prepend_symbol->isChecked());
 
-	QSettings settings;
-	settings.setValue("ReportDialog/Size", size());
+	Settings().setValue("ReportDialog/Size", size());
 
 	QDialog::hideEvent(event);
 }
@@ -265,7 +264,7 @@ void Report::reset() {
 /*****************************************************************************/
 
 void Report::save() {
-	QSettings settings;
+	Settings settings;
 	QString filter = settings.value("ReportDialog/Filter").toString();
 	QString html_filter = tr("Web Page (*.html *.htm)");
 	QString ical_filter = tr("iCalendar (*.ics)");

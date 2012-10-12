@@ -19,14 +19,14 @@
 
 #include "contact.h"
 
-#include <QSettings>
+#include "settings.h"
 
 //-----------------------------------------------------------------------------
 
 Contact::Contact()
 {
-	// Default to old QSettings values if they exist
-	QSettings settings;
+	// Default to old settings values if they exist
+	Settings settings;
 	m_name = settings.value("Contact/Name").toString();
 	m_company = settings.value("Contact/Company").toString();
 	m_address = settings.value("Contact/Address").toString();
@@ -35,7 +35,7 @@ Contact::Contact()
 	m_email = settings.value("Contact/Email").toString();
 	m_website = settings.value("Contact/Website").toString();
 
-	// Remove QSettings values
+	// Remove settings values
 	settings.remove("Contact/Name");
 	settings.remove("Contact/Company");
 	settings.remove("Contact/Address");

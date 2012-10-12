@@ -19,8 +19,9 @@
 
 #include "rates.h"
 
+#include "settings.h"
+
 #include <QLocale>
-#include <QSettings>
 
 //-----------------------------------------------------------------------------
 
@@ -36,14 +37,14 @@ Rates::Rates()
 	m_prepend_symbol = true;
 #endif
 
-	// Default to old QSettings values if they exist
-	QSettings settings;
+	// Default to old settings values if they exist
+	Settings settings;
 	m_hourly = settings.value("ReportDialog/HourlyRate").toDouble();
 	m_tax = settings.value("ReportDialog/TaxRate").toDouble();
 	m_currency_symbol = settings.value("ReportDialog/Currency", m_currency_symbol).toString();
 	m_prepend_symbol = settings.value("ReportDialog/PrependCurrency", m_prepend_symbol).toBool();
 
-	// Remove QSettings values
+	// Remove settings values
 	settings.remove("ReportDialog/HourlyRate");
 	settings.remove("ReportDialog/TaxRate");
 	settings.remove("ReportDialog/Currency");

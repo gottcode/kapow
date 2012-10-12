@@ -1,3 +1,6 @@
+2012-10-11 Graeme Gott <graeme@gottcode.org>
+	* Allow specifying INI file path.
+
 2012-08-14 Graeme Gott <graeme@gottcode.org>
 	* FIXED: Restarted timer if enter was pressed in task.
 

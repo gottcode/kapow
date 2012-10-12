@@ -27,8 +27,8 @@ Usage: Kapow [OPTION] [FILE]
 If you pass a FILE as the last argument, Kapow will use it instead of
 the default file. The FILE must end with ".xml".
 
-Windows arguments:
-  -ini  store settings in an INI file instead of the Registry
+Arguments:
+  --ini=FILE  store settings as INI format in specified FILE
 
 Exit status:
  0  if OK,

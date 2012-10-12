@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,10 +20,10 @@
 #include "session_dialog.h"
 
 #include "session.h"
+#include "settings.h"
 
 #include <QDialogButtonBox>
 #include <QFormLayout>
-#include <QSettings>
 #include <QVBoxLayout>
 
 /*****************************************************************************/
@@ -61,7 +61,7 @@ SessionDialog::SessionDialog(QWidget* parent)
 	layout->addStretch();
 	layout->addWidget(buttons);
 
-	resize(QSettings().value("SessionDialog/Size").toSize());
+	resize(Settings().value("SessionDialog/Size").toSize());
 }
 
 /*****************************************************************************/
@@ -84,7 +84,7 @@ void SessionDialog::accept() {
 /*****************************************************************************/
 
 void SessionDialog::hideEvent(QHideEvent* event) {
-	QSettings().setValue("SessionDialog/Size", size());
+	Settings().setValue("SessionDialog/Size", size());
 	QDialog::hideEvent(event);
 }
 
