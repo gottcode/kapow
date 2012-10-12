@@ -750,8 +750,8 @@ void Window::save() {
 		return;
 	}
 
-	// Open temporary file for writing
-	QFile file(m_filename + ".tmp");
+	// Open file for writing
+	QFile file(m_filename);
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
 		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
 		return;
@@ -780,7 +780,7 @@ void Window::save() {
 	bool saved = true;
 	if (file.isOpen()) {
 #if defined(Q_OS_MAC)
-		saved &= (fcntl(file.handle(), F_FULLFSYNC, NULL) == 0);
+		saved &= (fsync(file.handle()) == 0);
 #elif defined(Q_OS_UNIX)
 		saved &= (fsync(file.handle()) == 0);
 #elif defined(Q_OS_WIN)
@@ -790,15 +790,6 @@ void Window::save() {
 		file.close();
 	}
 
-	// Replace data file with temporary file
-	if (saved) {
-		if (QFile::exists(m_filename)) {
-			saved &= QFile::remove(m_filename);
-		}
-		if (saved) {
-			saved &= QFile::rename(m_filename + ".tmp", m_filename);
-		}
-	}
 	if (!saved) {
 		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
 	}

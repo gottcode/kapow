@@ -1,3 +1,6 @@
+2012-10-12 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Could not save to WebDAV.
+
 2012-10-11 Graeme Gott <graeme@gottcode.org>
 	* Allow specifying INI file path.
 
