@@ -29,6 +29,7 @@
 #include "session.h"
 #include "session_delegate.h"
 #include "session_dialog.h"
+#include "settings.h"
 #include "time_editor.h"
 
 #include <QAction>
@@ -50,7 +51,6 @@
 #include <QMetaProperty>
 #include <QPushButton>
 #include <QScrollBar>
-#include <QSettings>
 #include <QSignalMapper>
 #include <QSplitter>
 #include <QStack>
@@ -163,7 +163,7 @@ Window::Window(const QString& filename, QWidget* parent) :
 	m_cancel->setMinimumWidth(button_width);
 
 	// Load settings
-	QSettings settings;
+	Settings settings;
 	m_decimals = settings.value("DecimalTotals", true).toBool();
 	m_inline = settings.value("InlineEditing", true).toBool();
 
@@ -343,7 +343,7 @@ Window::Window(const QString& filename, QWidget* parent) :
 	m_details->header()->setStretchLastSection(false);
 
 	// Restore hidden columns
-	QStringList hidden = QSettings().value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8" << "9").toStringList();
+	QStringList hidden = settings.value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8" << "9").toStringList();
 	foreach (const QString& column, hidden) {
 		int i = column.toInt();
 		m_details->setColumnHidden(i, true);
@@ -371,7 +371,7 @@ bool Window::event(QEvent* event) {
 /*****************************************************************************/
 
 void Window::closeEvent(QCloseEvent* event) {
-	QSettings settings;
+	Settings settings;
 	settings.setValue("WindowGeometry", saveGeometry());
 	settings.setValue("SplitterSizes", m_contents->saveState());
 
@@ -439,7 +439,7 @@ void Window::setDecimalTotals(bool decimals) {
 			project->setDecimalTotals(m_decimals);
 		}
 	}
-	QSettings().setValue("DecimalTotals", m_decimals);
+	Settings().setValue("DecimalTotals", m_decimals);
 }
 
 /*****************************************************************************/
@@ -450,7 +450,7 @@ void Window::setInlineEditing(bool edit) {
 		m_details->closePersistentEditor(m_details->currentIndex());
 	}
 	sessionPressed(m_details->currentIndex());
-	QSettings().setValue("InlineEditing", edit);
+	Settings().setValue("InlineEditing", edit);
 }
 
 /*****************************************************************************/
@@ -740,7 +740,7 @@ void Window::toggleColumnHidden(int column) {
 			hidden.append(QString::number(i));
 		}
 	}
-	QSettings().setValue("HiddenColumns", hidden);
+	Settings().setValue("HiddenColumns", hidden);
 }
 
 /*****************************************************************************/

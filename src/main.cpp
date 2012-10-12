@@ -18,19 +18,21 @@
  ***********************************************************************/
 
 #include "locale_dialog.h"
+#include "settings.h"
 #include "window.h"
 
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDir>
 #include <QMessageBox>
-#include <QSettings>
 
 int main(int argc, char** argv)
 {
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
 	app.setApplicationVersion(VERSIONSTR);
+	app.setOrganizationDomain("gottcode.org");
+	app.setOrganizationName("GottCode");
 	{
 		QIcon fallback(":/hicolor/256x256/apps/kapow.png");
 		fallback.addFile(":/hicolor/128x128/apps/kapow.png");
@@ -47,13 +49,6 @@ int main(int argc, char** argv)
 	{
 		QStringList args = app.arguments();
 
-#if defined(Q_OS_WIN)
-		// Handle command-line argument to use INI files
-		if (args.contains("-ini")) {
-			QSettings::setDefaultFormat(QSettings::IniFormat);
-		}
-#endif
-
 		// Handle portability
 		QString appdir = app.applicationDirPath();
 #if defined(Q_OS_MAC)
@@ -63,28 +58,33 @@ int main(int argc, char** argv)
 #endif
 		if (portable.exists() && portable.isWritable()) {
 			path = portable.absoluteFilePath();
-			QSettings::setDefaultFormat(QSettings::IniFormat);
 			if (QFile::exists(path + "/Settings/GottCode/Kapow.ini") &&
 					!QFile::rename(path + "/Settings/GottCode/Kapow.ini", path + "/Settings/Kapow.ini")) {
-				QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path + "/Settings");
-				app.setOrganizationName("GottCode");
+				Settings::setPath(path + "/Settings/GottCode/Kapow.ini");
 			} else {
-				QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, path);
-				app.setOrganizationName("Settings");
+				Settings::setPath(path + "/Settings/Kapow.ini");
 			}
-		} else {
-			app.setOrganizationDomain("gottcode.org");
-			app.setOrganizationName("GottCode");
+		}
+
+		// Handle command-line settings file
+		foreach (const QString& arg, args) {
+			if (arg.startsWith("--ini=")) {
+				Settings::setPath(arg.mid(6));
+			}
 		}
 
 		// Handle command-line data path
-		if (args.back().endsWith(".xml")) {
+		if (args.back().endsWith(".xml") && !args.back().startsWith("--ini=")) {
 			QFileInfo override(args.back());
 			if (override.suffix().toLower() == "xml") {
 				path = override.absoluteFilePath();
 			}
 		}
 	}
+
+	// Load settings
+	Settings settings;
+	Q_UNUSED(settings);
 
 	LocaleDialog::loadTranslator("kapow_");
 

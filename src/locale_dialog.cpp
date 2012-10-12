@@ -19,6 +19,8 @@
 
 #include "locale_dialog.h"
 
+#include "settings.h"
+
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QDialogButtonBox>
@@ -29,7 +31,6 @@
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QMessageBox>
-#include <QSettings>
 #include <QTranslator>
 #include <QVBoxLayout>
 
@@ -94,7 +95,7 @@ void LocaleDialog::loadTranslator(const QString& name)
 	}
 
 	// Find current locale
-	m_current = QSettings().value("Locale/Language").toString();
+	m_current = Settings().value("Locale/Language").toString();
 	QString current = !m_current.isEmpty() ? m_current : QLocale::system().name();
 	QStringList translations = findTranslations();
 	if (!translations.contains(m_appname + current)) {
@@ -177,7 +178,7 @@ void LocaleDialog::accept()
 	QDialog::accept();
 
 	m_current = m_translations->itemData(m_translations->currentIndex()).toString();
-	QSettings().setValue("Locale/Language", m_current);
+	Settings().setValue("Locale/Language", m_current);
 	QMessageBox::information(this, tr("Note"), tr("Please restart this application for the change in language to take effect."), QMessageBox::Ok);
 }
 
