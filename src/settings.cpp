@@ -50,7 +50,7 @@ void Settings::setPath(const QString& path)
 	}
 
 	// Make sure location of INI file exists
-	QDir dir(f_path);
+	QDir dir(f_path + "/../");
 	if (!dir.exists()) {
 		dir.mkpath(dir.absolutePath());
 	}
