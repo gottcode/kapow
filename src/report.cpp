@@ -26,7 +26,11 @@
 
 #include <QCheckBox>
 #include <QComboBox>
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+#include <QStandardPaths>
+#else
 #include <QDesktopServices>
+#endif
 #include <QDialogButtonBox>
 #include <QDoubleSpinBox>
 #include <QFileDialog>
@@ -88,12 +92,22 @@ Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWi
 	m_details->setSelectionMode(QAbstractItemView::SingleSelection);
 	m_details->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_details->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+	m_details->header()->setSectionsClickable(false);
+	m_details->header()->setSectionsMovable(false);
+	m_details->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+#else
 	m_details->header()->setClickable(false);
 	m_details->header()->setMovable(false);
 	m_details->header()->setResizeMode(QHeaderView::ResizeToContents);
+#endif
 
 	m_details->setModel(m_data);
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+	m_details->header()->setSectionResizeMode(3, QHeaderView::Stretch);
+#else
 	m_details->header()->setResizeMode(3, QHeaderView::Stretch);
+#endif
 	m_details->header()->setStretchLastSection(false);
 	for (int i = 5; i < 10; ++i) {
 		m_details->setColumnHidden(i, true);
@@ -280,7 +294,11 @@ void Report::save() {
 	QString selected_filter;
 	QString filename = QFileDialog::getSaveFileName(this,
 		tr("Export Report"),
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+		QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+#else
 		QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation),
+#endif
 		filter,
 		&selected_filter);
 	if (!filename.isEmpty()) {
