@@ -22,7 +22,11 @@
 #include "window.h"
 
 #include <QApplication>
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+#include <QStandardPaths>
+#else
 #include <QDesktopServices>
+#endif
 #include <QDir>
 #include <QMessageBox>
 
@@ -90,7 +94,11 @@ int main(int argc, char** argv)
 
 	// Make sure data path exists
 	if (path.isEmpty()) {
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+		path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+#else
 		path = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
+#endif
 
 		// Update data location
 		if (!QFile::exists(path)) {
