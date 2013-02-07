@@ -83,7 +83,7 @@ unix: !macx {
 	icon.files = icons/hicolor/*
 	icon.path = $$PREFIX/share/icons/hicolor/
 
-	pixmap.files = icons/kapow_32.xpm
+	pixmap.files = icons/kapow.xpm
 	pixmap.path = $$PREFIX/share/pixmaps/
 
 	desktop.files = icons/kapow.desktop
