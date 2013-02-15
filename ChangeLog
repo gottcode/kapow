@@ -1,3 +1,6 @@
+2014-05-12 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Did not migrate data from previous versions.
+
 2013-02-17 Graeme Gott <graeme@gottcode.org>
 	* Tag version 1.4.4.1.
 
