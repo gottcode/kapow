@@ -767,6 +767,10 @@ void Window::save() {
 		return;
 	}
 
+	// Create temporary backup of time data
+	QFile::remove(m_filename + ".bak");
+	QFile::rename(m_filename, m_filename + ".bak");
+
 	// Open file for writing
 	QFile file(m_filename);
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
