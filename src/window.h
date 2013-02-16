@@ -85,6 +85,7 @@ private:
 	int currentRow();
 	void loadData();
 	void loadData(const QString& filename);
+	void createDataBackup();
 	void addProject(const QString& name);
 	void removeProject(QTreeWidgetItem* item);
 	void updateDetails();
