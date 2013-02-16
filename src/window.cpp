@@ -37,6 +37,7 @@
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDateTime>
+#include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QHBoxLayout>
@@ -847,6 +848,7 @@ void Window::loadData() {
 	// Try to load time data
 	loadData(m_filename);
 	if (m_valid) {
+		createDataBackup();
 		return;
 	}
 
@@ -854,6 +856,16 @@ void Window::loadData() {
 	if (QFile::exists(m_filename + ".bak")) {
 		m_valid = true;
 		loadData(m_filename + ".bak");
+		if (m_valid) {
+			return;
+		}
+	}
+
+	// Try to load time data from any backup
+	QStringList backups = QFileInfo(m_filename).dir().entryList(QStringList(m_filename + ".bak-"), QDir::Files, QDir::Name | QDir::IgnoreCase | QDir::Reversed);
+	foreach (const QString& backup, backups) {
+		m_valid = true;
+		loadData(backup);
 		if (m_valid) {
 			return;
 		}
@@ -990,6 +1002,77 @@ void Window::loadData(const QString& filename) {
 		current = m_projects->topLevelItem(0);
 	}
 	m_projects->setCurrentItem(current);
+}
+
+/*****************************************************************************/
+
+void Window::createDataBackup() {
+	// Create daily backup
+	QDate date = QDate::currentDate();
+	QString path = m_filename + ".bak-" + date.toString("yyyyMMdd");
+	if (QFile::exists(path)) {
+		return;
+	}
+	QFile::copy(m_filename, path);
+
+	// Create list of daily and weekly backups
+	QStringList days;
+	for (int i = 0; i < 7; ++i) {
+		QDate d = date.addDays(-i);
+		days.append(m_filename + ".bak-" + d.toString("yyyyMMdd"));
+	}
+	QStringList weeks;
+	for (int i = 1; i < 5; ++i) {
+		QDate d = date.addDays(-i * 7);
+		int year;
+		int week = d.weekNumber(&year);
+		weeks.prepend(QString("%1-%2").arg(year).arg(week));
+	}
+
+	// Reduce previous backups
+	QString current_month = date.addMonths(-1).addYears(-1).toString("yyyyMM");
+	int current_year = 0;
+	QDir dir = QFileInfo(m_filename).dir();
+	QStringList backups = dir.entryList(QStringList(m_filename + ".bak-"), QDir::Files, QDir::Name | QDir::IgnoreCase);
+	foreach (const QString& backup, backups) {
+		// Keep one backup a day for the last 7 days
+		if (days.contains(backup)) {
+			continue;
+		}
+
+		QDate d = QDate::fromString(backup.right(8), "yyyyMMdd");
+		if (!d.isValid()) {
+			continue;
+		}
+
+		// Keep one backup a week for the last 4 weeks
+		int year;
+		int week = d.weekNumber(&year);
+		QString week_string = QString("%1-%2").arg(year).arg(week);
+		if (weeks.first() == week_string) {
+			weeks.removeFirst();
+			continue;
+		}
+
+		// Keep one backup a month for the the last 12 months
+		QString month = d.toString("yyyyMM");
+		if (month > current_month) {
+			current_month = month;
+			if (d.year() > current_year) {
+				current_year = d.year();
+			}
+			continue;
+		}
+
+		// Keep one backup a year from the beginning
+		if (d.year() > current_year) {
+			current_year = d.year();
+			continue;
+		}
+
+		// Remove extra backup
+		dir.remove(backup);
+	}
 }
 
 /*****************************************************************************/
