@@ -1,3 +1,6 @@
+2013-02-16 Graeme Gott <graeme@gottcode.org>
+	* Rename invalid time data and allow program launch.
+
 2013-02-15 Graeme Gott <graeme@gottcode.org>
 	* Create temporary backup of time data when saving.
 	* Store time data in documents folder.

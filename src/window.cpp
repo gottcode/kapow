@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -844,8 +844,31 @@ int Window::currentRow() {
 /*****************************************************************************/
 
 void Window::loadData() {
+	// Try to load time data
+	loadData(m_filename);
+	if (m_valid) {
+		return;
+	}
+
+	// Try to load time data from temporary backup
+	if (QFile::exists(m_filename + ".bak")) {
+		m_valid = true;
+		loadData(m_filename + ".bak");
+		if (m_valid) {
+			return;
+		}
+	}
+
+	// Try to start with empty time data
+	m_valid = true;
+	loadData(m_filename);
+}
+
+/*****************************************************************************/
+
+void Window::loadData(const QString& filename) {
 	// Open data file; create default project if it doesn't exist
-	QFile file(m_filename);
+	QFile file(filename);
 	if (!file.exists()) {
 		addProject(tr("Untitled"));
 		m_projects->setCurrentItem(m_projects->topLevelItem(0));
@@ -929,9 +952,20 @@ void Window::loadData() {
 	// Abort if data is corrupt
 	if (xml.hasError()) {
 		m_valid = false;
+
+		// Move aside invalid data
+		QString path = QFileInfo(file).canonicalFilePath();
+		QFile::rename(filename, filename + ".invalid-" + QDateTime::currentDateTime().toString("yyyyMMddhhmmsszzz"));
+
+		// Clear invalid data
+		m_contact = Contact();
+		m_rates = Rates();
+		m_projects->clear();
+
+		// Warn user that data is invalid
 		QMessageBox message(QMessageBox::Critical, tr("Error"), tr("Unable to read time data."), QMessageBox::Ok, this);
 		message.setInformativeText(QString("%1:%2:%3: %4")
-			.arg(QFileInfo(file).canonicalFilePath())
+			.arg(path)
 			.arg(xml.lineNumber())
 			.arg(xml.columnNumber())
 #if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
