@@ -28,7 +28,8 @@ If you pass a FILE as the last argument, Kapow will use it instead of
 the default file. The FILE must end with ".xml".
 
 Arguments:
-  --ini=FILE  store settings as INI format in specified FILE
+  --ini=FILE    store settings as INI format in specified FILE
+  --no-backups  do not create automatic backups of time data
 
 Exit status:
  0  if OK,

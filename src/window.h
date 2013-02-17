@@ -42,7 +42,7 @@ class QTreeWidgetItem;
 class Window : public QMainWindow {
 	Q_OBJECT
 public:
-	Window(const QString& filename, QWidget* parent = 0);
+	Window(const QString& filename, bool backups_enabled, QWidget* parent = 0);
 
 	bool isValid() const;
 
@@ -98,6 +98,7 @@ private:
 	QString m_filename;
 	bool m_valid;
 	bool m_blocked;
+	bool m_backups_enabled;
 
 	QSplitter* m_contents;
 	QTreeWidget* m_projects;
