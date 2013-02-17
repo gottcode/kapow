@@ -105,11 +105,12 @@ namespace {
 
 /*****************************************************************************/
 
-Window::Window(const QString& filename, QWidget* parent) :
+Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	QMainWindow(parent),
 	m_filename(filename),
 	m_valid(true),
 	m_blocked(false),
+	m_backups_enabled(backups_enabled),
 	m_decimals(true),
 	m_inline(true),
 	m_active_project(0),
@@ -768,9 +769,11 @@ void Window::save() {
 		return;
 	}
 
-	// Create temporary backup of time data
-	QFile::remove(m_filename + ".bak");
-	QFile::rename(m_filename, m_filename + ".bak");
+	if (m_backups_enabled) {
+		// Create temporary backup of time data
+		QFile::remove(m_filename + ".bak");
+		QFile::rename(m_filename, m_filename + ".bak");
+	}
 
 	// Open file for writing
 	QFile file(m_filename);
@@ -848,26 +851,32 @@ void Window::loadData() {
 	// Try to load time data
 	loadData(m_filename);
 	if (m_valid) {
-		createDataBackup();
+		if (m_backups_enabled) {
+			createDataBackup();
+		}
 		return;
 	}
 
-	// Try to load time data from temporary backup
-	if (QFile::exists(m_filename + ".bak")) {
-		m_valid = true;
-		loadData(m_filename + ".bak");
-		if (m_valid) {
-			return;
+	if (m_backups_enabled) {
+		// Try to load time data from temporary backup
+		if (QFile::exists(m_filename + ".bak")) {
+			m_valid = true;
+			loadData(m_filename + ".bak");
+			if (m_valid) {
+				return;
+			}
 		}
-	}
 
-	// Try to load time data from any backup
-	QStringList backups = QFileInfo(m_filename).dir().entryList(QStringList(m_filename + ".bak-"), QDir::Files, QDir::Name | QDir::IgnoreCase | QDir::Reversed);
-	foreach (const QString& backup, backups) {
-		m_valid = true;
-		loadData(backup);
-		if (m_valid) {
-			return;
+		// Try to load time data from any backup
+		QStringList backups = QFileInfo(m_filename).dir().entryList(QStringList(m_filename + ".bak-"),
+				QDir::Files,
+				QDir::Name | QDir::IgnoreCase | QDir::Reversed);
+		foreach (const QString& backup, backups) {
+			m_valid = true;
+			loadData(backup);
+			if (m_valid) {
+				return;
+			}
 		}
 	}
 

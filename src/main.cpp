@@ -54,6 +54,7 @@ int main(int argc, char** argv)
 	}
 
 	QString path;
+	bool backups_enabled = true;
 	{
 		QStringList args = app.arguments();
 
@@ -78,6 +79,9 @@ int main(int argc, char** argv)
 		foreach (const QString& arg, args) {
 			if (arg.startsWith("--ini=")) {
 				Settings::setPath(arg.mid(6));
+			}
+			if (arg == "--no-backups") {
+				backups_enabled = false;
 			}
 		}
 
@@ -185,7 +189,7 @@ int main(int argc, char** argv)
 		}
 	}
 
-	Window window(path);
+	Window window(path, backups_enabled);
 	if (window.isValid()) {
 		return app.exec();
 	} else {
