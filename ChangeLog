@@ -1,3 +1,6 @@
+2013-02-17 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.4.4.
+
 2013-02-16 Graeme Gott <graeme@gottcode.org>
 	* Allow disabling time data backups.
 	* Create backups of time data.
