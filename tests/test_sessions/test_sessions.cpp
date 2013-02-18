@@ -21,8 +21,11 @@
 
 #include "data_model.h"
 #include "session.h"
+Q_DECLARE_METATYPE(Session)
 
 #include <QTest>
+
+//-----------------------------------------------------------------------------
 
 void TestSessions::addSessions_data()
 {
@@ -73,6 +76,8 @@ void TestSessions::addSessions()
 	QCOMPARE(session.task(), task);
 	QCOMPARE(session.isBilled(), false);
 }
+
+//-----------------------------------------------------------------------------
 
 void TestSessions::addConflictingSessions_data()
 {
@@ -136,5 +141,178 @@ void TestSessions::addConflictingSessions()
 
 	QCOMPARE(model.rowCount(), 2);
 }
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::addMultipleSessions_data()
+{
+	QTest::addColumn<QVariantList>("sessions");
+	QTest::addColumn<QVariantList>("result");
+
+	QTest::newRow("Sorted")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		);
+	QTest::newRow("Sorted reverse")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		);
+	QTest::newRow("Unsorted")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		);
+}
+
+void TestSessions::addMultipleSessions()
+{
+	DataModel model;
+
+	QFETCH(QVariantList, sessions);
+	for (int i = 0; i < sessions.count(); ++i) {
+		model.add(sessions.at(i).value<Session>());
+	}
+
+	QFETCH(QVariantList, result);
+	for (int i = 0; i < result.count(); ++i) {
+		QCOMPARE(model.session(i), result.at(i).value<Session>());
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::editSessions_data()
+{
+	QTest::addColumn<QVariantList>("sessions");
+	QTest::addColumn<int>("position");
+	QTest::addColumn<Session>("replacement");
+	QTest::addColumn<QVariantList>("result");
+
+	QTest::newRow("Simple edit")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		)
+		<< 1
+		<< Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "Test session.", false)
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		);
+	QTest::newRow("Prevent editing into conflict")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		)
+		<< 1
+		<< Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false)
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		);
+}
+
+void TestSessions::editSessions()
+{
+	DataModel model;
+
+	QFETCH(QVariantList, sessions);
+	for (int i = 0; i < sessions.count(); ++i) {
+		model.add(sessions.at(i).value<Session>());
+	}
+
+	QFETCH(int, position);
+	QFETCH(Session, replacement);
+	model.edit(position, replacement);
+
+	QFETCH(QVariantList, result);
+	for (int i = 0; i < result.count(); ++i) {
+		QCOMPARE(model.session(i), result.at(i).value<Session>());
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::removeSessions_data()
+{
+	QTest::addColumn<QVariantList>("sessions");
+	QTest::addColumn<QVariantList>("remove");
+	QTest::addColumn<QVariantList>("result");
+
+	QTest::newRow("Remove one session")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 1
+		)
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+		);
+	QTest::newRow("Remove two sessions in a row")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 1
+			<< 1
+		)
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		);
+}
+
+void TestSessions::removeSessions()
+{
+	DataModel model;
+
+	QFETCH(QVariantList, sessions);
+	for (int i = 0; i < sessions.count(); ++i) {
+		model.add(sessions.at(i).value<Session>());
+	}
+
+	QFETCH(QVariantList, remove);
+	for (int i = 0; i < remove.count(); ++i) {
+		model.remove(remove.at(i).toInt());
+	}
+
+	QFETCH(QVariantList, result);
+	for (int i = 0; i < result.count(); ++i) {
+		QCOMPARE(model.session(i), result.at(i).value<Session>());
+	}
+}
+
+//-----------------------------------------------------------------------------
 
 QTEST_MAIN(TestSessions)

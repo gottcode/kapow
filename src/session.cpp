@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -98,6 +98,16 @@ void Session::toXml(QXmlStreamWriter& xml) const {
 	xml.writeAttribute("stop", d->m_stop.toString(Qt::ISODate));
 	xml.writeAttribute("billed", QString::number(d->m_billed));
 	xml.writeAttribute("note", d->m_task);
+}
+
+/*****************************************************************************/
+
+bool operator==(const Session& lhs, const Session &rhs) {
+	return (lhs.date() == rhs.date())
+		&& (lhs.start() == rhs.start())
+		&& (lhs.stop() == rhs.stop())
+		&& (lhs.task() == rhs.task())
+		&& (lhs.isBilled() == rhs.isBilled());
 }
 
 /*****************************************************************************/
