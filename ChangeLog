@@ -1,3 +1,6 @@
+2013-02-18 Graeme Gott <graeme@gottcode.org>
+	* Simplify build system.
+
 2013-02-16 Graeme Gott <graeme@gottcode.org>
 	* Allow disabling time data backups.
 	* Create backups of time data.

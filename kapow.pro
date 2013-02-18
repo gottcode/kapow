@@ -1,17 +1,13 @@
+lessThan(QT_VERSION, 4.6) {
+	error("Kapow requires Qt 4.6 or greater")
+}
+
 TEMPLATE = app
+QT += network
 greaterThan(QT_MAJOR_VERSION, 4) {
-	QT += widgets
-	QT += printsupport
+	QT += widgets printsupport
 }
 CONFIG += warn_on
-macx {
-	CONFIG += x86_64
-}
-QT += network
-
-MOC_DIR = build
-OBJECTS_DIR = build
-RCC_DIR = build
 
 VERSION = $$system(git rev-parse --short HEAD)
 isEmpty(VERSION) {
@@ -56,17 +52,7 @@ SOURCES = src/contact.cpp \
 	src/time_editor.cpp \
 	src/window.cpp
 
-TRANSLATIONS = translations/kapow_bg.ts \
-	translations/kapow_cs.ts \
-	translations/kapow_da.ts \
-	translations/kapow_de.ts \
-	translations/kapow_el.ts \
-	translations/kapow_en.ts \
-	translations/kapow_es.ts \
-	translations/kapow_fr.ts \
-	translations/kapow_it.ts \
-	translations/kapow_nl.ts \
-	translations/kapow_uk.ts
+TRANSLATIONS = $$files(translations/kapow_*.ts)
 
 RESOURCES = icons/icons.qrc
 macx {
