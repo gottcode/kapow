@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,7 +64,19 @@ bool DataModel::add(const QDateTime& start, const QDateTime& stop, const QString
 	if (start.date() == stop.date()) {
 		return add(Session(start.date(), start.time(), stop.time(), task, false));
 	} else {
-		return add(Session(start.date(), start.time(), QTime(23, 59, 59), task, false)) && add(Session(stop.date(), QTime(0, 0, 0), stop.time(), task, false));
+		if (!add(Session(start.date(), start.time(), QTime(23, 59, 59), task, false))) {
+			return false;
+		}
+		QDate date = start.date();
+		while ((date = date.addDays(1)) != stop.date()) {
+			if (!add(Session(date, QTime(0, 0, 0), QTime(23, 59, 59), task, false))) {
+				return false;
+			}
+		}
+		if (!add(Session(stop.date(), QTime(0, 0, 0), stop.time(), task, false))) {
+			return false;
+		}
+		return true;
 	}
 }
 
