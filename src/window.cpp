@@ -24,6 +24,7 @@
 #include "filter_model.h"
 #include "locale_dialog.h"
 #include "project.h"
+#include "project_delegate.h"
 #include "report.h"
 #include "session.h"
 #include "session_delegate.h"
@@ -55,7 +56,6 @@
 #include <QSignalMapper>
 #include <QSplitter>
 #include <QStack>
-#include <QStyledItemDelegate>
 #include <QTextDocument>
 #include <QTimer>
 #include <QTreeView>
@@ -72,36 +72,6 @@
 #include <windows.h>
 #include <io.h>
 #endif
-
-/*****************************************************************************/
-
-namespace {
-	class Delegate : public QStyledItemDelegate {
-	public:
-		Delegate(QObject* parent = 0)
-		: QStyledItemDelegate(parent) {
-			m_height = QLineEdit().sizeHint().height();
-		}
-
-		QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const {
-			if (index.column() == 0) {
-				return QStyledItemDelegate::createEditor(parent, option, index);
-			} else {
-				return 0;
-			}
-		}
-
-		QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
-		{
-			QSize size = QStyledItemDelegate::sizeHint(option, index);
-			size.setHeight(m_height);
-			return size;
-		}
-
-	private:
-		int m_height;
-	};
-}
 
 /*****************************************************************************/
 
@@ -212,7 +182,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_projects->setDragEnabled(true);
 	m_projects->setDragDropMode(QAbstractItemView::InternalMove);
 	m_projects->setHeaderLabels(QStringList() << tr("Project") << tr("Timer"));
-	m_projects->setItemDelegate(new Delegate(m_projects));
+	m_projects->setItemDelegate(new ProjectDelegate(m_projects));
 	m_projects->setSelectionMode(QAbstractItemView::SingleSelection);
 	m_projects->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_projects->setSortingEnabled(true);

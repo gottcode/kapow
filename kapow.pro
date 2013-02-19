@@ -26,6 +26,7 @@ HEADERS = src/contact.h \
 	src/filter_model.h \
 	src/locale_dialog.h \
 	src/project.h \
+	src/project_delegate.h \
 	src/rates.h \
 	src/report.h \
 	src/session.h \
@@ -42,6 +43,7 @@ SOURCES = src/contact.cpp \
 	src/locale_dialog.cpp \
 	src/main.cpp \
 	src/project.cpp \
+	src/project_delegate.cpp \
 	src/rates.cpp \
 	src/report.cpp \
 	src/session.cpp \
