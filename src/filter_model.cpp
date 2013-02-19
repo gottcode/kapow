@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,14 +19,14 @@
 
 #include "filter_model.h"
 
-#include "data_model.h"
 #include "session.h"
+#include "session_model.h"
 
 #include <QDate>
 
 /*****************************************************************************/
 
-FilterModel::FilterModel(DataModel* model, QObject* parent)
+FilterModel::FilterModel(SessionModel* model, QObject* parent)
 : QSortFilterProxyModel(parent), m_model(model), m_type(All) {
 	setSourceModel(model);
 	connect(model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), this, SLOT(invalidate()));

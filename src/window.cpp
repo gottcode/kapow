@@ -20,7 +20,6 @@
 #include "window.h"
 
 #include "contact.h"
-#include "data_model.h"
 #include "date_editor.h"
 #include "filter_model.h"
 #include "locale_dialog.h"
@@ -29,6 +28,7 @@
 #include "session.h"
 #include "session_delegate.h"
 #include "session_dialog.h"
+#include "session_model.h"
 #include "settings.h"
 #include "time_editor.h"
 
@@ -137,7 +137,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 
 	m_task = new QLineEdit(contents);
 #if (QT_VERSION >= QT_VERSION_CHECK(4,7,0))
-	m_task->setPlaceholderText(DataModel::tr("Task"));
+	m_task->setPlaceholderText(SessionModel::tr("Task"));
 #endif
 	m_task->setFocus();
 	connect(m_task, SIGNAL(textChanged(QString)), this, SLOT(taskChanged(QString)));
@@ -920,7 +920,7 @@ void Window::loadData(const QString& filename) {
 
 	// Parse data file
 	QStack<Project*> projects;
-	DataModel* model = 0;
+	SessionModel* model = 0;
 	int filter = 0;
 	QTreeWidgetItem* item = m_projects->invisibleRootItem();
 	QTreeWidgetItem* current = 0;

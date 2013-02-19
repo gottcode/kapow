@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,28 +17,33 @@
  *
  ***********************************************************************/
 
-#ifndef DATA_MODEL_H
-#define DATA_MODEL_H
+#ifndef KAPOW_SESSION_MODEL_H
+#define KAPOW_SESSION_MODEL_H
 
 #include "session.h"
 
 #include <QAbstractItemModel>
 #include <QXmlStreamWriter>
 
-class DataModel : public QAbstractItemModel {
+class SessionModel : public QAbstractItemModel
+{
 	Q_OBJECT
-public:
-	DataModel(QObject* parent = 0);
 
-	QList<int> billedRows() const {
+public:
+	SessionModel(QObject* parent = 0);
+
+	QList<int> billedRows() const
+	{
 		return m_billed;
 	}
 
-	bool isBilled(int pos) const {
+	bool isBilled(int pos) const
+	{
 		return (!m_billed.isEmpty() && pos <= m_billed.last());
 	}
 
-	Session session(int pos) const {
+	Session session(int pos) const
+	{
 		return m_data.value(pos);
 	}
 
@@ -75,4 +80,4 @@ private:
 	bool m_loaded;
 };
 
-#endif
+#endif // KAPOW_SESSION_MODEL_H

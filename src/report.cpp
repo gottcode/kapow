@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,9 +20,9 @@
 #include "report.h"
 
 #include "contact.h"
-#include "data_model.h"
 #include "rates.h"
 #include "settings.h"
+#include "session_model.h"
 
 #include <QCheckBox>
 #include <QComboBox>
@@ -50,7 +50,7 @@
 
 /*****************************************************************************/
 
-Report::Report(DataModel* data, int current, Contact* contact, Rates* rates, QWidget* parent) :
+Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, QWidget* parent) :
 	QDialog(parent), m_data(data), m_current_row(current), m_contact(contact), m_rates(rates)
 {
 	// Create contact information widgets

@@ -19,8 +19,8 @@
 
 #include "test_sessions.h"
 
-#include "data_model.h"
 #include "session.h"
+#include "session_model.h"
 Q_DECLARE_METATYPE(Session)
 
 #include <QTest>
@@ -53,7 +53,7 @@ void TestSessions::addSessions_data()
 
 void TestSessions::addSessions()
 {
-	DataModel model;
+	SessionModel model;
 
 	QFETCH(QDateTime, start);
 	QFETCH(QDateTime, stop);
@@ -127,7 +127,7 @@ void TestSessions::addConflictingSessions_data()
 
 void TestSessions::addConflictingSessions()
 {
-	DataModel model;
+	SessionModel model;
 
 	QFETCH(QDateTime, start);
 	QFETCH(QDateTime, stop);
@@ -209,7 +209,7 @@ void TestSessions::addMultipleSessions_data()
 
 void TestSessions::addMultipleSessions()
 {
-	DataModel model;
+	SessionModel model;
 
 	QFETCH(QVariantList, sessions);
 	for (int i = 0; i < sessions.count(); ++i) {
@@ -361,7 +361,7 @@ void TestSessions::billSessions_data()
 
 void TestSessions::billSessions()
 {
-	DataModel model;
+	SessionModel model;
 
 	QFETCH(QVariantList, sessions);
 	for (int i = 0; i < sessions.count(); ++i) {
@@ -458,7 +458,7 @@ void TestSessions::editSessions_data()
 
 void TestSessions::editSessions()
 {
-	DataModel model;
+	SessionModel model;
 
 	QFETCH(QVariantList, sessions);
 	for (int i = 0; i < sessions.count(); ++i) {
@@ -543,7 +543,7 @@ void TestSessions::removeSessions_data()
 
 void TestSessions::removeSessions()
 {
-	DataModel model;
+	SessionModel model;
 
 	QFETCH(QVariantList, sessions);
 	for (int i = 0; i < sessions.count(); ++i) {

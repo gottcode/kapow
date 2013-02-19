@@ -1,3 +1,6 @@
+2013-02-19 Graeme Gott <graeme@gottcode.org>
+	* Rename DataModel to SessionModel.
+
 2013-02-18 Graeme Gott <graeme@gottcode.org>
 	* Prevent modifying billed sessions in DataModel.
 	* Move graphical code out of DataModel.

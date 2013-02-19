@@ -17,25 +17,30 @@
  *
  ***********************************************************************/
 
-#include "data_model.h"
+#include "session_model.h"
 
 #include "session.h"
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-DataModel::DataModel(QObject* parent)
-: QAbstractItemModel(parent), m_decimals(true), m_loaded(true) {
+SessionModel::SessionModel(QObject* parent) :
+	QAbstractItemModel(parent),
+	m_decimals(true),
+	m_loaded(true)
+{
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void DataModel::beginLoad() {
+void SessionModel::beginLoad()
+{
 	m_loaded = false;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void DataModel::endLoad() {
+void SessionModel::endLoad()
+{
 	m_loaded = true;
 
 	// Store billed status
@@ -50,9 +55,10 @@ void DataModel::endLoad() {
 	updateTotals();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool DataModel::add(const QDateTime& start, const QDateTime& stop, const QString& task) {
+bool SessionModel::add(const QDateTime& start, const QDateTime& stop, const QString& task)
+{
 	if (stop < start) {
 		return false;
 	}
@@ -76,9 +82,10 @@ bool DataModel::add(const QDateTime& start, const QDateTime& stop, const QString
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool DataModel::add(const Session& session) {
+bool SessionModel::add(const Session& session)
+{
 	if (!session.isValid()) {
 		return false;
 	}
@@ -140,9 +147,10 @@ bool DataModel::add(const Session& session) {
 	return true;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool DataModel::edit(int pos, const Session& session) {
+bool SessionModel::edit(int pos, const Session& session)
+{
 	if (!session.isValid() || isBilled(pos)) {
 		return false;
 	}
@@ -160,9 +168,10 @@ bool DataModel::edit(int pos, const Session& session) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool DataModel::remove(int pos) {
+bool SessionModel::remove(int pos)
+{
 	if (pos >= m_data.count() || isBilled(pos)) {
 		return false;
 	}
@@ -187,9 +196,10 @@ bool DataModel::remove(int pos) {
 	return true;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void DataModel::setBilled(int pos, bool billed) {
+void SessionModel::setBilled(int pos, bool billed)
+{
 	Q_ASSERT(pos < m_data.count());
 
 	if (!billed) {
@@ -204,24 +214,27 @@ void DataModel::setBilled(int pos, bool billed) {
 	updateTotals();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void DataModel::setDecimalTotals(bool decimals) {
+void SessionModel::setDecimalTotals(bool decimals)
+{
 	m_decimals = decimals;
 	emit dataChanged(index(0, 0), index(rowCount(), columnCount()));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void DataModel::toXml(QXmlStreamWriter& xml) const {
+void SessionModel::toXml(QXmlStreamWriter& xml) const
+{
 	foreach (const Session& session, m_data) {
 		session.toXml(xml);
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-int DataModel::rowCount(const QModelIndex& parent) const {
+int SessionModel::rowCount(const QModelIndex& parent) const
+{
 	if (!parent.isValid()) {
 		return m_data.count() + 1;
 	} else if ((parent.internalId() == -1) && m_billed.contains(parent.row())) {
@@ -231,15 +244,17 @@ int DataModel::rowCount(const QModelIndex& parent) const {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-int DataModel::columnCount(const QModelIndex&) const {
+int SessionModel::columnCount(const QModelIndex&) const
+{
 	return 10;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QVariant DataModel::data(const QModelIndex& index, int role) const {
+QVariant SessionModel::data(const QModelIndex& index, int role) const
+{
 	Q_ASSERT(index.isValid());
 	QVariant result;
 
@@ -429,9 +444,10 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 	return result;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Qt::ItemFlags DataModel::flags(const QModelIndex& index) const {
+Qt::ItemFlags SessionModel::flags(const QModelIndex& index) const
+{
 	Qt::ItemFlags result = QAbstractItemModel::flags(index);
 	if (index.parent().isValid() || (index.row() == m_data.count())) {
 		result = Qt::ItemIsEnabled;
@@ -445,9 +461,10 @@ Qt::ItemFlags DataModel::flags(const QModelIndex& index) const {
 	return result;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QVariant DataModel::headerData(int section, Qt::Orientation orientation, int role) const {
+QVariant SessionModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
 	if (orientation != Qt::Horizontal) {
 		return QVariant();
 	}
@@ -484,9 +501,10 @@ QVariant DataModel::headerData(int section, Qt::Orientation orientation, int rol
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QModelIndex DataModel::index(int row, int column, const QModelIndex& parent) const {
+QModelIndex SessionModel::index(int row, int column, const QModelIndex& parent) const
+{
 	if (!hasIndex(row, column, parent)) {
 		return QModelIndex();
 	}
@@ -498,9 +516,10 @@ QModelIndex DataModel::index(int row, int column, const QModelIndex& parent) con
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QModelIndex DataModel::parent(const QModelIndex& child) const {
+QModelIndex SessionModel::parent(const QModelIndex& child) const
+{
 	if (!child.isValid()) {
 		return QModelIndex();
 	}
@@ -513,9 +532,10 @@ QModelIndex DataModel::parent(const QModelIndex& child) const {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool DataModel::setData(const QModelIndex& index, const QVariant& value, int role) {
+bool SessionModel::setData(const QModelIndex& index, const QVariant& value, int role)
+{
 	if (!isBilled(index.row()) && role == Qt::EditRole) {
 		Session session = m_data.at(index.row());
 		QDate date = session.date();
@@ -552,9 +572,10 @@ bool DataModel::setData(const QModelIndex& index, const QVariant& value, int rol
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void DataModel::updateTotals() {
+void SessionModel::updateTotals()
+{
 	Session current, previous;
 	for (int i = 0; i < m_data.count(); ++i) {
 		current = m_data.at(i);
@@ -565,4 +586,4 @@ void DataModel::updateTotals() {
 	emit billedStatusChanged(current.isBilled());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

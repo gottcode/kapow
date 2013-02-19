@@ -22,8 +22,8 @@
 
 #include "contact.h"
 #include "rates.h"
-class DataModel;
 class Project;
+class SessionModel;
 
 #include <QDateTime>
 #include <QMainWindow>
@@ -118,7 +118,7 @@ private:
 	QDateTime m_current_time;
 
 	Project* m_active_project;
-	DataModel* m_active_model;
+	SessionModel* m_active_model;
 	QList<Project*> m_active_timers;
 
 	QAction* m_add_project;

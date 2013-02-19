@@ -19,8 +19,8 @@
 
 #include "project.h"
 
-#include "data_model.h"
 #include "filter_model.h"
+#include "session_model.h"
 
 #include <QApplication>
 #include <QMessageBox>
@@ -159,7 +159,7 @@ void Project::init() {
 	setFlags(flags() | Qt::ItemIsEditable);
 	setTextAlignment(1, Qt::AlignRight | Qt::AlignVCenter);
 
-	m_model = new DataModel(this);
+	m_model = new SessionModel(this);
 	connect(m_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(billedStatusChanged(bool)));
 	m_filter_model = new FilterModel(m_model, treeWidget());
 	m_active = false;

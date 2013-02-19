@@ -1,6 +1,6 @@
 TARGET = test_sessions
-HEADERS += ../../src/data_model.h
+HEADERS += ../../src/session_model.h
 SOURCES += \
-	../../src/data_model.cpp \
-	../../src/session.cpp
+	../../src/session.cpp \
+	../../src/session_model.cpp
 include(../tests.pri)

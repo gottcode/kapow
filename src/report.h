@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,8 @@
 #define REPORT_H
 
 class Contact;
-class DataModel;
 class Rates;
+class SessionModel;
 
 #include <QDialog>
 class QCheckBox;
@@ -35,7 +35,7 @@ class QTreeView;
 class Report : public QDialog {
 	Q_OBJECT
 public:
-	Report(DataModel* data, int current, Contact* contact, Rates* rates, QWidget* parent = 0);
+	Report(SessionModel* data, int current, Contact* contact, Rates* rates, QWidget* parent = 0);
 
 protected:
 	virtual void hideEvent(QHideEvent* event);
@@ -61,7 +61,7 @@ private:
 
 	QComboBox* m_groups;
 	QTreeView* m_details;
-	DataModel* m_data;
+	SessionModel* m_data;
 	int m_current_row;
 	QDoubleSpinBox* m_hourly_rate;
 	QDoubleSpinBox* m_tax_rate;

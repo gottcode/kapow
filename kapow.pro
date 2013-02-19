@@ -22,7 +22,6 @@ unix: !macx {
 }
 
 HEADERS = src/contact.h \
-	src/data_model.h \
 	src/date_editor.h \
 	src/filter_model.h \
 	src/locale_dialog.h \
@@ -32,12 +31,12 @@ HEADERS = src/contact.h \
 	src/session.h \
 	src/session_delegate.h \
 	src/session_dialog.h \
+	src/session_model.h \
 	src/settings.h \
 	src/time_editor.h \
 	src/window.h
 
 SOURCES = src/contact.cpp \
-	src/data_model.cpp \
 	src/date_editor.cpp \
 	src/filter_model.cpp \
 	src/locale_dialog.cpp \
@@ -48,6 +47,7 @@ SOURCES = src/contact.cpp \
 	src/session.cpp \
 	src/session_delegate.cpp \
 	src/session_dialog.cpp \
+	src/session_model.cpp \
 	src/settings.cpp \
 	src/time_editor.cpp \
 	src/window.cpp

@@ -23,7 +23,7 @@
 #include <QDateTime>
 #include <QTreeWidgetItem>
 #include <QXmlStreamWriter>
-class DataModel;
+class SessionModel;
 class FilterModel;
 
 class Project : public QObject, public QTreeWidgetItem {
@@ -41,7 +41,7 @@ public:
 		return m_active;
 	}
 
-	DataModel* model() const {
+	SessionModel* model() const {
 		return m_model;
 	}
 
@@ -66,7 +66,7 @@ private:
 	void init();
 
 private:
-	DataModel* m_model;
+	SessionModel* m_model;
 	FilterModel* m_filter_model;
 	QDateTime m_start_time;
 	QString m_task;
