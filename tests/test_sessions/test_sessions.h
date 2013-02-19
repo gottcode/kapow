@@ -33,6 +33,8 @@ private slots:
 	void addConflictingSessions();
 	void addMultipleSessions_data();
 	void addMultipleSessions();
+	void billSessions_data();
+	void billSessions();
 	void editSessions_data();
 	void editSessions();
 	void removeSessions_data();

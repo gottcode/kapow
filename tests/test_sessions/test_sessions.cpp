@@ -224,6 +224,164 @@ void TestSessions::addMultipleSessions()
 
 //-----------------------------------------------------------------------------
 
+void TestSessions::billSessions_data()
+{
+	QTest::addColumn<QVariantList>("sessions");
+	QTest::addColumn<QVariantList>("toggle");
+	QTest::addColumn<QVariantList>("result");
+
+	QTest::newRow("Check unbilled status")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< QVariantList()
+		<< (QVariantList()
+			<< false
+			<< false
+			<< false
+			<< false
+		);
+	QTest::newRow("Check billed status")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< QVariantList()
+		<< (QVariantList()
+			<< true
+			<< true
+			<< true
+			<< false
+		);
+	QTest::newRow("Bill session")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 1
+		)
+		<< (QVariantList()
+			<< true
+			<< true
+			<< false
+			<< false
+		);
+	QTest::newRow("Bill second session")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 2
+		)
+		<< (QVariantList()
+			<< true
+			<< true
+			<< true
+			<< false
+		);
+	QTest::newRow("Unbill session")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 2
+		)
+		<< (QVariantList()
+			<< true
+			<< false
+			<< false
+			<< false
+		);
+	QTest::newRow("Unbill all sessions")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 0
+			<< 2
+		)
+		<< (QVariantList()
+			<< false
+			<< false
+			<< false
+			<< false
+		);
+	QTest::newRow("Toggle billed session")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 2
+			<< 2
+		)
+		<< (QVariantList()
+			<< true
+			<< true
+			<< true
+			<< false
+		);
+	QTest::newRow("Toggle unbilled session")
+		<< (QVariantList()
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
+			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
+		)
+		<< (QVariantList()
+			<< 2
+			<< 2
+		)
+		<< (QVariantList()
+			<< false
+			<< false
+			<< false
+			<< false
+		);
+}
+
+void TestSessions::billSessions()
+{
+	DataModel model;
+
+	QFETCH(QVariantList, sessions);
+	for (int i = 0; i < sessions.count(); ++i) {
+		model.add(sessions.at(i).value<Session>());
+	}
+
+	QFETCH(QVariantList, toggle);
+	for (int i = 0; i < toggle.count(); ++i) {
+		int pos = toggle.at(i).toInt();
+		model.setBilled(pos, !model.session(pos).isBilled());
+	}
+
+	QFETCH(QVariantList, result);
+	for (int i = 0; i < result.count(); ++i) {
+		QCOMPARE(model.isBilled(i), result.at(i).value<bool>());
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void TestSessions::editSessions_data()
 {
 	QTest::addColumn<QVariantList>("sessions");
