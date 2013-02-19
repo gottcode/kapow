@@ -107,6 +107,11 @@ bool DataModel::add(const Session& session) {
 		}
 	}
 
+	// Prevent adding to billed
+	if (isBilled(pos)) {
+		return false;
+	}
+
 	// Insert session
 	if (!m_loaded) {
 		m_data.insert(pos, session);
@@ -138,7 +143,7 @@ bool DataModel::add(const Session& session) {
 /*****************************************************************************/
 
 bool DataModel::edit(int pos, const Session& session) {
-	if (!session.isValid()) {
+	if (!session.isValid() || isBilled(pos)) {
 		return false;
 	}
 
@@ -158,7 +163,7 @@ bool DataModel::edit(int pos, const Session& session) {
 /*****************************************************************************/
 
 bool DataModel::remove(int pos) {
-	if (pos >= m_data.count()) {
+	if (pos >= m_data.count() || isBilled(pos)) {
 		return false;
 	}
 
