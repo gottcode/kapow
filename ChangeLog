@@ -1,4 +1,5 @@
 2013-02-19 Graeme Gott <graeme@gottcode.org>
+	* FIXED: SessionModel ids were treated as signed ints.
 	* Move ProjectDelgate out of window file.
 	* Rename DataModel to SessionModel.
 

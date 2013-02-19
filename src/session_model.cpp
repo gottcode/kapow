@@ -21,6 +21,8 @@
 
 #include "session.h"
 
+#include <climits>
+
 //-----------------------------------------------------------------------------
 
 SessionModel::SessionModel(QObject* parent) :
@@ -237,7 +239,7 @@ int SessionModel::rowCount(const QModelIndex& parent) const
 {
 	if (!parent.isValid()) {
 		return m_data.count() + 1;
-	} else if ((parent.internalId() == -1) && m_billed.contains(parent.row())) {
+	} else if ((parent.internalId() == UINT_MAX) && m_billed.contains(parent.row())) {
 		return 1;
 	} else {
 		return 0;
@@ -510,7 +512,7 @@ QModelIndex SessionModel::index(int row, int column, const QModelIndex& parent) 
 	}
 
 	if (!parent.isValid()) {
-		return createIndex(row, column, -1);
+		return createIndex(row, column, UINT_MAX);
 	} else {
 		return createIndex(row, column, parent.row());
 	}
@@ -524,11 +526,11 @@ QModelIndex SessionModel::parent(const QModelIndex& child) const
 		return QModelIndex();
 	}
 
-	qint64 row = child.internalId();
-	if (row == -1) {
+	quintptr row = child.internalId();
+	if (row == UINT_MAX) {
 		return QModelIndex();
 	} else {
-		return createIndex(row, 0, -1);
+		return createIndex(row, 0, UINT_MAX);
 	}
 }
 
