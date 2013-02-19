@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,10 @@
 #include "session_delegate.h"
 
 #include <QDateEdit>
+#include <QFont>
 #include <QLineEdit>
+#include <QMessageBox>
+#include <QMetaProperty>
 #include <QPainter>
 
 //-----------------------------------------------------------------------------
@@ -47,6 +50,7 @@ void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
 		} else {
 			// Set up drawing of unbilled totals row
 			opt.features |= QStyleOptionViewItemV2::Alternate;
+			opt.font.setWeight(QFont::Bold);
 			opt.state &= ~QStyle::State_HasFocus;
 		}
 
@@ -55,6 +59,7 @@ void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
 	} else {
 		// Set up drawing of totals row
 		opt.features |= QStyleOptionViewItemV2::Alternate;
+		opt.font.setWeight(QFont::Bold);
 		opt.palette.setBrush(QPalette::Text, opt.palette.brush(QPalette::Disabled, QPalette::Text));
 		opt.palette.setBrush(QPalette::AlternateBase, opt.palette.brush(QPalette::Disabled, QPalette::AlternateBase));
 		opt.state &= ~QStyle::State_HasFocus;
@@ -74,6 +79,16 @@ void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
 			--y;
 		}
 		painter->restore();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void SessionDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const
+{
+	QByteArray prop = editor->metaObject()->userProperty().name();
+	if (!model->setData(index, editor->property(prop), Qt::EditRole)) {
+		QMessageBox::warning(0, tr("Error"), tr("Session conflicts with other sessions."));
 	}
 }
 

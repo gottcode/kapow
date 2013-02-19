@@ -21,10 +21,6 @@
 
 #include "session.h"
 
-#include <QApplication>
-#include <QMessageBox>
-#include <QPalette>
-
 /*****************************************************************************/
 
 DataModel::DataModel(QObject* parent)
@@ -101,14 +97,12 @@ bool DataModel::add(const Session& session) {
 	if (pos > 0) {
 		Session current = m_data.at(pos - 1);
 		if (QDateTime(session.date(), session.start()) < QDateTime(current.date(), current.stop())) {
-			QMessageBox::warning(0, tr("Error"), tr("Session conflicts with other sessions."));
 			return false;
 		}
 	}
 	if (pos < m_data.count()) {
 		Session current = m_data.at(pos);
 		if (QDateTime(session.date(), session.stop()) > QDateTime(current.date(), current.start())) {
-			QMessageBox::warning(0, tr("Error"), tr("Session conflicts with other sessions."));
 			return false;
 		}
 	}
@@ -247,9 +241,6 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 	int pos = index.row();
 	if (index.parent().isValid() || (pos == m_data.count())) {
 
-		QFont font;
-		font.setWeight(QFont::Bold);
-
 		Session session;
 		if (!index.parent().isValid()) {
 			--pos;
@@ -320,10 +311,6 @@ QVariant DataModel::data(const QModelIndex& index, int role) const {
 			} else if (index.column() != 3) {
 				result = static_cast<int>(Qt::AlignRight | Qt::AlignVCenter);
 			}
-			break;
-
-		case Qt::FontRole:
-			result = font;
 			break;
 
 		default:
@@ -550,7 +537,6 @@ bool DataModel::setData(const QModelIndex& index, const QVariant& value, int rol
 		if (edit(index.row(), Session(date, start, stop, task, false))) {
 			return true;
 		} else {
-			QMessageBox::warning(0, tr("Error"), tr("Session conflicts with other sessions."));
 			return false;
 		}
 	} else if (index.column() == 9 && role == Qt::CheckStateRole) {

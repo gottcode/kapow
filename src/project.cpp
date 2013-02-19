@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -108,14 +108,18 @@ void Project::start(const QDateTime& current) {
 
 /*****************************************************************************/
 
-void Project::stop(const QDateTime& current) {
+void Project::stop(const QDateTime& current, bool* ok) {
+	bool success = true;
 	m_active = false;
 	if (current.isValid()) {
-		m_model->add(m_start_time, current, m_task);
+		success = m_model->add(m_start_time, current, m_task);
 	} else {
 		billedStatusChanged(m_model->isBilled(m_model->rowCount() - 2));
 	}
 	setText(1, "");
+	if (ok) {
+		*ok = success;
+	}
 }
 
 /*****************************************************************************/

@@ -492,7 +492,11 @@ void Window::start() {
 /*****************************************************************************/
 
 void Window::stop() {
-	m_active_project->stop(m_current_time);
+	bool ok;
+	m_active_project->stop(m_current_time, &ok);
+	if (!ok) {
+		QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
+	}
 	m_active_timers.removeAll(m_active_project);
 	m_remove_project->setEnabled(true);
 	updateDetails();
@@ -703,6 +707,8 @@ void Window::addSession() {
 				m_edit_session->setEnabled(true);
 				m_remove_session->setEnabled(true);
 				break;
+			} else {
+				QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
 			}
 		} else {
 			break;
@@ -728,6 +734,8 @@ void Window::editSession() {
 				if (m_active_model->edit(pos, dialog.session())) {
 					save();
 					return;
+				} else {
+					QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
 				}
 			} else {
 				break;
@@ -929,7 +937,9 @@ void Window::loadData(const QString& filename) {
 				QTime stop = QTime::fromString(attributes.value(QLatin1String("stop")).toString(), Qt::ISODate);
 				QString task = attributes.value(QLatin1String("note")).toString();
 				bool billed = attributes.value(QLatin1String("billed")).toString().toInt();
-				model->add(Session(date, start, stop, task, billed));
+				if (!model->add(Session(date, start, stop, task, billed))) {
+					xml.raiseError(tr("Session conflicts with other sessions."));
+				}
 			// Start adding project
 			} else if (xml.name() == QLatin1String("project")) {
 				m_projects->blockSignals(true);
@@ -953,7 +963,9 @@ void Window::loadData(const QString& filename) {
 				QDateTime start = QDateTime::fromString(attributes.value(QLatin1String("start")).toString(), Qt::ISODate);
 				QDateTime stop = QDateTime::fromString(attributes.value(QLatin1String("stop")).toString(), Qt::ISODate);
 				QString task = attributes.value(QLatin1String("note")).toString();
-				model->add(start, stop, task);
+				if (!model->add(start, stop, task)) {
+					xml.raiseError(tr("Session conflicts with other sessions."));
+				}
 			}
 		// Finish adding project
 		} else if (xml.isEndElement() && xml.name() == QLatin1String("project")) {

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2011, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ public:
 	Project(QTreeWidgetItem* parent, const QString& project);
 
 	void start(const QDateTime& current);
-	void stop(const QDateTime& current = QDateTime());
+	void stop(const QDateTime& current = QDateTime(), bool* ok = 0);
 	void updateTime(const QDateTime& current);
 	void setTask(const QString& task);
 
