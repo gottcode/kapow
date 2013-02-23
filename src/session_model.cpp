@@ -130,14 +130,6 @@ bool SessionModel::add(const Session& session)
 	m_data.insert(pos, session);
 	endInsertRows();
 
-	// Update successive billed sessions
-	for (int i = 0; i < m_billed.count(); ++i) {
-		int& session = m_billed[i];
-		if (session >= pos) {
-			session++;
-		}
-	}
-
 	// Set billed status
 	if (session.isBilled()) {
 		setBilled(pos, true);
@@ -182,15 +174,6 @@ bool SessionModel::remove(int pos)
 	beginRemoveRows(QModelIndex(), pos, pos);
 	m_data.removeAt(pos);
 	endRemoveRows();
-
-	// Update successive billed sessions
-	m_billed.removeAll(pos);
-	for (int i = 0; i < m_billed.count(); ++i) {
-		int& session = m_billed[i];
-		if (session > pos) {
-			session--;
-		}
-	}
 
 	// Increase totals for sessions
 	updateTotals();
