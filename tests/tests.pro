@@ -1,5 +1,6 @@
 TEMPLATE = subdirs
 SUBDIRS  = \
+	test_filters \
 	test_sessions
 
 test.target = test

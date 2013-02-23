@@ -14,11 +14,13 @@ RCC_DIR = ../build
 INCLUDEPATH += ../../src/
 
 HEADERS += $$join(TARGET,,,.h)
-HEADERS += ../../src/session.h \
+HEADERS += ../../src/filter_model.h \
+	../../src/session.h \
 	../../src/session_model.h
 
 SOURCES += $$join(TARGET,,,.cpp)
-SOURCES += ../../src/session.cpp \
+SOURCES += ../../src/filter_model.cpp \
+	../../src/session.cpp \
 	../../src/session_model.cpp
 
 test.commands += ./$(QMAKE_TARGET)
