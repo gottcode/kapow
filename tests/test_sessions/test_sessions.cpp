@@ -38,17 +38,17 @@ void TestSessions::addSessions_data()
 			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
 			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
 			<< QString("Test session.")
-			<< 2;
+			<< 1;
 	QTest::newRow("Session across midnight")
 			<< QDateTime(QDate(2013, 2, 18), QTime(22, 30, 0))
 			<< QDateTime(QDate(2013, 2, 19), QTime(2, 45, 0))
 			<< QString("Test session.")
-			<< 3;
+			<< 2;
 	QTest::newRow("Two day session")
 			<< QDateTime(QDate(2013, 2, 18), QTime(22, 30, 0))
 			<< QDateTime(QDate(2013, 2, 20), QTime(2, 45, 0))
 			<< QString("Test session.")
-			<< 4;
+			<< 3;
 }
 
 void TestSessions::addSessions()
@@ -61,14 +61,14 @@ void TestSessions::addSessions()
 	model.add(start, stop, task);
 
 	QFETCH(int, row_count);
-	QCOMPARE(model.rowCount(), row_count);
+	QCOMPARE(model.rowCount() - 1, row_count);
 
 	Session session = model.session(0);
 	QCOMPARE(session.date(), start.date());
 	QCOMPARE(session.start(), start.time());
-	if (row_count > 2) {
+	if (row_count > 1) {
 		QCOMPARE(session.stop(), QTime(23, 59, 59));
-		session = model.session(row_count - 2);
+		session = model.session(row_count - 1);
 		QCOMPARE(session.date(), stop.date());
 		QCOMPARE(session.start(), QTime(0, 0, 0));
 	}
@@ -139,7 +139,7 @@ void TestSessions::addConflictingSessions()
 	QFETCH(QString, conflict_task);
 	model.add(conflict_start, conflict_stop, conflict_task);
 
-	QCOMPARE(model.rowCount(), 2);
+	QCOMPARE(model.rowCount() - 1, 1);
 }
 
 //-----------------------------------------------------------------------------
@@ -217,6 +217,7 @@ void TestSessions::addMultipleSessions()
 	}
 
 	QFETCH(QVariantList, result);
+	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
 		QCOMPARE(model.session(i), result.at(i).value<Session>());
 	}
@@ -375,6 +376,7 @@ void TestSessions::billSessions()
 	}
 
 	QFETCH(QVariantList, result);
+	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
 		QCOMPARE(model.isBilled(i), result.at(i).value<bool>());
 	}
@@ -470,6 +472,7 @@ void TestSessions::editSessions()
 	model.edit(position, replacement);
 
 	QFETCH(QVariantList, result);
+	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
 		QCOMPARE(model.session(i), result.at(i).value<Session>());
 	}
@@ -556,6 +559,7 @@ void TestSessions::removeSessions()
 	}
 
 	QFETCH(QVariantList, result);
+	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
 		QCOMPARE(model.session(i), result.at(i).value<Session>());
 	}
