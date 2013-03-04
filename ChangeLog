@@ -1,3 +1,6 @@
+2013-03-04 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Timer did not work with Qt 5.
+
 2013-02-23 Graeme Gott <graeme@gottcode.org>
 	* Add unit tests for filters.
 
