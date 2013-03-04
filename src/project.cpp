@@ -129,7 +129,7 @@ void Project::setTask(const QString& task) {
 void Project::updateTime(const QDateTime& current) {
 	if (m_active) {
 		int elapsed = current.toTime_t() - m_start_time.toTime_t();
-		QTime convert;
+		QTime convert(0, 0, 0);
 		convert = convert.addSecs(elapsed);
 		setText(1, convert.toString("hh:mm:ss"));
 	}
