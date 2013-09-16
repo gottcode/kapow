@@ -54,7 +54,21 @@ SOURCES = src/contact.cpp \
 	src/time_editor.cpp \
 	src/window.cpp
 
-TRANSLATIONS = $$files(translations/kapow_*.ts)
+TRANSLATIONS = \
+    translations/qt_nl.ts \
+    translations/qt_it.ts \
+    translations/kapow_ar.ts \
+    translations/kapow_en.ts \
+    translations/kapow_es.ts \
+    translations/kapow_fr.ts \
+    translations/kapow_it.ts \
+    translations/kapow_nl.ts \
+    translations/kapow_uk.ts \
+    translations/kapow_el.ts \
+    translations/kapow_de.ts \
+    translations/kapow_da.ts \
+    translations/kapow_cs.ts \
+    translations/kapow_bg.ts
 
 RESOURCES = icons/icons.qrc
 macx {
@@ -85,3 +99,19 @@ unix: !macx {
 
 	INSTALLS += target icon pixmap desktop qm
 }
+
+OTHER_FILES += \
+    translations/qt_nl.ts \
+    translations/qt_it.ts \
+    translations/kapow_ar.ts \
+    translations/kapow_en.ts \
+    translations/kapow_es.ts \
+    translations/kapow_fr.ts \
+    translations/kapow_it.ts \
+    translations/kapow_nl.ts \
+    translations/kapow_uk.ts \
+    translations/kapow_el.ts \
+    translations/kapow_de.ts \
+    translations/kapow_da.ts \
+    translations/kapow_cs.ts \
+    translations/kapow_bg.ts

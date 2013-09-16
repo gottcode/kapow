@@ -21,6 +21,8 @@
 #define KAPOW_LOCALE_DIALOG_H
 
 #include <QDialog>
+#include <QtWidgets>
+
 class QComboBox;
 
 /**
