@@ -124,6 +124,10 @@ void LocaleDialog::loadTranslator(const QString& name, const QStringList& datadi
 	static QTranslator translator;
 	translator.load(m_appname + current, m_path);
 	QCoreApplication::installTranslator(&translator);
+
+    if (current == "ar") {
+        qApp->setLayoutDirection(Qt::RightToLeft);
+    }
 }
 
 //-----------------------------------------------------------------------------

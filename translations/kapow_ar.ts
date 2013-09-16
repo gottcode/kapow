@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk" sourcelanguage="en">
+<TS version="2.0" language="ar" sourcelanguage="en">
 <context>
     <name>DataModel</name>
     <message>
         <source>Error</source>
-        <translation type="obsolete">Помилка</translation>
+        <translation type="obsolete">خطأ</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="obsolete">Сеанс конфліктує з іншими сеансами.</translation>
+        <translation type="obsolete">الجلسة متعارضة مع جلسة أخرى.</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation type="obsolete">Загалом</translation>
+        <translation type="obsolete">المجموع</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="obsolete">Дата</translation>
+        <translation type="obsolete">تاريخ</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="obsolete">Початок</translation>
+        <translation type="obsolete">بدء</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="obsolete">Зупинка</translation>
+        <translation type="obsolete">توقف</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="obsolete">Завдання</translation>
+        <translation type="obsolete">مهمة</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="obsolete">Час</translation>
+        <translation type="obsolete">ساعات</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="obsolete">Щодня</translation>
+        <translation type="obsolete">يومياً</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="obsolete">Щотижня</translation>
+        <translation type="obsolete">أسبوعياً</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="obsolete">Щомісяця</translation>
+        <translation type="obsolete">شهرياً</translation>
+    </message>
+    <message>
+        <source>Billed</source>
+        <translation type="obsolete">دفعت</translation>
     </message>
 </context>
 <context>
@@ -53,22 +57,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="51"/>
         <source>Select application language:</source>
-        <translation>Вибрати мову програми:</translation>
+        <translation>تحديد لغة التطبيق:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="54"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Системна мова&gt;</translation>
+        <translation>&lt;لغة النظام&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Note</source>
-        <translation>Примітка</translation>
+        <translation>ملاحظة</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Перезапустіть програму, щоб нова мова вступила в дію.</translation>
+        <translation>قم بإعادة تشغيل التطبيق من أجل تطبيق لغة الواجهة.</translation>
     </message>
 </context>
 <context>
@@ -76,7 +80,7 @@
     <message>
         <location filename="../src/rates.cpp" line="36"/>
         <source>$</source>
-        <translation type="unfinished"></translation>
+        <translation>$</translation>
     </message>
 </context>
 <context>
@@ -84,153 +88,153 @@
     <message>
         <location filename="../src/report.cpp" line="379"/>
         <source>Time Sheet Report</source>
-        <translation>Облік робочого часу</translation>
+        <translation>التقرير الزمني</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="74"/>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>الاسم:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="75"/>
         <source>Company:</source>
-        <translation>Компанія:</translation>
+        <translation>الشركة:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="76"/>
         <source>Address:</source>
-        <translation>Адреса:</translation>
+        <translation>العنوان:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="77"/>
         <source>Phone:</source>
-        <translation>Телефон:</translation>
+        <translation>الهاتف:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="78"/>
         <source>Fax:</source>
-        <translation>Факс:</translation>
+        <translation>الفاكس:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="79"/>
         <source>Email:</source>
-        <translation>Електронна пошта:</translation>
+        <translation>البريد الالكتروني:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="80"/>
         <source>Website:</source>
-        <translation>Веб-сайт:</translation>
+        <translation>موقع الانترنت:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="118"/>
         <location filename="../src/report.cpp" line="123"/>
         <source>N/A</source>
-        <translation>Не доступно</translation>
+        <translation>غير متوفر</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="127"/>
         <source>Prepend currency symbol</source>
-        <translation>Додавати символ валюти</translation>
+        <translation>رمز العملة في أول السطر</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="134"/>
         <source>Hourly rate:</source>
-        <translation>Погодинна оплата:</translation>
+        <translation>معدل الساعات:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="135"/>
         <source>Tax rate:</source>
-        <translation>Податкова ставка:</translation>
+        <translation>معدل الضريبة:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="136"/>
         <source>Currency symbol:</source>
-        <translation>Символ валюти:</translation>
+        <translation>رمز العملة:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="151"/>
         <source>Contact Information</source>
-        <translation>Контактні дані</translation>
+        <translation>معلومات الاتصال</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="152"/>
         <source>Data</source>
-        <translation>Дані</translation>
+        <translation>بيانات</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="153"/>
         <source>Preview</source>
-        <translation>Огляд</translation>
+        <translation>معاينة</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="159"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>تصدير</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="160"/>
         <source>Print</source>
-        <translation>Друк</translation>
+        <translation>طباعة</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="283"/>
         <source>Web Page (*.html *.htm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Web Page (*.html *.htm)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="284"/>
         <source>iCalendar (*.ics)</source>
-        <translation type="unfinished"></translation>
+        <translation>iCalendar (*.ics)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="285"/>
         <source>Outlook CSV (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Outlook CSV (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="296"/>
         <source>Export Report</source>
-        <translation type="unfinished"></translation>
+        <translation>تصدير تقرير</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="335"/>
         <source>View Reports</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض التقارير</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="351"/>
         <source>Create Report</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء تقرير</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="406"/>
         <source>Phone: %1</source>
-        <translation>Телефон: %1</translation>
+        <translation>الهاتف:%1</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="410"/>
         <source>Fax: %1</source>
-        <translation>Факс: %1</translation>
+        <translation>الفاكس%1</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="466"/>
         <source>Hours</source>
-        <translation>Час</translation>
+        <translation>ساعة</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="473"/>
         <source>Subtotal</source>
-        <translation>Проміжний підсумок</translation>
+        <translation>مجموع جزئي</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="475"/>
         <source>Taxes</source>
-        <translation>Податки</translation>
+        <translation>ضرائب</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="478"/>
         <source>Total</source>
-        <translation>Загалом</translation>
+        <translation>المجموع</translation>
     </message>
 </context>
 <context>
@@ -239,15 +243,22 @@
         <location filename="../src/session.cpp" line="50"/>
         <source>%n hour(s)</source>
         <translation>
-            <numerusform>%n година</numerusform>
-            <numerusform>%n години</numerusform>
-            <numerusform>%n годин</numerusform>
+            <numerusform>%n ساعة</numerusform>
+            <numerusform>%n ساعة</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/session.cpp" line="52"/>
         <source>%L1 hours</source>
-        <translation>%L1 год.</translation>
+        <translation>%L1 ساعة</translation>
+    </message>
+    <message>
+        <source>%1 hours</source>
+        <translation type="obsolete">%1 ساعة</translation>
     </message>
 </context>
 <context>
@@ -255,12 +266,12 @@
     <message>
         <location filename="../src/session_delegate.cpp" line="91"/>
         <source>Error</source>
-        <translation type="unfinished">Помилка</translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <location filename="../src/session_delegate.cpp" line="91"/>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished">Сеанс конфліктує з іншими сеансами.</translation>
+        <translation>الجلسة متعارضة مع جلسة أخرى.</translation>
     </message>
 </context>
 <context>
@@ -268,32 +279,32 @@
     <message>
         <location filename="../src/session_dialog.cpp" line="33"/>
         <source>Add Session</source>
-        <translation>Додати сеанс</translation>
+        <translation>اضافة جلسة</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="54"/>
         <source>Date:</source>
-        <translation>Дата:</translation>
+        <translation>التاريخ:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="55"/>
         <source>Start:</source>
-        <translation>Початок:</translation>
+        <translation>بدء:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="56"/>
         <source>Stop:</source>
-        <translation>Зупинка:</translation>
+        <translation>توقف:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="57"/>
         <source>Task:</source>
-        <translation>Завдання:</translation>
+        <translation>المهمة:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="70"/>
         <source>Edit Session</source>
-        <translation>Змінити сеанс</translation>
+        <translation>تحرير الجلسة</translation>
     </message>
 </context>
 <context>
@@ -302,53 +313,53 @@
         <location filename="../src/session_model.cpp" line="264"/>
         <location filename="../src/session_model.cpp" line="476"/>
         <source>Total</source>
-        <translation type="unfinished">Загалом</translation>
+        <translation>مجموع</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="460"/>
         <source>Date</source>
-        <translation type="unfinished">Дата</translation>
+        <translation>تاريخ</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="462"/>
         <source>Start</source>
-        <translation type="unfinished">Початок</translation>
+        <translation>بدء</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="464"/>
         <source>Stop</source>
-        <translation type="unfinished">Зупинка</translation>
+        <translation>ايقاف</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="466"/>
         <location filename="../src/window.cpp" line="110"/>
         <source>Task</source>
-        <translation type="unfinished">Завдання</translation>
+        <translation>مهمة</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="468"/>
         <source>Hours</source>
-        <translation type="unfinished">Час</translation>
+        <translation>ساعة</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="470"/>
         <source>Daily</source>
-        <translation type="unfinished">Щодня</translation>
+        <translation>يومي</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="472"/>
         <source>Weekly</source>
-        <translation type="unfinished">Щотижня</translation>
+        <translation>أسبوعي</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="474"/>
         <source>Monthly</source>
-        <translation type="unfinished">Щомісяця</translation>
+        <translation>شهري</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="478"/>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>تقرير</translation>
     </message>
 </context>
 <context>
@@ -361,49 +372,63 @@
     <message>
         <location filename="../src/window.cpp" line="116"/>
         <source>Start</source>
-        <translation>Початок</translation>
+        <translation>بدء</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="121"/>
         <source>Stop</source>
-        <translation>Зупинка</translation>
+        <translation>توقف</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="127"/>
         <source>Cancel</source>
-        <translation>Скасувати</translation>
+        <translation>إلغاء الأمر</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="143"/>
         <source>&amp;Project</source>
-        <translation>&amp;Проект</translation>
+        <translation>&amp;مشروع</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
         <location filename="../src/window.cpp" line="156"/>
         <source>&amp;Add</source>
-        <translation>&amp;Додати</translation>
+        <translation>&amp;اضافة</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
         <source>Ctrl+Shift+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="145"/>
         <location filename="../src/window.cpp" line="159"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Вилучити</translation>
+        <translation>&amp;ازالة</translation>
+    </message>
+    <message>
+        <source>&amp;Report</source>
+        <translation type="obsolete">&amp;تقرير</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="145"/>
         <source>Ctrl+Shift+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+Delete</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="148"/>
+        <source>&amp;Create Report...</source>
+        <translation>&amp;إنشاء تقرير...</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="150"/>
+        <source>View R&amp;eports</source>
+        <translation>&amp;عرض التقارير</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
         <source>&amp;Quit</source>
-        <translation>В&amp;ийти</translation>
+        <translation>&amp;خروج</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
@@ -413,102 +438,107 @@
     <message>
         <location filename="../src/window.cpp" line="155"/>
         <source>&amp;Session</source>
-        <translation>&amp;Сеанс</translation>
+        <translation>&amp;جلسة</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="157"/>
         <source>&amp;Edit</source>
-        <translation>З&amp;міни</translation>
+        <translation>&amp;تحرير</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>Ctrl+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Delete</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>S&amp;ettings</source>
-        <translation>П&amp;араметри</translation>
+        <translation>ا&amp;عدادات</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="163"/>
         <source>Columns</source>
-        <translation>Стовпчики</translation>
+        <translation>أعمدة</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="164"/>
         <source>&amp;Decimal Totals</source>
-        <translation>Д&amp;есятичний підсумок</translation>
+        <translation>&amp;مجموع عشري</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Inline Editing</source>
-        <translation>Редагування в &amp;один рядок</translation>
+        <translation>تحرير &amp;ضمني</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Мова програми...</translation>
+        <translation>&amp;لغة التطبيق</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Help</source>
-        <translation>&amp;Довідка</translation>
+        <translation>&amp;مساعدة</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="176"/>
         <source>&amp;About</source>
-        <translation>&amp;Про програму</translation>
+        <translation>&amp;حول</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="177"/>
         <source>About &amp;Qt</source>
-        <translation>Про &amp;Qt</translation>
+        <translation>حول &amp;كيوت</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="184"/>
         <source>Project</source>
-        <translation>Проект</translation>
+        <translation>مشروع</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="184"/>
         <source>Timer</source>
-        <translation>Таймер</translation>
+        <translation>مؤقت</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="220"/>
         <source>Show all</source>
-        <translation>Показати все</translation>
+        <translation>عرض الكل</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="221"/>
         <source>Show only unbilled</source>
-        <translation>Показувати лише невідфактуровані</translation>
+        <translation>عرض غير المدفوع</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="222"/>
         <source>Show only this year</source>
-        <translation>Показувати лише за цей рік</translation>
+        <translation>عرض هذا العام فقط</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="223"/>
         <source>Show only this month</source>
-        <translation>Показувати лише за цей місяць</translation>
+        <translation>عرض هذا الشهر فقط</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="224"/>
         <source>Show only this week</source>
-        <translation>Показувати лише за цей тиждень</translation>
+        <translation>عرض هذا الأسبوع فقط</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="377"/>
+        <source>There are timers running. Stop timers and quit?</source>
+        <translation>بعض العدّادات ماتزال تعمل. هل أنت متأكد من رغبتك بالخروج؟</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="415"/>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>جميع الحقوق محقوظة &amp;copy; Graeme Gott 2008-%1 &lt;br/&gt;تعريب:&lt;br/&gt;محمد بشير النعيمي: mbnoimi@gmail.com</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="416"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>أُصدر برخصة &lt;a href=%1&gt;GPL 3&lt;/a&gt; </translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="468"/>
@@ -517,42 +547,40 @@
         <location filename="../src/window.cpp" line="911"/>
         <location filename="../src/window.cpp" line="937"/>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished">Сеанс конфліктує з іншими сеансами.</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="887"/>
-        <location filename="../src/window.cpp" line="969"/>
-        <source>Unable to read time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>الجلسة متعارضة مع جلسة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="586"/>
         <location filename="../src/window.cpp" line="872"/>
         <location filename="../src/window.cpp" line="987"/>
         <source>Untitled</source>
-        <translation>Без назви</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="759"/>
-        <location filename="../src/window.cpp" line="797"/>
-        <location filename="../src/window.cpp" line="880"/>
-        <source>Unable to write time data.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="377"/>
-        <source>There are timers running. Stop timers and quit?</source>
-        <translation>Таймери працюють. Зупинити їх і вийти?</translation>
+        <translation>غير مسمى</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="412"/>
         <source>About</source>
-        <translation>Про</translation>
+        <translation>حول</translation>
+    </message>
+    <message>
+        <source>Kapow %1 Punch Clock</source>
+        <translation type="obsolete">كابو %1 برنامج ادارة الوقت</translation>
+    </message>
+    <message>
+        <source>Kapow Punch Clock %1</source>
+        <translation type="obsolete">كابو %1 برنامج ادارة الوقت</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="414"/>
         <source>A program to help track spent time</source>
-        <translation>Програма для відстежування витраченого часу</translation>
+        <translation>برنامج بسيط لادارة و تتبع دوام الموظفين</translation>
+    </message>
+    <message>
+        <source>Copyright &amp;copy; 2008-2010 Graeme Gott</source>
+        <translation type="obsolete">جميع الحقوق محقوظة &amp;copy; Graeme Gott&lt;br/&gt;تعريب:&lt;br/&gt;&lt;a href=&quot;http://mbnoimi.net/&quot;&gt;محمد بشير النعيمي&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
+        <translation type="obsolete">&lt;br/&gt;هذا المنتج يستعمل رخصة &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="377"/>
@@ -560,32 +588,22 @@
         <location filename="../src/window.cpp" line="552"/>
         <location filename="../src/window.cpp" line="723"/>
         <source>Question</source>
-        <translation>Запитання</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="148"/>
-        <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="150"/>
-        <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
+        <translation>سؤال</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="480"/>
         <source>Cancel this session?</source>
-        <translation>Скасувати цей сеанс?</translation>
+        <translation>هل تريد إلغاء هذه الجلسة؟</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="529"/>
         <source>Add Project</source>
-        <translation>Додати проект</translation>
+        <translation>اضافة مشروع</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="529"/>
         <source>Enter project name:</source>
-        <translation>Введіть назву проекту:</translation>
+        <translation>أدخل اسم المشروع:</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="115"/>
@@ -601,41 +619,57 @@
         <location filename="../src/window.cpp" line="887"/>
         <location filename="../src/window.cpp" line="969"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="115"/>
         <location filename="../src/main.cpp" line="176"/>
         <source>Unable to create time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>غير قادر على إنشاء مكان بيانات الوقت.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="168"/>
         <source>Unable to move time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>غير قادر على نقل مكان بيانات الوقت.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="535"/>
         <source>A project with that name already exists.</source>
-        <translation>Проект з такою назвою вже є.</translation>
+        <translation>هذا الاسم موجود مسبقاً.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="552"/>
         <source>Remove selected project?</source>
-        <translation>Вилучити вибраний проект?</translation>
+        <translation>هل تريد إزالة المشروع المحدد؟</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="723"/>
         <source>Remove selected session?</source>
-        <translation>Вилучити вибраний сеанс?</translation>
+        <translation>هل تريد إزالة الجلسة المحددة؟</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="759"/>
+        <location filename="../src/window.cpp" line="797"/>
+        <location filename="../src/window.cpp" line="880"/>
+        <source>Unable to write time data.</source>
+        <translation>غير قادر على كتابة بيانات الوقت.</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="887"/>
+        <location filename="../src/window.cpp" line="969"/>
+        <source>Unable to read time data.</source>
+        <translation>غير قادر على قراءة بيانات الوقت.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/window.cpp" line="1137"/>
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>Працює %n таймер</numerusform>
-            <numerusform>Працюють %n таймери</numerusform>
-            <numerusform>Працюють %n таймерів</numerusform>
+            <numerusform>%n مؤقت يعمل</numerusform>
+            <numerusform>%n مؤقت يعمل</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -643,7 +677,7 @@
         <location filename="../src/window.cpp" line="1134"/>
         <location filename="../src/window.cpp" line="1144"/>
         <source>Kapow Punch Clock</source>
-        <translation>Kapow Punch Clock</translation>
+        <translation>كابو برنامج إدارة الوقت</translation>
     </message>
 </context>
 </TS>
