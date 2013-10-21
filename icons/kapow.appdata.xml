@@ -12,7 +12,7 @@
     edit any of the entries by double-clicking on the session in question. Kapow
     also allows you to easily keep track of the hours since you last billed a
     client, by providing a helpful "Billed" check box--the totals will reflect your
-    work after the last billed session. 
+    work after the last billed session.
   </p>
  </description>
  <screenshots>
@@ -24,4 +24,3 @@
  <url type="homepage">http://gottcode.org/kapow/</url>
  <updatecontact>graeme@gottcode.org</updatecontact>
 </application>
-

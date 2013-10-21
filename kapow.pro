@@ -80,8 +80,11 @@ unix: !macx {
 	desktop.files = icons/kapow.desktop
 	desktop.path = $$PREFIX/share/applications/
 
+	appdata.files = icons/kapow.appdata.xml
+	appdata.path = $$PREFIX/share/appdata/
+
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/kapow/translations/
 
-	INSTALLS += target icon pixmap desktop qm
+	INSTALLS += target icon pixmap desktop appdata qm
 }
