@@ -150,7 +150,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_view_reports = menu->addAction(tr("View R&eports"), this, SLOT(viewReports()));
 	m_view_reports->setEnabled(false);
 	menu->addSeparator();
-	menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
+	QAction* action = menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
+	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Session"));
 	m_add_session = menu->addAction(tr("&Add"), this, SLOT(addSession()), QKeySequence::New);
@@ -161,7 +162,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
 	QMenu* column_menu = menu->addMenu(tr("Columns"));
-	QAction* action = menu->addAction(tr("&Decimal Totals"));
+	action = menu->addAction(tr("&Decimal Totals"));
 	action->setCheckable(true);
 	action->setChecked(m_decimals);
 	connect(action, SIGNAL(toggled(bool)), this, SLOT(setDecimalTotals(bool)));
@@ -173,8 +174,10 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
 
 	menu = menuBar()->addMenu(tr("&Help"));
-	menu->addAction(tr("&About"), this, SLOT(about()));
-	menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action = menu->addAction(tr("&About"), this, SLOT(about()));
+	action->setMenuRole(QAction::AboutRole);
+	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action->setMenuRole(QAction::AboutQtRole);
 
 	// Create projects
 	m_projects = new QTreeWidget(contents);
