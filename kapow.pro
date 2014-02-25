@@ -59,12 +59,9 @@ TRANSLATIONS = $$files(translations/kapow_*.ts)
 RESOURCES = icons/icons.qrc
 macx {
 	ICON = icons/kapow.icns
-}
-win32 {
+} else:win32 {
 	RC_FILE = icons/icon.rc
-}
-
-unix: !macx {
+} else:unix {
 	isEmpty(PREFIX) {
 		PREFIX = /usr/local
 	}
@@ -86,5 +83,8 @@ unix: !macx {
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/kapow/translations/
 
-	INSTALLS += target icon pixmap desktop appdata qm
+	man.files = doc/kapow.1
+	man.path = $$PREFIX/share/man/man1
+
+	INSTALLS += target icon pixmap desktop appdata qm man
 }
