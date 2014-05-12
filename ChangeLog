@@ -1,4 +1,5 @@
 2014-05-12 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Compiler warnings.
 	* FIXED: Did not migrate data from previous versions.
 
 2013-02-17 Graeme Gott <graeme@gottcode.org>

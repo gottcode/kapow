@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,8 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QPalette>
+
+#include <climits>
 
 /*****************************************************************************/
 
@@ -213,7 +215,7 @@ void DataModel::toXml(QXmlStreamWriter& xml) const {
 int DataModel::rowCount(const QModelIndex& parent) const {
 	if (!parent.isValid()) {
 		return m_data.count() + 1;
-	} else if ((parent.internalId() == -1) && m_billed.contains(parent.row())) {
+	} else if ((parent.internalId() == UINT_MAX) && m_billed.contains(parent.row())) {
 		return 1;
 	} else {
 		return 0;
@@ -488,7 +490,7 @@ QModelIndex DataModel::index(int row, int column, const QModelIndex& parent) con
 	}
 
 	if (!parent.isValid()) {
-		return createIndex(row, column, -1);
+		return createIndex(row, column, UINT_MAX);
 	} else {
 		return createIndex(row, column, parent.row());
 	}
@@ -502,10 +504,10 @@ QModelIndex DataModel::parent(const QModelIndex& child) const {
 	}
 
 	qint64 row = child.internalId();
-	if (row == -1) {
+	if (row == UINT_MAX) {
 		return QModelIndex();
 	} else {
-		return createIndex(row, 0, -1);
+		return createIndex(row, 0, UINT_MAX);
 	}
 }
 
