@@ -103,9 +103,9 @@ int main(int argc, char** argv)
 	// Make sure data path exists
 	if (path.isEmpty()) {
 #if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
-		path = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/Kapow";
+		path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
 #else
-		path = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation) + "/Kapow";
+		path = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
 #endif
 
 		if (!QFile::exists(path)) {
@@ -120,15 +120,9 @@ int main(int argc, char** argv)
 			QString oldpath;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
-			// Data path from Qt 4 version of 1.5
-			oldpath = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation) + "/Kapow";
-			if (oldpath != path) {
-				oldpaths.append(oldpath);
-			}
-#endif
-
-			// Data path from 1.4
+			// Data path from Qt 4 version of 1.4
 			oldpaths.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation));
+#endif
 
 			// Data path from 1.0
 #if defined(Q_OS_MAC)
