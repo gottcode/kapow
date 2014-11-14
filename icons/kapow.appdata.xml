@@ -3,11 +3,34 @@
   <id>kapow.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <name>Kapow</name>
-  <summary>A punch clock program</summary>
+  <name>Kapow Punch Clock</name>
+  <name xml:lang="cs">Evidence pracovní doby Kapow</name>
+  <name xml:lang="da">Kapow Punch Clock</name>
+  <name xml:lang="de">Kapow Zeiterfassung</name>
+  <name xml:lang="el">Χρονόμετρο εργασίας Kapow</name>
+  <name xml:lang="es">Reloj de control Kapow</name>
+  <name xml:lang="nl">Kapow tikklok</name>
+  <name xml:lang="no">Kapow Stemplingsur</name>
+  <name xml:lang="pl">Rejestracja czasu pracy Kapow</name>
+  <name xml:lang="pt_BR">Relógio de ponto Kapow</name>
+  <name xml:lang="ro">Kapow Punch Clock</name>
+  <name xml:lang="ru">Kapow Учет времени</name>
+  <name xml:lang="tr">Kapow Kokteyl Saat</name>
+  <summary>Keep track of time spent on projects</summary>
+  <summary xml:lang="cs">Udržovat si přehled o čase stráveném nad projekty</summary>
+  <summary xml:lang="da">Overvåg tidsforbrug for projekter</summary>
+  <summary xml:lang="de">Verfolgen Sie Ihre Arbeitszeiten an Projekten</summary>
+  <summary xml:lang="el">Παρακολούθηση του χρόνου που δαπανάται σε έργα</summary>
+  <summary xml:lang="es">Realice un seguimiento del tiempo que invierte en proyectos</summary>
+  <summary xml:lang="nl">Tijdadministratie voor projecten</summary>
+  <summary xml:lang="no">Hold styring på tidsbruken på prosjekter</summary>
+  <summary xml:lang="pl">Rejestracja czasu spędzonego przy projektach</summary>
+  <summary xml:lang="pt_BR">Mantenha o registro do tempo gasto em projetos</summary>
+  <summary xml:lang="ro">Ţineţi evidenţa timpului petrecut pe proiecte</summary>
+  <summary xml:lang="ru">Отслеживать потраченое время на проекты</summary>
+  <summary xml:lang="tr">Projeler için harcanan zamanı takip edin</summary>
   <description>
-    <p>Kapow is a punch clock program designed to easily keep track of your hours, whether you're working on one project or many. Simply clock in and out with the Start/Stop button. If you make a mistake in your hours, you can go back and edit any of the entries by double-clicking on the session in question. Kapow also allows you to easily keep track of the hours since you last billed a client, by providing a helpful "Billed" check box--the totals will reflect your
-    work after the last billed session.</p>
+    <p>Kapow is a punch clock program designed to easily keep track of your hours, whether you're working on one project or many. Simply clock in and out with the Start/Stop button. If you make a mistake in your hours, you can go back and edit any of the entries by double-clicking on the session in question. Kapow also allows you to easily keep track of the hours since you last billed a client, by providing a helpful "Billed" check box--the totals will reflect your work after the last billed session.</p>
   </description>
   <screenshots>
     <screenshot type="default">
