@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application>
- <id type="desktop">kapow.desktop</id>
- <licence>CC0</licence>
- <name>Kapow</name>
- <summary>A punch clock program</summary>
- <description>
-  <p>
-    Kapow is a punch clock program designed to easily keep track of your hours,
-    whether you're working on one project or many. Simply clock in and out with the
-    Start/Stop button. If you make a mistake in your hours, you can go back and
-    edit any of the entries by double-clicking on the session in question. Kapow
-    also allows you to easily keep track of the hours since you last billed a
-    client, by providing a helpful "Billed" check box--the totals will reflect your
-    work after the last billed session.
-  </p>
- </description>
- <screenshots>
-     <screenshot type="default">http://gottcode.org/kapow/screenshots/kapow.png</screenshot>
-     <screenshot>http://gottcode.org/kapow/screenshots/report1.png</screenshot>
-     <screenshot>http://gottcode.org/kapow/screenshots/report2.png</screenshot>
-     <screenshot>http://gottcode.org/kapow/screenshots/report3.png</screenshot>
- </screenshots>
- <url type="homepage">http://gottcode.org/kapow/</url>
- <updatecontact>graeme@gottcode.org</updatecontact>
-</application>
+<component type="desktop">
+  <id>kapow.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Kapow</name>
+  <summary>A punch clock program</summary>
+  <description>
+    <p>Kapow is a punch clock program designed to easily keep track of your hours, whether you're working on one project or many. Simply clock in and out with the Start/Stop button. If you make a mistake in your hours, you can go back and edit any of the entries by double-clicking on the session in question. Kapow also allows you to easily keep track of the hours since you last billed a client, by providing a helpful "Billed" check box--the totals will reflect your
+    work after the last billed session.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://gottcode.org/kapow/screenshots/kapow.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://gottcode.org/kapow/screenshots/report1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://gottcode.org/kapow/screenshots/report2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://gottcode.org/kapow/screenshots/report3.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">http://gottcode.org/kapow/</url>
+  <url type="bugtracker">http://gottcode.org/kapow/bugs/</url>
+  <url type="donation">http://gottcode.org/tip/</url>
+  <developer_name>Graeme Gott</developer_name>
+  <updatecontact>graeme@gottcode.org</updatecontact>
+  <provides>
+    <binary>kapow</binary>
+  </provides>
+</component>
