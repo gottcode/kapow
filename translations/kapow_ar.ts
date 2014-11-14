@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ar" sourcelanguage="en">
+<TS version="2.1" language="ar" sourcelanguage="en">
 <context>
     <name>LocaleDialog</name>
     <message>
@@ -191,7 +191,7 @@
     <message numerus="yes">
         <location filename="../src/session.cpp" line="50"/>
         <source>%n hour(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n ساعة</numerusform>
             <numerusform>%n ساعة</numerusform>
             <numerusform></numerusform>
@@ -211,12 +211,12 @@
     <message>
         <location filename="../src/session_delegate.cpp" line="91"/>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="unfinished">خطأ</translation>
     </message>
     <message>
         <location filename="../src/session_delegate.cpp" line="91"/>
         <source>Session conflicts with other sessions.</source>
-        <translation>الجلسة متعارضة مع جلسة أخرى.</translation>
+        <translation type="unfinished">الجلسة متعارضة مع جلسة أخرى.</translation>
     </message>
 </context>
 <context>
@@ -258,53 +258,53 @@
         <location filename="../src/session_model.cpp" line="264"/>
         <location filename="../src/session_model.cpp" line="476"/>
         <source>Total</source>
-        <translation>مجموع</translation>
+        <translation type="unfinished">المجموع</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="460"/>
         <source>Date</source>
-        <translation>تاريخ</translation>
+        <translation type="unfinished">تاريخ</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="462"/>
         <source>Start</source>
-        <translation>بدء</translation>
+        <translation type="unfinished">بدء</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="464"/>
         <source>Stop</source>
-        <translation>ايقاف</translation>
+        <translation type="unfinished">توقف</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="466"/>
         <location filename="../src/window.cpp" line="110"/>
         <source>Task</source>
-        <translation>مهمة</translation>
+        <translation type="unfinished">مهمة</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="468"/>
         <source>Hours</source>
-        <translation>ساعة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="470"/>
         <source>Daily</source>
-        <translation>يومي</translation>
+        <translation type="unfinished">يومياً</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="472"/>
         <source>Weekly</source>
-        <translation>أسبوعي</translation>
+        <translation type="unfinished">أسبوعياً</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="474"/>
         <source>Monthly</source>
-        <translation>شهري</translation>
+        <translation type="unfinished">شهرياً</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="478"/>
         <source>Report</source>
-        <translation>تقرير</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -336,7 +336,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
-        <location filename="../src/window.cpp" line="156"/>
+        <location filename="../src/window.cpp" line="157"/>
         <source>&amp;Add</source>
         <translation>&amp;اضافة</translation>
     </message>
@@ -347,7 +347,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="145"/>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>&amp;Remove</source>
         <translation>&amp;ازالة</translation>
     </message>
@@ -355,16 +355,6 @@
         <location filename="../src/window.cpp" line="145"/>
         <source>Ctrl+Shift+Delete</source>
         <translation>Ctrl+Shift+Delete</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="148"/>
-        <source>&amp;Create Report...</source>
-        <translation>&amp;إنشاء تقرير...</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="150"/>
-        <source>View R&amp;eports</source>
-        <translation>&amp;عرض التقارير</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
@@ -377,218 +367,228 @@
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="155"/>
+        <location filename="../src/window.cpp" line="156"/>
         <source>&amp;Session</source>
         <translation>&amp;جلسة</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="157"/>
+        <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Edit</source>
         <translation>&amp;تحرير</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>Ctrl+Delete</source>
         <translation>Ctrl+Delete</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="163"/>
         <source>S&amp;ettings</source>
         <translation>ا&amp;عدادات</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="163"/>
+        <location filename="../src/window.cpp" line="164"/>
         <source>Columns</source>
         <translation>أعمدة</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="164"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>&amp;Decimal Totals</source>
         <translation>&amp;مجموع عشري</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="168"/>
+        <location filename="../src/window.cpp" line="169"/>
         <source>&amp;Inline Editing</source>
         <translation>تحرير &amp;ضمني</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="173"/>
+        <location filename="../src/window.cpp" line="174"/>
         <source>Application &amp;Language...</source>
         <translation>&amp;لغة التطبيق</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="176"/>
         <source>&amp;Help</source>
         <translation>&amp;مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="176"/>
+        <location filename="../src/window.cpp" line="177"/>
         <source>&amp;About</source>
         <translation>&amp;حول</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="177"/>
+        <location filename="../src/window.cpp" line="179"/>
         <source>About &amp;Qt</source>
         <translation>حول &amp;كيوت</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="184"/>
+        <location filename="../src/window.cpp" line="187"/>
         <source>Project</source>
         <translation>مشروع</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="184"/>
+        <location filename="../src/window.cpp" line="187"/>
         <source>Timer</source>
         <translation>مؤقت</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="220"/>
+        <location filename="../src/window.cpp" line="223"/>
         <source>Show all</source>
         <translation>عرض الكل</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="221"/>
+        <location filename="../src/window.cpp" line="224"/>
         <source>Show only unbilled</source>
         <translation>عرض غير المدفوع</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="222"/>
+        <location filename="../src/window.cpp" line="225"/>
         <source>Show only this year</source>
         <translation>عرض هذا العام فقط</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="223"/>
+        <location filename="../src/window.cpp" line="226"/>
         <source>Show only this month</source>
         <translation>عرض هذا الشهر فقط</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="224"/>
+        <location filename="../src/window.cpp" line="227"/>
         <source>Show only this week</source>
         <translation>عرض هذا الأسبوع فقط</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="377"/>
+        <location filename="../src/window.cpp" line="418"/>
+        <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
+        <translation>جميع الحقوق محقوظة &amp;copy; Graeme Gott 2008-%1 &lt;br/&gt;تعريب:&lt;br/&gt;محمد بشير النعيمي: mbnoimi@gmail.com</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="419"/>
+        <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
+        <translation>أُصدر برخصة &lt;a href=%1&gt;GPL 3&lt;/a&gt; </translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="471"/>
+        <location filename="../src/window.cpp" line="684"/>
+        <location filename="../src/window.cpp" line="711"/>
+        <location filename="../src/window.cpp" line="914"/>
+        <location filename="../src/window.cpp" line="940"/>
+        <source>Session conflicts with other sessions.</source>
+        <translation type="unfinished">الجلسة متعارضة مع جلسة أخرى.</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="890"/>
+        <location filename="../src/window.cpp" line="972"/>
+        <source>Unable to read time data.</source>
+        <translation>غير قادر على قراءة بيانات الوقت.</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="589"/>
+        <location filename="../src/window.cpp" line="875"/>
+        <location filename="../src/window.cpp" line="990"/>
+        <source>Untitled</source>
+        <translation>غير مسمى</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="762"/>
+        <location filename="../src/window.cpp" line="800"/>
+        <location filename="../src/window.cpp" line="883"/>
+        <source>Unable to write time data.</source>
+        <translation>غير قادر على كتابة بيانات الوقت.</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="380"/>
         <source>There are timers running. Stop timers and quit?</source>
         <translation>بعض العدّادات ماتزال تعمل. هل أنت متأكد من رغبتك بالخروج؟</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="415"/>
-        <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation>جميع الحقوق محقوظة &amp;copy; Graeme Gott 2008-%1</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="416"/>
-        <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>أُصدر برخصة &lt;a href=%1&gt;GPL 3&lt;/a&gt; </translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="468"/>
-        <location filename="../src/window.cpp" line="681"/>
-        <location filename="../src/window.cpp" line="708"/>
-        <location filename="../src/window.cpp" line="911"/>
-        <location filename="../src/window.cpp" line="937"/>
-        <source>Session conflicts with other sessions.</source>
-        <translation>الجلسة متعارضة مع جلسة أخرى.</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="586"/>
-        <location filename="../src/window.cpp" line="872"/>
-        <location filename="../src/window.cpp" line="987"/>
-        <source>Untitled</source>
-        <translation>غير مسمى</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="412"/>
         <source>About</source>
         <translation>حول</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="414"/>
+        <location filename="../src/window.cpp" line="417"/>
         <source>A program to help track spent time</source>
         <translation>برنامج بسيط لادارة و تتبع دوام الموظفين</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="377"/>
-        <location filename="../src/window.cpp" line="480"/>
-        <location filename="../src/window.cpp" line="552"/>
-        <location filename="../src/window.cpp" line="723"/>
+        <location filename="../src/window.cpp" line="380"/>
+        <location filename="../src/window.cpp" line="483"/>
+        <location filename="../src/window.cpp" line="555"/>
+        <location filename="../src/window.cpp" line="726"/>
         <source>Question</source>
         <translation>سؤال</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="480"/>
+        <location filename="../src/window.cpp" line="148"/>
+        <source>&amp;Create Report...</source>
+        <translation>&amp;إنشاء تقرير...</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="150"/>
+        <source>View R&amp;eports</source>
+        <translation>&amp;عرض التقارير</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="483"/>
         <source>Cancel this session?</source>
         <translation>هل تريد إلغاء هذه الجلسة؟</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="529"/>
+        <location filename="../src/window.cpp" line="532"/>
         <source>Add Project</source>
         <translation>اضافة مشروع</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="529"/>
+        <location filename="../src/window.cpp" line="532"/>
         <source>Enter project name:</source>
         <translation>أدخل اسم المشروع:</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="115"/>
-        <location filename="../src/main.cpp" line="168"/>
-        <location filename="../src/main.cpp" line="176"/>
-        <location filename="../src/window.cpp" line="468"/>
-        <location filename="../src/window.cpp" line="535"/>
-        <location filename="../src/window.cpp" line="681"/>
-        <location filename="../src/window.cpp" line="708"/>
-        <location filename="../src/window.cpp" line="759"/>
-        <location filename="../src/window.cpp" line="797"/>
-        <location filename="../src/window.cpp" line="880"/>
-        <location filename="../src/window.cpp" line="887"/>
-        <location filename="../src/window.cpp" line="969"/>
+        <location filename="../src/main.cpp" line="162"/>
+        <location filename="../src/main.cpp" line="170"/>
+        <location filename="../src/window.cpp" line="471"/>
+        <location filename="../src/window.cpp" line="538"/>
+        <location filename="../src/window.cpp" line="684"/>
+        <location filename="../src/window.cpp" line="711"/>
+        <location filename="../src/window.cpp" line="762"/>
+        <location filename="../src/window.cpp" line="800"/>
+        <location filename="../src/window.cpp" line="883"/>
+        <location filename="../src/window.cpp" line="890"/>
+        <location filename="../src/window.cpp" line="972"/>
         <source>Error</source>
         <translation>خطأ</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="115"/>
-        <location filename="../src/main.cpp" line="176"/>
+        <location filename="../src/main.cpp" line="170"/>
         <source>Unable to create time data location.</source>
         <translation>غير قادر على إنشاء مكان بيانات الوقت.</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="168"/>
+        <location filename="../src/main.cpp" line="162"/>
         <source>Unable to move time data location.</source>
         <translation>غير قادر على نقل مكان بيانات الوقت.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="535"/>
+        <location filename="../src/window.cpp" line="538"/>
         <source>A project with that name already exists.</source>
         <translation>هذا الاسم موجود مسبقاً.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="552"/>
+        <location filename="../src/window.cpp" line="555"/>
         <source>Remove selected project?</source>
         <translation>هل تريد إزالة المشروع المحدد؟</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="723"/>
+        <location filename="../src/window.cpp" line="726"/>
         <source>Remove selected session?</source>
         <translation>هل تريد إزالة الجلسة المحددة؟</translation>
     </message>
-    <message>
-        <location filename="../src/window.cpp" line="759"/>
-        <location filename="../src/window.cpp" line="797"/>
-        <location filename="../src/window.cpp" line="880"/>
-        <source>Unable to write time data.</source>
-        <translation>غير قادر على كتابة بيانات الوقت.</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="887"/>
-        <location filename="../src/window.cpp" line="969"/>
-        <source>Unable to read time data.</source>
-        <translation>غير قادر على قراءة بيانات الوقت.</translation>
-    </message>
     <message numerus="yes">
-        <location filename="../src/window.cpp" line="1137"/>
+        <location filename="../src/window.cpp" line="1140"/>
         <source>%n timer(s) running</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n مؤقت يعمل</numerusform>
             <numerusform>%n مؤقت يعمل</numerusform>
             <numerusform></numerusform>
@@ -598,9 +598,9 @@
         </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="413"/>
-        <location filename="../src/window.cpp" line="1134"/>
-        <location filename="../src/window.cpp" line="1144"/>
+        <location filename="../src/window.cpp" line="416"/>
+        <location filename="../src/window.cpp" line="1137"/>
+        <location filename="../src/window.cpp" line="1147"/>
         <source>Kapow Punch Clock</source>
         <translation>كابو برنامج إدارة الوقت</translation>
     </message>

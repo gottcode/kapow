@@ -2,20 +2,62 @@ Developers
 ----------
 * Graeme Gott
 
-Translators
------------
-* Krasimir S. Stefanov (bg)
-* Pavel Fric (cs)
-* Rasmus Blomqvist (da)
-* Swen-Peter Scheel (de)
-* geogeo.gr (el)
-* Ricardo A. Hermosilla Carrillo (es)
-* Guillaume Gay (fr)
-* Stéphane Aulery (fr)
-* Alberto Negri (it)
-* Elbert Pol (nl)
-* Sergiy Gavrylov (uk)
+
+Translations
+------------
+Bulgarian:
+* Krasimir S. Stefanov
+
+Czech:
+* Pavel Fric
+
+Danish:
+* Rasmus Blomqvist
+
+Dutch:
+* Elbert Pol
+
+German:
+* Swen-Peter Scheel
+
+Greek:
+* geogeo.gr
+
+French:
+* Guillaume Gay
+* Stéphane Aulery
+
+Italian:
+* Alberto Negri
+
+Lithuanian:
+* Moo
+
+Norwegian:
+* Lasse Berge
+
+Polish:
+* Michał Trzebiatowski
+
+Portuguese (Brazil):
+* Rafael Ferreira
+
+Romanian:
+* Jaff (Oprea Nicolae)
+
+Russian:
+* Ilya Rogov
+
+Spanish:
+* Ricardo A. Hermosilla Carrillo
+
+Turkish:
+* Cüneyt Oktay
+
+Ukrainian:
+* Sergiy Gavrylov
+
 
 Libraries
 ---------
-* Qt, http://qt-project.org/
+* Qt, http://www.qt.io/

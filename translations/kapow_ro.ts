@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<TS version="2.1" language="ro" sourcelanguage="en">
 <context>
     <name>LocaleDialog</name>
     <message>
         <location filename="../src/locale_dialog.cpp" line="51"/>
         <source>Select application language:</source>
-        <translation>Seleccione el idioma de la aplicación:</translation>
+        <translation>Selectaţi limba aplicaţiei</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="54"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Idioma del sistema&gt;</translation>
+        <translation>&lt;Limbaj sistem&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="187"/>
         <source>Note</source>
-        <translation>Nota</translation>
+        <translation>Notă</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="187"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Reinicie la aplicación para el cambio de idioma surta efecto.</translation>
+        <translation>Vă rugăm reporniţi această aplicaţie pentru ca schimbarea limbii să aibă efect.</translation>
     </message>
 </context>
 <context>
@@ -37,27 +37,27 @@
     <message>
         <location filename="../src/report.cpp" line="379"/>
         <source>Time Sheet Report</source>
-        <translation>Informe de horas trabajadas</translation>
+        <translation>Raport pontaj</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="74"/>
         <source>Name:</source>
-        <translation>Nombre:</translation>
+        <translation>Nume:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="75"/>
         <source>Company:</source>
-        <translation>Empresa:</translation>
+        <translation>Companie:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="76"/>
         <source>Address:</source>
-        <translation>Dirección:</translation>
+        <translation>Adresă:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="77"/>
         <source>Phone:</source>
-        <translation>Teléfono:</translation>
+        <translation>Telefon:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="78"/>
@@ -67,68 +67,68 @@
     <message>
         <location filename="../src/report.cpp" line="79"/>
         <source>Email:</source>
-        <translation>Correo electrónico:</translation>
+        <translation>e-mail:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="80"/>
         <source>Website:</source>
-        <translation>Página web:</translation>
+        <translation>Site web:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="118"/>
         <location filename="../src/report.cpp" line="123"/>
         <source>N/A</source>
-        <translation>N/D</translation>
+        <translation>Indisponibil</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="127"/>
         <source>Prepend currency symbol</source>
-        <translation>Anteponer símbolo de moneda</translation>
+        <translation>Prefixul simbolului monetar</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="134"/>
         <source>Hourly rate:</source>
-        <translation>Tarifa por hora:</translation>
+        <translation>Rată orară:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="135"/>
         <source>Tax rate:</source>
-        <translation>Tasa de impuesto:</translation>
+        <translation>Rată de impozitare:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="136"/>
         <source>Currency symbol:</source>
-        <translation>Símbolo de moneda:</translation>
+        <translation>Simbol monedă:</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="151"/>
         <source>Contact Information</source>
-        <translation>Información de contacto</translation>
+        <translation>Informaţii de contact</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="152"/>
         <source>Data</source>
-        <translation>Datos</translation>
+        <translation>Date</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="153"/>
         <source>Preview</source>
-        <translation>Previsualización</translation>
+        <translation>Previzualizare</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="159"/>
         <source>Export</source>
-        <translation>Exportar</translation>
+        <translation>Exportare</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="160"/>
         <source>Print</source>
-        <translation>Imprimir</translation>
+        <translation>Imprimare</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="283"/>
         <source>Web Page (*.html *.htm)</source>
-        <translation>Página web (*.html *.htm)</translation>
+        <translation>Pagină web (*.html *.htm)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="284"/>
@@ -138,27 +138,27 @@
     <message>
         <location filename="../src/report.cpp" line="285"/>
         <source>Outlook CSV (*.csv)</source>
-        <translation>CSV de Outlook (*.csv)</translation>
+        <translation>Outlook CSV (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="296"/>
         <source>Export Report</source>
-        <translation>Exportar el informe</translation>
+        <translation>Raport exportare</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="335"/>
         <source>View Reports</source>
-        <translation>Ver los informes</translation>
+        <translation>Vizualizare rapoarte</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="351"/>
         <source>Create Report</source>
-        <translation>Crear informe</translation>
+        <translation>Creare raport</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="406"/>
         <source>Phone: %1</source>
-        <translation>Teléfono: %1</translation>
+        <translation>Telefon: %1</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="410"/>
@@ -168,7 +168,7 @@
     <message>
         <location filename="../src/report.cpp" line="466"/>
         <source>Hours</source>
-        <translation>Horas</translation>
+        <translation>Ore</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="473"/>
@@ -178,7 +178,7 @@
     <message>
         <location filename="../src/report.cpp" line="475"/>
         <source>Taxes</source>
-        <translation>Impuestos</translation>
+        <translation>Taxe</translation>
     </message>
     <message>
         <location filename="../src/report.cpp" line="478"/>
@@ -192,14 +192,15 @@
         <location filename="../src/session.cpp" line="50"/>
         <source>%n hour(s)</source>
         <translation>
-            <numerusform>%n hora</numerusform>
-            <numerusform>%n horas</numerusform>
+            <numerusform>%n oră</numerusform>
+            <numerusform>%n ore</numerusform>
+            <numerusform>%n ore</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/session.cpp" line="52"/>
         <source>%L1 hours</source>
-        <translation>%L1 horas</translation>
+        <translation>%L1 ore</translation>
     </message>
 </context>
 <context>
@@ -207,12 +208,12 @@
     <message>
         <location filename="../src/session_delegate.cpp" line="91"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation type="unfinished">Eroare</translation>
     </message>
     <message>
         <location filename="../src/session_delegate.cpp" line="91"/>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished">La sesión provoca conflictos con otras sesiones.</translation>
+        <translation type="unfinished">Sesiunea este în conflict cu alte sesiuni.</translation>
     </message>
 </context>
 <context>
@@ -220,32 +221,32 @@
     <message>
         <location filename="../src/session_dialog.cpp" line="33"/>
         <source>Add Session</source>
-        <translation>Añadir sesión</translation>
+        <translation>Adăugare sesiune</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="54"/>
         <source>Date:</source>
-        <translation>Fecha:</translation>
+        <translation>Dată:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="55"/>
         <source>Start:</source>
-        <translation>Inicio:</translation>
+        <translation>Start:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="56"/>
         <source>Stop:</source>
-        <translation>Fin:</translation>
+        <translation>Stop:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="57"/>
         <source>Task:</source>
-        <translation>Tarea:</translation>
+        <translation>Sarcină:</translation>
     </message>
     <message>
         <location filename="../src/session_dialog.cpp" line="70"/>
         <source>Edit Session</source>
-        <translation>Editar sesión</translation>
+        <translation>Editare sesiune</translation>
     </message>
 </context>
 <context>
@@ -259,48 +260,48 @@
     <message>
         <location filename="../src/session_model.cpp" line="460"/>
         <source>Date</source>
-        <translation type="unfinished">Fecha</translation>
+        <translation type="unfinished">Dată</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="462"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Start</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="464"/>
         <source>Stop</source>
-        <translation type="unfinished">Detener</translation>
+        <translation type="unfinished">Stop</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="466"/>
         <location filename="../src/window.cpp" line="110"/>
         <source>Task</source>
-        <translation type="unfinished">Tarea</translation>
+        <translation type="unfinished">Sarcină</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="468"/>
         <source>Hours</source>
-        <translation type="unfinished">Horas</translation>
+        <translation type="unfinished">Ore</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="470"/>
         <source>Daily</source>
-        <translation type="unfinished">Diariamente</translation>
+        <translation type="unfinished">Zilnic</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="472"/>
         <source>Weekly</source>
-        <translation type="unfinished">Semanalmente</translation>
+        <translation type="unfinished">Săptămînal</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="474"/>
         <source>Monthly</source>
-        <translation type="unfinished">Mensualmente</translation>
+        <translation type="unfinished">Lunar</translation>
     </message>
     <message>
         <location filename="../src/session_model.cpp" line="478"/>
         <source>Report</source>
-        <translation type="unfinished">Informar</translation>
+        <translation type="unfinished">Raport</translation>
     </message>
 </context>
 <context>
@@ -313,49 +314,49 @@
     <message>
         <location filename="../src/window.cpp" line="116"/>
         <source>Start</source>
-        <translation>Iniciar</translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="121"/>
         <source>Stop</source>
-        <translation>Detener</translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="127"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Anulare</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="143"/>
         <source>&amp;Project</source>
-        <translation>&amp;Proyecto</translation>
+        <translation>&amp;Proiect</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
         <location filename="../src/window.cpp" line="157"/>
         <source>&amp;Add</source>
-        <translation>&amp;Añadir</translation>
+        <translation>&amp;Adăugare</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
         <source>Ctrl+Shift+N</source>
-        <translation>Ctrl+Mayús+N</translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="145"/>
         <location filename="../src/window.cpp" line="160"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Remover</translation>
+        <translation>E&amp;liminare</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="145"/>
         <source>Ctrl+Shift+Delete</source>
-        <translation>Ctrl+Mayús+Supr</translation>
+        <translation>Ctrl+Shift+Delete</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Salir</translation>
+        <translation>&amp;Ieşire</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
@@ -365,102 +366,102 @@
     <message>
         <location filename="../src/window.cpp" line="156"/>
         <source>&amp;Session</source>
-        <translation>&amp;Sesión</translation>
+        <translation>&amp;Sesiune</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Editar</translation>
+        <translation>&amp;Editare</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
         <source>Ctrl+Delete</source>
-        <translation>Ctrl+Supr</translation>
+        <translation>Ctrl+Delete</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="163"/>
         <source>S&amp;ettings</source>
-        <translation>&amp;Configuración</translation>
+        <translation>S&amp;etări</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="164"/>
         <source>Columns</source>
-        <translation>Columnas</translation>
+        <translation>Coloane</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="165"/>
         <source>&amp;Decimal Totals</source>
-        <translation>&amp;Totales decimales</translation>
+        <translation>Total &amp;zecimale</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Edición en la misma línea</translation>
+        <translation>Editare în linie</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="174"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Idioma de la aplicación…</translation>
+        <translation>&amp;Limbă aplicaţie...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="176"/>
         <source>&amp;Help</source>
-        <translation>Ay&amp;uda</translation>
+        <translation>&amp;Ajutor</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="177"/>
         <source>&amp;About</source>
-        <translation>&amp;Acerca de</translation>
+        <translation>&amp;Despre</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="179"/>
         <source>About &amp;Qt</source>
-        <translation>Acerca de &amp;Qt</translation>
+        <translation>Despre &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="187"/>
         <source>Project</source>
-        <translation>Proyecto</translation>
+        <translation>Proiect</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="187"/>
         <source>Timer</source>
-        <translation>Temporizador</translation>
+        <translation>Cronometru</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="223"/>
         <source>Show all</source>
-        <translation>Mostrar todo</translation>
+        <translation>Arată toate</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="224"/>
         <source>Show only unbilled</source>
-        <translation>Mostrar solo no facturados</translation>
+        <translation>Arată doar nefacturate</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="225"/>
         <source>Show only this year</source>
-        <translation>Mostrar solo este año</translation>
+        <translation>Arată doar acest an</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="226"/>
         <source>Show only this month</source>
-        <translation>Mostrar solo este mes</translation>
+        <translation>Arată doar luna aceasta</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="227"/>
         <source>Show only this week</source>
-        <translation>Mostrar solo esta semana</translation>
+        <translation>Arată daor luna aceasta</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="418"/>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2008-%1 Graeme Gott</translation>
+        <translation>Toate drepturile rezervate &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="419"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Publicado bajo la licencia &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Lansat sub licenţă &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="471"/>
@@ -469,42 +470,42 @@
         <location filename="../src/window.cpp" line="914"/>
         <location filename="../src/window.cpp" line="940"/>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished">La sesión provoca conflictos con otras sesiones.</translation>
+        <translation type="unfinished">Sesiunea este în conflict cu alte sesiuni.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="890"/>
         <location filename="../src/window.cpp" line="972"/>
         <source>Unable to read time data.</source>
-        <translation>No se pudieron leer los datos del tiempo.</translation>
+        <translation>Nu se pot citit datele de timp.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="589"/>
         <location filename="../src/window.cpp" line="875"/>
         <location filename="../src/window.cpp" line="990"/>
         <source>Untitled</source>
-        <translation>Sin título</translation>
+        <translation>Fără titlu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="762"/>
         <location filename="../src/window.cpp" line="800"/>
         <location filename="../src/window.cpp" line="883"/>
         <source>Unable to write time data.</source>
-        <translation>No se pudieron escribir los datos del tiempo.</translation>
+        <translation>Nu se pot scrie datele de timp.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="380"/>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Hay temporizadores en ejecución. ¿Quiere detenerlos y salir?</translation>
+        <translation>Există cronometre care rulează. Opriţi cronometrele şi ieşiţi?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="415"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Despre</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="417"/>
         <source>A program to help track spent time</source>
-        <translation>Un programa para ayudar a rastrear tiempo consumido</translation>
+        <translation>Un program pentru a vă ajuta să urmăriţi timpul petrecut</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="380"/>
@@ -512,32 +513,32 @@
         <location filename="../src/window.cpp" line="555"/>
         <location filename="../src/window.cpp" line="726"/>
         <source>Question</source>
-        <translation>Pregunta</translation>
+        <translation>Întrebare</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="148"/>
         <source>&amp;Create Report...</source>
-        <translation>&amp;Crear el informe…</translation>
+        <translation>&amp;Creare raport...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
         <source>View R&amp;eports</source>
-        <translation>Ver los in&amp;formes</translation>
+        <translation>Vizualizare rapoarte</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="483"/>
         <source>Cancel this session?</source>
-        <translation>¿Quiere cancelar esta sesión?</translation>
+        <translation>Anulează această sesiune?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="532"/>
         <source>Add Project</source>
-        <translation>Añadir un proyecto</translation>
+        <translation>Adăugare proiect</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="532"/>
         <source>Enter project name:</source>
-        <translation>Escriba el nombre del proyecto:</translation>
+        <translation>Introduceţi numele proiectului:</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="115"/>
@@ -553,40 +554,41 @@
         <location filename="../src/window.cpp" line="890"/>
         <location filename="../src/window.cpp" line="972"/>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="115"/>
         <location filename="../src/main.cpp" line="170"/>
         <source>Unable to create time data location.</source>
-        <translation>No se pudo crear la ubicación de datos del tiempo.</translation>
+        <translation>Nu se poate crea locaţia datelor de timp.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="162"/>
         <source>Unable to move time data location.</source>
-        <translation>No se pudo mover la ubicación de datos del tiempo.</translation>
+        <translation>Nu se poate muta locaţia datelor de timp.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="538"/>
         <source>A project with that name already exists.</source>
-        <translation>Ya existe un proyecto con ese nombre.</translation>
+        <translation>Un proiect cu acel nume deja există.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="555"/>
         <source>Remove selected project?</source>
-        <translation>¿Quiere eliminar el proyecto seleccionado?</translation>
+        <translation>Eliminaţi proiectul selectat?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="726"/>
         <source>Remove selected session?</source>
-        <translation>¿Quiere eliminar la sesión seleccionada?</translation>
+        <translation>Eliminaţi sesiunea selectată?</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/window.cpp" line="1140"/>
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>%n temporizador ejecutándose</numerusform>
-            <numerusform>%n temporizadores ejecutándose</numerusform>
+            <numerusform>%n cronometru rulează</numerusform>
+            <numerusform>%n cronometre rulează</numerusform>
+            <numerusform>%n cronometre rulează</numerusform>
         </translation>
     </message>
     <message>
@@ -594,7 +596,7 @@
         <location filename="../src/window.cpp" line="1137"/>
         <location filename="../src/window.cpp" line="1147"/>
         <source>Kapow Punch Clock</source>
-        <translation>Reloj de control Kapow</translation>
+        <translation>Kapow Punch Clock</translation>
     </message>
 </context>
 </TS>
