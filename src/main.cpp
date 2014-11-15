@@ -41,17 +41,9 @@ int main(int argc, char** argv)
 	app.setApplicationVersion(VERSIONSTR);
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
-	{
-		QIcon fallback(":/hicolor/256x256/apps/kapow.png");
-		fallback.addFile(":/hicolor/128x128/apps/kapow.png");
-		fallback.addFile(":/hicolor/64x64/apps/kapow.png");
-		fallback.addFile(":/hicolor/48x48/apps/kapow.png");
-		fallback.addFile(":/hicolor/32x32/apps/kapow.png");
-		fallback.addFile(":/hicolor/24x24/apps/kapow.png");
-		fallback.addFile(":/hicolor/22x22/apps/kapow.png");
-		fallback.addFile(":/hicolor/16x16/apps/kapow.png");
-		app.setWindowIcon(QIcon::fromTheme("kapow", fallback));
-	}
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MAC)
+	app.setWindowIcon(QIcon::fromTheme("kapow", QIcon(":/kapow.png")));
+#endif
 
 	QString path;
 	bool backups_enabled = true;
