@@ -6,11 +6,11 @@ TEMPLATE = app
 QT += network widgets printsupport
 CONFIG += warn_on c++11
 
-VERSION = $$system(git rev-parse --short HEAD)
+VERSION = $$system(git describe)
 isEmpty(VERSION) {
-	VERSION = 0
+	VERSION = git
 }
-DEFINES += VERSIONSTR=\\\"git.$${VERSION}\\\"
+DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
 
 unix: !macx {
 	TARGET = kapow

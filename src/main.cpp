@@ -27,6 +27,7 @@
 #include "window.h"
 
 #include <QApplication>
+#include <QCommandLineParser>
 #include <QDesktopServices>
 #include <QDir>
 #include <QMessageBox>
@@ -47,8 +48,6 @@ int main(int argc, char** argv)
 	QString path;
 	bool backups_enabled = true;
 	{
-		QStringList args = app.arguments();
-
 		// Handle portability
 		QString appdir = app.applicationDirPath();
 #if defined(Q_OS_MAC)
@@ -66,19 +65,32 @@ int main(int argc, char** argv)
 			}
 		}
 
-		// Handle command-line settings file
-		for (const QString& arg : args) {
-			if (arg.startsWith("--ini=")) {
-				Settings::setPath(arg.mid(6));
-			}
-			if (arg == "--no-backups") {
-				backups_enabled = false;
-			}
+		// Handle command-line options
+		QCommandLineParser parser;
+		parser.setApplicationDescription(QCoreApplication::translate("main", "Punch clock program"));
+		parser.addHelpOption();
+		parser.addVersionOption();
+		parser.addOptions({
+			{"ini",
+				QCoreApplication::translate("main", "Store settings as INI format in specified file."),
+				QCoreApplication::translate("main", "file")},
+			{"no-backups",
+				QCoreApplication::translate("main", "Do not create automatic backups of time data.")}
+		});
+		parser.addPositionalArgument("file", QCoreApplication::translate("main", "The time data file to use."), "[file]");
+		parser.process(app);
+
+		if (parser.isSet("ini")) {
+			Settings::setPath(parser.value("ini"));
 		}
 
-		// Handle command-line data path
-		if (args.back().endsWith(".xml") && !args.back().startsWith("--ini=")) {
-			QFileInfo override(args.back());
+		if (parser.isSet("no-backups")) {
+			backups_enabled = false;
+		}
+
+		QStringList files = parser.positionalArguments();
+		if (!files.isEmpty()) {
+			QFileInfo override(files.back());
 			if (override.suffix().toLower() == "xml") {
 				path = override.absoluteFilePath();
 			}
