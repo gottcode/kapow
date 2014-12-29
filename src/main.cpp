@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2010, 2011, 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
 		}
 
 		// Handle command-line settings file
-		foreach (const QString& arg, args) {
+		for (const QString& arg : args) {
 			if (arg.startsWith("--ini=")) {
 				Settings::setPath(arg.mid(6));
 			}
@@ -134,7 +134,7 @@ int main(int argc, char** argv)
 
 			// Check if an old data location exists
 			oldpath.clear();
-			foreach (const QString& testpath, oldpaths) {
+			for (const QString& testpath : oldpaths) {
 				if (QFile::exists(testpath)) {
 					oldpath = testpath;
 					break;
@@ -146,7 +146,7 @@ int main(int argc, char** argv)
 				QDir olddir(oldpath);
 				QStringList files = olddir.entryList(QDir::Files);
 				bool success = true;
-				foreach (const QString& file, files) {
+				for (const QString& file : files) {
 					success &= QFile::rename(olddir.absoluteFilePath(file), dir.absoluteFilePath(file));
 				}
 				dir.rmdir(oldpath);

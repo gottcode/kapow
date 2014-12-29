@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -240,7 +240,7 @@ void Report::groupSelected(int group) {
 	}
 
 	QList<QVariant> rows = m_groups->itemData(group).toList();
-	foreach (const QVariant& row, rows) {
+	for (const QVariant& row : rows) {
 		m_details->setRowHidden(row.toInt(), QModelIndex(), false);
 	}
 

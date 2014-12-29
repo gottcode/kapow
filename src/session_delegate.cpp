@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,12 +26,14 @@
 #include <QMetaProperty>
 #include <QPainter>
 
+#include <algorithm>
+
 //-----------------------------------------------------------------------------
 
 SessionDelegate::SessionDelegate(QObject* parent) :
 	QStyledItemDelegate(parent)
 {
-	m_height = qMax(QDateEdit().sizeHint().height(), QLineEdit().sizeHint().height());
+	m_height = std::max(QDateEdit().sizeHint().height(), QLineEdit().sizeHint().height());
 }
 
 //-----------------------------------------------------------------------------

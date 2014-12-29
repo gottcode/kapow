@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,6 +64,8 @@
 #include <QVBoxLayout>
 #include <QXmlStreamReader>
 
+#include <algorithm>
+
 #if defined(Q_OS_MAC)
 #include <sys/fcntl.h>
 #elif defined(Q_OS_UNIX)
@@ -122,13 +124,13 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_stop->setAutoDefault(true);
 	m_stop->hide();
 	connect(m_stop, SIGNAL(clicked()), this, SLOT(stop()));
-	button_width = qMax(m_stop->sizeHint().width(), button_width);
+	button_width = std::max(m_stop->sizeHint().width(), button_width);
 
 	m_cancel = new QPushButton(tr("Cancel"), contents);
 	m_cancel->setAutoDefault(true);
 	m_cancel->setEnabled(false);
 	connect(m_cancel, SIGNAL(clicked()), this, SLOT(cancel()));
-	button_width = qMax(m_cancel->sizeHint().width(), button_width);
+	button_width = std::max(m_cancel->sizeHint().width(), button_width);
 
 	m_start->setMinimumWidth(button_width);
 	m_stop->setMinimumWidth(button_width);
@@ -267,7 +269,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	// Add tray icon
 	m_active_icon = windowIcon();
 	QList<QSize> sizes = m_active_icon.availableSizes();
-	foreach (const QSize& size, sizes) {
+	for (const QSize& size : sizes) {
 		m_inactive_icon.addPixmap(m_active_icon.pixmap(size, QIcon::Disabled));
 	}
 	m_tray_icon = new QSystemTrayIcon(m_inactive_icon, this);
@@ -336,7 +338,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 
 	// Restore hidden columns
 	QStringList hidden = settings.value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8" << "9").toStringList();
-	foreach (const QString& column, hidden) {
+	for (const QString& column : hidden) {
 		int i = column.toInt();
 		m_details->setColumnHidden(i, true);
 		column_actions[i - 3]->setChecked(false);
@@ -852,7 +854,7 @@ void Window::loadData() {
 		QStringList backups = QFileInfo(m_filename).dir().entryList(QStringList(m_filename + ".bak-"),
 				QDir::Files,
 				QDir::Name | QDir::IgnoreCase | QDir::Reversed);
-		foreach (const QString& backup, backups) {
+		for (const QString& backup : backups) {
 			m_valid = true;
 			loadData(backup);
 			if (m_valid) {
@@ -1028,7 +1030,7 @@ void Window::createDataBackup() {
 	int current_year = 0;
 	QDir dir = QFileInfo(m_filename).dir();
 	QStringList backups = dir.entryList(QStringList(m_filename + ".bak-"), QDir::Files, QDir::Name | QDir::IgnoreCase);
-	foreach (const QString& backup, backups) {
+	for (const QString& backup : backups) {
 		// Keep one backup a day for the last 7 days
 		if (days.contains(backup)) {
 			continue;

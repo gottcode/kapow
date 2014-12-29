@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 
 #include "session.h"
 
+#include <algorithm>
 #include <climits>
 
 //-----------------------------------------------------------------------------
@@ -100,7 +101,7 @@ bool SessionModel::add(const Session& session)
 			break;
 		}
 	}
-	pos = qMax(pos, 0);
+	pos = std::max(pos, 0);
 
 	// Prevent intersecting sessions
 	if (pos > 0) {
@@ -211,7 +212,7 @@ void SessionModel::setDecimalTotals(bool decimals)
 
 void SessionModel::toXml(QXmlStreamWriter& xml) const
 {
-	foreach (const Session& session, m_data) {
+	for (const Session& session : m_data) {
 		session.toXml(xml);
 	}
 }
