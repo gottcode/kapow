@@ -52,6 +52,7 @@
 #include <QMessageBox>
 #include <QMetaProperty>
 #include <QPushButton>
+#include <QSaveFile>
 #include <QScrollBar>
 #include <QSignalMapper>
 #include <QSplitter>
@@ -65,15 +66,6 @@
 #include <QXmlStreamReader>
 
 #include <algorithm>
-
-#if defined(Q_OS_MAC)
-#include <sys/fcntl.h>
-#elif defined(Q_OS_UNIX)
-#include <unistd.h>
-#elif defined(Q_OS_WIN)
-#include <windows.h>
-#include <io.h>
-#endif
 
 /*****************************************************************************/
 
@@ -733,15 +725,15 @@ void Window::save() {
 		return;
 	}
 
+	// Create temporary backup of time data
 	if (m_backups_enabled) {
-		// Create temporary backup of time data
 		QFile::remove(m_filename + ".bak");
-		QFile::rename(m_filename, m_filename + ".bak");
+		QFile::copy(m_filename, m_filename + ".bak");
 	}
 
 	// Open file for writing
-	QFile file(m_filename);
-	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+	QSaveFile file(m_filename);
+	if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
 		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
 		return;
 	}
@@ -766,19 +758,7 @@ void Window::save() {
 	xml.writeEndDocument();
 
 	// Force time data to disk
-	bool saved = true;
-	if (file.isOpen()) {
-#if defined(Q_OS_MAC)
-		saved &= (fsync(file.handle()) == 0);
-#elif defined(Q_OS_UNIX)
-		saved &= (fsync(file.handle()) == 0);
-#elif defined(Q_OS_WIN)
-		saved &= (FlushFileBuffers(reinterpret_cast<HANDLE>(_get_osfhandle(file.handle()))) != 0);
-#endif
-		saved &= (file.error() == QFile::NoError);
-		file.close();
-	}
-
+	bool saved = file.commit();
 	if (!saved) {
 		QMessageBox::critical(this, tr("Error"), tr("Unable to write time data."));
 	}
