@@ -108,9 +108,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	save_timer->start();
 
 	m_task = new QLineEdit(contents);
-#if (QT_VERSION >= QT_VERSION_CHECK(4,7,0))
 	m_task->setPlaceholderText(SessionModel::tr("Task"));
-#endif
 	m_task->setFocus();
 	connect(m_task, SIGNAL(textChanged(QString)), this, SLOT(taskChanged(QString)));
 	connect(m_task, SIGNAL(returnPressed()), this, SLOT(taskStart()));
@@ -195,17 +193,10 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_projects->sortByColumn(0, Qt::AscendingOrder);
 	m_projects->header()->setSortIndicatorShown(false);
 	m_projects->header()->setStretchLastSection(false);
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	m_projects->header()->setSectionsClickable(false);
 	m_projects->header()->setSectionsMovable(false);
 	m_projects->header()->setSectionResizeMode(0, QHeaderView::Stretch);
 	m_projects->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
-#else
-	m_projects->header()->setClickable(false);
-	m_projects->header()->setMovable(false);
-	m_projects->header()->setResizeMode(0, QHeaderView::Stretch);
-	m_projects->header()->setResizeMode(1, QHeaderView::ResizeToContents);
-#endif
 	m_projects->addAction(m_add_project);
 	m_projects->addAction(m_remove_project);
 	m_projects->setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -238,13 +229,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_details->setSelectionMode(QAbstractItemView::SingleSelection);
 	m_details->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_details->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	m_details->header()->setSectionsClickable(false);
 	m_details->header()->setSectionsMovable(false);
-#else
-	m_details->header()->setClickable(false);
-	m_details->header()->setMovable(false);
-#endif
 	m_details->addAction(m_add_session);
 	m_details->addAction(m_edit_session);
 	m_details->addAction(m_remove_session);
@@ -327,13 +313,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	}
 	m_details->header()->addActions(column_actions);
 	m_details->header()->setContextMenuPolicy(Qt::ActionsContextMenu);
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	m_details->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
 	m_details->header()->setSectionResizeMode(3, QHeaderView::Stretch);
-#else
-	m_details->header()->setResizeMode(QHeaderView::ResizeToContents);
-	m_details->header()->setResizeMode(3, QHeaderView::Stretch);
-#endif
 	m_details->header()->setStretchLastSection(false);
 
 	// Restore hidden columns
@@ -976,11 +957,7 @@ void Window::loadData(const QString& filename) {
 			.arg(path)
 			.arg(xml.lineNumber())
 			.arg(xml.columnNumber())
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 			.arg(xml.errorString().toHtmlEscaped())
-#else
-			.arg(Qt::escape(xml.errorString()))
-#endif
 		);
 		message.exec();
 		return;
@@ -1146,7 +1123,7 @@ void Window::updateTrayIcon() {
 /*****************************************************************************/
 
 void Window::updateWindowTitle(const QString& project) {
-	setWindowTitle(project + ' ' + QChar(0x2014) + ' ' + tr("Kapow Punch Clock"));
+	setWindowFilePath(project);
 }
 
 /*****************************************************************************/

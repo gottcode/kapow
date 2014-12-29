@@ -30,14 +30,13 @@
 #include <QDesktopServices>
 #include <QDir>
 #include <QMessageBox>
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 #include <QStandardPaths>
-#endif
 
 int main(int argc, char** argv)
 {
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
+	app.setApplicationDisplayName(Window::tr("Kapow Punch Clock"));
 	app.setApplicationVersion(VERSIONSTR);
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
@@ -94,11 +93,7 @@ int main(int argc, char** argv)
 
 	// Make sure data path exists
 	if (path.isEmpty()) {
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 		path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
-#else
-		path = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
-#endif
 
 		if (!QFile::exists(path)) {
 			// Create data location
@@ -111,10 +106,8 @@ int main(int argc, char** argv)
 			QStringList oldpaths;
 			QString oldpath;
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 			// Data path from Qt 4 version of 1.4
 			oldpaths.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation));
-#endif
 
 			// Data path from 1.0
 #if defined(Q_OS_MAC)

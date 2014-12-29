@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2012, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,15 +27,10 @@
 
 Rates::Rates()
 {
-#if (QT_VERSION >= QT_VERSION_CHECK(4,8,0))
 	// Use currency symbol of locale
 	QLocale locale;
 	m_currency_symbol = locale.currencySymbol();
 	m_prepend_symbol = locale.toCurrencyString(1, m_currency_symbol).at(0) != '1';
-#else
-	m_currency_symbol = tr("$");
-	m_prepend_symbol = true;
-#endif
 
 	// Default to old settings values if they exist
 	Settings settings;
