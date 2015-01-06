@@ -1,0 +1,105 @@
+1.4.4.2
+-------
+* FIXED: Compiler warnings.
+* FIXED: Did not migrate data from previous versions.
+
+1.4.4.1
+-------
+* FIXED: Timer did not work with Qt 5.
+
+1.4.4
+-----
+* Added automatic backups of time data
+* Added support for Qt 5
+* FIXED: Settings command-line parameter created a folder.
+
+1.4.3
+-----
+* FIXED: Could not save to WebDAV.
+* FIXED: Restarted timer if enter was pressed in task.
+* FIXED: Did not use new file when unable to remove old file.
+* Translation updates: Greek.
+
+1.4.2
+-----
+* FIXED: Was not migrating data.
+* Translation updates: Dutch.
+
+1.4.1
+-----
+* FIXED: Some projects had no totals rows.
+
+1.4.0
+-----
+* Added entering task before starting session.
+* Added totals row for each billed session.
+* Added exporting reports as HTML / iCalendar / CSV.
+* Added setting the data location.
+* Improved loading time data.
+* Translation updates: Czech, Danish, French.
+
+1.3.5
+-----
+* FIXED: Did not warn user when unable to save.
+* FIXED: Could overwrite unreadable data file.
+* Translation updates: Danish, French.
+
+1.3.4
+-----
+* Replaced icon.
+* Added portable mode.
+* FIXED: Qt translations were not copied in Windows.
+* FIXED: Languahe was not stored with portable settings.
+* FIXED: Sessions tracked milliseconds.
+* FIXED: Could not type in timer time edit.
+* FIXED: Could sometimes edit sessions that were billed.
+* FIXED: Totals did not reflect billed status.
+* FIXED: Quit was not causing a close event.
+* Translation updates: Bulgarian, Czech, French, Spanish, Ukrainian.
+
+1.3.3
+-----
+* Minor interface improvements.
+* FIXED: Report currencies were not translated.
+* FIXED: Decimal totals were no longer translated.
+* FIXED: Decimal totals didn't add up.
+* FIXED: Projects appearance did not match sessions.
+* Translation updates: Italian.
+
+1.3.2
+-----
+* Added filtering sessions.
+* Small interface improvements.
+* FIXED: Totals line didn't update when last session was billed.
+* FIXED: Always showed decimal totals when launched.
+
+1.3.1
+-----
+* FIXED: User was not informed of all session conflicts.
+* FIXED: Window was not raised in Windows.
+* FIXED: Totals row was not always shown.
+* FIXED: Timer column was not always wide enough.
+* Translation updates: German.
+
+1.3.0
+-----
+* Added printable reports.
+* Added totals column and row.
+* Added column hiding.
+
+1.2.0
+-----
+* Added subprojects.
+* Added multiple timers.
+* Added renaming and removing projects.
+* Added system tray icon.
+* FIXED: Added sessions had incorrect totals.
+
+1.1.1
+-----
+* FIXED: Missing columns.
+
+1.1.0
+-----
+* Added inline editing.
+* Added note column.
