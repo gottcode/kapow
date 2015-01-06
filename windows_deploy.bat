@@ -1,7 +1,7 @@
 @ECHO OFF
 
 SET APP=Kapow
-FOR /f %%i IN ('git rev-parse --short HEAD') DO SET VERSION=%%i
+FOR /f %%i IN ('git describe') DO SET VERSION=%%i
 
 ECHO Copying executable
 MKDIR %APP%
@@ -16,6 +16,9 @@ SET TRANSLATIONS=%APP%\translations
 MKDIR %TRANSLATIONS%
 COPY translations\*.qm %TRANSLATIONS% >nul
 COPY %QTDIR%\translations\qt_*.qm %TRANSLATIONS% >nul
+
+ECHO Making portable
+MKDIR %APP%\Data
 
 ECHO Creating compressed file
 CD %APP%
