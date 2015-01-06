@@ -6,18 +6,28 @@ TEMPLATE = app
 QT += network widgets printsupport
 CONFIG += warn_on c++11
 
+# Allow in-tree builds
+!win32 {
+	MOC_DIR = build
+	OBJECTS_DIR = build
+	RCC_DIR = build
+}
+
+# Set program version
 VERSION = $$system(git describe)
 isEmpty(VERSION) {
 	VERSION = git
 }
 DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
 
+# Set program name
 unix: !macx {
 	TARGET = kapow
 } else {
 	TARGET = Kapow
 }
 
+# Specify program sources
 HEADERS = src/contact.h \
 	src/date_editor.h \
 	src/filter_model.h \
@@ -51,8 +61,10 @@ SOURCES = src/contact.cpp \
 	src/time_editor.cpp \
 	src/window.cpp
 
+# Allow for updating translations
 TRANSLATIONS = $$files(translations/kapow_*.ts)
 
+# Install program data
 macx {
 	ICON = icons/kapow.icns
 } else:win32 {
