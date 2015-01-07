@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2010, 2011, 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2010, 2011, 2012, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,21 +17,15 @@
  *
  ***********************************************************************/
 
-// Need this to find the old data locations from Qt 4 when using Qt 5.
-// QDesktopServices::storageLocation() is deprecated and returns a different
-// path than QStandardPaths::writableLocation().
-#define QT_DISABLE_DEPRECATED_BEFORE 0x000000
-
 #include "locale_dialog.h"
+#include "paths.h"
 #include "settings.h"
 #include "window.h"
 
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QDesktopServices>
 #include <QDir>
 #include <QMessageBox>
-#include <QStandardPaths>
 
 int main(int argc, char** argv)
 {
@@ -105,7 +99,7 @@ int main(int argc, char** argv)
 
 	// Make sure data path exists
 	if (path.isEmpty()) {
-		path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+		path = Paths::dataPath();
 
 		if (!QFile::exists(path)) {
 			// Create data location
@@ -115,38 +109,8 @@ int main(int argc, char** argv)
 				return 1;
 			}
 
-			QStringList oldpaths;
-			QString oldpath;
-
-			// Data path from Qt 4 version of 1.4
-			oldpaths.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation));
-
-			// Data path from 1.0
-#if defined(Q_OS_MAC)
-			oldpath = QDir::homePath() + "/Library/Application Support/GottCode/Kapow/";
-#elif defined(Q_OS_UNIX)
-			oldpath = getenv("$XDG_DATA_HOME");
-			if (oldpath.isEmpty()) {
-				oldpath = QDir::homePath() + "/.local/share/";
-			}
-			oldpath += "/gottcode/kapow/";
-#elif defined(Q_OS_WIN32)
-			oldpath = QDir::homePath() + "/Application Data/GottCode/Kapow/";
-#endif
-			if (!oldpaths.contains(oldpath)) {
-				oldpaths.append(oldpath);
-			}
-
-			// Check if an old data location exists
-			oldpath.clear();
-			for (const QString& testpath : oldpaths) {
-				if (QFile::exists(testpath)) {
-					oldpath = testpath;
-					break;
-				}
-			}
-
 			// Move time data
+			QString oldpath = Paths::oldDataPath();
 			if (!oldpath.isEmpty()) {
 				QDir olddir(oldpath);
 				QStringList files = olddir.entryList(QDir::Files);

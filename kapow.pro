@@ -32,6 +32,7 @@ HEADERS = src/contact.h \
 	src/date_editor.h \
 	src/filter_model.h \
 	src/locale_dialog.h \
+	src/paths.h \
 	src/project.h \
 	src/project_delegate.h \
 	src/rates.h \
@@ -49,6 +50,7 @@ SOURCES = src/contact.cpp \
 	src/filter_model.cpp \
 	src/locale_dialog.cpp \
 	src/main.cpp \
+	src/paths.cpp \
 	src/project.cpp \
 	src/project_delegate.cpp \
 	src/rates.cpp \
