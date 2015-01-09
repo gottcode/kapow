@@ -38,6 +38,7 @@ int main(int argc, char** argv)
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MAC)
 	app.setWindowIcon(QIcon::fromTheme("kapow", QIcon(":/kapow.png")));
 #endif
+	app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
 	QString path;
 	bool backups_enabled = true;

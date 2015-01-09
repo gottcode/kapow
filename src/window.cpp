@@ -216,7 +216,6 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_details->setUniformRowHeights(true);
 	m_details->setRootIsDecorated(false);
 	m_details->setItemsExpandable(false);
-	m_details->setItemDelegate(new SessionDelegate(m_details));
 	m_details->setIndentation(0);
 	m_details->setSelectionMode(QAbstractItemView::SingleSelection);
 	m_details->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -231,6 +230,10 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	connect(m_details, SIGNAL(pressed(const QModelIndex&)), this, SLOT(sessionPressed(const QModelIndex&)));
 	connect(m_details->verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(sessionsScrolled(int)));
 	m_details->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+	SessionDelegate* delegate = new SessionDelegate(m_details);
+	delegate->setDevicePixelRatio(devicePixelRatio());
+	m_details->setItemDelegate(delegate);
 
 	QVBoxLayout* details_layout = new QVBoxLayout(details);
 	details_layout->setMargin(0);

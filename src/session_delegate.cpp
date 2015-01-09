@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2012, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,8 @@
 //-----------------------------------------------------------------------------
 
 SessionDelegate::SessionDelegate(QObject* parent) :
-	QStyledItemDelegate(parent)
+	QStyledItemDelegate(parent),
+	m_ratio(1)
 {
 	m_height = std::max(QDateEdit().sizeHint().height(), QLineEdit().sizeHint().height());
 }
@@ -71,16 +72,35 @@ void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
 
 		// Draw drop shadow below totals row
 		painter->save();
-		int y = opt.rect.bottom();
-		const int alphas[5] = { 99, 50, 20, 6, 1 };
+		painter->translate(0, opt.rect.bottom() + 1);
+		painter->scale(1.0, 1.0 / m_ratio);
+		int y = 0;
 		QColor color(0,0,0);
-		for (int i = 0; i < 5; ++i) {
-			color.setAlpha(alphas[i]);
+		for (int i = 0, end = m_alphas.size(); i < end; ++i) {
+			color.setAlpha(m_alphas[i]);
 			painter->setPen(color);
 			painter->drawLine(opt.rect.left(), y, opt.rect.right(), y);
 			--y;
 		}
 		painter->restore();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void SessionDelegate::setDevicePixelRatio(int ratio)
+{
+	m_ratio = ratio;
+
+	const int count = m_ratio * 5;
+	m_alphas.resize(count);
+
+	const qreal delta = 1.0 / m_ratio;
+	for (int i = 0; i < count; ++i)
+	{
+		const qreal x = i * delta;
+		qreal y = (-0.75 * x * x * x) + (11.875 * x * x) + (-60.0 * x) + 99;
+		m_alphas[i] = std::lround(y);
 	}
 }
 
@@ -100,7 +120,7 @@ QSize SessionDelegate::sizeHint(const QStyleOptionViewItem& option, const QModel
 {
 	QSize size = QStyledItemDelegate::sizeHint(option, index);
 	if (index.parent().isValid() || (index.model()->rowCount() - 1) == index.row()) {
-		size.setHeight(size.height() + 3);
+		size.setHeight(size.height() + (3 * m_ratio));
 	} else {
 		size.setHeight(m_height);
 	}

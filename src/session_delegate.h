@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2012, 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,11 +28,14 @@ public:
 	SessionDelegate(QObject* parent = 0);
 
 	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+	void setDevicePixelRatio(int ratio);
 	void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const;
 	QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
 private:
 	int m_height;
+	int m_ratio;
+	QVector<int> m_alphas;
 };
 
 #endif
