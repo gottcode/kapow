@@ -248,7 +248,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_contents->setStretchFactor(1, 1);
 
 	// Add tray icon
-	m_active_icon = windowIcon();
+	m_active_icon = QIcon(":/kapow.png");
 	QList<QSize> sizes = m_active_icon.availableSizes();
 	for (const QSize& size : sizes) {
 		m_inactive_icon.addPixmap(m_active_icon.pixmap(size, QIcon::Disabled));

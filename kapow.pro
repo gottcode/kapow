@@ -67,13 +67,13 @@ SOURCES = src/contact.cpp \
 TRANSLATIONS = $$files(translations/kapow_*.ts)
 
 # Install program data
+RESOURCES = icons/icons.qrc
+
 macx {
 	ICON = icons/kapow.icns
 } else:win32 {
 	RC_FILE = icons/icon.rc
 } else:unix {
-	RESOURCES = icons/icons.qrc
-
 	isEmpty(PREFIX) {
 		PREFIX = /usr/local
 	}
