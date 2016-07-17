@@ -34,21 +34,20 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image>http://gottcode.org/kapow/screenshots/kapow.png</image>
+      <image>https://gottcode.org/kapow/screenshots/kapow.png</image>
     </screenshot>
     <screenshot>
-      <image>http://gottcode.org/kapow/screenshots/report1.png</image>
+      <image>https://gottcode.org/kapow/screenshots/report1.png</image>
     </screenshot>
     <screenshot>
-      <image>http://gottcode.org/kapow/screenshots/report2.png</image>
+      <image>https://gottcode.org/kapow/screenshots/report2.png</image>
     </screenshot>
     <screenshot>
-      <image>http://gottcode.org/kapow/screenshots/report3.png</image>
+      <image>https://gottcode.org/kapow/screenshots/report3.png</image>
     </screenshot>
   </screenshots>
-  <url type="homepage">http://gottcode.org/kapow/</url>
-  <url type="bugtracker">http://gottcode.org/kapow/bugs/</url>
-  <url type="donation">http://gottcode.org/tip/</url>
+  <url type="homepage">https://gottcode.org/kapow/</url>
+  <url type="donation">https://gottcode.org/tip/</url>
   <developer_name>Graeme Gott</developer_name>
   <updatecontact>graeme@gottcode.org</updatecontact>
   <provides>
