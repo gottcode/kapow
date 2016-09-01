@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,6 +59,7 @@ QString Paths::oldDataPath()
 	if (!oldpaths.contains(oldpath)) {
 		oldpaths.append(oldpath);
 	}
+	oldpaths.removeAll(dataPath() + "/");
 
 	// Check if an old data location exists
 	oldpath.clear();
