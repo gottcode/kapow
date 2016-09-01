@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -128,6 +128,8 @@ private:
 	QAction* m_add_session;
 	QAction* m_edit_session;
 	QAction* m_remove_session;
+	QAction* m_stop_session;
+	QAction* m_cancel_session;
 
 	QSystemTrayIcon* m_tray_icon;
 	QIcon m_active_icon;

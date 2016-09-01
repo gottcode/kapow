@@ -116,11 +116,19 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	connect(m_stop, SIGNAL(clicked()), this, SLOT(stop()));
 	button_width = std::max(m_stop->sizeHint().width(), button_width);
 
+	m_stop_session = new QAction(tr("Stop"), this);
+	m_stop_session->setEnabled(false);
+	connect(m_stop_session, SIGNAL(triggered(bool)), this, SLOT(stop()));
+
 	m_cancel = new QPushButton(tr("Cancel"), contents);
 	m_cancel->setAutoDefault(true);
 	m_cancel->setEnabled(false);
 	connect(m_cancel, SIGNAL(clicked()), this, SLOT(cancel()));
 	button_width = std::max(m_cancel->sizeHint().width(), button_width);
+
+	m_cancel_session = new QAction(tr("Cancel"), this);
+	m_cancel_session->setEnabled(false);
+	connect(m_cancel_session, SIGNAL(triggered(bool)), this, SLOT(cancel()));
 
 	m_start->setMinimumWidth(button_width);
 	m_stop->setMinimumWidth(button_width);
@@ -438,6 +446,10 @@ void Window::start() {
 	m_remove_project->setEnabled(false);
 	updateDetails();
 	m_stop->setFocus();
+
+	m_stop_session->setEnabled(true);
+	m_cancel_session->setEnabled(true);
+	m_projects->insertActions(m_add_project, {m_stop_session, m_cancel_session});
 }
 
 /*****************************************************************************/
@@ -453,6 +465,11 @@ void Window::stop() {
 	updateDetails();
 	m_task->clear();
 	m_task->setFocus();
+
+	m_stop_session->setEnabled(false);
+	m_cancel_session->setEnabled(false);
+	m_projects->removeAction(m_stop_session);
+	m_projects->removeAction(m_cancel_session);
 }
 
 /*****************************************************************************/
@@ -465,6 +482,11 @@ void Window::cancel() {
 		updateDetails();
 		m_task->clear();
 		m_task->setFocus();
+
+		m_stop_session->setEnabled(false);
+		m_cancel_session->setEnabled(false);
+		m_projects->removeAction(m_stop_session);
+		m_projects->removeAction(m_cancel_session);
 	}
 }
 
@@ -583,6 +605,16 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	m_details->expandAll();
 	m_filter->setCurrentIndex(m_filter->findData(m_active_project->filterModel()->type()));
 	m_remove_project->setEnabled(!project->isActive());
+	if (!m_active_project->time().isEmpty()) {
+		m_stop_session->setEnabled(true);
+		m_cancel_session->setEnabled(true);
+		m_projects->insertActions(m_add_project, {m_stop_session, m_cancel_session});
+	} else {
+		m_stop_session->setEnabled(false);
+		m_cancel_session->setEnabled(false);
+		m_projects->removeAction(m_stop_session);
+		m_projects->removeAction(m_cancel_session);
+	}
 	m_view_reports->setEnabled(m_active_model->isBilled(0));
 	m_edit_session->setEnabled(false);
 	m_remove_session->setEnabled(false);
