@@ -42,7 +42,7 @@ SessionDelegate::SessionDelegate(QObject* parent) :
 
 void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
-	QStyleOptionViewItemV4 opt = option;
+	QStyleOptionViewItem opt = option;
 	initStyleOption(&opt, index);
 
 	if (!index.parent().isValid()) {
@@ -53,7 +53,7 @@ void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
 			}
 		} else {
 			// Set up drawing of unbilled totals row
-			opt.features |= QStyleOptionViewItemV2::Alternate;
+			opt.features |= QStyleOptionViewItem::Alternate;
 			opt.font.setWeight(QFont::Bold);
 			opt.state &= ~QStyle::State_HasFocus;
 		}
@@ -62,7 +62,7 @@ void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
 		QStyledItemDelegate::paint(painter, opt, index);
 	} else {
 		// Set up drawing of totals row
-		opt.features |= QStyleOptionViewItemV2::Alternate;
+		opt.features |= QStyleOptionViewItem::Alternate;
 		opt.font.setWeight(QFont::Bold);
 		opt.palette.setBrush(QPalette::Text, opt.palette.brush(QPalette::Disabled, QPalette::Text));
 		opt.palette.setBrush(QPalette::AlternateBase, opt.palette.brush(QPalette::Disabled, QPalette::AlternateBase));
