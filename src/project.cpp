@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2011, 2012, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,6 +38,24 @@ Project::Project(QTreeWidget* parent, const QString& project)
 Project::Project(QTreeWidgetItem* parent, const QString& project)
 : QTreeWidgetItem(parent, QStringList(project)) {
 	init();
+}
+
+/*****************************************************************************/
+
+bool Project::isActive() const {
+	if (m_active) {
+		return true;
+	}
+
+	int count = childCount();
+	for (int i = 0; i < count; ++i) {
+		Project* project = dynamic_cast<Project*>(child(i));
+		if (project && project->isActive()) {
+			return true;
+		}
+	}
+
+	return false;
 }
 
 /*****************************************************************************/

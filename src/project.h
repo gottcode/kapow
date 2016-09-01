@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2011, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2011, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,9 +37,7 @@ public:
 	void updateTime(const QDateTime& current);
 	void setTask(const QString& task);
 
-	bool isActive() const {
-		return m_active;
-	}
+	bool isActive() const;
 
 	SessionModel* model() const {
 		return m_model;
