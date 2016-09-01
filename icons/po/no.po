@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Lasse Berge <lasse@innit.no>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Norwegian (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2016-03-11 08:02+0000\n"
+"Last-Translator: Lasse Berge <lasse@innit.no>\n"
+"Language-Team: Norwegian (http://www.transifex.com/gottcode/kapow/language/"
 "no/)\n"
 "Language: no\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +25,7 @@ msgstr "Kapow Stemplingsur"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Hold styring på tidsbruken på prosjekter"
+msgstr "Ha kontroll over tidsforbruk på prosjekter "
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -36,6 +37,12 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow er et elektronisk stemplingsur som holder kontroll på ditt "
+"tidsforbruk, enten du jobber på ett eller flere prosjekt. Du stempler bare "
+"inn og ut med Start/Stopp knappen. Gjør du en feil, kan du enkelt rette "
+"denne ved å dobbeltklikke på oppføringen du vil endre. Kapow gir deg "
+"oversikt på tidsforbruk siden siste faktura, ved en enkel avkrysning for "
+"fakturert tid, - totalen vil gjenspeile tidsforbruk siden forrige faktura."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"

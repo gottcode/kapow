@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# M T <michtrz@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2015-10-25 20:42+0000\n"
+"Last-Translator: M T <michtrz@gmail.com>\n"
+"Language-Team: Polish (http://www.transifex.com/gottcode/kapow/language/"
 "pl/)\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +26,7 @@ msgstr "Rejestracja czasu pracy Kapow"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Rejestracja czasu spędzonego przy projektach"
+msgstr "Śledź twój czas poświęcony na projekty"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -37,6 +38,13 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow to program rejestracji czasu pracy przeznaczony do łatwego śledzenia "
+"swoich godzin, gdy pracujesz nad jednym lub wielu projektach. Po prostu "
+"zastartuj/zatrzymaj zegar przyciskiem Start/Stop. Jeśli popełnisz błąd w "
+"zapisie swoich godzin, możesz cofnąć i zmienić jedną z pozycji, klikając "
+"dwukrotnie na sesję w pytaniu. Kapow pozwala także łatwo śledzić godziny od "
+"ostatniego rozliczania z klientem, poprzez dostarczenie pola pomocniczego "
+"\"rozliczone\" wyboru--sumy będą rozliczane twoją pracę po ostatniej sesji."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"

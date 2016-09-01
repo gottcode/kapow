@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Guillaume Gay <guillaume.gay@bigfoot.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2014-11-17 09:13+0000\n"
+"Last-Translator: Guillaume Gay <guillaume.gay@bigfoot.com>\n"
+"Language-Team: French (http://www.transifex.com/gottcode/kapow/language/"
 "fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
-msgstr ""
+msgstr "Pointeuse Kapow"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr ""
+msgstr "Conservez une trace du temps passé sur vos projets"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -36,7 +37,15 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow est une pointeuse horaire conçue pour conserver facilement une trace "
+"de votre temps passé à travailler sur un ou sur plusieurs projets. Pointez "
+"et dépointez simplement à l'aide du bouton Démarrer/Arrêter. Si vous vous "
+"êtes trompé(e) dans vos heures, vous pouvez revenir dessus et éditer l'une "
+"des entrées en double-cliquant sur la session en question. Kapow vous permet "
+"aussi de conserver une trace des heures que vous devrez au final facturer au "
+"client, en proposant une case « Facturé » bien pratique. Les totaux "
+"refléteront votre travail après la dernière session facturée. "
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
-msgstr ""
+msgstr "Pointeuse horaire"

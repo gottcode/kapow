@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# RobertBorst <webmaster@fam-borst.nl>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/kapow/language/"
-"nl/)\n"
+"PO-Revision-Date: 2016-08-21 13:57+0000\n"
+"Last-Translator: RobertBorst <webmaster@fam-borst.nl>\n"
+"Language-Team: Dutch (http://www.transifex.com/gottcode/kapow/language/nl/)\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr "Kapow tikklok"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Tijdadministratie voor projecten"
+msgstr "Hou je project uren in de gaten"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -36,7 +36,14 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow is een tikkok die ontworpen is om de uren te administreren op een of "
+"meerdere projecten. Gewoon in en uitklokken met de start-stop knop. Als je "
+"een fout maakt dan kun je teruggaan en de melding bewerken door te "
+"dubbelklikken. Kapow houdt ook de uren gemakkelijk bij sinds de laatste keer "
+"dat je een rekening hebt gestuurd door gebruik te maken van de \"rekening\" "
+"checkbox. De totalen zullen je werk weergeven na de laatst afgerekende "
+"versie."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
-msgstr "tikklok"
+msgstr "Tikklok"

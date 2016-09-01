@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Wasilis Mandratzis-Walz, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2015-04-18 23:24+0000\n"
+"Last-Translator: Wasilis Mandratzis-Walz\n"
+"Language-Team: German (http://www.transifex.com/gottcode/kapow/language/"
 "de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -36,6 +37,15 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow ist eine Zeiterfassungssoftware und wurde entwickelt, um leichter den "
+"Überblick über Ihre Stunden, die Sie an einem Projekt arbeiten zu behalten. "
+"Einfach die Stempeluhr beginnen oder stoppen mit der Start/Stop-Taste. Wenn "
+"Sie einen Fehler in der Stunde machen, können Sie zurückgehen und bearbeiten "
+"einen der Einträge mit einem Doppelklick auf die Sitzung. Mit Kapow können "
+"Sie auch leicht den Überblick über die Stunden seit der letzten Rechnung "
+"eines Kunden durch die Bereitstellung eines hilfreichen \"Billed\" "
+"aktivieren - die Summe wird Ihre Arbeit nach der letzten Rechnung der "
+"Sitzung an berechnen."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"

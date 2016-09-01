@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Oprea Nicolae <jaff2002@yahoo.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2015-01-22 00:44+0000\n"
+"Last-Translator: Oprea Nicolae <jaff2002@yahoo.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/gottcode/kapow/language/"
 "ro/)\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +38,13 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow este un program de ceas stimul conceput pentru a ţine evidenţa orelor "
+"dvs., indiferent dacă lucraţi pe un proiect sau mai multe. Pur şi simplu "
+"cronometraţi cu butonul Start/Stop. Dacă faceţi o greşeală în orele dvs., vă "
+"puteţi întoarce şi edita oricare dintre intrări dînd dublu-clic pe sesiunea "
+"în cauză. Kapow, de asemenea, vă permite să păstraţi cu uşurinţă evidenţa "
+"orelor de cînd aţi facturat în trecut un client, bifînd căsuţa ajutătoare "
+"\"Taxat\" - totalurile vor reflecta munca, după ultima sesiune facturată."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"

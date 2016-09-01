@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2015-11-16 13:57+0000\n"
+"Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread."
+"net>\n"
+"Language-Team: Danish (http://www.transifex.com/gottcode/kapow/language/"
 "da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +22,11 @@ msgstr ""
 
 #: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
-msgstr "Kapow Punch Clock"
+msgstr "Kapow stopur"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Overvåg tidsforbrug for projekter"
+msgstr "Hold styr på, hvor meget tid der bruges på projekter"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -36,7 +38,15 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow er et tidstagningsprogram beregnet til at holde styr på dine timer, om "
+"du så arbejder på et enkelt projekt eller mange. Check ind og ud med start/"
+"stop-knappen. Laver du en fejl i din registrering, kan du gå tilbage og "
+"redigere den ved at dobbeltklikke på den. Kapow gør det også nemt at holde "
+"styr på, hvor mange timer der er kommet til siden du sidst fakturerede en "
+"kunde med en praktisk afkrydsningsboks med \"faktureret\" - så vil den "
+"totale tid afspejle den tid, der er gået siden den seneste faktura er "
+"udarbejdet."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
-msgstr "Punch Clock"
+msgstr "Stopur"

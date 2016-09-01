@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# fri, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/kapow/language/"
-"cs/)\n"
+"PO-Revision-Date: 2014-12-28 09:19+0000\n"
+"Last-Translator: fri\n"
+"Language-Team: Czech (http://www.transifex.com/gottcode/kapow/language/cs/)\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr "Evidence pracovní doby Kapow"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Udržovat si přehled o čase stráveném nad projekty"
+msgstr "Udržujte si přehled o čase stráveném nad projekty"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -36,6 +36,15 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow je program na evidenci pracovní doby navržený tak, abyste si snadno "
+"mohli držovat přehled o hodinách, ať už je to čas strávený nad jedním nebo "
+"mnoha projekty. Jednoduše si píchněte příchod a odchod tlačítkem pro začátek/"
+"konec pracovní doby. Pokud se ve svých hodinách zmýlíte, můžete se vrátit a "
+"kterýkoli ze záznamů upravit dvojitým klepnutím myší na sezení, o kterém je "
+"řeč. Kapow také dovoluje snadné udržování přehledu o hodinách pro dobu, "
+"kterou budete nakonec účtovat klientovi tím, že poskytuje praktické "
+"zaškrtávací políčko \"Účtováno\". Toto celkově odráží vaši práci od "
+"posledního zúčtovaného sezení."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
