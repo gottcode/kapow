@@ -138,7 +138,6 @@ Var StartMenuFolder
 !insertmacro MUI_LANGUAGE "Afrikaans"
 !insertmacro MUI_LANGUAGE "Catalan"
 !insertmacro MUI_LANGUAGE "Esperanto"
-!insertmacro MUI_LANGUAGE "Asturian"
 
 ;--------------------------------
 ;Reserve Files
@@ -154,6 +153,53 @@ Function .onInit
 
 FunctionEnd
 
+Function ConvertUnixNewLines
+
+	Exch $R0 ;file #1 path
+	Push $R1 ;file #1 handle
+	Push $R2 ;file #2 path
+	Push $R3 ;file #2 handle
+	Push $R4 ;data
+	Push $R5
+
+	FileOpen $R1 $R0 r
+	GetTempFileName $R2
+	FileOpen $R3 $R2 w
+
+	loopRead:
+		ClearErrors
+		FileRead $R1 $R4
+		IfErrors doneRead
+
+		StrCpy $R5 $R4 1 -1
+		StrCmp $R5 $\n 0 +4
+		StrCpy $R5 $R4 1 -2
+		StrCmp $R5 $\r +3
+		StrCpy $R4 $R4 -1
+		StrCpy $R4 "$R4$\r$\n"
+
+		FileWrite $R3 $R4
+
+	Goto loopRead
+	doneRead:
+
+	FileClose $R3
+	FileClose $R1
+
+	SetDetailsPrint none
+	Delete $R0
+	Rename $R2 $R0
+	SetDetailsPrint both
+
+	Pop $R5
+	Pop $R4
+	Pop $R3
+	Pop $R2
+	Pop $R1
+	Pop $R0
+
+FunctionEnd
+
 ;--------------------------------
 ;Installer Section
 
@@ -162,28 +208,57 @@ Section "install"
 	;Copy files
 	SetOutPath $INSTDIR
 	File ..\release\Kapow.exe
+	File $%QTDIR%\bin\iconv.dll
+	File $%QTDIR%\bin\libgcc_s_sjlj-1.dll
+	File $%QTDIR%\bin\libGLESv2.dll
+	File $%QTDIR%\bin\libglib-2.0-0.dll
+	File $%QTDIR%\bin\libharfbuzz-0.dll
+	File $%QTDIR%\bin\libintl-8.dll
+	File $%QTDIR%\bin\libpcre-1.dll
+	File $%QTDIR%\bin\libpcre16-0.dll
+	File $%QTDIR%\bin\libpng16-16.dll
+	File $%QTDIR%\bin\libstdc++-6.dll
+	File $%QTDIR%\bin\libwinpthread-1.dll
+	File $%QTDIR%\bin\zlib1.dll
+	File $%QTDIR%\bin\Qt5Core.dll
+	File $%QTDIR%\bin\Qt5Gui.dll
+	File $%QTDIR%\bin\Qt5Network.dll
+	File $%QTDIR%\bin\Qt5PrintSupport.dll
+	File $%QTDIR%\bin\Qt5Widgets.dll
+
+	SetOutPath $INSTDIR\bearer
+	File $%QTDIR%\lib\qt5\plugins\bearer\*.dll
+
+	SetOutPath $INSTDIR\platforms
+	File $%QTDIR%\lib\qt5\plugins\platforms\*.dll
+
+	SetOutPath $INSTDIR\printsupport
+	File $%QTDIR%\lib\qt5\plugins\printsupport\*.dll
 
 	SetOutPath $INSTDIR\translations
 	File ..\translations\*.qm
-	File $%QTDIR%\translations\qt_*.qm
+	File $%QTDIR%\share\qt5\translations\qt_*.qm
+	File $%QTDIR%\share\qt5\translations\qtbase_*.qm
 
 	;Create ReadMe file
 	SetOutPath $INSTDIR
 	File /oname=ReadMe.txt ..\README
 	FileOpen $4 "ReadMe.txt" a
 	FileSeek $4 0 END
-	FileWrite $4 "$\r$\n$\r$\nCredits$\r$\n=======$\r$\n$\r$\n"
+	FileWrite $4 "$\n$\nCredits$\n=======$\n$\n"
 	FileClose $4
 	File ..\CREDITS
 	${FileJoin} "ReadMe.txt" "CREDITS" "ReadMe.txt"
 	Delete $INSTDIR\CREDITS
 	FileOpen $4 "ReadMe.txt" a
 	FileSeek $4 0 END
-	FileWrite $4 "$\r$\n$\r$\nNews$\r$\n====$\r$\n$\r$\n"
+	FileWrite $4 "$\n$\nNews$\n====$\n$\n"
 	FileClose $4
 	File ..\NEWS
 	${FileJoin} "ReadMe.txt" "NEWS" "ReadMe.txt"
 	Delete $INSTDIR\NEWS
+	Push $INSTDIR\ReadMe.txt
+	Call ConvertUnixNewLines
 
 	;Registry information for add/remove programs
 	WriteRegStr HKLM "Software\${APPNAME}" "" "$INSTDIR"
@@ -235,10 +310,17 @@ Section "Uninstall"
 	;Remove files
 	Delete $INSTDIR\Kapow.exe
 	Delete $INSTDIR\ReadMe.txt
+	Delete $INSTDIR\*.dll
+	Delete $INSTDIR\bearer\*.dll
+	Delete $INSTDIR\platforms\*.dll
+	Delete $INSTDIR\printsupport\*.dll
 	Delete $INSTDIR\translations\*.qm
 	Delete $INSTDIR\Uninstall.exe
 
 	;Remove directories
+	RMDir $INSTDIR\bearer
+	RMDir $INSTDIR\platforms
+	RMDir $INSTDIR\printsupport
 	RMDir $INSTDIR\translations
 	RMDir $INSTDIR
 
