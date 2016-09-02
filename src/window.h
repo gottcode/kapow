@@ -128,6 +128,7 @@ private:
 	QAction* m_add_session;
 	QAction* m_edit_session;
 	QAction* m_remove_session;
+	QAction* m_actions_separator;
 	QAction* m_stop_session;
 	QAction* m_cancel_session;
 

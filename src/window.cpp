@@ -179,6 +179,9 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
 	action->setMenuRole(QAction::AboutQtRole);
 
+	m_actions_separator = new QAction(this);
+	m_actions_separator->setSeparator(true);
+
 	// Create projects
 	m_projects = new QTreeWidget(contents);
 	m_projects->setAutoExpandDelay(500);
@@ -197,6 +200,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_projects->header()->setSectionsMovable(false);
 	m_projects->header()->setSectionResizeMode(0, QHeaderView::Stretch);
 	m_projects->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+	m_projects->addAction(m_actions_separator);
 	m_projects->addAction(m_add_project);
 	m_projects->addAction(m_remove_project);
 	m_projects->setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -446,7 +450,7 @@ void Window::start() {
 
 	m_stop_session->setEnabled(true);
 	m_cancel_session->setEnabled(true);
-	m_projects->insertActions(m_add_project, {m_stop_session, m_cancel_session});
+	m_projects->insertActions(m_actions_separator, {m_stop_session, m_cancel_session});
 }
 
 /*****************************************************************************/
@@ -605,7 +609,7 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	if (!m_active_project->time().isEmpty()) {
 		m_stop_session->setEnabled(true);
 		m_cancel_session->setEnabled(true);
-		m_projects->insertActions(m_add_project, {m_stop_session, m_cancel_session});
+		m_projects->insertActions(m_actions_separator, {m_stop_session, m_cancel_session});
 	} else {
 		m_stop_session->setEnabled(false);
 		m_cancel_session->setEnabled(false);
