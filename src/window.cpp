@@ -179,8 +179,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
 	action->setMenuRole(QAction::AboutQtRole);
 
-	m_actions_separator = new QAction(this);
-	m_actions_separator->setSeparator(true);
+	QAction* actions_separator = new QAction(this);
+	actions_separator->setSeparator(true);
 
 	// Create projects
 	m_projects = new QTreeWidget(contents);
@@ -200,9 +200,11 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_projects->header()->setSectionsMovable(false);
 	m_projects->header()->setSectionResizeMode(0, QHeaderView::Stretch);
 	m_projects->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
-	m_projects->addAction(m_actions_separator);
 	m_projects->addAction(m_add_project);
 	m_projects->addAction(m_remove_project);
+	m_projects->addAction(actions_separator);
+	m_projects->addAction(m_stop_session);
+	m_projects->addAction(m_cancel_session);
 	m_projects->setContextMenuPolicy(Qt::ActionsContextMenu);
 	connect(m_projects, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(projectActivated(QTreeWidgetItem*)));
 	connect(m_projects, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(projectChanged(QTreeWidgetItem*, int)));
@@ -450,7 +452,6 @@ void Window::start() {
 
 	m_stop_session->setEnabled(true);
 	m_cancel_session->setEnabled(true);
-	m_projects->insertActions(m_actions_separator, {m_stop_session, m_cancel_session});
 }
 
 /*****************************************************************************/
@@ -469,8 +470,6 @@ void Window::stop() {
 
 	m_stop_session->setEnabled(false);
 	m_cancel_session->setEnabled(false);
-	m_projects->removeAction(m_stop_session);
-	m_projects->removeAction(m_cancel_session);
 }
 
 /*****************************************************************************/
@@ -486,8 +485,6 @@ void Window::cancel() {
 
 		m_stop_session->setEnabled(false);
 		m_cancel_session->setEnabled(false);
-		m_projects->removeAction(m_stop_session);
-		m_projects->removeAction(m_cancel_session);
 	}
 }
 
@@ -609,12 +606,9 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	if (!m_active_project->time().isEmpty()) {
 		m_stop_session->setEnabled(true);
 		m_cancel_session->setEnabled(true);
-		m_projects->insertActions(m_actions_separator, {m_stop_session, m_cancel_session});
 	} else {
 		m_stop_session->setEnabled(false);
 		m_cancel_session->setEnabled(false);
-		m_projects->removeAction(m_stop_session);
-		m_projects->removeAction(m_cancel_session);
 	}
 	m_view_reports->setEnabled(m_active_model->isBilled(0));
 	m_edit_session->setEnabled(false);
