@@ -110,6 +110,10 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	connect(m_start, SIGNAL(clicked()), this, SLOT(start()));
 	int button_width = m_start->sizeHint().width();
 
+	m_start_session = new QAction(tr("Start"), this);
+	m_start_session->setEnabled(true);
+	connect(m_start_session, SIGNAL(triggered(bool)), this, SLOT(start()));
+
 	m_stop = new QPushButton(tr("Stop"), contents);
 	m_stop->setAutoDefault(true);
 	m_stop->hide();
@@ -203,6 +207,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_projects->addAction(m_add_project);
 	m_projects->addAction(m_remove_project);
 	m_projects->addAction(actions_separator);
+	m_projects->addAction(m_start_session);
 	m_projects->addAction(m_stop_session);
 	m_projects->addAction(m_cancel_session);
 	m_projects->setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -450,6 +455,7 @@ void Window::start() {
 	updateDetails();
 	m_stop->setFocus();
 
+	m_start_session->setEnabled(false);
 	m_stop_session->setEnabled(true);
 	m_cancel_session->setEnabled(true);
 }
@@ -468,6 +474,7 @@ void Window::stop() {
 	m_task->clear();
 	m_task->setFocus();
 
+	m_start_session->setEnabled(true);
 	m_stop_session->setEnabled(false);
 	m_cancel_session->setEnabled(false);
 }
@@ -483,6 +490,7 @@ void Window::cancel() {
 		m_task->clear();
 		m_task->setFocus();
 
+		m_start_session->setEnabled(true);
 		m_stop_session->setEnabled(false);
 		m_cancel_session->setEnabled(false);
 	}
@@ -604,9 +612,11 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	m_filter->setCurrentIndex(m_filter->findData(m_active_project->filterModel()->type()));
 	m_remove_project->setEnabled(!project->isActive());
 	if (!m_active_project->time().isEmpty()) {
+		m_start_session->setEnabled(false);
 		m_stop_session->setEnabled(true);
 		m_cancel_session->setEnabled(true);
 	} else {
+		m_start_session->setEnabled(true);
 		m_stop_session->setEnabled(false);
 		m_cancel_session->setEnabled(false);
 	}
