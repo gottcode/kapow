@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# geogeo.gr <geogeo.gr@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-12-21 16:41+0000\n"
+"PO-Revision-Date: 2016-09-02 05:47+0000\n"
 "Last-Translator: geogeo.gr <geogeo.gr@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/kapow/language/el/)\n"
 "Language: el\n"
@@ -35,7 +36,7 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
-"Το Kapow είναι ένα πρόγραμμα ρολογιού punch, σχεδιασμένο για εύκολη "
+"Το Kapow είναι ένα πρόγραμμα χρονομέτρου εργασίας, σχεδιασμένο για εύκολη "
 "παρακολούθηση των ωρών, όποτε εργάζεστε σε ένα ή περισσότερα έργα. Απλός "
 "έλεγχος του ρολογιού με το πάτημα ενός κουμπιού Έναρξης/Διακοπής. Εάν κάνετε "
 "κάποιο λάθος κατά τις ώρες σας, μπορείτε να επιστρέψετε πίσω και να "

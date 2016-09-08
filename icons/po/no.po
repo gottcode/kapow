@@ -25,7 +25,7 @@ msgstr "Kapow Stemplingsur"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Ha kontroll over tidsforbruk på prosjekter "
+msgstr "Ha kontroll over tidsforbruk på prosjekter"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
