@@ -80,6 +80,7 @@ private slots:
 	void toggleColumnHidden(int column);
 	void save();
 	void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
+	void toggleVisible();
 
 private:
 	int currentRow();
@@ -131,6 +132,7 @@ private:
 	QAction* m_start_session;
 	QAction* m_stop_session;
 	QAction* m_cancel_session;
+	QAction* m_toggle_visibility;
 
 	QSystemTrayIcon* m_tray_icon;
 	QIcon m_active_icon;

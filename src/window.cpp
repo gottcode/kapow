@@ -138,6 +138,9 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_stop->setMinimumWidth(button_width);
 	m_cancel->setMinimumWidth(button_width);
 
+	m_toggle_visibility = new QAction(tr("&Minimize"), this);
+	connect(m_toggle_visibility, SIGNAL(triggered(bool)), this, SLOT(toggleVisible()));
+
 	// Load settings
 	Settings settings;
 	m_decimals = settings.value("DecimalTotals", true).toBool();
@@ -154,8 +157,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_view_reports = menu->addAction(tr("View R&eports"), this, SLOT(viewReports()));
 	m_view_reports->setEnabled(false);
 	menu->addSeparator();
-	QAction* action = menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
-	action->setMenuRole(QAction::QuitRole);
+	QAction* quit_action = menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
+	quit_action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Session"));
 	m_add_session = menu->addAction(tr("&Add"), this, SLOT(addSession()), QKeySequence::New);
@@ -166,7 +169,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
 	QMenu* column_menu = menu->addMenu(tr("Columns"));
-	action = menu->addAction(tr("&Decimal Totals"));
+	QAction* action = menu->addAction(tr("&Decimal Totals"));
 	action->setCheckable(true);
 	action->setChecked(m_decimals);
 	connect(action, SIGNAL(toggled(bool)), this, SLOT(setDecimalTotals(bool)));
@@ -185,6 +188,10 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 
 	QAction* actions_separator = new QAction(this);
 	actions_separator->setSeparator(true);
+
+	QMenu* context_menu = new QMenu(this);
+	context_menu->addAction(m_toggle_visibility);
+	context_menu->addAction(quit_action);
 
 	// Create projects
 	m_projects = new QTreeWidget(contents);
@@ -273,6 +280,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 		m_inactive_icon.addPixmap(m_active_icon.pixmap(size, QIcon::Disabled));
 	}
 	m_tray_icon = new QSystemTrayIcon(m_inactive_icon, this);
+	m_tray_icon->setContextMenu(context_menu);
 	updateTrayIcon();
 	connect(m_tray_icon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
 	m_tray_icon->show();
@@ -808,13 +816,21 @@ void Window::save() {
 
 void Window::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
 	if (reason == QSystemTrayIcon::Trigger) {
-		if (isVisible() && !m_blocked) {
-			hide();
-		} else {
-			show();
-			raise();
-			activateWindow();
-		}
+		toggleVisible();
+	}
+}
+
+/*****************************************************************************/
+
+void Window::toggleVisible() {
+	if (isVisible() && !m_blocked) {
+		m_toggle_visibility->setText(tr("&Restore"));
+		hide();
+	} else {
+		m_toggle_visibility->setText(tr("&Minimize"));
+		show();
+		raise();
+		activateWindow();
 	}
 }
 
