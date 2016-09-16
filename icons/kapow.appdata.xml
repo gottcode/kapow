@@ -33,6 +33,7 @@
   <summary xml:lang="ro">Ţineţi evidenţa timpului petrecut pe proiecte</summary>
   <summary xml:lang="ru">Отслеживать потраченое время на проекты</summary>
   <summary xml:lang="tr">Projeler için harcanan zamanı takip edin</summary>
+
   <description>
     <p>Kapow is a punch clock program designed to easily keep track of your hours, whether you're working on one project or many. Simply clock in and out with the Start/Stop button. If you make a mistake in your hours, you can go back and edit any of the entries by double-clicking on the session in question. Kapow also allows you to easily keep track of the hours since you last billed a client, by providing a helpful "Billed" check box--the totals will reflect your work after the last billed session.</p>
     <p xml:lang="cs">Kapow je program na evidenci pracovní doby navržený tak, abyste si snadno mohli držovat přehled o hodinách, ať už je to čas strávený nad jedním nebo mnoha projekty. Jednoduše si píchněte příchod a odchod tlačítkem pro začátek/konec pracovní doby. Pokud se ve svých hodinách zmýlíte, můžete se vrátit a kterýkoli ze záznamů upravit dvojitým klepnutím myší na sezení, o kterém je řeč. Kapow také dovoluje snadné udržování přehledu o hodinách pro dobu, kterou budete nakonec účtovat klientovi tím, že poskytuje praktické zaškrtávací políčko "Účtováno". Toto celkově odráží vaši práci od posledního zúčtovaného sezení.</p>
@@ -46,6 +47,7 @@
     <p xml:lang="pl">Kapow to program rejestracji czasu pracy przeznaczony do łatwego śledzenia swoich godzin, gdy pracujesz nad jednym lub wielu projektach. Po prostu zastartuj/zatrzymaj zegar przyciskiem Start/Stop. Jeśli popełnisz błąd w zapisie swoich godzin, możesz cofnąć i zmienić jedną z pozycji, klikając dwukrotnie na sesję w pytaniu. Kapow pozwala także łatwo śledzić godziny od ostatniego rozliczania z klientem, poprzez dostarczenie pola pomocniczego "rozliczone" wyboru--sumy będą rozliczane twoją pracę po ostatniej sesji.</p>
     <p xml:lang="ro">Kapow este un program de ceas stimul conceput pentru a ţine evidenţa orelor dvs., indiferent dacă lucraţi pe un proiect sau mai multe. Pur şi simplu cronometraţi cu butonul Start/Stop. Dacă faceţi o greşeală în orele dvs., vă puteţi întoarce şi edita oricare dintre intrări dînd dublu-clic pe sesiunea în cauză. Kapow, de asemenea, vă permite să păstraţi cu uşurinţă evidenţa orelor de cînd aţi facturat în trecut un client, bifînd căsuţa ajutătoare "Taxat" - totalurile vor reflecta munca, după ultima sesiune facturată.</p>
   </description>
+
   <screenshots>
     <screenshot type="default">
       <image>https://gottcode.org/kapow/screenshots/kapow.png</image>
@@ -60,11 +62,23 @@
       <image>https://gottcode.org/kapow/screenshots/report3.png</image>
     </screenshot>
   </screenshots>
+
   <url type="homepage">https://gottcode.org/kapow/</url>
+  <url type="bugtracker">https://gottcode.org/kapow/bugs/</url>
   <url type="donation">https://gottcode.org/tip/</url>
+  <url type="translate">https://www.transifex.com/projects/p/kapow/</url>
+
   <developer_name>Graeme Gott</developer_name>
-  <updatecontact>graeme@gottcode.org</updatecontact>
+  <update_contact>graeme@gottcode.org</update_contact>
+
+  <translation type="qt">kapow</translation>
+
   <provides>
     <binary>kapow</binary>
   </provides>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
 </component>
