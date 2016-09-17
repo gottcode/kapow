@@ -324,7 +324,7 @@
         <location filename="../src/window.cpp" line="141"/>
         <location filename="../src/window.cpp" line="830"/>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ελαχιστοποίηση</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -475,7 +475,7 @@
     <message>
         <location filename="../src/window.cpp" line="827"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Επανα&amp;φορά</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="909"/>
