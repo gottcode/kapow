@@ -14,7 +14,10 @@ CONFIG += warn_on c++11
 }
 
 # Set program version
-VERSION = 1.5.0
+VERSION = $$system(git describe)
+isEmpty(VERSION) {
+	VERSION = git
+}
 DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
 
 # Set program name
