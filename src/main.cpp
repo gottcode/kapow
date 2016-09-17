@@ -65,13 +65,11 @@ int main(int argc, char** argv)
 		parser.setApplicationDescription(QCoreApplication::translate("main", "Punch clock program"));
 		parser.addHelpOption();
 		parser.addVersionOption();
-		parser.addOptions({
-			{"ini",
-				QCoreApplication::translate("main", "Store settings as INI format in specified file."),
-				QCoreApplication::translate("main", "file")},
-			{"no-backups",
-				QCoreApplication::translate("main", "Do not create automatic backups of time data.")}
-		});
+		parser.addOption(QCommandLineOption("ini",
+			QCoreApplication::translate("main", "Store settings as INI format in specified file."),
+			QCoreApplication::translate("main", "file")));
+		parser.addOption(QCommandLineOption("no-backups",
+			QCoreApplication::translate("main", "Do not create automatic backups of time data.")));
 		parser.addPositionalArgument("file", QCoreApplication::translate("main", "The time data file to use."), "[file]");
 		parser.process(app);
 
