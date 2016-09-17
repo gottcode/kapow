@@ -1,7 +1,7 @@
 @ECHO OFF
 
 SET APP=Kapow
-FOR /f %%i IN ('git describe') DO SET VERSION=%%i
+SET VERSION=1.5.0
 
 ECHO Copying executable
 MKDIR %APP%

@@ -1,3 +1,22 @@
+1.5.0
+-----
+* Disabled removing projects with running timers in subprojects.
+* Properly stop all timers when program exits.
+* Added starting, stopping, or canceling sessions from sidebar.
+* Added support for high DPI displays.
+* Added AppData file.
+* Added manpage.
+* Added unit tests.
+* Refactored code.
+* Simplified build system.
+* Switched to Qt 5.
+* Switched to C++11.
+* FIXED: Could not add session longer than one day.
+* FIXED: Broken system tray icon support in Windows.
+* FIXED: Setting locale did not change layout direction.
+* FIXED: SessionModel ids were treated as signed ints.
+* Translation updates: Arabic, Bulgarian, Czech, Danish, Dutch, French, German, Greek, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Turkish, Ukrainian.
+
 1.4.4.2
 -------
 * FIXED: Compiler warnings.
