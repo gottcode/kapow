@@ -183,7 +183,6 @@ Section "install"
 
 	SetOutPath $INSTDIR\translations
 	File ..\translations\*.qm
-	File $%QTDIR%\translations\qt_*.qm
 	File $%QTDIR%\translations\qtbase_*.qm
 
 	;Create ReadMe file
