@@ -6,7 +6,7 @@
 !define VERSIONMINOR 5
 !define VERSIONPATCH 0
 !define APPVERSION "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONPATCH}"
-!define ABOUTURL "http://gottcode.org/kapow/"
+!define ABOUTURL "https://gottcode.org/kapow/"
 
 ;--------------------------------
 ;Includes
