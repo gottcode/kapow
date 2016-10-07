@@ -99,6 +99,7 @@ macx {
 
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/kapow/translations/
+	qm.CONFIG += no_check_exist
 
 	man.files = doc/kapow.1
 	man.path = $$PREFIX/share/man/man1
