@@ -259,7 +259,7 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimizează</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -375,7 +375,7 @@
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Restaurează</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
