@@ -1,3 +1,7 @@
+1.5.2
+-----
+* FIXED: Broken report totals with commas.
+
 1.5.1
 -----
 * Generate binary translations at build time.
