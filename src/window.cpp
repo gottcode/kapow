@@ -94,10 +94,9 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	connect(m_timer, SIGNAL(timeout()), this, SLOT(updateTime()));
 	m_timer->start();
 
-	QTimer* save_timer = new QTimer(this);
-	save_timer->setInterval(30000);
-	connect(save_timer, SIGNAL(timeout()), this, SLOT(save()));
-	save_timer->start();
+	m_save_timer = new QTimer(this);
+	m_save_timer->setInterval(30000);
+	connect(m_save_timer, SIGNAL(timeout()), this, SLOT(save()));
 
 	m_task = new QLineEdit(contents);
 	m_task->setPlaceholderText(SessionModel::tr("Task"));
@@ -396,6 +395,7 @@ void Window::closeEvent(QCloseEvent* event) {
 		}
 	}
 
+	m_save_timer->stop();
 	save();
 	event->accept();
 
@@ -466,6 +466,10 @@ void Window::start() {
 	m_start_session->setEnabled(false);
 	m_stop_session->setEnabled(true);
 	m_cancel_session->setEnabled(true);
+
+	if (!m_save_timer->isActive()) {
+		m_save_timer->start();
+	}
 }
 
 /*****************************************************************************/
@@ -485,6 +489,11 @@ void Window::stop() {
 	m_start_session->setEnabled(true);
 	m_stop_session->setEnabled(false);
 	m_cancel_session->setEnabled(false);
+
+	if (m_active_timers.isEmpty()) {
+		m_save_timer->stop();
+		save();
+	}
 }
 
 /*****************************************************************************/
@@ -501,6 +510,11 @@ void Window::cancel() {
 		m_start_session->setEnabled(true);
 		m_stop_session->setEnabled(false);
 		m_cancel_session->setEnabled(false);
+
+		if (m_active_timers.isEmpty()) {
+			m_save_timer->stop();
+			save();
+		}
 	}
 }
 
