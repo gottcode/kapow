@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2011, 2012, 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2011, 2012, 2013, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -150,9 +150,8 @@ void Project::setTask(const QString& task) {
 
 void Project::updateTime(const QDateTime& current) {
 	if (m_active) {
-		int elapsed = current.toTime_t() - m_start_time.toTime_t();
 		QTime convert(0, 0, 0);
-		convert = convert.addSecs(elapsed);
+		convert = convert.addSecs(m_start_time.secsTo(current));
 		setText(1, convert.toString("hh:mm:ss"));
 	}
 
