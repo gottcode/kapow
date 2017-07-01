@@ -100,7 +100,7 @@ macx {
 	appdata.files = icons/kapow.appdata.xml
 	appdata.path = $$PREFIX/share/metainfo/
 
-	qm.files = translations/*.qm
+	qm.files = $$replace(TRANSLATIONS, .ts, .qm)
 	qm.path = $$PREFIX/share/kapow/translations/
 	qm.CONFIG += no_check_exist
 
