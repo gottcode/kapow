@@ -10,13 +10,14 @@
   <name xml:lang="el">Kapow Punch Clock</name>
   <name xml:lang="es">Reloj de control Kapow</name>
   <name xml:lang="fr">Pointeuse Kapow</name>
+  <name xml:lang="it">Kapow, il timbra cartellino</name>
   <name xml:lang="lt">Kapow kontrolinis laikrodis</name>
-  <name xml:lang="nl">Kapow tikklok</name>
+  <name xml:lang="nl">Kapow Prikklok</name>
   <name xml:lang="no">Kapow Stemplingsur</name>
   <name xml:lang="pl">Rejestracja czasu pracy Kapow</name>
   <name xml:lang="pt_BR">Relógio de ponto Kapow</name>
   <name xml:lang="ro">Kapow Punch Clock</name>
-  <name xml:lang="ru">Kapow Учет времени</name>
+  <name xml:lang="ru">Kapow Punch Clock</name>
   <name xml:lang="tr">Kapow Kokteyl Saat</name>
   <summary>Keep track of time spent on projects</summary>
   <summary xml:lang="cs">Udržujte si přehled o čase stráveném nad projekty</summary>
@@ -25,13 +26,14 @@
   <summary xml:lang="el">Παρακολουθήστε το χρόνο που δαπανάτε σε έργα</summary>
   <summary xml:lang="es">Realice un seguimiento del tiempo que invierte en proyectos</summary>
   <summary xml:lang="fr">Conservez une trace du temps passé sur vos projets</summary>
+  <summary xml:lang="it">Tieni traccia del tempo speso nel progetto</summary>
   <summary xml:lang="lt">Sekite projektams išleistą laiką</summary>
-  <summary xml:lang="nl">Hou je project uren in de gaten</summary>
+  <summary xml:lang="nl">Houdt de tijd bij die u spendeert aan projecten</summary>
   <summary xml:lang="no">Ha kontroll over tidsforbruk på prosjekter</summary>
   <summary xml:lang="pl">Śledź twój czas poświęcony na projekty</summary>
   <summary xml:lang="pt_BR">Mantenha o registro do tempo gasto em projetos</summary>
   <summary xml:lang="ro">Ţineţi evidenţa timpului petrecut pe proiecte</summary>
-  <summary xml:lang="ru">Отслеживать потраченое время на проекты</summary>
+  <summary xml:lang="ru">Следите за временем, затраченным на проекты</summary>
   <summary xml:lang="tr">Projeler için harcanan zamanı takip edin</summary>
 
   <description>
@@ -41,11 +43,13 @@
     <p xml:lang="de">Kapow ist eine Zeiterfassungssoftware und wurde entwickelt, um leichter den Überblick über Ihre Stunden, die Sie an einem Projekt arbeiten zu behalten. Einfach die Stempeluhr beginnen oder stoppen mit der Start/Stop-Taste. Wenn Sie einen Fehler in der Stunde machen, können Sie zurückgehen und bearbeiten einen der Einträge mit einem Doppelklick auf die Sitzung. Mit Kapow können Sie auch leicht den Überblick über die Stunden seit der letzten Rechnung eines Kunden durch die Bereitstellung eines hilfreichen "Billed" aktivieren - die Summe wird Ihre Arbeit nach der letzten Rechnung der Sitzung an berechnen.</p>
     <p xml:lang="el">Το Kapow είναι ένα πρόγραμμα χρονομέτρου εργασίας, σχεδιασμένο για εύκολη παρακολούθηση των ωρών, όποτε εργάζεστε σε ένα ή περισσότερα έργα. Απλός έλεγχος του ρολογιού με το πάτημα ενός κουμπιού Έναρξης/Διακοπής. Εάν κάνετε κάποιο λάθος κατά τις ώρες σας, μπορείτε να επιστρέψετε πίσω και να επεξεργαστείτε οποιαδήποτε από τις καταγραφές, κάνοντας διπλό κλικ στη σχετική σύνοδο. Το Kapow σας δίνει επίσης τη δυνατότητα να παρακολουθείτε εύκολα τις ώρες από την τελευταία σας χρέωση σε έναν πελάτη, παρέχοντας ένα χρήσιμο πλαίσιο ελέγχου "Χρέωσης", παρουσιάζοντας έτσι τα συνολικά ποσά που αντιστοιχούν στην εργασίας σας μετά την τελευταία χρέωση.</p>
     <p xml:lang="fr">Kapow est une pointeuse horaire conçue pour conserver facilement une trace de votre temps passé à travailler sur un ou sur plusieurs projets. Pointez et dépointez simplement à l'aide du bouton Démarrer/Arrêter. Si vous vous êtes trompé(e) dans vos heures, vous pouvez revenir dessus et éditer l'une des entrées en double-cliquant sur la session en question. Kapow vous permet aussi de conserver une trace des heures que vous devrez au final facturer au client, en proposant une case « Facturé » bien pratique. Les totaux refléteront votre travail après la dernière session facturée. </p>
+    <p xml:lang="it">Kapow è un programma "timbra cartellino",  dal design semplice,  creata per aiutarti a tener traccia delle ore di lavoro su uno o molti progetti. E' un semplice orologio di inizio e fine grazie ad un pulsante di Start e Stop. Se commetti un errore quando registri le tue ore, puoi tranquillamente editare i dati cliccando due volte il nome della sessione. Kapow ti aiuta a tenera traccia delle ore fatturate ad un cliente, grazie all'utilissima check box "Fatturato" che ti mostra il tuo ammontare, partendo dall'ultima fatturazione</p>
     <p xml:lang="lt">Kapow yra kontrolinio laikrodžio programa, skirta sekti valandas, nesvarbu, ar dirbama su vienu, ar su daugeliu projektų. Paprastai valdykite laiką mygtuku Pradėti/Stabdyti. Jei savo valandose suklydote, galite grįžti ir, spustelėję du kartus, keisti įrašus. Taip pat Kapow, suteikdama naudingą žymimąjį langelį "Apmokestinta", leidžia lengvai sekti valandas nuo to laiko, kuomet paskutinį kartą apmokestinote savo klientą--sumos atspindės jūsų darbą nuo paskutinės apmokestintos sesijos.</p>
-    <p xml:lang="nl">Kapow is een tikkok die ontworpen is om de uren te administreren op een of meerdere projecten. Gewoon in en uitklokken met de start-stop knop. Als je een fout maakt dan kun je teruggaan en de melding bewerken door te dubbelklikken. Kapow houdt ook de uren gemakkelijk bij sinds de laatste keer dat je een rekening hebt gestuurd door gebruik te maken van de "rekening" checkbox. De totalen zullen je werk weergeven na de laatst afgerekende versie.</p>
+    <p xml:lang="nl">Kapow is een prikklokprogamma, ontworpen om gemakkelijk uw uren bij te kunnen houden, of u nu werkt aan één of meerdere projecten. Klok in en uit met de Start/Stop-knop. Als u een fout maakt, dan kunt u teruggaan en elke invoer bewerken door te dubbelklikken op de bijbehorende sessie. Kapow laat u tevens gemakkelijk bijhouden wanneer u voor het laatst een cliënt hebt gefactureerd d.m.v. het selectievakje "Gefactureerd". Het totaal geeft uw werkuren aan sinds de laatst gefactureerde sessie.</p>
     <p xml:lang="no">Kapow er et elektronisk stemplingsur som holder kontroll på ditt tidsforbruk, enten du jobber på ett eller flere prosjekt. Du stempler bare inn og ut med Start/Stopp knappen. Gjør du en feil, kan du enkelt rette denne ved å dobbeltklikke på oppføringen du vil endre. Kapow gir deg oversikt på tidsforbruk siden siste faktura, ved en enkel avkrysning for fakturert tid, - totalen vil gjenspeile tidsforbruk siden forrige faktura.</p>
     <p xml:lang="pl">Kapow to program rejestracji czasu pracy przeznaczony do łatwego śledzenia swoich godzin, gdy pracujesz nad jednym lub wielu projektach. Po prostu zastartuj/zatrzymaj zegar przyciskiem Start/Stop. Jeśli popełnisz błąd w zapisie swoich godzin, możesz cofnąć i zmienić jedną z pozycji, klikając dwukrotnie na sesję w pytaniu. Kapow pozwala także łatwo śledzić godziny od ostatniego rozliczania z klientem, poprzez dostarczenie pola pomocniczego "rozliczone" wyboru--sumy będą rozliczane twoją pracę po ostatniej sesji.</p>
     <p xml:lang="ro">Kapow este un program de ceas stimul conceput pentru a ţine evidenţa orelor dvs., indiferent dacă lucraţi pe un proiect sau mai multe. Pur şi simplu cronometraţi cu butonul Start/Stop. Dacă faceţi o greşeală în orele dvs., vă puteţi întoarce şi edita oricare dintre intrări dînd dublu-clic pe sesiunea în cauză. Kapow, de asemenea, vă permite să păstraţi cu uşurinţă evidenţa orelor de cînd aţi facturat în trecut un client, bifînd căsuţa ajutătoare "Taxat" - totalurile vor reflecta munca, după ultima sesiune facturată.</p>
+    <p xml:lang="ru">Kapow - это програма по учёту времени разработанная для простого отслеживания Ваших часов, как-бы Вы не работали над одним или несколькими проектами. Просто используйте часы с помощью кнопок Старт/Стоп. Если Вы допустите ошибку в Ваших замерах времени, Вы можете вернуться назад и изменить любую запись с помощью двойного нажатия на рассматриваемую сессию. Kapow также может легко отслеживать время с момента последнего выставления счёта клиенту, предоставляя полезный флажок «Счета»--итоговые суммы будут отражать Вашу работу после последнего выставленного счёта.</p>
   </description>
 
   <screenshots>
