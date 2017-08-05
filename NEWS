@@ -1,3 +1,8 @@
+1.5.3
+-----
+* FIXED: Did not always install translations in Linux.
+* Translation updates: Dutch, Italian, Russian.
+
 1.5.2
 -----
 * FIXED: Broken report totals with commas.
