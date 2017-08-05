@@ -18,7 +18,7 @@ DEFINES += QT_NO_NARROWING_CONVERSIONS_IN_CONNECT
 }
 
 # Set program version
-VERSION = 1.5.2
+VERSION = 1.5.3
 DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
 
 # Set program name
