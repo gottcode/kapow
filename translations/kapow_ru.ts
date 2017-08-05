@@ -48,11 +48,11 @@
     </message>
     <message>
         <source>Email:</source>
-        <translation type="unfinished"></translation>
+        <translation>Электронная почта:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation type="unfinished"></translation>
+        <translation>Веб-сайт:</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -100,11 +100,11 @@
     </message>
     <message>
         <source>iCalendar (*.ics)</source>
-        <translation type="unfinished"></translation>
+        <translation>iCalendar (*.ics)</translation>
     </message>
     <message>
         <source>Outlook CSV (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Outlook CSV (*.csv)</translation>
     </message>
     <message>
         <source>Export Report</source>
@@ -162,11 +162,11 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сессия конфликтует с другими сеансами.</translation>
     </message>
 </context>
 <context>
@@ -200,50 +200,50 @@
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Итого</translation>
+        <translation>Всего</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Старт</translation>
+        <translation>Начать</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Стоп</translation>
+        <translation>Остановить</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Задача</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Часы</translation>
+        <translation>Часы</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Ежедневно</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Еженедельно</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Ежемесячно</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Отчёт</translation>
     </message>
 </context>
 <context>
     <name>Window</name>
     <message>
         <source>00:00:00</source>
-        <translation type="unfinished"></translation>
+        <translation>00:00:00</translation>
     </message>
     <message>
         <source>Start</source>
@@ -259,7 +259,7 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Свернуть</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -287,7 +287,7 @@
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Й</translation>
     </message>
     <message>
         <source>&amp;Session</source>
@@ -363,19 +363,19 @@
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Защищено авторским правом &amp;copy; 2008-%1 Грэм Готт</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>Распространяется под лицензией &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сессия конфликтует с другими сеансами.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Развернуть</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
@@ -459,30 +459,30 @@
     </message>
     <message>
         <source>Kapow Punch Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapow Punch Clock</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"></translation>
+        <translation>Програма по учёту времени</translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Храните настройки в формате INI в указанном файле.</translation>
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>файл</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не создавайте автоматических бэкапов временных данных.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Используемый файл данных времени.</translation>
     </message>
 </context>
 </TS>

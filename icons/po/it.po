@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Patrizio Bellan <patrizio.bellan@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2017-04-13 19:10+0000\n"
+"Last-Translator: Patrizio Bellan <patrizio.bellan@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/gottcode/kapow/language/"
 "it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
-msgstr ""
+msgstr "Kapow, il timbra cartellino"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr ""
+msgstr "Tieni traccia del tempo speso nel progetto"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -36,7 +37,15 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow è un programma \"timbra cartellino\",  dal design semplice,  creata "
+"per aiutarti a tener traccia delle ore di lavoro su uno o molti progetti. E' "
+"un semplice orologio di inizio e fine grazie ad un pulsante di Start e Stop. "
+"Se commetti un errore quando registri le tue ore, puoi tranquillamente "
+"editare i dati cliccando due volte il nome della sessione. Kapow ti aiuta a "
+"tenera traccia delle ore fatturate ad un cliente, grazie all'utilissima "
+"check box \"Fatturato\" che ti mostra il tuo ammontare, partendo dall'ultima "
+"fatturazione"
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
-msgstr ""
+msgstr "Timbra Cartellino"

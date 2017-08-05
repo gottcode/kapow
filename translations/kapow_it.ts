@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta</translation>
     </message>
     <message>
         <source>Print</source>
@@ -96,27 +96,27 @@
     </message>
     <message>
         <source>Web Page (*.html *.htm)</source>
-        <translation type="unfinished"></translation>
+        <translation>pagina web (*.html, *.htm)</translation>
     </message>
     <message>
         <source>iCalendar (*.ics)</source>
-        <translation type="unfinished"></translation>
+        <translation>iCalendar (*.ics)</translation>
     </message>
     <message>
         <source>Outlook CSV (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Outlook CSV (*.csv)</translation>
     </message>
     <message>
         <source>Export Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta Report</translation>
     </message>
     <message>
         <source>View Reports</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizza Report</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea Report</translation>
     </message>
     <message>
         <source>Phone: %1</source>
@@ -161,11 +161,11 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>La sessone è in conflitto con altre sessioni</translation>
     </message>
 </context>
 <context>
@@ -199,19 +199,19 @@
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Totale</translation>
+        <translation>Totale</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Inizio</translation>
+        <translation>Start</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Fine</translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <source>Task</source>
@@ -219,23 +219,23 @@
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Ore</translation>
+        <translation>Ore</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Giornaliero</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Settimanale</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensile</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Report</translation>
     </message>
 </context>
 <context>
@@ -258,7 +258,7 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimizza</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -270,7 +270,7 @@
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
@@ -278,7 +278,7 @@
     </message>
     <message>
         <source>Ctrl+Shift+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+Canc</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -298,7 +298,7 @@
     </message>
     <message>
         <source>Ctrl+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Canc</translation>
     </message>
     <message>
         <source>S&amp;ettings</source>
@@ -362,15 +362,15 @@
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>Rilasciata sotto licenza &lt;a href=%1&gt;GPL 3&lt;/a&gt; </translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La sessone è in conflitto con altre sessioni</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
@@ -410,7 +410,7 @@
     </message>
     <message>
         <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizza R&amp;eports</translation>
     </message>
     <message>
         <source>Cancel this session?</source>
@@ -472,7 +472,7 @@
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>file</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>

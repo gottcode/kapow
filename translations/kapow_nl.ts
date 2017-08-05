@@ -5,26 +5,26 @@
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Selecteer taal:</translation>
+        <translation>Applicatietaal selecteren:</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Systeem Taal&gt;</translation>
+        <translation>&lt;Systeemtaal&gt;</translation>
     </message>
     <message>
         <source>Note</source>
-        <translation>Aantekening</translation>
+        <translation>Let op:</translation>
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Herstart programma als je van taal wisselt.</translation>
+        <translation>Herstart de applicatie om de taalwijziging toe te passen.</translation>
     </message>
 </context>
 <context>
     <name>Report</name>
     <message>
         <source>Time Sheet Report</source>
-        <translation>Urenregistratie rapport</translation>
+        <translation>Tijdkaart-rapport</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -40,7 +40,7 @@
     </message>
     <message>
         <source>Phone:</source>
-        <translation>Telefoon:</translation>
+        <translation>Telefoonnummer:</translation>
     </message>
     <message>
         <source>Fax:</source>
@@ -48,7 +48,7 @@
     </message>
     <message>
         <source>Email:</source>
-        <translation>Email:</translation>
+        <translation>E-mailadres:</translation>
     </message>
     <message>
         <source>Website:</source>
@@ -56,15 +56,15 @@
     </message>
     <message>
         <source>N/A</source>
-        <translation>N/A</translation>
+        <translation>N.V.T.</translation>
     </message>
     <message>
         <source>Prepend currency symbol</source>
-        <translation>Plaatst u valutateken</translation>
+        <translation>Valutateken toevoegen</translation>
     </message>
     <message>
         <source>Hourly rate:</source>
-        <translation>Uur loon:</translation>
+        <translation>Uurloon:</translation>
     </message>
     <message>
         <source>Tax rate:</source>
@@ -72,11 +72,11 @@
     </message>
     <message>
         <source>Currency symbol:</source>
-        <translation>Munteenheid:</translation>
+        <translation>Valutateken:</translation>
     </message>
     <message>
         <source>Contact Information</source>
-        <translation>Contact informatie</translation>
+        <translation>Contactinformatie</translation>
     </message>
     <message>
         <source>Data</source>
@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Export</source>
-        <translation>Exporteer</translation>
+        <translation>Exporteren</translation>
     </message>
     <message>
         <source>Print</source>
@@ -96,11 +96,11 @@
     </message>
     <message>
         <source>Web Page (*.html *.htm)</source>
-        <translation>Web Pagina (*.html *.htm)</translation>
+        <translation>Webpagina (*.html *.htm)</translation>
     </message>
     <message>
         <source>iCalendar (*.ics)</source>
-        <translation>ICalendar (*.ics)</translation>
+        <translation>iCalendar (*.ics)</translation>
     </message>
     <message>
         <source>Outlook CSV (*.csv)</source>
@@ -108,19 +108,19 @@
     </message>
     <message>
         <source>Export Report</source>
-        <translation>Exporteer Raport</translation>
+        <translation>Rapport exporteren</translation>
     </message>
     <message>
         <source>View Reports</source>
-        <translation>Bekijk Rapporten</translation>
+        <translation>Rapporten weergeven</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation>Maak Rapport</translation>
+        <translation>Rapport creëren</translation>
     </message>
     <message>
         <source>Phone: %1</source>
-        <translation>Telefoon: %1</translation>
+        <translation>Telefoonnummer: %1</translation>
     </message>
     <message>
         <source>Fax: %1</source>
@@ -149,30 +149,30 @@
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n uur</numerusform>
-            <numerusform>%n uren</numerusform>
+            <numerusform>%n uur</numerusform>
         </translation>
     </message>
     <message>
         <source>%L1 hours</source>
-        <translation>%L1 uren</translation>
+        <translation>%L1 uur</translation>
     </message>
 </context>
 <context>
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>De sessie conflicteert met andere sessies.</translation>
     </message>
 </context>
 <context>
     <name>SessionDialog</name>
     <message>
         <source>Add Session</source>
-        <translation>Voeg een sessie toe</translation>
+        <translation>Sessie toevoegen</translation>
     </message>
     <message>
         <source>Date:</source>
@@ -192,50 +192,50 @@
     </message>
     <message>
         <source>Edit Session</source>
-        <translation>Bewerk Sessie</translation>
+        <translation>Sessie bewerken</translation>
     </message>
 </context>
 <context>
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Totaal</translation>
+        <translation>Totaal</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Start</translation>
+        <translation>Start</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Stop</translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Taak</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Uren</translation>
+        <translation>Uren</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Dagelijks</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Wekelijks</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Maandelijks</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapport</translation>
     </message>
 </context>
 <context>
@@ -254,15 +254,15 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Annuleer</translation>
+        <translation>Annuleren</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimaliseren</translation>
     </message>
     <message>
         <source>&amp;Project</source>
-        <translation>&amp;Taak</translation>
+        <translation>&amp;Project</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -282,7 +282,7 @@
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Einde</translation>
+        <translation>&amp;Afsluiten</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -294,7 +294,7 @@
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp;Bewerk</translation>
+        <translation>&amp;Bewerken</translation>
     </message>
     <message>
         <source>Ctrl+Delete</source>
@@ -310,19 +310,19 @@
     </message>
     <message>
         <source>&amp;Decimal Totals</source>
-        <translation>&amp;Aantal komma&apos;s</translation>
+        <translation>&amp;Aantal decimalen</translation>
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Inline Bewerken</translation>
+        <translation>&amp;Inline bewerken</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>Toepassing &amp;Taal...</translation>
+        <translation>Applicatie&amp;taal...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <translation>&amp;Hulp</translation>
     </message>
     <message>
         <source>&amp;About</source>
@@ -334,51 +334,51 @@
     </message>
     <message>
         <source>Project</source>
-        <translation>Taak</translation>
+        <translation>Project</translation>
     </message>
     <message>
         <source>Timer</source>
-        <translation>Tijdklok</translation>
+        <translation>Timer</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Toon alles</translation>
+        <translation>Alles weergeven</translation>
     </message>
     <message>
         <source>Show only unbilled</source>
-        <translation>Toon alleen de te factureren</translation>
+        <translation>Alleen ongefactureerde weergeven</translation>
     </message>
     <message>
         <source>Show only this year</source>
-        <translation>Toon alleen dit jaar</translation>
+        <translation>Alleen dit jaar weergeven</translation>
     </message>
     <message>
         <source>Show only this month</source>
-        <translation>Toon alleen deze maand</translation>
+        <translation>Alleen deze maand weergeven</translation>
     </message>
     <message>
         <source>Show only this week</source>
-        <translation>Toon alleen deze week</translation>
+        <translation>Alleen deze week weergeven</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation>Auteursrecht &amp;copy; 2008 2012 Graeme Gott {2008-%1 ?}</translation>
+        <translation>Copyright &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Uitgebracht onder het  &lt;a href=%1&gt;GPL 3&lt;/a&gt; licentie</translation>
+        <translation>Uitgebracht onder de voorwaarden van de  &lt;a href=%1&gt;GPL 3&lt;/a&gt;-licentie</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>De sessie conflicteert met andere sessies.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>He&amp;rstellen</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
-        <translation>Kan de tijdgegevens niet lezen.</translation>
+        <translation>De tijdgegevens kunnen niet worden gelezen.</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -386,11 +386,11 @@
     </message>
     <message>
         <source>Unable to write time data.</source>
-        <translation>Kan de tijdgegevens niet schrijven.</translation>
+        <translation>De tijdgegevens kunnen niet worden weggeschreven.</translation>
     </message>
     <message>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Er lopen tijdklokken. Stop de tijdklok en stop?</translation>
+        <translation>Er lopen nog timers. Wilt u de timers stopzetten en afsluiten?</translation>
     </message>
     <message>
         <source>About</source>
@@ -398,7 +398,7 @@
     </message>
     <message>
         <source>A program to help track spent time</source>
-        <translation>Een programma dat de tijd bij houdt</translation>
+        <translation>Een programma dat doorgebrachte tijd bijhoudt</translation>
     </message>
     <message>
         <source>Question</source>
@@ -406,23 +406,23 @@
     </message>
     <message>
         <source>&amp;Create Report...</source>
-        <translation>&amp;Maak Rapport...</translation>
+        <translation>Rapport &amp;creëren...</translation>
     </message>
     <message>
         <source>View R&amp;eports</source>
-        <translation>Bekijk R&amp;apporten</translation>
+        <translation>R&amp;apporten weergeven</translation>
     </message>
     <message>
         <source>Cancel this session?</source>
-        <translation>Annuleer deze sessie?</translation>
+        <translation>Wilt u deze sessie annuleren?</translation>
     </message>
     <message>
         <source>Add Project</source>
-        <translation>Taak toevoegen</translation>
+        <translation>Project toevoegen</translation>
     </message>
     <message>
         <source>Enter project name:</source>
-        <translation>Voer naam van taak in:</translation>
+        <translation>Voer de projectnaam in:</translation>
     </message>
     <message>
         <source>Error</source>
@@ -430,57 +430,57 @@
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation>Kan geen tijd of data locatie creëren.</translation>
+        <translation>De tijdgegevenslocatie kan niet worden gecreëerd.</translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
-        <translation>Kan de tijd of data locatie niet verplaatsen.</translation>
+        <translation>De tijdgegevenslocatie kan niet worden verplaatst.</translation>
     </message>
     <message>
         <source>A project with that name already exists.</source>
-        <translation>Een taak met deze naam bestaat al.</translation>
+        <translation>Er bestaat al een project met deze naam.</translation>
     </message>
     <message>
         <source>Remove selected project?</source>
-        <translation>Verwijder geselecteerde taak?</translation>
+        <translation>Wilt u het geselecteerde project verwijderen?</translation>
     </message>
     <message>
         <source>Remove selected session?</source>
-        <translation>Verwijder geselecteerde sessie?</translation>
+        <translation>Wilt u de geselecteerde sessie verwijderen?</translation>
     </message>
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>%n timer running</numerusform>
-            <numerusform>%n timers running</numerusform>
+            <numerusform>%n lopende timer</numerusform>
+            <numerusform>%n lopende timers</numerusform>
         </translation>
     </message>
     <message>
         <source>Kapow Punch Clock</source>
-        <translation>Kapow Stempel klok</translation>
+        <translation>Kapow Prikklok</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikklokprogramma</translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen opslaan in het opgegeven INI-bestand.</translation>
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>bestand</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen automatische back-ups creëren van tijdgegevens.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het te gebruiken tijdgegevensbestand.</translation>
     </message>
 </context>
 </TS>
