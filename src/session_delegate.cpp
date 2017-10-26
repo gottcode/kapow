@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2012, 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2012, 2013, 2014, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -119,10 +119,14 @@ void SessionDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, c
 
 QSize SessionDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
-	QSize size = QStyledItemDelegate::sizeHint(option, index);
+	QSize size;
 	if (index.parent().isValid() || (index.model()->rowCount() - 1) == index.row()) {
+		QStyleOptionViewItem opt = option;
+		opt.font.setWeight(QFont::Bold);
+		size = QStyledItemDelegate::sizeHint(opt, index);
 		size.setHeight(size.height() + (3 * m_ratio));
 	} else {
+		size.setWidth(QStyledItemDelegate::sizeHint(option, index).width());
 		size.setHeight(m_height);
 	}
 	return size;
