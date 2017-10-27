@@ -1,7 +1,7 @@
 @ECHO OFF
 
 SET APP=Kapow
-SET VERSION=1.5.3
+SET VERSION=1.5.4
 
 ECHO Copying executable
 MKDIR %APP%
