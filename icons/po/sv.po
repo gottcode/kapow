@@ -3,31 +3,29 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# M T <michtrz@gmail.com>, 2015
+# Jonas Bohdén <jonas.bohden@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2015-10-25 20:42+0000\n"
-"Last-Translator: M T <michtrz@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/gottcode/kapow/language/"
-"pl/)\n"
-"Language: pl\n"
+"PO-Revision-Date: 2017-10-27 13:07+0000\n"
+"Last-Translator: Jonas Bohdén <jonas.bohden@gmail.com>\n"
+"Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/kapow/"
+"language/sv_SE/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
-"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
-"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
-msgstr "Rejestracja czasu pracy Kapow"
+msgstr "Kapow Stämpelklocka"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Śledź twój czas poświęcony na projekty"
+msgstr "Håll koll på tiden som du spenderar på projekt"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -39,14 +37,15 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
-"Kapow to program rejestracji czasu pracy przeznaczony do łatwego śledzenia "
-"swoich godzin, gdy pracujesz nad jednym lub wielu projektach. Po prostu "
-"zastartuj/zatrzymaj zegar przyciskiem Start/Stop. Jeśli popełnisz błąd w "
-"zapisie swoich godzin, możesz cofnąć i zmienić jedną z pozycji, klikając "
-"dwukrotnie na sesję w pytaniu. Kapow pozwala także łatwo śledzić godziny od "
-"ostatniego rozliczania z klientem, poprzez dostarczenie pola pomocniczego "
-"\"rozliczone\" wyboru--sumy będą rozliczane twoją pracę po ostatniej sesji."
+"Kapow är ett stämpelklocksprogram som är enkelt utformat för att hålla koll "
+"på dina timmar, oavsett om du arbetar på ett eller flera projekt. Stämpla "
+"helt enkelt in och ut med Start/Stopp-knappen. Om du gör ett misstag i dina "
+"timmar, kan du gå tillbaka och redigera någon av posterna genom att "
+"dubbelklicka på den aktuella sessionen. Kapow låter dig även enkelt hålla "
+"koll på timmarna sedan du senast fakturerade en kund, genom att "
+"tillhandahålla en användbar \"Fakturerat\"-kryssruta. Summan kommer att "
+"återspegla ditt arbete efter den senast fakturerade sessionen."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
-msgstr "Rejestracja czasu pracy"
+msgstr "Stämpelklocka"
