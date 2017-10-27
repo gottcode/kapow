@@ -18,6 +18,7 @@
   <name xml:lang="pt_BR">Relógio de ponto Kapow</name>
   <name xml:lang="ro">Kapow Punch Clock</name>
   <name xml:lang="ru">Kapow Punch Clock</name>
+  <name xml:lang="sv">Kapow Stämpelklocka</name>
   <name xml:lang="tr">Kapow Kokteyl Saat</name>
   <summary>Keep track of time spent on projects</summary>
   <summary xml:lang="cs">Udržujte si přehled o čase stráveném nad projekty</summary>
@@ -34,6 +35,7 @@
   <summary xml:lang="pt_BR">Mantenha o registro do tempo gasto em projetos</summary>
   <summary xml:lang="ro">Ţineţi evidenţa timpului petrecut pe proiecte</summary>
   <summary xml:lang="ru">Следите за временем, затраченным на проекты</summary>
+  <summary xml:lang="sv">Håll koll på tiden som du spenderar på projekt</summary>
   <summary xml:lang="tr">Projeler için harcanan zamanı takip edin</summary>
 
   <description>
@@ -50,6 +52,7 @@
     <p xml:lang="pl">Kapow to program rejestracji czasu pracy przeznaczony do łatwego śledzenia swoich godzin, gdy pracujesz nad jednym lub wielu projektach. Po prostu zastartuj/zatrzymaj zegar przyciskiem Start/Stop. Jeśli popełnisz błąd w zapisie swoich godzin, możesz cofnąć i zmienić jedną z pozycji, klikając dwukrotnie na sesję w pytaniu. Kapow pozwala także łatwo śledzić godziny od ostatniego rozliczania z klientem, poprzez dostarczenie pola pomocniczego "rozliczone" wyboru--sumy będą rozliczane twoją pracę po ostatniej sesji.</p>
     <p xml:lang="ro">Kapow este un program de ceas stimul conceput pentru a ţine evidenţa orelor dvs., indiferent dacă lucraţi pe un proiect sau mai multe. Pur şi simplu cronometraţi cu butonul Start/Stop. Dacă faceţi o greşeală în orele dvs., vă puteţi întoarce şi edita oricare dintre intrări dînd dublu-clic pe sesiunea în cauză. Kapow, de asemenea, vă permite să păstraţi cu uşurinţă evidenţa orelor de cînd aţi facturat în trecut un client, bifînd căsuţa ajutătoare "Taxat" - totalurile vor reflecta munca, după ultima sesiune facturată.</p>
     <p xml:lang="ru">Kapow - это програма по учёту времени разработанная для простого отслеживания Ваших часов, как-бы Вы не работали над одним или несколькими проектами. Просто используйте часы с помощью кнопок Старт/Стоп. Если Вы допустите ошибку в Ваших замерах времени, Вы можете вернуться назад и изменить любую запись с помощью двойного нажатия на рассматриваемую сессию. Kapow также может легко отслеживать время с момента последнего выставления счёта клиенту, предоставляя полезный флажок «Счета»--итоговые суммы будут отражать Вашу работу после последнего выставленного счёта.</p>
+    <p xml:lang="sv">Kapow är ett stämpelklocksprogram som är enkelt utformat för att hålla koll på dina timmar, oavsett om du arbetar på ett eller flera projekt. Stämpla helt enkelt in och ut med Start/Stopp-knappen. Om du gör ett misstag i dina timmar, kan du gå tillbaka och redigera någon av posterna genom att dubbelklicka på den aktuella sessionen. Kapow låter dig även enkelt hålla koll på timmarna sedan du senast fakturerade en kund, genom att tillhandahålla en användbar "Fakturerat"-kryssruta. Summan kommer att återspegla ditt arbete efter den senast fakturerade sessionen.</p>
   </description>
 
   <screenshots>
