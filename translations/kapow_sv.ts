@@ -68,7 +68,7 @@
     </message>
     <message>
         <source>Tax rate:</source>
-        <translation>Skattesats:</translation>
+        <translation>Momssats:</translation>
     </message>
     <message>
         <source>Currency symbol:</source>
@@ -136,7 +136,7 @@
     </message>
     <message>
         <source>Taxes</source>
-        <translation>Skatter</translation>
+        <translation>Moms</translation>
     </message>
     <message>
         <source>Total</source>
@@ -350,7 +350,7 @@
     </message>
     <message>
         <source>Show only this year</source>
-        <translation>Visa endast detta år</translation>
+        <translation>Visa endast detta året</translation>
     </message>
     <message>
         <source>Show only this month</source>
