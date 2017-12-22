@@ -1,4 +1,7 @@
-lessThan(QT_VERSION, 5.2) {
+lessThan(QT_MAJOR_VERSION, 5) {
+	error("Kapow requires Qt 5.2 or greater")
+}
+equals(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 2) {
 	error("Kapow requires Qt 5.2 or greater")
 }
 
@@ -7,7 +10,7 @@ QT += network widgets printsupport
 CONFIG += warn_on c++11
 
 DEFINES += QT_DEPRECATED_WARNINGS
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x050900
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x051000
 DEFINES += QT_NO_NARROWING_CONVERSIONS_IN_CONNECT
 
 # Allow in-tree builds
