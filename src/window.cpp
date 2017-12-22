@@ -54,7 +54,6 @@
 #include <QPushButton>
 #include <QSaveFile>
 #include <QScrollBar>
-#include <QSignalMapper>
 #include <QSplitter>
 #include <QStack>
 #include <QTextDocument>
@@ -323,14 +322,12 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	}
 
 	// Add column actions
-	QSignalMapper* mapper = new QSignalMapper(this);
-	connect(mapper, SIGNAL(mapped(int)), this, SLOT(toggleColumnHidden(int)));
 	QList<QAction*> column_actions;
 	for (int i = 3; i < 10; ++i) {
-		action = column_menu->addAction(m_active_model->headerData(i, Qt::Horizontal).toString(), mapper, SLOT(map()));
+		action = column_menu->addAction(m_active_model->headerData(i, Qt::Horizontal).toString());
 		action->setCheckable(true);
 		action->setChecked(true);
-		mapper->setMapping(action, i);
+		connect(action, &QAction::triggered, [=] { toggleColumnHidden(i); });
 		column_actions.append(action);
 	}
 	m_details->header()->addActions(column_actions);
