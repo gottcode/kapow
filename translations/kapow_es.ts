@@ -161,7 +161,7 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
@@ -199,43 +199,43 @@
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Total</translation>
+        <translation>Total</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Iniciar</translation>
+        <translation>Iniciar</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Detener</translation>
+        <translation>Detener</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarea</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Horas</translation>
+        <translation>Horas</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Diario</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Semanalmente</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensualmente</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Reporte</translation>
     </message>
 </context>
 <context>
@@ -480,7 +480,7 @@
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo temporal a usar.</translation>
     </message>
 </context>
 </TS>
