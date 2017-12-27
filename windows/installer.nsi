@@ -4,7 +4,7 @@
 !define APPNAME "Kapow"
 !define VERSIONMAJOR 1
 !define VERSIONMINOR 5
-!define VERSIONPATCH 4
+!define VERSIONPATCH 5
 !define APPVERSION "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONPATCH}"
 !define ABOUTURL "https://gottcode.org/kapow/"
 
