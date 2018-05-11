@@ -88,4 +88,15 @@
     <kudo>HiDpiIcon</kudo>
     <kudo>ModernToolkit</kudo>
   </kudos>
+
+  <releases>
+    <release version="1.5.5" date="2017-12-27">
+      <description>
+        <ul>
+          <li>FIXED: Could not compile with Qt 5.10</li>
+          <li>Translation updates: Spanish, Swedish</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
 </component>
