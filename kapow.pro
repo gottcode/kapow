@@ -70,7 +70,7 @@ SOURCES = src/contact.cpp \
 # Generate translations
 TRANSLATIONS = $$files(translations/kapow_*.ts)
 TS_FILES = $$TRANSLATIONS
-TS_FILES += translations/qtbase_nl.ts translations/qtbase_sv.ts
+TS_FILES += translations/qtbase_nl.ts
 qtPrepareTool(LRELEASE, lrelease)
 updateqm.input = TS_FILES
 updateqm.output = ${QMAKE_FILE_PATH}/${QMAKE_FILE_BASE}.qm
