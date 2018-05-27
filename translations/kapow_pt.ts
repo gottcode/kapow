@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="da" sourcelanguage="en">
+<TS version="2.1" language="pt" sourcelanguage="en">
 <context>
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Vælg sprog:</translation>
+        <translation>Selecione o idioma da aplicação:</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Systemsprog&gt;</translation>
+        <translation>&lt;Idioma do Sistema&gt;</translation>
     </message>
     <message>
         <source>Note</source>
-        <translation>Bemærk</translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Programmet skal genstartes før ændringen træder i kraft.</translation>
+        <translation>Por favor reinicie esta aplicação para que a alteração do idioma surta efeito.</translation>
     </message>
 </context>
 <context>
     <name>Report</name>
     <message>
         <source>Time Sheet Report</source>
-        <translation>Timeseddel</translation>
+        <translation>Relatório de Horas de Trabalho</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Navn:</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>Company:</source>
-        <translation>Firma:</translation>
+        <translation>Empresa:</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>Adresse:</translation>
+        <translation>Endereço:</translation>
     </message>
     <message>
         <source>Phone:</source>
-        <translation>Telefon:</translation>
+        <translation>Telefone:</translation>
     </message>
     <message>
         <source>Fax:</source>
@@ -48,55 +48,55 @@
     </message>
     <message>
         <source>Email:</source>
-        <translation>E-mail:</translation>
+        <translation>Email:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation>Hjemmeside:</translation>
+        <translation>Website:</translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation>Ikke tilgængelig</translation>
+        <translation>N/A</translation>
     </message>
     <message>
         <source>Prepend currency symbol</source>
-        <translation>Tilføj valutasymbol i begyndelsen</translation>
+        <translation>Símbolo de moeda à frente do valor</translation>
     </message>
     <message>
         <source>Hourly rate:</source>
-        <translation>Timeløn:</translation>
+        <translation>Preço por hora:</translation>
     </message>
     <message>
         <source>Tax rate:</source>
-        <translation>Skatteprocent:</translation>
+        <translation>Taxa de imposto:</translation>
     </message>
     <message>
         <source>Currency symbol:</source>
-        <translation>Valutasymbol:</translation>
+        <translation>Símbolo de moeda:</translation>
     </message>
     <message>
         <source>Contact Information</source>
-        <translation>Kontaktinformation</translation>
+        <translation>Informação de Contacto</translation>
     </message>
     <message>
         <source>Data</source>
-        <translation>Data</translation>
+        <translation>Dados</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Forhåndsvisning</translation>
+        <translation>Pré-visualizar</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Eksportér</translation>
+        <translation>Exportar</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Udskriv</translation>
+        <translation>Imprimir</translation>
     </message>
     <message>
         <source>Web Page (*.html *.htm)</source>
-        <translation>Hjemmeside (*.html *.htm)</translation>
+        <translation>Página Web (*.html *.htm)</translation>
     </message>
     <message>
         <source>iCalendar (*.ics)</source>
@@ -108,19 +108,19 @@
     </message>
     <message>
         <source>Export Report</source>
-        <translation>Eksporteret rapport</translation>
+        <translation>Exportar Relatório</translation>
     </message>
     <message>
         <source>View Reports</source>
-        <translation>Vis rapporter</translation>
+        <translation>Ver Relatórios</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation>Opret rapport</translation>
+        <translation>Criar Relatório</translation>
     </message>
     <message>
         <source>Phone: %1</source>
-        <translation>Telefon: %1</translation>
+        <translation>Telefone: %1</translation>
     </message>
     <message>
         <source>Fax: %1</source>
@@ -128,7 +128,7 @@
     </message>
     <message>
         <source>Hours</source>
-        <translation>Timer</translation>
+        <translation>Horas</translation>
     </message>
     <message>
         <source>Subtotal</source>
@@ -136,7 +136,7 @@
     </message>
     <message>
         <source>Taxes</source>
-        <translation>Skatter</translation>
+        <translation>Imposto</translation>
     </message>
     <message>
         <source>Total</source>
@@ -148,51 +148,51 @@
     <message numerus="yes">
         <source>%n hour(s)</source>
         <translation>
-            <numerusform>one: %n time</numerusform>
-            <numerusform>other: %n timer</numerusform>
+            <numerusform>%n hora</numerusform>
+            <numerusform>%n houras</numerusform>
         </translation>
     </message>
     <message>
         <source>%L1 hours</source>
-        <translation>%L1 timer</translation>
+        <translation>%L1 horas</translation>
     </message>
 </context>
 <context>
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation>Session er i konflikt med andre sessioner.</translation>
+        <translation>A sessão está em conflito com outras sessões.</translation>
     </message>
 </context>
 <context>
     <name>SessionDialog</name>
     <message>
         <source>Add Session</source>
-        <translation>Tilføj session</translation>
+        <translation>Adicionar Sessão</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Dato:</translation>
+        <translation>Data:</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Start:</translation>
+        <translation>Iniciar:</translation>
     </message>
     <message>
         <source>Stop:</source>
-        <translation>Slut:</translation>
+        <translation>Parar:</translation>
     </message>
     <message>
         <source>Task:</source>
-        <translation>Opgave:</translation>
+        <translation>Tarefa:</translation>
     </message>
     <message>
         <source>Edit Session</source>
-        <translation>Rediger session</translation>
+        <translation>Editar Sessão</translation>
     </message>
 </context>
 <context>
@@ -203,39 +203,39 @@
     </message>
     <message>
         <source>Date</source>
-        <translation>Dato</translation>
+        <translation>Data</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Start</translation>
+        <translation>Iniciar</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Parar</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation>Opgave</translation>
+        <translation>Tarefa</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation>Timer</translation>
+        <translation>Horas</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Dagligt</translation>
+        <translation>Diáriamente</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Ugentligt</translation>
+        <translation>Semanalmente</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation>Månedligt</translation>
+        <translation>Mensalmente</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation>Rapport</translation>
+        <translation>Relatório</translation>
     </message>
 </context>
 <context>
@@ -246,27 +246,27 @@
     </message>
     <message>
         <source>Start</source>
-        <translation>Start</translation>
+        <translation>Iniciar</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Parar</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Annuller</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;Minimer</translation>
+        <translation>&amp;Minimizar</translation>
     </message>
     <message>
         <source>&amp;Project</source>
-        <translation>&amp;Projekt</translation>
+        <translation>&amp;Projeto</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;Tilføj</translation>
+        <translation>&amp;Adicionar</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
@@ -274,7 +274,7 @@
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Fjern</translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Delete</source>
@@ -282,19 +282,19 @@
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Afslut</translation>
+        <translation>&amp;Sair</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>&amp;Session</source>
-        <translation>&amp;Session</translation>
+        <translation>&amp;Sessão</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp;Rediger</translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <source>Ctrl+Delete</source>
@@ -302,185 +302,185 @@
     </message>
     <message>
         <source>S&amp;ettings</source>
-        <translation>I&amp;ndstillinger</translation>
+        <translation>&amp;Configurações</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation>Kolonner</translation>
+        <translation>Colunas</translation>
     </message>
     <message>
         <source>&amp;Decimal Totals</source>
-        <translation>&amp;Timer i decimaler</translation>
+        <translation>Totais no Formato &amp;Decimal</translation>
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Direkte redigering</translation>
+        <translation>&amp;Edição Direta na Tabela</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Sprog...</translation>
+        <translation>&amp;Idioma da Aplicação...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Hjælp</translation>
+        <translation>&amp;Ajuda</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Om</translation>
+        <translation>&amp;Sobre</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>Om &amp;Qt</translation>
+        <translation>Sobre o &amp;Qt</translation>
     </message>
     <message>
         <source>Project</source>
-        <translation>Projekt</translation>
+        <translation>Projeto</translation>
     </message>
     <message>
         <source>Timer</source>
-        <translation>Timer</translation>
+        <translation>Contador</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Vis alt</translation>
+        <translation>Mostrar tudo</translation>
     </message>
     <message>
         <source>Show only unbilled</source>
-        <translation>Vis kun ubetalte</translation>
+        <translation>Mostrar apenas por faturar</translation>
     </message>
     <message>
         <source>Show only this year</source>
-        <translation>Vis kun dette år</translation>
+        <translation>Mostrar apenas este ano</translation>
     </message>
     <message>
         <source>Show only this month</source>
-        <translation>Vis kun denne måned</translation>
+        <translation>Mostrar apenas este mês</translation>
     </message>
     <message>
         <source>Show only this week</source>
-        <translation>Vis kun denne uge</translation>
+        <translation>Mostrar apenas esta semana</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2008-%1 Graeme Gott</translation>
+        <translation>Direitos de Autor &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Frigivet under &lt;a href=%1&gt;GPL 3&lt;/a&gt;-licens</translation>
+        <translation>Lançado sob a licença &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation>Session er i konflikt med andre sessioner.</translation>
+        <translation>A sessão está em conflito com outras sessões.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation>&amp;Gendan</translation>
+        <translation>&amp;Restaurar</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
-        <translation>Kan ikke aflæse tidsdata.</translation>
+        <translation>Não foi possível ler os dados de tempo.</translation>
     </message>
     <message>
         <source>Untitled</source>
-        <translation>Unavngivet</translation>
+        <translation>Sem título</translation>
     </message>
     <message>
         <source>Unable to write time data.</source>
-        <translation>Kan ikke opgøre tidsdata.</translation>
+        <translation>Não foi possível gravar os dados de tempo.</translation>
     </message>
     <message>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Timere kører. Stop timere og afslut?</translation>
+        <translation>Há contadores a decorrer. Parar contadores e sair?</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Om</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <source>A program to help track spent time</source>
-        <translation>Et program til at holde styr på tidsforbruget</translation>
+        <translation>Um programa para ajudar a rastrear o tempo utilizado</translation>
     </message>
     <message>
         <source>Question</source>
-        <translation>Spørgsmål</translation>
+        <translation>Questão</translation>
     </message>
     <message>
         <source>&amp;Create Report...</source>
-        <translation>&amp;Opret rapport...</translation>
+        <translation>&amp;Criar Relatório...</translation>
     </message>
     <message>
         <source>View R&amp;eports</source>
-        <translation>Vis R&amp;apporter</translation>
+        <translation>Ver R&amp;elatórios</translation>
     </message>
     <message>
         <source>Cancel this session?</source>
-        <translation>Annuller denne session?</translation>
+        <translation>Cancelar esta sessão?</translation>
     </message>
     <message>
         <source>Add Project</source>
-        <translation>Tilføj projekt</translation>
+        <translation>Adicionar Projeto</translation>
     </message>
     <message>
         <source>Enter project name:</source>
-        <translation>Angiv projektnavn:</translation>
+        <translation>Introduza o nome do projeto:</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation>Kunne ikke oprette placering.</translation>
+        <translation>Não foi possível criar a localização dos dados de tempo.</translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
-        <translation>Kunne ikke flytte placering.</translation>
+        <translation>Não foi possível mover a localização dos dados de tempo.</translation>
     </message>
     <message>
         <source>A project with that name already exists.</source>
-        <translation>Et projekt med dette navn eksisterer allerede.</translation>
+        <translation>Já existe um projeto com esse nome.</translation>
     </message>
     <message>
         <source>Remove selected project?</source>
-        <translation>Fjern valgte projekt?</translation>
+        <translation>Remover o projeto selecionado?</translation>
     </message>
     <message>
         <source>Remove selected session?</source>
-        <translation>Fjern valgte session?</translation>
+        <translation>Remover a sessão selecionada?</translation>
     </message>
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>%n timer kører</numerusform>
-            <numerusform>%n timere kører</numerusform>
+            <numerusform>%n contador a decorrer</numerusform>
+            <numerusform>%n contadores a decorrer</numerusform>
         </translation>
     </message>
     <message>
         <source>Kapow Punch Clock</source>
-        <translation>Kapow Punch Clock</translation>
+        <translation>Relógio de Ponto Kapow</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation>Stempelur til tidstagning</translation>
+        <translation>Programa de relógio de ponto</translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation>Gem indstillinger i INI-format i fil.</translation>
+        <translation>Armazenar as configurações no formato INI no ficheiro especificado.</translation>
     </message>
     <message>
         <source>file</source>
-        <translation>fil</translation>
+        <translation>ficheiro</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation>Opret ikke automatiske backups af tidsdata.</translation>
+        <translation>Não criar cópias de segurança automáticas de dados de tempo.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation>Tidsdatafilen, der skal bruges.</translation>
+        <translation>Ficheiro de dados de tempo a utilizar.</translation>
     </message>
 </context>
 </TS>
