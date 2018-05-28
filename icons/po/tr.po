@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-14 20:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/kapow/language/"
+"PO-Revision-Date: 2018-05-28 17:56+0000\n"
+"Last-Translator: Graeme Gott <graeme@gottcode.org>\n"
+"Language-Team: Turkish (http://www.transifex.com/gottcode/kapow/language/"
 "tr/)\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
+#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
 msgid "Kapow Punch Clock"
 msgstr "Kapow Kokteyl Saat"
 
-#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
+#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
 msgid "Keep track of time spent on projects"
 msgstr "Projeler için harcanan zamanı takip edin"
 
-#: ../kapow.appdata.xml.in.h:3
+#: ../kapow.appdata.xml.in:10
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -37,6 +37,6 @@ msgid ""
 "will reflect your work after the last billed session."
 msgstr ""
 
-#: ../kapow.desktop.in.h:2
+#: ../kapow.desktop.in:4
 msgid "Punch Clock"
 msgstr "Kokteyl Saat"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2017-04-08 15:18+0000\n"
+"PO-Revision-Date: 2017-09-21 14:01+0000\n"
 "Last-Translator: Артём Давыдов <davydoff_ru@mail.ru>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/gottcode/kapow/"
 "language/ru_RU/)\n"
@@ -21,15 +21,15 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
+#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
 msgid "Kapow Punch Clock"
 msgstr "Kapow Punch Clock"
 
-#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
+#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
 msgid "Keep track of time spent on projects"
 msgstr "Следите за временем, затраченным на проекты"
 
-#: ../kapow.appdata.xml.in.h:3
+#: ../kapow.appdata.xml.in:10
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -48,6 +48,6 @@ msgstr ""
 "счёта клиенту, предоставляя полезный флажок «Счета»--итоговые суммы будут "
 "отражать Вашу работу после последнего выставленного счёта."
 
-#: ../kapow.desktop.in.h:2
+#: ../kapow.desktop.in:4
 msgid "Punch Clock"
 msgstr "Учёт времени"
