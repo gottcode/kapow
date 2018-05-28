@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2014-11-17 09:13+0000\n"
+"PO-Revision-Date: 2017-09-23 20:29+0000\n"
 "Last-Translator: Guillaume Gay <guillaume.gay@bigfoot.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/kapow/language/"
 "fr/)\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
+#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
 msgid "Kapow Punch Clock"
 msgstr "Pointeuse Kapow"
 
-#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
+#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
 msgid "Keep track of time spent on projects"
 msgstr "Conservez une trace du temps passé sur vos projets"
 
-#: ../kapow.appdata.xml.in.h:3
+#: ../kapow.appdata.xml.in:10
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -46,6 +46,6 @@ msgstr ""
 "client, en proposant une case « Facturé » bien pratique. Les totaux "
 "refléteront votre travail après la dernière session facturée. "
 
-#: ../kapow.desktop.in.h:2
+#: ../kapow.desktop.in:4
 msgid "Punch Clock"
 msgstr "Pointeuse horaire"

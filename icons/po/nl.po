@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2017-04-08 11:01+0000\n"
+"PO-Revision-Date: 2017-09-21 14:01+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/kapow/language/nl/)\n"
 "Language: nl\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
+#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
 msgid "Kapow Punch Clock"
 msgstr "Kapow Prikklok"
 
-#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
+#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
 msgid "Keep track of time spent on projects"
 msgstr "Houdt de tijd bij die u spendeert aan projecten"
 
-#: ../kapow.appdata.xml.in.h:3
+#: ../kapow.appdata.xml.in:10
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -45,6 +45,6 @@ msgstr ""
 "gefactureerd d.m.v. het selectievakje \"Gefactureerd\". Het totaal geeft uw "
 "werkuren aan sinds de laatst gefactureerde sessie."
 
-#: ../kapow.desktop.in.h:2
+#: ../kapow.desktop.in:4
 msgid "Punch Clock"
 msgstr "Prikklok"
