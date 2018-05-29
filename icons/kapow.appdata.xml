@@ -93,11 +93,14 @@
   </kudos>
 
   <releases>
-    <release version="1.5.5" date="2017-12-27">
+    <release version="1.5.6" date="2018-05-29">
       <description>
         <ul>
-          <li>FIXED: Could not compile with Qt 5.10</li>
-          <li>Translation updates: Spanish, Swedish</li>
+          <li>Extra warnings only shown in debug build</li>
+          <li>Improved Linux deployment</li>
+          <li>Improved macOS deployment</li>
+          <li>Improved Windows deployment</li>
+          <li>Translation updates: Danish, Portuguese</li>
         </ul>
       </description>
     </release>
