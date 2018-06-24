@@ -1,3 +1,8 @@
+1.5.7
+-----
+* FIXED: Crash when adding projects.
+* FIXED: Crash when removing projects with multiple subprojects.
+
 1.5.6
 -----
 * Extra warnings only shown in debug build.
