@@ -1093,8 +1093,7 @@ void Window::addProject(const QString& name) {
 /*****************************************************************************/
 
 void Window::removeProject(QTreeWidgetItem* item) {
-	int count = item->childCount();
-	for (int i = 0; i < count; ++i) {
+	for (int i = item->childCount() - 1; i >= 0; i--) {
 		removeProject(item->child(i));
 	}
 	Project* project = dynamic_cast<Project*>(item);
