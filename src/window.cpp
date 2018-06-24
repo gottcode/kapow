@@ -624,12 +624,13 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	connect(m_active_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(modelBilledStatusChanged()));
 	connect(m_active_model, SIGNAL(rowsInserted(const QModelIndex&, int, int)), this, SLOT(sessionsInserted(const QModelIndex&, int, int)));
 
-	updateDisplay();
-	updateSessionButtons();
 	m_details->setModel(m_active_project->filterModel());
 	m_details->expandAll();
 	m_filter->setCurrentIndex(m_filter->findData(m_active_project->filterModel()->type()));
-	m_remove_project->setEnabled(!project->isActive());
+
+	updateDisplay();
+	updateSessionButtons();
+	m_remove_project->setEnabled(!m_active_project->isActive());
 	if (!m_active_project->time().isEmpty()) {
 		m_start_session->setEnabled(false);
 		m_stop_session->setEnabled(true);
