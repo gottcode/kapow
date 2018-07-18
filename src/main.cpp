@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2010, 2011, 2012, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2010, 2011, 2012, 2013, 2014, 2015, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,6 +29,14 @@
 
 int main(int argc, char** argv)
 {
+#if !defined(Q_OS_MAC) && (QT_VERSION >= QT_VERSION_CHECK(5,6,0))
+	if (!qEnvironmentVariableIsSet("QT_DEVICE_PIXEL_RATIO")
+			&& !qEnvironmentVariableIsSet("QT_AUTO_SCREEN_SCALE_FACTOR")
+			&& !qEnvironmentVariableIsSet("QT_SCALE_FACTOR")
+			&& !qEnvironmentVariableIsSet("QT_SCREEN_SCALE_FACTORS")) {
+		QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	}
+#endif
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
 	app.setApplicationDisplayName(Window::tr("Kapow Punch Clock"));
