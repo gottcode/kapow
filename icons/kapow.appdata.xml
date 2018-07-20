@@ -93,6 +93,13 @@
   </kudos>
 
   <releases>
+    <release version="1.5.8" date="2018-07-20">
+      <description>
+        <ul>
+          <li>FIXED: Automatic high DPI support</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.7" date="2018-06-24">
       <description>
         <ul>
