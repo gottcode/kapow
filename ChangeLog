@@ -1,3 +1,7 @@
+1.5.8
+-----
+* FIXED: Automatic high DPI support.
+
 1.5.7
 -----
 * FIXED: Crash when adding projects.
