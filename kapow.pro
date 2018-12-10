@@ -87,7 +87,9 @@ RESOURCES = icons/icons.qrc
 macx {
 	ICON = icons/kapow.icns
 } else:win32 {
-	RC_FILE = icons/icon.rc
+	RC_ICONS = icons/kapow.ico
+	QMAKE_TARGET_DESCRIPTION = "Punch clock"
+	QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2018 Graeme Gott"
 } else:unix {
 	isEmpty(PREFIX) {
 		PREFIX = /usr/local
