@@ -67,9 +67,8 @@ bool FilterModel::filterAcceptsRow(int row, const QModelIndex& parent) const {
 			return !m_model->isBilled(row);
 
 		case ThisMonth:
-			if (current.month() != date.month()) {
-				return false;
-			}
+			return (current.month() == date.month()) && (current.year() == date.year());
+
 		case ThisYear:
 			return current.year() == date.year();
 
