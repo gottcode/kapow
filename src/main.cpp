@@ -45,6 +45,7 @@ int main(int argc, char** argv)
 	app.setOrganizationName("GottCode");
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MAC)
 	app.setWindowIcon(QIcon::fromTheme("kapow", QIcon(":/kapow.png")));
+	app.setDesktopFileName("kapow");
 #endif
 	app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
