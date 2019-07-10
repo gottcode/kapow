@@ -116,7 +116,7 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	QFormLayout* data_rates_layout = new QFormLayout;
 	data_rates_layout->setFormAlignment(Qt::AlignCenter | Qt::AlignTop);
 	data_rates_layout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
-	data_rates_layout->setMargin(0);
+	data_rates_layout->setContentsMargins(0, 0, 0, 0);
 	data_rates_layout->addRow(tr("Hourly rate:"), m_hourly_rate);
 	data_rates_layout->addRow(tr("Tax rate:"), m_tax_rate);
 	data_rates_layout->addRow(tr("Currency symbol:"), m_currency_symbol);
