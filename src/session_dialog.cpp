@@ -50,7 +50,7 @@ SessionDialog::SessionDialog(QWidget* parent)
 	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
 
 	QFormLayout* item_layout = new QFormLayout;
-	item_layout->setMargin(0);
+	item_layout->setContentsMargins(0, 0, 0, 0);
 	item_layout->addRow(tr("Date:"), m_date);
 	item_layout->addRow(tr("Start:"), m_start);
 	item_layout->addRow(tr("Stop:"), m_stop);

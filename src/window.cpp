@@ -260,7 +260,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_details->setItemDelegate(delegate);
 
 	QVBoxLayout* details_layout = new QVBoxLayout(details);
-	details_layout->setMargin(0);
+	details_layout->setContentsMargins(0, 0, 0, 0);
 	details_layout->addWidget(m_filter);
 	details_layout->addWidget(m_details);
 
@@ -285,7 +285,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 
 	// Lay out window
 	QHBoxLayout* session_buttons = new QHBoxLayout;
-	session_buttons->setMargin(0);
+	session_buttons->setContentsMargins(0, 0, 0, 0);
 	session_buttons->setSpacing(0);
 	session_buttons->addStretch(1);
 	session_buttons->addWidget(m_task, 2);
@@ -297,13 +297,13 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	session_buttons->addStretch(1);
 
 	QVBoxLayout* session_layout = new QVBoxLayout;
-	session_layout->setMargin(0);
+	session_layout->setContentsMargins(0, 0, 0, 0);
 	session_layout->setSpacing(0);
 	session_layout->addWidget(m_display, 0, Qt::AlignCenter);
 	session_layout->addLayout(session_buttons);
 
 	QVBoxLayout* layout = new QVBoxLayout(contents);
-	layout->setMargin(0);
+	layout->setContentsMargins(0, 0, 0, 0);
 	layout->addLayout(session_layout, 0);
 	layout->addSpacing(6);
 	layout->addWidget(m_contents, 1);
