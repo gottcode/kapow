@@ -93,6 +93,17 @@
   </kudos>
 
   <releases>
+    <release version="1.5.9" date="2019-08-07">
+      <description>
+        <ul>
+          <li>FIXED: Window icon didn't work in Wayland</li>
+          <li>Improved loading locales</li>
+          <li>Improved Windows deployment</li>
+          <li>Replaced deprecated code</li>
+          <li>Translation updates: Czech, French</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.8" date="2018-07-20">
       <description>
         <ul>
