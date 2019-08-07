@@ -3,28 +3,30 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Pavel Borecki <pavel.borecki@gmail.com>, 2018
 # fri, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2017-09-21 14:01+0000\n"
-"Last-Translator: fri\n"
+"PO-Revision-Date: 2018-08-03 07:27+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/kapow/language/cs/)\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
 msgid "Kapow Punch Clock"
-msgstr "Evidence pracovní doby Kapow"
+msgstr "Kapow – evidence odpracovaného času"
 
 #: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
 msgid "Keep track of time spent on projects"
-msgstr "Udržujte si přehled o čase stráveném nad projekty"
+msgstr "Udržujte si přehled o času stráveném nad projekty"
 
 #: ../kapow.appdata.xml.in:10
 msgid ""
@@ -36,16 +38,15 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
-"Kapow je program na evidenci pracovní doby navržený tak, abyste si snadno "
-"mohli držovat přehled o hodinách, ať už je to čas strávený nad jedním nebo "
-"mnoha projekty. Jednoduše si píchněte příchod a odchod tlačítkem pro začátek/"
-"konec pracovní doby. Pokud se ve svých hodinách zmýlíte, můžete se vrátit a "
-"kterýkoli ze záznamů upravit dvojitým klepnutím myší na sezení, o kterém je "
-"řeč. Kapow také dovoluje snadné udržování přehledu o hodinách pro dobu, "
-"kterou budete nakonec účtovat klientovi tím, že poskytuje praktické "
-"zaškrtávací políčko \"Účtováno\". Toto celkově odráží vaši práci od "
-"posledního zúčtovaného sezení."
+"Kapow je aplikace pro evidenci odpracovaného času navržená pro snadné "
+"udržování si přehledu o hodinách, ať už strávených nad jedním nebo více "
+"projekty. Jednoduše si kliknutím na příslušné tlačítko zaznamenejte zahájení "
+"a přerušení/skončení práce. Pokud se zmýlíte, můžete se vrátit a kterýkoli "
+"ze záznamů upravit dvojklikem na příslušné sezení. Kapow také umožňuje "
+"snadné udržování přehledu o hodinách, odpracovaných od minulého zúčtování s "
+"klientem a to praktickou zaškrtávací kolonkou „Účtováno“. Součty budou "
+"odpovídat vaší práci od posledního zúčtovaného sezení."
 
 #: ../kapow.desktop.in:4
 msgid "Punch Clock"
-msgstr "Evidence pracovní doby"
+msgstr "Evidence odpracovaného času"

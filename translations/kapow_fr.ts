@@ -52,11 +52,11 @@
     </message>
     <message>
         <source>Website:</source>
-        <translation>Site WWW : </translation>
+        <translation>Site web : </translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation>N/A</translation>
+        <translation>N/D</translation>
     </message>
     <message>
         <source>Prepend currency symbol</source>
@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Export</source>
-        <translation>Exportation</translation>
+        <translation>Exporter</translation>
     </message>
     <message>
         <source>Print</source>
@@ -108,15 +108,15 @@
     </message>
     <message>
         <source>Export Report</source>
-        <translation>Exportation du rapport</translation>
+        <translation>Exporter le rapport</translation>
     </message>
     <message>
         <source>View Reports</source>
-        <translation>Affichage des rapports</translation>
+        <translation>Afficher les rapports</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation>Création de rapport</translation>
+        <translation>Créer un rapport</translation>
     </message>
     <message>
         <source>Phone: %1</source>
@@ -161,11 +161,11 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erreur</translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Session en conflit avec d&apos;autres sessions. </translation>
     </message>
 </context>
 <context>
@@ -199,43 +199,43 @@
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Total</translation>
+        <translation>Total</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Date</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Démarrer</translation>
+        <translation>Démarrer</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Arrêter</translation>
+        <translation>Arrêter</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Tâche</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Heures</translation>
+        <translation>Heures</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Quotidien</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Hebdomadaire</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensuel</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapport</translation>
     </message>
 </context>
 <context>
@@ -258,7 +258,7 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Réduire</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -370,15 +370,15 @@
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Session en conflit avec d&apos;autres sessions. </translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Agrandir</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
-        <translation>Lecture impossible des données d&apos;heure. </translation>
+        <translation>Impossible de lire les données horaires. </translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -386,7 +386,7 @@
     </message>
     <message>
         <source>Unable to write time data.</source>
-        <translation>Écriture impossible des données d&apos;heure. </translation>
+        <translation>Impossible d&apos;écrire les données horaires.</translation>
     </message>
     <message>
         <source>There are timers running. Stop timers and quit?</source>
@@ -430,11 +430,11 @@
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation>Création de l&apos;emplacement de données de date impossible. </translation>
+        <translation>Impossible de créer l&apos;emplacement des données horaires. </translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
-        <translation>Déplacement de l&apos;emplacement de données de date impossible. </translation>
+        <translation>Impossible de déplacer l&apos;emplacement des données horaires. </translation>
     </message>
     <message>
         <source>A project with that name already exists.</source>
@@ -464,23 +464,23 @@
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"></translation>
+        <translation>Programme de pointeuse</translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stocker les paramètres au format INI dans le fichier indiqué. </translation>
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne pas créer de sauvegarde automatique des données horaires. </translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier à utiliser pour les données horaires.</translation>
     </message>
 </context>
 </TS>
