@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Kapow Punch Clock
-Name[cs]=Evidence pracovní doby Kapow
+Name[cs]=Kapow – evidence odpracovaného času
 Name[da]=Kapow stopur
 Name[de]=Kapow Zeiterfassung
 Name[el]=Kapow Punch Clock
@@ -18,7 +18,7 @@ Name[ru]=Kapow Punch Clock
 Name[sv]=Kapow Stämpelklocka
 Name[tr]=Kapow Kokteyl Saat
 GenericName=Punch Clock
-GenericName[cs]=Evidence pracovní doby
+GenericName[cs]=Evidence odpracovaného času
 GenericName[da]=Stopur
 GenericName[de]=Zeiterfassung
 GenericName[el]=Ρολόι Punch
@@ -36,7 +36,7 @@ GenericName[ru]=Учёт времени
 GenericName[sv]=Stämpelklocka
 GenericName[tr]=Kokteyl Saat
 Comment=Keep track of time spent on projects
-Comment[cs]=Udržujte si přehled o čase stráveném nad projekty
+Comment[cs]=Udržujte si přehled o času stráveném nad projekty
 Comment[da]=Hold styr på, hvor meget tid der bruges på projekter
 Comment[de]=Verfolgen Sie Ihre Arbeitszeiten an Projekten
 Comment[el]=Παρακολουθήστε το χρόνο που δαπανάτε σε έργα

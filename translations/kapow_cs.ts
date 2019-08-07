@@ -5,7 +5,7 @@
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Vybrat jazyk programu:</translation>
+        <translation>Vyberte jazyk aplikace:</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
@@ -17,14 +17,14 @@
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Spusťte, prosím, tento program znovu, aby se změna jazyka projevila.</translation>
+        <translation>Aby se změna jazyka projevila, bude třeba aplikaci restartovat.</translation>
     </message>
 </context>
 <context>
     <name>Report</name>
     <message>
         <source>Time Sheet Report</source>
-        <translation>Pracovní výkaz</translation>
+        <translation>Výkaz práce</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -48,19 +48,19 @@
     </message>
     <message>
         <source>Email:</source>
-        <translation>El. pošta:</translation>
+        <translation>E-mail:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation>Stránky:</translation>
+        <translation>Web. stránky:</translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation>Nedostupné</translation>
+        <translation>Nezadáno</translation>
     </message>
     <message>
         <source>Prepend currency symbol</source>
-        <translation>Měnový symbol uvést na začátku</translation>
+        <translation>Symbol měny uvádět před částkou</translation>
     </message>
     <message>
         <source>Hourly rate:</source>
@@ -72,11 +72,11 @@
     </message>
     <message>
         <source>Currency symbol:</source>
-        <translation>Měnový symbol:</translation>
+        <translation>Symbol měny:</translation>
     </message>
     <message>
         <source>Contact Information</source>
-        <translation>Spojení</translation>
+        <translation>Kontaktní údaje</translation>
     </message>
     <message>
         <source>Data</source>
@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Export</source>
-        <translation>Vyvést</translation>
+        <translation>Export</translation>
     </message>
     <message>
         <source>Print</source>
@@ -96,7 +96,7 @@
     </message>
     <message>
         <source>Web Page (*.html *.htm)</source>
-        <translation>Stránka (*.html *.htm)</translation>
+        <translation>Web. stránka (*.html *.htm)</translation>
     </message>
     <message>
         <source>iCalendar (*.ics)</source>
@@ -108,15 +108,15 @@
     </message>
     <message>
         <source>Export Report</source>
-        <translation>Vyvést zprávu</translation>
+        <translation>Exportovat výkaz</translation>
     </message>
     <message>
         <source>View Reports</source>
-        <translation>Zobrazit zprávy</translation>
+        <translation>Zobrazit výkazy</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation>Vytvořit zprávu</translation>
+        <translation>Vytvořit výkaz</translation>
     </message>
     <message>
         <source>Phone: %1</source>
@@ -140,7 +140,7 @@
     </message>
     <message>
         <source>Total</source>
-        <translation>Úhrn</translation>
+        <translation>Celkem</translation>
     </message>
 </context>
 <context>
@@ -162,11 +162,11 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konflikty s ostatními sezeními.</translation>
     </message>
 </context>
 <context>
@@ -200,43 +200,43 @@
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Úhrn</translation>
+        <translation>Celkem</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Spustit</translation>
+        <translation>Začátek</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Zastavit</translation>
+        <translation>Konec</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Úkol</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Hodiny</translation>
+        <translation>Hodin</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Denně</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Týdně</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Měsíčně</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Výkaz</translation>
     </message>
 </context>
 <context>
@@ -255,11 +255,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Storno</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimalizovat</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -267,7 +267,7 @@
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;Přidat</translation>
+        <translation>Přid&amp;at</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Odstranit</translation>
+        <translation>Odst&amp;ranit</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Delete</source>
@@ -303,7 +303,7 @@
     </message>
     <message>
         <source>S&amp;ettings</source>
-        <translation>&amp;Nastavení</translation>
+        <translation>Nastav&amp;ení</translation>
     </message>
     <message>
         <source>Columns</source>
@@ -315,11 +315,11 @@
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Přímé zpracování hodnot</translation>
+        <translation>&amp;Přímé upravování hodnot</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>Jazyk &amp;programu...</translation>
+        <translation>Jazyk ap&amp;likace…</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -327,7 +327,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;O programu</translation>
+        <translation>O &amp;aplikaci</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -343,43 +343,43 @@
     </message>
     <message>
         <source>Show all</source>
-        <translation>Ukázat vše</translation>
+        <translation>Zobrazit vše</translation>
     </message>
     <message>
         <source>Show only unbilled</source>
-        <translation>Ukázat pouze nevyúčtované hodiny</translation>
+        <translation>Zobrazit pouze nevyúčtované hodiny</translation>
     </message>
     <message>
         <source>Show only this year</source>
-        <translation>Ukázat pouze tento rok</translation>
+        <translation>Zobrazit pouze tento rok</translation>
     </message>
     <message>
         <source>Show only this month</source>
-        <translation>Ukázat pouze tento měsíc</translation>
+        <translation>Zobrazit pouze tento měsíc</translation>
     </message>
     <message>
         <source>Show only this week</source>
-        <translation>Ukázat pouze tento týden</translation>
+        <translation>Zobrazit pouze tento týden</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation>Autorské právo &amp;copy; 2008-%1 Graeme Gott</translation>
+        <translation>Autorské právo © 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Vydáno pod licencí &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Vydáno pod licencí GNU &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konflikty s ostatními relacemi.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Obnovit</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
-        <translation>Nelze přečíst data času.</translation>
+        <translation>Nedaří se načíst časová data.</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -387,27 +387,27 @@
     </message>
     <message>
         <source>Unable to write time data.</source>
-        <translation>Nelze zapsat data času.</translation>
+        <translation>Nedaří se zapsat časová data.</translation>
     </message>
     <message>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Běží časomíry. Zastavit časomíry a ukončit?</translation>
+        <translation>Jsou spuštěné časomíry. Zastavit je a ukončit?</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation>O aplikaci</translation>
     </message>
     <message>
         <source>A program to help track spent time</source>
-        <translation>Program pro evidenci pracovní doby na počítači, který vám pomůže sledovat vámi strávený čas.</translation>
+        <translation>Aplikace která pomáhá udržovat si přehled o stráveném času.</translation>
     </message>
     <message>
         <source>Question</source>
-        <translation>Otázka</translation>
+        <translation>Dotaz</translation>
     </message>
     <message>
         <source>&amp;Create Report...</source>
-        <translation>&amp;Vytvořit zprávu...</translation>
+        <translation>&amp;Vytvořit zprávu…</translation>
     </message>
     <message>
         <source>View R&amp;eports</source>
@@ -431,15 +431,15 @@
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation>Nelze vytvořit umístění pro data času.</translation>
+        <translation>Nedaří se vytvořit umístění pro časová data.</translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
-        <translation>Nelze přesunout umístění pro data času.</translation>
+        <translation>Nedaří se přesunout umístění časových dat.</translation>
     </message>
     <message>
         <source>A project with that name already exists.</source>
-        <translation>Projekt s tímto názvem již existuje.</translation>
+        <translation>Projekt s tímto názvem už existuje.</translation>
     </message>
     <message>
         <source>Remove selected project?</source>
@@ -452,37 +452,37 @@
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>Běží %n časomíra</numerusform>
-            <numerusform>Běží %n časomíry</numerusform>
-            <numerusform>Běží %n časomír</numerusform>
+            <numerusform>Spuštěná %n časomíra</numerusform>
+            <numerusform>Spuštěné %n časomíry</numerusform>
+            <numerusform>Spuštěných %n časomír</numerusform>
         </translation>
     </message>
     <message>
         <source>Kapow Punch Clock</source>
-        <translation>Evidence pracovní doby Kapow</translation>
+        <translation>Kapow, evidence odpracovaného času, verze</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplikace pro evidenci odpracovaného času</translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit nastavení v INI formátu do zadaného souboru.</translation>
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>soubor</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepořizovat automatické zálohy časových dat.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor s časovými daty, který použít.</translation>
     </message>
 </context>
 </TS>
