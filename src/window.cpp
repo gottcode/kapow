@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -414,7 +414,7 @@ void Window::about() {
 	QMessageBox::about(this, tr("About"), QString("<p align='center'><big><b>%1 %2</b></big><br/>%3<br/><small>%4</small><br/><small>%5</small></p>")
 		.arg(tr("Kapow Punch Clock"), QCoreApplication::applicationVersion(),
 			tr("A program to help track spent time"),
-			tr("Copyright &copy; 2008-%1 Graeme Gott").arg("2019"),
+			tr("Copyright &copy; 2008-%1 Graeme Gott").arg("2020"),
 			tr("Released under the <a href=%1>GPL 3</a> license").arg("\"http://www.gnu.org/licenses/gpl.html\""))
 	);
 }
