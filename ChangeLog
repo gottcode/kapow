@@ -1,3 +1,9 @@
+1.5.10
+------
+* FIXED: Did not load locales with underscores.
+* Improved Windows deployment.
+* Translation updates: Italian.
+
 1.5.9
 -----
 * FIXED: Window icon didn't work in Wayland.
