@@ -215,7 +215,7 @@
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Compito </translation>
     </message>
     <message>
         <source>Hours</source>
@@ -370,11 +370,11 @@
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished">La sessone è in conflitto con altre sessioni</translation>
+        <translation>La sessione è in conflitto con altre sessioni.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ripristina</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
@@ -406,7 +406,7 @@
     </message>
     <message>
         <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Crea Report...</translation>
     </message>
     <message>
         <source>View R&amp;eports</source>
@@ -430,11 +430,11 @@
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile creare la posizione dei dati temporali.</translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile spostare la posizione dei dati temporali.</translation>
     </message>
     <message>
         <source>A project with that name already exists.</source>
@@ -468,7 +468,7 @@
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Memorizza le impostazioni come formato INI nel file specificato.</translation>
     </message>
     <message>
         <source>file</source>
@@ -476,11 +476,11 @@
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non creare backup automatici dei dati temporali.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il file di dati temporali da utilizzare.</translation>
     </message>
 </context>
 </TS>
