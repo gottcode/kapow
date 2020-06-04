@@ -21,6 +21,8 @@
 
 #include "session.h"
 
+#include <QLocale>
+
 #include <algorithm>
 #include <climits>
 
@@ -325,18 +327,19 @@ QVariant SessionModel::data(const QModelIndex& index, int role) const
 		return result;
 	}
 
+	QLocale locale;
 	Session session = m_data.value(pos);
 	switch (role) {
 	case Qt::DisplayRole:
 		switch (index.column()) {
 		case 0:
-			result = session.date().toString(Qt::DefaultLocaleShortDate);
+			result = locale.toString(session.date(), QLocale::ShortFormat);
 			break;
 		case 1:
-			result = session.start().toString(Qt::DefaultLocaleShortDate);
+			result = locale.toString(session.start(), QLocale::ShortFormat);
 			break;
 		case 2:
-			result = session.stop().toString(Qt::DefaultLocaleShortDate);
+			result = locale.toString(session.stop(), QLocale::ShortFormat);
 			break;
 		case 3:
 			result = session.task();
