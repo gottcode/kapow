@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -221,9 +221,9 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 
 	// Create details
 	QItemEditorFactory* factory = new QItemEditorFactory;
-	factory->registerEditor(QVariant::Date, new QStandardItemEditorCreator<DateEditor>());
-	factory->registerEditor(QVariant::Time, new QStandardItemEditorCreator<TimeEditor>());
-	factory->registerEditor(QVariant::String, new QStandardItemEditorCreator<QLineEdit>());
+	factory->registerEditor(QMetaType::QDate, new QStandardItemEditorCreator<DateEditor>());
+	factory->registerEditor(QMetaType::QTime, new QStandardItemEditorCreator<TimeEditor>());
+	factory->registerEditor(QMetaType::QString, new QStandardItemEditorCreator<QLineEdit>());
 	QItemEditorFactory::setDefaultFactory(factory);
 
 	QWidget* details = new QWidget(contents);
@@ -949,8 +949,8 @@ void Window::loadData(const QString& filename) {
 				m_projects->blockSignals(true);
 				projects.push(new Project(item, attributes.value(QLatin1String("name")).toString()));
 				item = projects.top();
-				item->setExpanded(attributes.value(QLatin1String("expanded")) == "1");
-				current = (attributes.value(QLatin1String("current")) == "1") ? projects.top() : current;
+				item->setExpanded(attributes.value(QLatin1String("expanded")) == QLatin1String("1"));
+				current = (attributes.value(QLatin1String("current")) == QLatin1String("1")) ? projects.top() : current;
 				filter = attributes.value(QLatin1String("filter")).toString().toInt();
 				model = projects.top()->model();
 				model->setDecimalTotals(m_decimals);

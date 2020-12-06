@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2012, 2013, 2014, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -474,7 +474,9 @@ void Report::writeHtml(QString filename) {
 	QFile file(filename);
 	if (file.open(QFile::WriteOnly | QFile::Text)) {
 		QTextStream stream(&file);
+#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 		stream.setCodec("UTF-8");
+#endif
 		stream << generateHtml();
 		file.close();
 	}
