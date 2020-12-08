@@ -1,13 +1,15 @@
-@ECHO ON>windows\dirs.nsh
-@ECHO ON>windows\files.nsh
+@ECHO ON>..\kapow\windows\dirs.nsh
+@ECHO ON>..\kapow\windows\files.nsh
 @ECHO OFF
 
+SET SRCDIR=..\kapow
 SET APP=Kapow
 FOR /f %%i IN ('git describe') DO SET VERSION=%%i
 
 ECHO Copying executable
-MKDIR %APP%
-COPY release\%APP%.exe %APP% >nul
+MKDIR %SRCDIR%\%APP%
+COPY release\%APP%.exe %SRCDIR%\%APP% >nul
+CD %SRCDIR%
 
 ECHO Copying translations
 SET TRANSLATIONS=%APP%\translations
@@ -15,7 +17,7 @@ MKDIR %TRANSLATIONS%
 COPY translations\*.qm %TRANSLATIONS% >nul
 
 ECHO Copying Qt
-%QTDIR%\bin\windeployqt.exe --verbose 0 --no-angle --no-opengl-sw --no-svg %APP%\%APP%.exe
+%QTDIR%\bin\windeployqt.exe --verbose 0 --no-opengl-sw --no-system-d3d-compiler --no-svg %APP%\%APP%.exe
 RMDIR /S /Q %APP%\imageformats
 
 ECHO Creating ReadMe
