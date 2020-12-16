@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,6 +58,7 @@ public:
 	bool remove(int row);
 	void setBilled(int row, bool billed);
 	void setDecimalTotals(bool decimals);
+	void setMaximumDateTime(const QDateTime& max);
 	void toXml(QXmlStreamWriter& xml) const;
 
 	virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
@@ -78,6 +79,7 @@ private:
 private:
 	QList<Session> m_data;
 	QList<int> m_billed;
+	QDateTime m_max_datetime;
 	bool m_decimals;
 	bool m_loaded;
 };

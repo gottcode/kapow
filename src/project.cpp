@@ -125,6 +125,7 @@ bool Project::start(const QDateTime& current) {
 
 	m_start_time = current;
 	m_active = true;
+	m_model->setMaximumDateTime(m_start_time);
 	setText(1, "00:00:00");
 	billedStatusChanged(false);
 
@@ -136,6 +137,7 @@ bool Project::start(const QDateTime& current) {
 void Project::stop(const QDateTime& current, bool* ok) {
 	bool success = true;
 	m_active = false;
+	m_model->setMaximumDateTime(QDateTime());
 	if (current.isValid()) {
 		success = m_model->add(m_start_time, current, m_task);
 	} else {

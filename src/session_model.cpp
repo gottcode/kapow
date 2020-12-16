@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -114,6 +114,13 @@ bool SessionModel::add(const Session& session)
 		return false;
 	}
 
+	// Prevent intersecting current running timer
+	if (m_max_datetime.isValid()) {
+		if ((QDateTime(session.date(), session.start()) >= m_max_datetime) || (QDateTime(session.date(), session.stop()) >= m_max_datetime)) {
+			return false;
+		}
+	}
+
 	// Find session position
 	int pos = 0;
 	for (pos = m_data.count(); pos > 0; --pos) {
@@ -177,7 +184,10 @@ bool SessionModel::edit(int pos, const Session& session)
 	// Replace session
 	remove(pos);
 	if (add(Session(session.date(), session.start(), session.stop(), session.task(), current.isBilled())) == false) {
+		const QDateTime temp = m_max_datetime;
+		m_max_datetime = QDateTime();
 		add(current);
+		m_max_datetime = temp;
 		return false;
 	} else {
 		return true;
@@ -227,6 +237,13 @@ void SessionModel::setDecimalTotals(bool decimals)
 {
 	m_decimals = decimals;
 	emit dataChanged(index(0, 0), index(rowCount(), columnCount()));
+}
+
+//-----------------------------------------------------------------------------
+
+void SessionModel::setMaximumDateTime(const QDateTime& max)
+{
+	m_max_datetime = max;
 }
 
 //-----------------------------------------------------------------------------
