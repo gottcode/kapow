@@ -475,9 +475,7 @@ void Window::start() {
 /*****************************************************************************/
 
 void Window::stop() {
-	bool ok;
-	m_active_project->stop(m_current_time, &ok);
-	if (!ok) {
+	if (!m_active_project->stop(m_current_time)) {
 		QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
 	}
 	m_active_timers.removeAll(m_active_project);

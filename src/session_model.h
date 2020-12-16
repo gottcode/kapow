@@ -42,6 +42,8 @@ public:
 		return (!m_billed.isEmpty() && pos <= m_billed.last());
 	}
 
+	void fixConflict(const QDateTime& current_start, QDateTime& current_stop) const;
+
 	bool hasConflict(const QDateTime& current) const;
 
 	Session session(int pos) const

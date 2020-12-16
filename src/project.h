@@ -33,7 +33,7 @@ public:
 	Project(QTreeWidgetItem* parent, const QString& project);
 
 	bool start(const QDateTime& current);
-	void stop(const QDateTime& current = QDateTime(), bool* ok = 0);
+	bool stop(QDateTime current = QDateTime());
 	void updateTime(const QDateTime& current);
 	void setTask(const QString& task);
 

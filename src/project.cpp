@@ -134,7 +134,12 @@ bool Project::start(const QDateTime& current) {
 
 /*****************************************************************************/
 
-void Project::stop(const QDateTime& current, bool* ok) {
+bool Project::stop(QDateTime current) {
+	// Prevent ending timer inside of or after existing session
+	if (current.isValid()) {
+		m_model->fixConflict(m_start_time, current);
+	}
+
 	bool success = true;
 	m_active = false;
 	m_model->setMaximumDateTime(QDateTime());
@@ -144,9 +149,8 @@ void Project::stop(const QDateTime& current, bool* ok) {
 		billedStatusChanged(m_model->isBilled(m_model->rowCount() - 2));
 	}
 	setText(1, "");
-	if (ok) {
-		*ok = success;
-	}
+
+	return success;
 }
 
 /*****************************************************************************/
