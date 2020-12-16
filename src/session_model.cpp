@@ -37,6 +37,25 @@ SessionModel::SessionModel(QObject* parent) :
 
 //-----------------------------------------------------------------------------
 
+bool SessionModel::hasConflict(const QDateTime& current) const
+{
+	for (int pos = m_data.count(); pos > 0; --pos) {
+		const Session& session = m_data.at(pos - 1);
+		if (session.date() == current.date()) {
+			if ((session.stop() >= current.time()) && (session.start() <= current.time())) {
+				return true;
+			} else if (session.stop() < current.time()) {
+				break;
+			}
+		} else if (session.date() < current.date()) {
+			break;
+		}
+	}
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
 void SessionModel::beginLoad()
 {
 	m_loaded = false;

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2011, 2012, 2013, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -117,11 +117,18 @@ void Project::toXml(QXmlStreamWriter& xml) const {
 
 /*****************************************************************************/
 
-void Project::start(const QDateTime& current) {
+bool Project::start(const QDateTime& current) {
+	// Prevent starting timer inside of existing session
+	if (m_model->hasConflict(current)) {
+		return false;
+	}
+
 	m_start_time = current;
 	m_active = true;
 	setText(1, "00:00:00");
 	billedStatusChanged(false);
+
+	return true;
 }
 
 /*****************************************************************************/

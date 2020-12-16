@@ -454,7 +454,10 @@ void Window::setLocaleClicked() {
 /*****************************************************************************/
 
 void Window::start() {
-	m_active_project->start(m_current_time);
+	if (!m_active_project->start(m_current_time)) {
+		QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
+		return;
+	}
 	m_active_timers += m_active_project;
 	m_remove_project->setEnabled(false);
 	updateDetails();

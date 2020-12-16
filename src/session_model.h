@@ -42,6 +42,8 @@ public:
 		return (!m_billed.isEmpty() && pos <= m_billed.last());
 	}
 
+	bool hasConflict(const QDateTime& current) const;
+
 	Session session(int pos) const
 	{
 		return m_data.value(pos);
