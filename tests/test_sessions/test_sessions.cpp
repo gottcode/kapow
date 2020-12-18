@@ -35,20 +35,20 @@ void TestSessions::addSessions_data()
 	QTest::addColumn<int>("row_count");
 
 	QTest::newRow("Simple session")
-			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
-			<< QString("Test session.")
-			<< 1;
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< 1;
 	QTest::newRow("Session across midnight")
-			<< QDateTime(QDate(2013, 2, 18), QTime(22, 30, 0))
-			<< QDateTime(QDate(2013, 2, 19), QTime(2, 45, 0))
-			<< QString("Test session.")
-			<< 2;
+		<< QDateTime(QDate(2013, 2, 18), QTime(22, 30, 0))
+		<< QDateTime(QDate(2013, 2, 19), QTime(2, 45, 0))
+		<< QString("Test session.")
+		<< 2;
 	QTest::newRow("Two day session")
-			<< QDateTime(QDate(2013, 2, 18), QTime(22, 30, 0))
-			<< QDateTime(QDate(2013, 2, 20), QTime(2, 45, 0))
-			<< QString("Test session.")
-			<< 3;
+		<< QDateTime(QDate(2013, 2, 18), QTime(22, 30, 0))
+		<< QDateTime(QDate(2013, 2, 20), QTime(2, 45, 0))
+		<< QString("Test session.")
+		<< 3;
 }
 
 void TestSessions::addSessions()
@@ -89,40 +89,40 @@ void TestSessions::addConflictingSessions_data()
 	QTest::addColumn<QString>("conflict_task");
 
 	QTest::newRow("Prevent duplicate sessions")
-			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
-			<< QString("Test session.")
-			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
-			<< QString("Conflict session.");
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Conflict session.");
 	QTest::newRow("Prevent overlap session start")
-			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
-			<< QString("Test session.")
-			<< QDateTime(QDate(2013, 2, 18), QTime(11, 0, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
-			<< QString("Conflict session.");
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 18), QTime(11, 0, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
+		<< QString("Conflict session.");
 	QTest::newRow("Prevent overlap session end")
-			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
-			<< QString("Test session.")
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(14, 0, 0))
-			<< QString("Conflict session.");
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(14, 0, 0))
+		<< QString("Conflict session.");
 	QTest::newRow("Prevent overlap entire session")
-			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
-			<< QString("Test session.")
-			<< QDateTime(QDate(2013, 2, 18), QTime(11, 0, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(14, 0, 0))
-			<< QString("Conflict session.");
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 18), QTime(11, 0, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(14, 0, 0))
+		<< QString("Conflict session.");
 	QTest::newRow("Prevent overlap inside session")
-			<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
-			<< QString("Test session.")
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
-			<< QDateTime(QDate(2013, 2, 18), QTime(13, 30, 0))
-			<< QString("Conflict session.");
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 30, 0))
+		<< QString("Conflict session.");
 }
 
 void TestSessions::addConflictingSessions()
@@ -146,80 +146,80 @@ void TestSessions::addConflictingSessions()
 
 void TestSessions::addMultipleSessions_data()
 {
-	QTest::addColumn<QVariantList>("sessions");
-	QTest::addColumn<QVariantList>("result");
+	QTest::addColumn<QList<Session>>("sessions");
+	QTest::addColumn<QList<Session>>("result");
 
 	QTest::newRow("Sorted")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Sorted reverse")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Unsorted")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Sessions with some billed")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Prevent adding to billed")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(10, 0, 0), QTime(11, 0, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(10, 0, 0), QTime(11, 0, 0), "Test session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 }
 
 void TestSessions::addMultipleSessions()
 {
 	SessionModel model;
 
-	QFETCH(QVariantList, sessions);
-	for (int i = 0; i < sessions.count(); ++i) {
-		model.add(sessions.at(i).value<Session>());
+	QFETCH(QList<Session>, sessions);
+	for (const Session& session : sessions) {
+		model.add(session);
 	}
 
-	QFETCH(QVariantList, result);
+	QFETCH(QList<Session>, result);
 	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
-		QCOMPARE(model.session(i), result.at(i).value<Session>());
+		QCOMPARE(model.session(i), result.at(i));
 	}
 }
 
@@ -512,158 +512,157 @@ void TestSessions::addSessionsMaximumDateTime()
 
 void TestSessions::billSessions_data()
 {
-	QTest::addColumn<QVariantList>("sessions");
-	QTest::addColumn<QVariantList>("toggle");
-	QTest::addColumn<QVariantList>("result");
+	QTest::addColumn<QList<Session>>("sessions");
+	QTest::addColumn<QList<int>>("toggle");
+	QTest::addColumn<QList<bool>>("result");
 
 	QTest::newRow("Check unbilled status")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< QVariantList()
-		<< (QVariantList()
-			<< false
-			<< false
-			<< false
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>()
+		<< QList<bool>{
+			false,
+			false,
+			false,
+			false
+		};
 	QTest::newRow("Check billed status")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< QVariantList()
-		<< (QVariantList()
-			<< true
-			<< true
-			<< true
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>()
+		<< QList<bool>{
+			true,
+			true,
+			true,
+			false
+		};
 	QTest::newRow("Bill session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 1
-		)
-		<< (QVariantList()
-			<< true
-			<< true
-			<< false
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<bool>{
+			true,
+			true,
+			false,
+			false
+		};
 	QTest::newRow("Bill second session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 2
-		)
-		<< (QVariantList()
-			<< true
-			<< true
-			<< true
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			2
+		}
+		<< QList<bool>{
+			true,
+			true,
+			true,
+			false
+		};
 	QTest::newRow("Unbill session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 2
-		)
-		<< (QVariantList()
-			<< true
-			<< false
-			<< false
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			2
+		}
+		<< QList<bool>{
+			true,
+			false,
+			false,
+			false
+		};
 	QTest::newRow("Unbill all sessions")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 0
-			<< 2
-		)
-		<< (QVariantList()
-			<< false
-			<< false
-			<< false
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			0,
+			2
+		}
+		<< QList<bool>{
+			false,
+			false,
+			false,
+			false,
+		};
 	QTest::newRow("Toggle billed session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 2
-			<< 2
-		)
-		<< (QVariantList()
-			<< true
-			<< true
-			<< true
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			2,
+			2
+		}
+		<< QList<bool>{
+			true,
+			true,
+			true,
+			false
+		};
 	QTest::newRow("Toggle unbilled session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 2
-			<< 2
-		)
-		<< (QVariantList()
-			<< false
-			<< false
-			<< false
-			<< false
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			2,
+			2
+		}
+		<< QList<bool>{
+			false,
+			false,
+			false,
+			false
+		};
 }
 
 void TestSessions::billSessions()
 {
 	SessionModel model;
 
-	QFETCH(QVariantList, sessions);
-	for (int i = 0; i < sessions.count(); ++i) {
-		model.add(sessions.at(i).value<Session>());
+	QFETCH(QList<Session>, sessions);
+	for (const Session& session : sessions) {
+		model.add(session);
 	}
 
-	QFETCH(QVariantList, toggle);
-	for (int i = 0; i < toggle.count(); ++i) {
-		int pos = toggle.at(i).toInt();
+	QFETCH(QList<int>, toggle);
+	for (int pos : toggle) {
 		model.setBilled(pos, !model.session(pos).isBilled());
 	}
 
-	QFETCH(QVariantList, result);
+	QFETCH(QList<bool>, result);
 	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
-		QCOMPARE(model.isBilled(i), result.at(i).value<bool>());
+		QCOMPARE(model.isBilled(i), result.at(i));
 	}
 }
 
@@ -671,95 +670,108 @@ void TestSessions::billSessions()
 
 void TestSessions::editSessions_data()
 {
-	QTest::addColumn<QVariantList>("sessions");
+	QTest::addColumn<QList<Session>>("sessions");
 	QTest::addColumn<int>("position");
 	QTest::addColumn<Session>("replacement");
-	QTest::addColumn<QVariantList>("result");
+	QTest::addColumn<QList<Session>>("result");
 
 	QTest::newRow("Simple edit")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
 		<< 1
-		<< Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "Test session.", false)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "New session.", false)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "New session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Prevent editing into conflict")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
 		<< 1
-		<< Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< Session(QDate(2013, 2, 18), QTime(13, 0, 0), QTime(14, 45, 0), "New session.", false)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Prevent editing into overlap")
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< 1
+		<< Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "New session.", false)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Prevent editing in billed")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
 		<< 0
-		<< Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "Test session.", false)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "New session.", false)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Prevent editing into billed")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
 		<< 2
-		<< Session(QDate(2013, 2, 18), QTime(10, 0, 0), QTime(11, 0, 0), "Test session.", false)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< Session(QDate(2013, 2, 18), QTime(10, 0, 0), QTime(11, 0, 0), "New session.", false)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Prevent editing billed session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
 		<< 1
-		<< Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "Test session.", false)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< Session(QDate(2013, 2, 18), QTime(15, 0, 0), QTime(15, 45, 0), "New session.", false)
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 }
 
 void TestSessions::editSessions()
 {
 	SessionModel model;
 
-	QFETCH(QVariantList, sessions);
-	for (int i = 0; i < sessions.count(); ++i) {
-		model.add(sessions.at(i).value<Session>());
+	QFETCH(QList<Session>, sessions);
+	for (const Session& session : sessions) {
+		model.add(session);
 	}
 
 	QFETCH(int, position);
 	QFETCH(Session, replacement);
 	model.edit(position, replacement);
 
-	QFETCH(QVariantList, result);
+	QFETCH(QList<Session>, result);
 	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
-		QCOMPARE(model.session(i), result.at(i).value<Session>());
+		QCOMPARE(model.session(i), result.at(i));
 	}
 }
 
@@ -830,86 +842,86 @@ void TestSessions::editSessionsMaximumDateTime()
 
 void TestSessions::removeSessions_data()
 {
-	QTest::addColumn<QVariantList>("sessions");
-	QTest::addColumn<QVariantList>("remove");
-	QTest::addColumn<QVariantList>("result");
+	QTest::addColumn<QList<Session>>("sessions");
+	QTest::addColumn<QList<int>>("remove");
+	QTest::addColumn<QList<Session>>("result");
 
 	QTest::newRow("Remove one session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 1
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Remove two sessions in a row")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 1
-			<< 1
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			1,
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		};
 	QTest::newRow("Prevent removing from billed")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 0
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			0
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 	QTest::newRow("Prevent removing billed session")
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		)
-		<< (QVariantList()
-			<< 1
-		)
-		<< (QVariantList()
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true))
-			<< QVariant::fromValue<Session>(Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false))
-		);
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
 }
 
 void TestSessions::removeSessions()
 {
 	SessionModel model;
 
-	QFETCH(QVariantList, sessions);
-	for (int i = 0; i < sessions.count(); ++i) {
-		model.add(sessions.at(i).value<Session>());
+	QFETCH(QList<Session>, sessions);
+	for (const Session& session : sessions) {
+		model.add(session);
 	}
 
-	QFETCH(QVariantList, remove);
-	for (int i = 0; i < remove.count(); ++i) {
-		model.remove(remove.at(i).toInt());
+	QFETCH(QList<int>, remove);
+	for (int row : remove) {
+		model.remove(row);
 	}
 
-	QFETCH(QVariantList, result);
+	QFETCH(QList<Session>, result);
 	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
-		QCOMPARE(model.session(i), result.at(i).value<Session>());
+		QCOMPARE(model.session(i), result.at(i));
 	}
 }
 
