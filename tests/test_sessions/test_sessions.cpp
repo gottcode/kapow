@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -220,6 +220,291 @@ void TestSessions::addMultipleSessions()
 	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
 		QCOMPARE(model.session(i), result.at(i).value<Session>());
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::addSessionsFixConflict_data()
+{
+	QTest::addColumn<QList<Session>>("sessions");
+	QTest::addColumn<QDateTime>("start");
+	QTest::addColumn<QDateTime>("stop");
+	QTest::addColumn<QString>("task");
+	QTest::addColumn<QList<Session>>("result");
+
+	QTest::newRow("No sessions")
+		<< QList<Session>()
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(15, 45, 0), "New session.", false)
+		};
+	QTest::newRow("Session before")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(15, 45, 0), "New session.", false)
+		};
+	QTest::newRow("Session after")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(15, 45, 0), "New session.", false),
+			Session(QDate(2020, 12, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Intersect end")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(15, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(15, 29, 59), "New session.", false),
+			Session(QDate(2020, 12, 18), QTime(15, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Intersect end next day")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 19), QTime(15, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 19), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(23, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 19), QTime(0, 0, 0), QTime(15, 29, 59), "New session.", false),
+			Session(QDate(2020, 12, 19), QTime(15, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Intersect start")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(12, 30, 0), QTime(15, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(12, 30, 0), QTime(15, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Intersect start previous day")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 17), QTime(12, 30, 0), QTime(15, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 17), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 17), QTime(12, 30, 0), QTime(15, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Overlap single")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(17, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(14, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "Test session.", false)
+		};
+	QTest::newRow("Overlap single next day")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 19), QTime(15, 0, 0), QTime(15, 15, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 19), QTime(17, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(23, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 19), QTime(0, 0, 0), QTime(14, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 19), QTime(15, 0, 0), QTime(15, 15, 0), "Test session.", false)
+		};
+	QTest::newRow("Overlap single previous day")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 19), QTime(17, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(14, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "Test session.", false)
+		};
+	QTest::newRow("Overlap multiple")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "First session.", false),
+			Session(QDate(2020, 12, 18), QTime(16, 0, 0), QTime(16, 15, 0), "Second session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(17, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(14, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "First session.", false),
+			Session(QDate(2020, 12, 18), QTime(16, 0, 0), QTime(16, 15, 0), "Second session.", false)
+		};
+	QTest::newRow("Overlap multiple next day")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 19), QTime(15, 0, 0), QTime(15, 15, 0), "First session.", false),
+			Session(QDate(2020, 12, 19), QTime(16, 0, 0), QTime(16, 15, 0), "Second session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 19), QTime(17, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(23, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 19), QTime(0, 0, 0), QTime(14, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 19), QTime(15, 0, 0), QTime(15, 15, 0), "First session.", false),
+			Session(QDate(2020, 12, 19), QTime(16, 0, 0), QTime(16, 15, 0), "Second session.", false)
+		};
+	QTest::newRow("Overlap multiple previous day")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "First session.", false),
+			Session(QDate(2020, 12, 18), QTime(16, 0, 0), QTime(16, 15, 0), "Second session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 19), QTime(17, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(14, 59, 59), "New session.", false),
+			Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(15, 15, 0), "First session.", false),
+			Session(QDate(2020, 12, 18), QTime(16, 0, 0), QTime(16, 15, 0), "Second session.", false)
+		};
+}
+
+void TestSessions::addSessionsFixConflict()
+{
+	SessionModel model;
+
+	QFETCH(QList<Session>, sessions);
+	for (const Session& session : sessions) {
+		model.add(session);
+	}
+
+	QFETCH(QDateTime, start);
+	QFETCH(QDateTime, stop);
+	QFETCH(QString, task);
+	model.fixConflict(start, stop);
+	model.add(start, stop, task);
+
+	QFETCH(QList<Session>, result);
+	QCOMPARE(model.rowCount() - 1, result.count());
+	for (int i = 0; i < result.count(); ++i) {
+		QCOMPARE(model.session(i), result.at(i));
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::addSessionsHasConflict_data()
+{
+	QTest::addColumn<QList<Session>>("sessions");
+	QTest::addColumn<QDateTime>("test");
+	QTest::addColumn<bool>("result");
+
+	QTest::newRow("No sessions")
+		<< QList<Session>()
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< false;
+	QTest::newRow("Session before")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< false;
+	QTest::newRow("Session after")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< false;
+	QTest::newRow("Between sessions")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2020, 12, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< false;
+	QTest::newRow("Inside session")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false)
+		}
+		<< QDateTime(QDate(2020, 12, 18), QTime(13, 0, 0))
+		<< true;
+}
+
+void TestSessions::addSessionsHasConflict()
+{
+	SessionModel model;
+
+	QFETCH(QList<Session>, sessions);
+	for (const Session& session : sessions) {
+		model.add(session);
+	}
+
+	QFETCH(QDateTime, test);
+	QFETCH(bool, result);
+	QCOMPARE(model.hasConflict(test), result);
+}
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::addSessionsMaximumDateTime_data()
+{
+	QTest::addColumn<QDateTime>("maximum");
+	QTest::addColumn<QDateTime>("start");
+	QTest::addColumn<QDateTime>("stop");
+	QTest::addColumn<QString>("task");
+	QTest::addColumn<QList<Session>>("result");
+
+	QTest::newRow("Add before max")
+		<< QDateTime(QDate(2020, 12, 18), QTime(16, 0, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>{
+			Session(QDate(2020, 12, 18), QTime(14, 30, 0), QTime(15, 45, 0), "New session.", false)
+		};
+	QTest::newRow("Prevent add across max")
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 0, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>();
+	QTest::newRow("Prevent add after max")
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 0, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< QDateTime(QDate(2020, 12, 18), QTime(15, 45, 0))
+		<< QString("New session.")
+		<< QList<Session>();
+}
+
+void TestSessions::addSessionsMaximumDateTime()
+{
+	SessionModel model;
+
+	QFETCH(QDateTime, maximum);
+	model.setMaximumDateTime(maximum);
+
+	QFETCH(QDateTime, start);
+	QFETCH(QDateTime, stop);
+	QFETCH(QString, task);
+	model.add(start, stop, task);
+
+	QFETCH(QList<Session>, result);
+	QCOMPARE(model.rowCount() - 1, result.count());
+	for (int i = 0; i < result.count(); ++i) {
+		QCOMPARE(model.session(i), result.at(i));
 	}
 }
 
@@ -476,6 +761,69 @@ void TestSessions::editSessions()
 	for (int i = 0; i < result.count(); ++i) {
 		QCOMPARE(model.session(i), result.at(i).value<Session>());
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::editSessionsMaximumDateTime_data()
+{
+	QTest::addColumn<Session>("session");
+	QTest::addColumn<QDateTime>("maximum");
+	QTest::addColumn<Session>("replacement");
+	QTest::addColumn<Session>("result");
+
+	QTest::newRow("Before to before max")
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(13, 45, 0), "Test session.", false)
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< Session(QDate(2020, 12, 18), QTime(11, 0, 0), QTime(12, 45, 0), "New session.", false)
+		<< Session(QDate(2020, 12, 18), QTime(11, 0, 0), QTime(12, 45, 0), "New session.", false);
+	QTest::newRow("After to before max")
+		<< Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(16, 45, 0), "Test session.", false)
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< Session(QDate(2020, 12, 18), QTime(11, 0, 0), QTime(12, 45, 0), "New session.", false)
+		<< Session(QDate(2020, 12, 18), QTime(11, 0, 0), QTime(12, 45, 0), "New session.", false);
+	QTest::newRow("Across to before max")
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(17, 45, 0), "Test session.", false)
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< Session(QDate(2020, 12, 18), QTime(11, 0, 0), QTime(12, 45, 0), "New session.", false)
+		<< Session(QDate(2020, 12, 18), QTime(11, 0, 0), QTime(12, 45, 0), "New session.", false);
+	QTest::newRow("Prevent before to after max")
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(13, 45, 0), "Test session.", false)
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(16, 45, 0), "New session.", false)
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(13, 45, 0), "Test session.", false);
+	QTest::newRow("Prevent before to across max")
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(13, 45, 0), "Test session.", false)
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(16, 45, 0), "New session.", false)
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(13, 45, 0), "Test session.", false);
+	QTest::newRow("Prevent after to after max")
+		<< Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(16, 45, 0), "Test session.", false)
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< Session(QDate(2020, 12, 18), QTime(17, 0, 0), QTime(18, 45, 0), "New session.", false)
+		<< Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(16, 45, 0), "Test session.", false);
+	QTest::newRow("Prevent after to across max")
+		<< Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(16, 45, 0), "Test session.", false)
+		<< QDateTime(QDate(2020, 12, 18), QTime(14, 30, 0))
+		<< Session(QDate(2020, 12, 18), QTime(12, 0, 0), QTime(16, 45, 0), "New session.", false)
+		<< Session(QDate(2020, 12, 18), QTime(15, 0, 0), QTime(16, 45, 0), "Test session.", false);
+}
+
+void TestSessions::editSessionsMaximumDateTime()
+{
+	SessionModel model;
+
+	QFETCH(Session, session);
+	model.add(session);
+
+	QFETCH(QDateTime, maximum);
+	model.setMaximumDateTime(maximum);
+
+	QFETCH(Session, replacement);
+	model.edit(0, replacement);
+
+	QFETCH(Session, result);
+	QCOMPARE(model.session(0), result);
 }
 
 //-----------------------------------------------------------------------------

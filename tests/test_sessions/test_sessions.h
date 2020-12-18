@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,10 +33,18 @@ private slots:
 	void addConflictingSessions();
 	void addMultipleSessions_data();
 	void addMultipleSessions();
+	void addSessionsFixConflict_data();
+	void addSessionsFixConflict();
+	void addSessionsHasConflict_data();
+	void addSessionsHasConflict();
+	void addSessionsMaximumDateTime_data();
+	void addSessionsMaximumDateTime();
 	void billSessions_data();
 	void billSessions();
 	void editSessions_data();
 	void editSessions();
+	void editSessionsMaximumDateTime_data();
+	void editSessionsMaximumDateTime();
 	void removeSessions_data();
 	void removeSessions();
 };
