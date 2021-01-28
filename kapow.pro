@@ -89,7 +89,7 @@ macx {
 } else:win32 {
 	RC_ICONS = icons/kapow.ico
 	QMAKE_TARGET_DESCRIPTION = "Punch clock"
-	QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2019 Graeme Gott"
+	QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2021 Graeme Gott"
 } else:unix {
 	isEmpty(PREFIX) {
 		PREFIX = /usr/local
