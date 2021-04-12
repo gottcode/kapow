@@ -7,6 +7,7 @@ equals(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 9) {
 
 TEMPLATE = app
 QT += network widgets printsupport
+CONFIG += c++17
 
 CONFIG(debug, debug|release) {
 	CONFIG += warn_on

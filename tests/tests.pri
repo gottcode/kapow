@@ -3,6 +3,7 @@ QT += network printsupport testlib widgets
 macx {
 	CONFIG -= app_bundle
 }
+CONFIG += c++17
 
 MOC_DIR = ../build
 OBJECTS_DIR = ../build
