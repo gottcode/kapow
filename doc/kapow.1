@@ -1,15 +1,14 @@
-.TH KAPOW "1" "April 2021" "General Commands"
-.P
+.TH KAPOW 1 "April 2021" "Kapow 1.5.10" "General Commands Manual"
+
 .SH "NAME"
-.P
 kapow \- punch clock program
-.P
+
 .SH "SYNOPSIS"
-.P
-\fBkapow\fP [options] [\fIfilename\fP]
-.P
+.B kapow
+[options]
+.RI [ filename ]
+
 .SH "DESCRIPTION"
-.P
 Kapow is a punch clock program designed to easily keep track of your hours,
 whether you're working on one project or many. Simply clock in and out with
 the Start/Stop button. If you make a mistake in your hours, you can go back
@@ -17,44 +16,39 @@ and edit any of the entries by double-clicking on the session in question.
 Kapow also allows you to easily keep track of the hours since you last
 billed a client, by providing a helpful "Billed" checkbox\-\-the totals will
 reflect your work after the last billed session.
-.P
+
 .SH "OPTIONS"
-.P
 .TP
-\fB\-\-ini\=FILE\fP
+.BR \-h ", " \-\-help
+Displays help on commandline options.
+.TP
+.B \-\-help-all
+Displays help including Qt specific options.
+.TP
+.BR \-v ", " \-\-version
+Displays version information.
+.TP
+.B \-\-ini\=FILE
 Store settings as INI format in specified file.
 .TP
-\fB\-\-no\-backups\fP
+.B \-\-no\-backups
 Do not create automatic backups of time data.
 .TP
-\fIfilename\fP
+.I filename
 Time data file to use.
-.P
+
 .SH "SEE ALSO"
-.P
-\fBqt5options\fP(7)
-.P
+.BR qt5options (7)
+
 .SH "REPORTING BUGS"
-.P
 Report bugs to <kapow@bugs.gottcode.org>.
-.P
+
 .SH "COPYRIGHT"
-.P
-Copyright \(co 2008\-2021 Graeme Gott
-.P
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
-.P
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-.P
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
-.P
+Copyright \(co 2008-2021 Graeme Gott
+.PP
+Free use of this software is granted under the terms of the GNU General
+Public License version 3 (GPLv3). There is NO WARRANTY, to the extent
+permitted by law.
+
 .SH "AUTHOR"
-.P
 Graeme Gott <graeme@gottcode.org>.
