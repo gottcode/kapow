@@ -28,7 +28,7 @@
 
 QString Paths::dataPath()
 {
-	static QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+	static QString path = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
 	return path;
 }
 
