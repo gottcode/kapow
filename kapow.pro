@@ -98,9 +98,6 @@ macx {
 	icon.files = icons/hicolor/*
 	icon.path = $$PREFIX/share/icons/hicolor/
 
-	pixmap.files = icons/kapow.xpm
-	pixmap.path = $$PREFIX/share/pixmaps/
-
 	desktop.files = icons/kapow.desktop
 	desktop.path = $$PREFIX/share/applications/
 
@@ -114,5 +111,5 @@ macx {
 	man.files = doc/kapow.1
 	man.path = $$PREFIX/share/man/man1
 
-	INSTALLS += target icon pixmap desktop appdata qm man
+	INSTALLS += target icon desktop appdata qm man
 }
