@@ -76,6 +76,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_backups_enabled(backups_enabled),
 	m_decimals(true),
 	m_inline(true),
+	m_closetotray(true),
 	m_active_project(0),
 	m_active_model(0)
 {
@@ -143,6 +144,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	Settings settings;
 	m_decimals = settings.value("DecimalTotals", true).toBool();
 	m_inline = settings.value("InlineEditing", true).toBool();
+	m_closetotray = settings.value("CloseToTray", true).toBool();
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Project"));
@@ -175,6 +177,10 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	action->setCheckable(true);
 	action->setChecked(m_inline);
 	connect(action, SIGNAL(toggled(bool)), this, SLOT(setInlineEditing(bool)));
+	action = menu->addAction(tr("&Close to tray"));
+	action->setCheckable(true);
+	action->setChecked(m_closetotray);
+	connect(action, SIGNAL(toggled(bool)), this, SLOT(setCloseToTray(bool)));
 	menu->addSeparator();
 	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
 
