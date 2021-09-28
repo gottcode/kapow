@@ -112,6 +112,7 @@ private:
 	QTreeView* m_details;
 	bool m_decimals;
 	bool m_inline;
+	bool m_closetotray;
 	Contact m_contact;
 	Rates m_rates;
 
