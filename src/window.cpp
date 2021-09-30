@@ -374,9 +374,18 @@ void Window::closeEvent(QCloseEvent* event) {
 	settings.setValue("WindowGeometry", saveGeometry());
 	settings.setValue("SplitterSizes", m_contents->saveState());
 
+	bool visible = isVisible();
+
+	if (m_closetotray) {
+		if (visible) {
+			event->ignore();
+			toggleVisible();
+			return;
+		}
+	}
+
 	if (!m_active_timers.isEmpty()) {
 		// Show window
-		bool visible = isVisible();
 		if (!visible) {
 			show();
 		}
@@ -448,6 +457,13 @@ void Window::setInlineEditing(bool edit) {
 	}
 	sessionPressed(m_details->currentIndex());
 	Settings().setValue("InlineEditing", edit);
+}
+
+/*****************************************************************************/
+
+void Window::setCloseToTray(bool closetotray) {
+	m_closetotray = closetotray;
+	Settings().setValue("CloseToTray", closetotray);
 }
 
 /*****************************************************************************/
