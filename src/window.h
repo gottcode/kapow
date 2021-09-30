@@ -55,6 +55,7 @@ private slots:
 	void about();
 	void setDecimalTotals(bool decimals);
 	void setInlineEditing(bool edit);
+	void setCloseToTray(bool closetotray);
 	void setLocaleClicked();
 	void start();
 	void stop();
