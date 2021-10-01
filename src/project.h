@@ -7,11 +7,12 @@
 #ifndef KAPOW_PROJECT_H
 #define KAPOW_PROJECT_H
 
+class FilterModel;
+class SessionModel;
+
 #include <QDateTime>
 #include <QTreeWidgetItem>
 #include <QXmlStreamWriter>
-class SessionModel;
-class FilterModel;
 
 class Project : public QObject, public QTreeWidgetItem {
 	Q_OBJECT

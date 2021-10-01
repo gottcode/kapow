@@ -7,8 +7,9 @@
 #ifndef KAPOW_FILTER_MODEL_H
 #define KAPOW_FILTER_MODEL_H
 
-#include <QSortFilterProxyModel>
 class SessionModel;
+
+#include <QSortFilterProxyModel>
 
 class FilterModel : public QSortFilterProxyModel {
 public:
