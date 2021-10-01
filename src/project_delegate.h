@@ -14,8 +14,8 @@ class ProjectDelegate : public QStyledItemDelegate
 public:
 	explicit ProjectDelegate(QObject* parent = nullptr);
 
-	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-	QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
+	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+	QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
 private:
 	int m_height;

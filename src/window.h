@@ -36,9 +36,9 @@ public:
 	bool isValid() const;
 
 protected:
-	virtual bool event(QEvent* event);
-	virtual void closeEvent(QCloseEvent* event);
-	virtual void showEvent(QShowEvent* event);
+	bool event(QEvent* event) override;
+	void closeEvent(QCloseEvent* event) override;
+	void showEvent(QShowEvent* event) override;
 
 private slots:
 	void about();

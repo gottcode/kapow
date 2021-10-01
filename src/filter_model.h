@@ -35,7 +35,7 @@ public:
 	void setType(int type);
 
 protected:
-	bool filterAcceptsRow(int row, const QModelIndex& parent) const;
+	bool filterAcceptsRow(int row, const QModelIndex& parent) const override;
 
 private:
 	SessionModel* m_model;

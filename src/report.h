@@ -27,7 +27,7 @@ public:
 	Report(SessionModel* data, int current, Contact* contact, Rates* rates, QWidget* parent = nullptr);
 
 protected:
-	virtual void hideEvent(QHideEvent* event);
+	void hideEvent(QHideEvent* event) override;
 
 private slots:
 	void currencyChanged();

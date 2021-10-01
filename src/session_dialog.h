@@ -29,10 +29,10 @@ public:
 	void setSession(const Session& session);
 
 public:
-	virtual void accept();
+	void accept() override;
 
 protected:
-	virtual void hideEvent(QHideEvent* event);
+	void hideEvent(QHideEvent* event) override;
 
 private:
 	Session m_session;
