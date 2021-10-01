@@ -78,54 +78,54 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_current_time = QDateTime::currentDateTime();
 	m_timer = new QTimer(this);
 	m_timer->setInterval(1000);
-	connect(m_timer, SIGNAL(timeout()), this, SLOT(updateTime()));
+	connect(m_timer, &QTimer::timeout, this, &Window::updateTime);
 	m_timer->start();
 
 	m_save_timer = new QTimer(this);
 	m_save_timer->setInterval(30000);
-	connect(m_save_timer, SIGNAL(timeout()), this, SLOT(save()));
+	connect(m_save_timer, &QTimer::timeout, this, &Window::save);
 
 	m_task = new QLineEdit(contents);
 	m_task->setPlaceholderText(SessionModel::tr("Task"));
 	m_task->setFocus();
-	connect(m_task, SIGNAL(textChanged(QString)), this, SLOT(taskChanged(QString)));
-	connect(m_task, SIGNAL(returnPressed()), this, SLOT(taskStart()));
+	connect(m_task, &QLineEdit::textChanged, this, &Window::taskChanged);
+	connect(m_task, &QLineEdit::returnPressed, this, &Window::taskStart);
 
 	m_start = new QPushButton(tr("Start"), contents);
 	m_start->setAutoDefault(true);
-	connect(m_start, SIGNAL(clicked()), this, SLOT(start()));
+	connect(m_start, &QPushButton::clicked, this, &Window::start);
 	int button_width = m_start->sizeHint().width();
 
 	m_start_session = new QAction(tr("Start"), this);
 	m_start_session->setEnabled(true);
-	connect(m_start_session, SIGNAL(triggered(bool)), this, SLOT(start()));
+	connect(m_start_session, &QAction::triggered, this, &Window::start);
 
 	m_stop = new QPushButton(tr("Stop"), contents);
 	m_stop->setAutoDefault(true);
 	m_stop->hide();
-	connect(m_stop, SIGNAL(clicked()), this, SLOT(stop()));
+	connect(m_stop, &QPushButton::clicked, this, &Window::stop);
 	button_width = std::max(m_stop->sizeHint().width(), button_width);
 
 	m_stop_session = new QAction(tr("Stop"), this);
 	m_stop_session->setEnabled(false);
-	connect(m_stop_session, SIGNAL(triggered(bool)), this, SLOT(stop()));
+	connect(m_stop_session, &QAction::triggered, this, &Window::stop);
 
 	m_cancel = new QPushButton(tr("Cancel"), contents);
 	m_cancel->setAutoDefault(true);
 	m_cancel->setEnabled(false);
-	connect(m_cancel, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(m_cancel, &QPushButton::clicked, this, &Window::cancel);
 	button_width = std::max(m_cancel->sizeHint().width(), button_width);
 
 	m_cancel_session = new QAction(tr("Cancel"), this);
 	m_cancel_session->setEnabled(false);
-	connect(m_cancel_session, SIGNAL(triggered(bool)), this, SLOT(cancel()));
+	connect(m_cancel_session, &QAction::triggered, this, &Window::cancel);
 
 	m_start->setMinimumWidth(button_width);
 	m_stop->setMinimumWidth(button_width);
 	m_cancel->setMinimumWidth(button_width);
 
 	m_toggle_visibility = new QAction(tr("&Minimize"), this);
-	connect(m_toggle_visibility, SIGNAL(triggered(bool)), this, SLOT(toggleVisible()));
+	connect(m_toggle_visibility, &QAction::triggered, this, &Window::toggleVisible);
 
 	// Load settings
 	Settings settings;
@@ -135,23 +135,23 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Project"));
-	m_add_project = menu->addAction(tr("&Add"), this, SLOT(addProject()), tr("Ctrl+Shift+N"));
-	m_remove_project = menu->addAction(tr("&Remove"), this, SLOT(removeProject()), tr("Ctrl+Shift+Delete"));
+	m_add_project = menu->addAction(tr("&Add"), this, qOverload<>(&Window::addProject), tr("Ctrl+Shift+N"));
+	m_remove_project = menu->addAction(tr("&Remove"), this, qOverload<>(&Window::removeProject), tr("Ctrl+Shift+Delete"));
 	m_remove_project->setEnabled(false);
 	menu->addSeparator();
-	m_create_report = menu->addAction(tr("&Create Report..."), this, SLOT(createReport()));
+	m_create_report = menu->addAction(tr("&Create Report..."), this, &Window::createReport);
 	m_create_report->setEnabled(false);
-	m_view_reports = menu->addAction(tr("View R&eports"), this, SLOT(viewReports()));
+	m_view_reports = menu->addAction(tr("View R&eports"), this, &Window::viewReports);
 	m_view_reports->setEnabled(false);
 	menu->addSeparator();
-	QAction* quit_action = menu->addAction(tr("&Quit"), this, SLOT(close()), tr("Ctrl+Q"));
+	QAction* quit_action = menu->addAction(tr("&Quit"), this, &Window::close, tr("Ctrl+Q"));
 	quit_action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Session"));
-	m_add_session = menu->addAction(tr("&Add"), this, SLOT(addSession()), QKeySequence::New);
-	m_edit_session = menu->addAction(tr("&Edit"), this, SLOT(editSession()));
+	m_add_session = menu->addAction(tr("&Add"), this, &Window::addSession, QKeySequence::New);
+	m_edit_session = menu->addAction(tr("&Edit"), this, &Window::editSession);
 	m_edit_session->setEnabled(false);
-	m_remove_session = menu->addAction(tr("&Remove"), this, SLOT(removeSession()), tr("Ctrl+Delete"));
+	m_remove_session = menu->addAction(tr("&Remove"), this, &Window::removeSession, tr("Ctrl+Delete"));
 	m_remove_session->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
@@ -159,22 +159,22 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	QAction* action = menu->addAction(tr("&Decimal Totals"));
 	action->setCheckable(true);
 	action->setChecked(m_decimals);
-	connect(action, SIGNAL(toggled(bool)), this, SLOT(setDecimalTotals(bool)));
+	connect(action, &QAction::toggled, this, &Window::setDecimalTotals);
 	action = menu->addAction(tr("&Inline Editing"));
 	action->setCheckable(true);
 	action->setChecked(m_inline);
-	connect(action, SIGNAL(toggled(bool)), this, SLOT(setInlineEditing(bool)));
+	connect(action, &QAction::toggled, this, &Window::setInlineEditing);
 	action = menu->addAction(tr("&Close to Tray"));
 	action->setCheckable(true);
 	action->setChecked(m_closetotray);
-	connect(action, SIGNAL(toggled(bool)), this, SLOT(setCloseToTray(bool)));
+	connect(action, &QAction::toggled, this, &Window::setCloseToTray);
 	menu->addSeparator();
-	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
+	menu->addAction(tr("Application &Language..."), this, &Window::setLocaleClicked);
 
 	menu = menuBar()->addMenu(tr("&Help"));
-	action = menu->addAction(tr("&About"), this, SLOT(about()));
+	action = menu->addAction(tr("&About"), this, &Window::about);
 	action->setMenuRole(QAction::AboutRole);
-	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action = menu->addAction(tr("About &Qt"), qApp, &QApplication::aboutQt);
 	action->setMenuRole(QAction::AboutQtRole);
 
 	QAction* actions_separator = new QAction(this);
@@ -209,8 +209,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_projects->addAction(m_stop_session);
 	m_projects->addAction(m_cancel_session);
 	m_projects->setContextMenuPolicy(Qt::ActionsContextMenu);
-	connect(m_projects, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(projectActivated(QTreeWidgetItem*)));
-	connect(m_projects, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(projectChanged(QTreeWidgetItem*, int)));
+	connect(m_projects, &QTreeWidget::currentItemChanged, this, &Window::projectActivated);
+	connect(m_projects, &QTreeWidget::itemChanged, this, &Window::projectChanged);
 
 	// Create details
 	QItemEditorFactory* factory = new QItemEditorFactory;
@@ -227,7 +227,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_filter->addItem(tr("Show only this year"), FilterModel::ThisYear);
 	m_filter->addItem(tr("Show only this month"), FilterModel::ThisMonth);
 	m_filter->addItem(tr("Show only this week"), FilterModel::ThisWeek);
-	connect(m_filter, SIGNAL(activated(int)), this, SLOT(filterChanged(int)));
+	connect(m_filter, &QComboBox::activated, this, &Window::filterChanged);
 
 	m_details = new QTreeView(details);
 	m_details->setUniformRowHeights(true);
@@ -243,9 +243,9 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_details->addAction(m_edit_session);
 	m_details->addAction(m_remove_session);
 	m_details->setContextMenuPolicy(Qt::ActionsContextMenu);
-	connect(m_details, SIGNAL(activated(const QModelIndex&)), this, SLOT(editSession()));
-	connect(m_details, SIGNAL(pressed(const QModelIndex&)), this, SLOT(sessionPressed(const QModelIndex&)));
-	connect(m_details->verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(sessionsScrolled(int)));
+	connect(m_details, &QTreeView::activated, this, &Window::editSession);
+	connect(m_details, &QTreeView::pressed, this, &Window::sessionPressed);
+	connect(m_details->verticalScrollBar(), &QScrollBar::valueChanged, this, &Window::sessionsScrolled);
 	m_details->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
 	SessionDelegate* delegate = new SessionDelegate(m_details);
@@ -273,7 +273,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_tray_icon = new QSystemTrayIcon(m_inactive_icon, this);
 	m_tray_icon->setContextMenu(context_menu);
 	updateTrayIcon();
-	connect(m_tray_icon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
+	connect(m_tray_icon, &QSystemTrayIcon::activated, this, &Window::trayIconActivated);
 	m_tray_icon->show();
 
 	// Lay out window
@@ -645,13 +645,13 @@ void Window::projectActivated(QTreeWidgetItem* item)
 	}
 
 	if (m_active_model) {
-		disconnect(m_active_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(modelBilledStatusChanged()));
-		disconnect(m_active_model, SIGNAL(rowsInserted(const QModelIndex&, int, int)), this, SLOT(sessionsInserted(const QModelIndex&, int, int)));
+		disconnect(m_active_model, &SessionModel::billedStatusChanged, this, &Window::modelBilledStatusChanged);
+		disconnect(m_active_model, &SessionModel::rowsInserted, this, &Window::sessionsInserted);
 	}
 	m_active_project = project;
 	m_active_model = m_active_project->model();
-	connect(m_active_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(modelBilledStatusChanged()));
-	connect(m_active_model, SIGNAL(rowsInserted(const QModelIndex&, int, int)), this, SLOT(sessionsInserted(const QModelIndex&, int, int)));
+	connect(m_active_model, &SessionModel::billedStatusChanged, this, &Window::modelBilledStatusChanged);
+	connect(m_active_model, &SessionModel::rowsInserted, this, &Window::sessionsInserted);
 
 	m_details->setModel(m_active_project->filterModel());
 	m_details->expandAll();

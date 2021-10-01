@@ -43,19 +43,19 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	// Create contact information widgets
 	QWidget* contact_info_tab = new QWidget(this);
 	m_name = new QLineEdit(contact_info_tab);
-	connect(m_name, SIGNAL(textChanged(const QString&)), this, SLOT(generateText()));
+	connect(m_name, &QLineEdit::textChanged, this, &Report::generateText);
 	m_company = new QLineEdit(contact_info_tab);
-	connect(m_company, SIGNAL(textChanged(const QString&)), this, SLOT(generateText()));
+	connect(m_company, &QLineEdit::textChanged, this, &Report::generateText);
 	m_address = new QTextEdit(contact_info_tab);
-	connect(m_address, SIGNAL(textChanged()), this, SLOT(generateText()));
+	connect(m_address, &QTextEdit::textChanged, this, &Report::generateText);
 	m_phone = new QLineEdit(contact_info_tab);
-	connect(m_phone, SIGNAL(textChanged(const QString&)), this, SLOT(generateText()));
+	connect(m_phone, &QLineEdit::textChanged, this, &Report::generateText);
 	m_fax = new QLineEdit(contact_info_tab);
-	connect(m_fax, SIGNAL(textChanged(const QString&)), this, SLOT(generateText()));
+	connect(m_fax, &QLineEdit::textChanged, this, &Report::generateText);
 	m_email = new QLineEdit(contact_info_tab);
-	connect(m_email, SIGNAL(textChanged(const QString&)), this, SLOT(generateText()));
+	connect(m_email, &QLineEdit::textChanged, this, &Report::generateText);
 	m_website = new QLineEdit(contact_info_tab);
-	connect(m_website, SIGNAL(textChanged(const QString&)), this, SLOT(generateText()));
+	connect(m_website, &QLineEdit::textChanged, this, &Report::generateText);
 
 	QFormLayout* contact_info_layout = new QFormLayout(contact_info_tab);
 	contact_info_layout->addRow(tr("Name:"), m_name);
@@ -70,7 +70,7 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	QWidget* data_tab = new QWidget(this);
 
 	m_groups = new QComboBox(data_tab);
-	connect(m_groups, SIGNAL(currentIndexChanged(int)), this, SLOT(groupSelected(int)));
+	connect(m_groups, &QComboBox::currentIndexChanged, this, &Report::groupSelected);
 
 	m_details = new QTreeView(data_tab);
 	m_details->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -93,16 +93,16 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	m_hourly_rate = new QDoubleSpinBox(data_tab);
 	m_hourly_rate->setRange(0.0, 100000.0);
 	m_hourly_rate->setSpecialValueText(tr("N/A"));
-	connect(m_hourly_rate, SIGNAL(valueChanged(double)), this, SLOT(generateText()));
+	connect(m_hourly_rate, &QDoubleSpinBox::valueChanged, this, &Report::generateText);
 	m_tax_rate = new QDoubleSpinBox(data_tab);
 	m_tax_rate->setRange(0.0, 100.0);
 	m_tax_rate->setSuffix(QLocale().percent());
 	m_tax_rate->setSpecialValueText(tr("N/A"));
-	connect(m_tax_rate, SIGNAL(valueChanged(double)), this, SLOT(generateText()));
+	connect(m_tax_rate, &QDoubleSpinBox::valueChanged, this, &Report::generateText);
 	m_currency_symbol = new QLineEdit(data_tab);
-	connect(m_currency_symbol, SIGNAL(textChanged(const QString&)), this, SLOT(currencyChanged()));
+	connect(m_currency_symbol, &QLineEdit::textChanged, this, &Report::currencyChanged);
 	m_prepend_symbol = new QCheckBox(tr("Prepend currency symbol"), data_tab);
-	connect(m_prepend_symbol, SIGNAL(toggled(bool)), this, SLOT(currencyChanged()));
+	connect(m_prepend_symbol, &QCheckBox::toggled, this, &Report::currencyChanged);
 
 	QFormLayout* data_rates_layout = new QFormLayout;
 	data_rates_layout->setFormAlignment(Qt::AlignCenter | Qt::AlignTop);
@@ -140,16 +140,16 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	} else {
 		buttons->addButton(QDialogButtonBox::Cancel);
 		QPushButton* ok_button = buttons->addButton(QDialogButtonBox::Ok);
-		connect(ok_button, SIGNAL(clicked()), this, SLOT(bill()));
+		connect(ok_button, &QPushButton::clicked, this, &Report::bill);
 	}
 	if (style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
 		export_button->setIcon(QIcon::fromTheme("document-export"));
 		print_button->setIcon(QIcon::fromTheme("document-print"));
 	}
-	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
-	connect(reset_button, SIGNAL(clicked()), this, SLOT(reset()));
-	connect(export_button, SIGNAL(clicked()), this, SLOT(save()));
-	connect(print_button, SIGNAL(clicked()), this, SLOT(print()));
+	connect(buttons, &QDialogButtonBox::rejected, this, &Report::reject);
+	connect(reset_button, &QPushButton::clicked, this, &Report::reset);
+	connect(export_button, &QPushButton::clicked, this, &Report::save);
+	connect(print_button, &QPushButton::clicked, this, &Report::print);
 
 	// Lay out dialog
 	QVBoxLayout* layout = new QVBoxLayout(this);

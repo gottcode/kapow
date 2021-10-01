@@ -19,7 +19,7 @@ FilterModel::FilterModel(SessionModel* model, QObject* parent)
 	, m_type(All)
 {
 	setSourceModel(model);
-	connect(model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), this, SLOT(invalidate()));
+	connect(model, &SessionModel::dataChanged, this, &FilterModel::invalidate);
 }
 
 //-----------------------------------------------------------------------------

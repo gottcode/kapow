@@ -190,7 +190,7 @@ void Project::init()
 	setTextAlignment(1, Qt::AlignRight | Qt::AlignVCenter);
 
 	m_model = new SessionModel(this);
-	connect(m_model, SIGNAL(billedStatusChanged(bool)), this, SLOT(billedStatusChanged(bool)));
+	connect(m_model, &SessionModel::billedStatusChanged, this, &Project::billedStatusChanged);
 	m_filter_model = new FilterModel(m_model, treeWidget());
 	m_active = false;
 	m_scroll_value = -1;

@@ -34,8 +34,8 @@ SessionDialog::SessionDialog(QWidget* parent)
 	m_task = new QLineEdit(this);
 
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, this);
-	connect(buttons, SIGNAL(accepted()), this, SLOT(accept()));
-	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttons, &QDialogButtonBox::accepted, this, &SessionDialog::accept);
+	connect(buttons, &QDialogButtonBox::rejected, this, &SessionDialog::reject);
 
 	QFormLayout* item_layout = new QFormLayout;
 	item_layout->setContentsMargins(0, 0, 0, 0);
