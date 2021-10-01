@@ -16,34 +16,62 @@ public:
 	Contact();
 
 	QString name() const
-		{ return m_name; }
+	{
+		return m_name;
+	}
 	QString company() const
-		{ return m_company; }
+	{
+		return m_company;
+	}
 	QString address() const
-		{ return m_address; }
+	{
+		return m_address;
+	}
 	QString phone() const
-		{ return m_phone; }
+	{
+		return m_phone;
+	}
 	QString fax() const
-		{ return m_fax; }
+	{
+		return m_fax;
+	}
 	QString email() const
-		{ return m_email; }
+	{
+		return m_email;
+	}
 	QString website() const
-		{ return m_website; }
+	{
+		return m_website;
+	}
 
 	void setName(const QString& name)
-		{ m_name = name; }
+	{
+		m_name = name;
+	}
 	void setCompany(const QString& company)
-		{ m_company = company; }
+	{
+		m_company = company;
+	}
 	void setAddress(const QString& address)
-		{ m_address = address; }
+	{
+		m_address = address;
+	}
 	void setPhone(const QString& phone)
-		{ m_phone = phone; }
+	{
+		m_phone = phone;
+	}
 	void setFax(const QString& fax)
-		{ m_fax = fax; }
+	{
+		m_fax = fax;
+	}
 	void setEmail(const QString& email)
-		{ m_email = email; }
+	{
+		m_email = email;
+	}
 	void setWebsite(const QString& website)
-		{ m_website = website; }
+	{
+		m_website = website;
+	}
 
 	void toXml(QXmlStreamWriter& xml) const;
 	void fromXml(QXmlStreamReader& xml);

@@ -10,22 +10,25 @@
 
 #include <cmath>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Session::Session() {
+Session::Session()
+{
 	d = new SessionData(QDate(), QTime(), QTime(), QString(), false);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Session::Session(const QDate& date, const QTime& start, const QTime& stop, const QString& task, bool billed) {
+Session::Session(const QDate& date, const QTime& start, const QTime& stop, const QString& task, bool billed)
+{
 	d = new SessionData(date, start, stop, task, billed);
 	updateTotals();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QString Session::total(Time time, bool decimals, bool unit) const {
+QString Session::total(Time time, bool decimals, bool unit) const
+{
 	QString result;
 	int seconds = d->m_totals[time];
 	if (decimals) {
@@ -49,9 +52,10 @@ QString Session::total(Time time, bool decimals, bool unit) const {
 	return result;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Session::updateTotals(const Session& previous) {
+void Session::updateTotals(const Session& previous)
+{
 	int duration = d->m_start.secsTo(d->m_stop);
 	for (int i = Duration; i <= Total; ++i) {
 		d->m_totals[i] = duration;
@@ -76,9 +80,10 @@ void Session::updateTotals(const Session& previous) {
 	d->m_totals[Total] += previous.d->m_totals[Total];
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Session::toXml(QXmlStreamWriter& xml) const {
+void Session::toXml(QXmlStreamWriter& xml) const
+{
 	xml.writeEmptyElement("session");
 	xml.writeAttribute("date", d->m_date.toString(Qt::ISODate));
 	xml.writeAttribute("start", d->m_start.toString(Qt::ISODate));
@@ -87,14 +92,15 @@ void Session::toXml(QXmlStreamWriter& xml) const {
 	xml.writeAttribute("note", d->m_task);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool operator==(const Session& lhs, const Session &rhs) {
+bool operator==(const Session& lhs, const Session &rhs)
+{
 	return (lhs.date() == rhs.date())
-		&& (lhs.start() == rhs.start())
-		&& (lhs.stop() == rhs.stop())
-		&& (lhs.task() == rhs.task())
-		&& (lhs.isBilled() == rhs.isBilled());
+			&& (lhs.start() == rhs.start())
+			&& (lhs.stop() == rhs.stop())
+			&& (lhs.task() == rhs.task())
+			&& (lhs.isBilled() == rhs.isBilled());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

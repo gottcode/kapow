@@ -13,10 +13,11 @@
 #include <QFormLayout>
 #include <QVBoxLayout>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
 SessionDialog::SessionDialog(QWidget* parent)
-: QDialog(parent) {
+	: QDialog(parent)
+{
 	setWindowTitle(tr("Add Session"));
 
 	m_date = new QDateEdit(QDate::currentDate(), this);
@@ -51,9 +52,10 @@ SessionDialog::SessionDialog(QWidget* parent)
 	resize(Settings().value("SessionDialog/Size").toSize());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void SessionDialog::setSession(const Session& session) {
+void SessionDialog::setSession(const Session& session)
+{
 	setWindowTitle(tr("Edit Session"));
 	m_date->setDate(session.date());
 	m_start->setTime(session.start());
@@ -61,18 +63,20 @@ void SessionDialog::setSession(const Session& session) {
 	m_task->setText(session.task());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void SessionDialog::accept() {
+void SessionDialog::accept()
+{
 	m_session = Session(m_date->date(), m_start->time(), m_stop->time(), m_task->text(), false);
 	QDialog::accept();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void SessionDialog::hideEvent(QHideEvent* event) {
+void SessionDialog::hideEvent(QHideEvent* event)
+{
 	Settings().setValue("SessionDialog/Size", size());
 	QDialog::hideEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

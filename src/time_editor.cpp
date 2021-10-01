@@ -6,11 +6,12 @@
 
 #include "time_editor.h"
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
 TimeEditor::TimeEditor(QWidget* parent)
-: QTimeEdit(parent) {
+	: QTimeEdit(parent)
+{
 	setDisplayFormat(QLocale().timeFormat(QLocale::LongFormat).contains("AP", Qt::CaseInsensitive) ? "h:mm:ss AP" : "HH:mm:ss");
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

@@ -26,8 +26,10 @@ class QTreeView;
 class QTreeWidget;
 class QTreeWidgetItem;
 
-class Window : public QMainWindow {
+class Window : public QMainWindow
+{
 	Q_OBJECT
+
 public:
 	Window(const QString& filename, bool backups_enabled, QWidget* parent = 0);
 

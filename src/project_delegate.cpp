@@ -10,8 +10,8 @@
 
 //-----------------------------------------------------------------------------
 
-ProjectDelegate::ProjectDelegate(QObject* parent) :
-	QStyledItemDelegate(parent)
+ProjectDelegate::ProjectDelegate(QObject* parent)
+	: QStyledItemDelegate(parent)
 {
 	m_height = QLineEdit().sizeHint().height();
 }

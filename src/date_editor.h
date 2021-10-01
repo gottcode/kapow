@@ -9,9 +9,11 @@
 
 #include <QDateEdit>
 
-class DateEditor : public QDateEdit {
+class DateEditor : public QDateEdit
+{
 	Q_OBJECT
 	Q_PROPERTY(QDate date READ date WRITE setDate USER true)
+
 public:
 	DateEditor(QWidget* parent = 0);
 };

@@ -11,17 +11,21 @@
 
 #include <QDate>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
 FilterModel::FilterModel(SessionModel* model, QObject* parent)
-: QSortFilterProxyModel(parent), m_model(model), m_type(All) {
+	: QSortFilterProxyModel(parent)
+	, m_model(model)
+	, m_type(All)
+{
 	setSourceModel(model);
 	connect(model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), this, SLOT(invalidate()));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QModelIndex FilterModel::mapUnbilledToSource(const QModelIndex& proxy_index) const {
+QModelIndex FilterModel::mapUnbilledToSource(const QModelIndex& proxy_index) const
+{
 	QModelIndex index = mapToSource(proxy_index);
 	if (!m_model->isBilled(index.row()) && (index.row() + 1 < m_model->rowCount())) {
 		return index;
@@ -30,16 +34,18 @@ QModelIndex FilterModel::mapUnbilledToSource(const QModelIndex& proxy_index) con
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void FilterModel::setType(int type) {
+void FilterModel::setType(int type)
+{
 	m_type = type;
 	invalidateFilter();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool FilterModel::filterAcceptsRow(int row, const QModelIndex& parent) const {
+bool FilterModel::filterAcceptsRow(int row, const QModelIndex& parent) const
+{
 	Q_UNUSED(parent);
 	if (!parent.isValid() && (row < sourceModel()->rowCount() - 1)) {
 		QDate current = QDate::currentDate();
@@ -72,4 +78,4 @@ bool FilterModel::filterAcceptsRow(int row, const QModelIndex& parent) const {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

@@ -31,10 +31,14 @@
 #include <QTreeView>
 #include <QVBoxLayout>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, QWidget* parent) :
-	QDialog(parent), m_data(data), m_current_row(current), m_contact(contact), m_rates(rates)
+Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, QWidget* parent)
+	: QDialog(parent)
+	, m_data(data)
+	, m_current_row(current)
+	, m_contact(contact)
+	, m_rates(rates)
 {
 	// Create contact information widgets
 	QWidget* contact_info_tab = new QWidget(this);
@@ -159,9 +163,10 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	reset();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::hideEvent(QHideEvent* event) {
+void Report::hideEvent(QHideEvent* event)
+{
 	m_contact->setName(m_name->text());
 	m_contact->setCompany(m_company->text());
 	m_contact->setAddress(m_address->toPlainText());
@@ -180,9 +185,10 @@ void Report::hideEvent(QHideEvent* event) {
 	QDialog::hideEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::currencyChanged() {
+void Report::currencyChanged()
+{
 	QString symbol = m_currency_symbol->text().simplified();
 	if (m_prepend_symbol->isChecked()) {
 		m_hourly_rate->setSuffix("");
@@ -194,16 +200,18 @@ void Report::currencyChanged() {
 	generateText();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::generateText() {
+void Report::generateText()
+{
 
 	m_preview->setHtml(generateHtml());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::groupSelected(int group) {
+void Report::groupSelected(int group)
+{
 	if (group == -1) {
 		return;
 	}
@@ -220,9 +228,10 @@ void Report::groupSelected(int group) {
 	generateText();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::print() {
+void Report::print()
+{
 	QPrinter printer;
 	QPrintDialog dialog(&printer, this);
 	if (dialog.exec() != QDialog::Accepted) {
@@ -231,9 +240,10 @@ void Report::print() {
 	m_preview->print(&printer);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::reset() {
+void Report::reset()
+{
 	m_name->setText(m_contact->name());
 	m_company->setText(m_contact->company());
 	m_address->setPlainText(m_contact->address());
@@ -248,9 +258,10 @@ void Report::reset() {
 	m_prepend_symbol->setChecked(m_rates->prependSymbol());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::save() {
+void Report::save()
+{
 	Settings settings;
 	QString filter = settings.value("ReportDialog/Filter").toString();
 	QString html_filter = tr("Web Page (*.html *.htm)");
@@ -266,10 +277,10 @@ void Report::save() {
 
 	QString selected_filter;
 	QString filename = QFileDialog::getSaveFileName(this,
-		tr("Export Report"),
-		QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
-		filter,
-		&selected_filter);
+			tr("Export Report"),
+			QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+			filter,
+			&selected_filter);
 	if (!filename.isEmpty()) {
 		if (selected_filter == html_filter) {
 			settings.remove("ReportDialog/Filter");
@@ -284,16 +295,18 @@ void Report::save() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::bill() {
+void Report::bill()
+{
 	m_data->setBilled(m_current_row, true);
 	QDialog::accept();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::findGroups() {
+void Report::findGroups()
+{
 	int current_group = -1;
 
 	int count = m_data->rowCount();
@@ -337,9 +350,10 @@ void Report::findGroups() {
 	m_groups->setCurrentIndex(current_group);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QString Report::generateHtml() const {
+QString Report::generateHtml() const
+{
 	if (!m_data->rowCount()) {
 		m_preview->clear();
 		return QString();
@@ -347,14 +361,14 @@ QString Report::generateHtml() const {
 
 	QString title = tr("Time Sheet Report");
 	QString html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n   \"http://www.w3.org/TR/html4/loose.dtd\">\n"
-		"<html>\n"
-		"<head>\n"
-		"<title>" + title + "</title>\n"
-		"<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n"
-		"<style type=\"text/css\">td, th {white-space:pre}</style>\n"
-		"</head>\n"
-		"<body>\n"
-		"<p align=\"center\"><b><big>" + title + "</big><br>\n" + m_groups->currentText() + "</b>\n<small>";
+			"<html>\n"
+			"<head>\n"
+			"<title>" + title + "</title>\n"
+			"<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n"
+			"<style type=\"text/css\">td, th {white-space:pre}</style>\n"
+			"</head>\n"
+			"<body>\n"
+			"<p align=\"center\"><b><big>" + title + "</big><br>\n" + m_groups->currentText() + "</b>\n<small>";
 
 	// Add contact information
 	QString info = m_name->text().simplified();
@@ -394,12 +408,12 @@ QString Report::generateHtml() const {
 	html += "<table width=\"100%\">\n";
 
 	QString header("<tr>"
-		"<th align=\"left\">%1</th>"
-		"<th align=\"left\">%2</th>"
-		"<th align=\"left\">%3</th>"
-		"<th align=\"center\" colspan=\"2\">%4</th>"
-		"<th align=\"right\">%5</th>"
-		"</tr>\n");
+			"<th align=\"left\">%1</th>"
+			"<th align=\"left\">%2</th>"
+			"<th align=\"left\">%3</th>"
+			"<th align=\"center\" colspan=\"2\">%4</th>"
+			"<th align=\"right\">%5</th>"
+			"</tr>\n");
 	for (int column = 0; column < 5; ++column) {
 		header = header.arg(m_data->headerData(column, Qt::Horizontal).toString());
 	}
@@ -420,12 +434,12 @@ QString Report::generateHtml() const {
 			columns.append(data);
 		}
 		html += QString("<tr>"
-			"<td width=\"0%\" align=\"right\">%1</td>"
-			"<td width=\"0%\" align=\"right\">%2</td>"
-			"<td width=\"0%\" align=\"right\">%3</td>"
-			"<td width=\"100%\" colspan=\"2\" style=\"white-space: normal;\">%4</td>"
-			"<td width=\"0%\" align=\"right\">%5</td>"
-			"</tr>\n").arg(columns[0], columns[1], columns[2], columns[3], columns[4]);
+				"<td width=\"0%\" align=\"right\">%1</td>"
+				"<td width=\"0%\" align=\"right\">%2</td>"
+				"<td width=\"0%\" align=\"right\">%3</td>"
+				"<td width=\"100%\" colspan=\"2\" style=\"white-space: normal;\">%4</td>"
+				"<td width=\"0%\" align=\"right\">%5</td>"
+				"</tr>\n").arg(columns[0], columns[1], columns[2], columns[3], columns[4]);
 	}
 
 	// Add billing information
@@ -452,9 +466,10 @@ QString Report::generateHtml() const {
 	return html;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::writeHtml(QString filename) {
+void Report::writeHtml(QString filename)
+{
 	if (!filename.endsWith(".html") && !filename.endsWith(".htm")) {
 		filename.append(".html");
 	}
@@ -469,9 +484,10 @@ void Report::writeHtml(QString filename) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-static void writeWrappedLine(const QByteArray& line, QIODevice* device) {
+static void writeWrappedLine(const QByteArray& line, QIODevice* device)
+{
 	int end = line.count();
 	int start = 0;
 	int pos = 0;
@@ -496,7 +512,8 @@ static void writeWrappedLine(const QByteArray& line, QIODevice* device) {
 	}
 }
 
-void Report::writeICalendar(QString filename) {
+void Report::writeICalendar(QString filename)
+{
 	if (!filename.endsWith(".ics")) {
 		filename.append(".ics");
 	}
@@ -553,9 +570,10 @@ void Report::writeICalendar(QString filename) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Report::writeOutlookCsv(QString filename) {
+void Report::writeOutlookCsv(QString filename)
+{
 	if (!filename.endsWith(".csv")) {
 		filename.append(".csv");
 	}
@@ -571,13 +589,13 @@ void Report::writeOutlookCsv(QString filename) {
 
 			Session session = m_data->session(row);
 			stream << '"' << session.task() << QLatin1String("\",\"")
-				<< session.date().toString("MM/dd/yy") << QLatin1String("\",\"")
-				<< session.start().toString("hh:mm:ss AP") << QLatin1String("\",\"")
-				<< session.date().toString("MM/dd/yy") << QLatin1String("\",\"")
-				<< session.stop().toString("hh:mm:ss AP") << QLatin1String("\"\r\n");
+					<< session.date().toString("MM/dd/yy") << QLatin1String("\",\"")
+					<< session.start().toString("hh:mm:ss AP") << QLatin1String("\",\"")
+					<< session.date().toString("MM/dd/yy") << QLatin1String("\",\"")
+					<< session.stop().toString("hh:mm:ss AP") << QLatin1String("\"\r\n");
 		}
 		file.close();
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

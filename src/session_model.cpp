@@ -15,10 +15,10 @@
 
 //-----------------------------------------------------------------------------
 
-SessionModel::SessionModel(QObject* parent) :
-	QAbstractItemModel(parent),
-	m_decimals(true),
-	m_loaded(true)
+SessionModel::SessionModel(QObject* parent)
+	: QAbstractItemModel(parent)
+	, m_decimals(true)
+	, m_loaded(true)
 {
 }
 

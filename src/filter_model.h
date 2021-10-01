@@ -11,13 +11,15 @@ class SessionModel;
 
 #include <QSortFilterProxyModel>
 
-class FilterModel : public QSortFilterProxyModel {
+class FilterModel : public QSortFilterProxyModel
+{
 public:
 	FilterModel(SessionModel* model, QObject* parent = 0);
 
 	QModelIndex mapUnbilledToSource(const QModelIndex& proxy_index) const;
 
-	enum FilterType {
+	enum FilterType
+	{
 		All,
 		Unbilled,
 		ThisYear,
@@ -25,7 +27,8 @@ public:
 		ThisWeek
 	};
 
-	int type() const {
+	int type() const
+	{
 		return m_type;
 	}
 

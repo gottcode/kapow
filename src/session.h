@@ -12,42 +12,51 @@
 #include <QExplicitlySharedDataPointer>
 #include <QXmlStreamWriter>
 
-class Session {
+class Session
+{
 	Q_DECLARE_TR_FUNCTIONS(Session)
 
 public:
 	Session();
 	Session(const QDate& date, const QTime& start, const QTime& stop, const QString& task, bool billed);
 
-	bool isValid() const {
+	bool isValid() const
+	{
 		return d->m_date.isValid() && (d->m_start <= d->m_stop);
 	}
 
-	QDate date() const {
+	QDate date() const
+	{
 		return d->m_date;
 	}
 
-	QTime start() const {
+	QTime start() const
+	{
 		return d->m_start;
 	}
 
-	QTime stop() const {
+	QTime stop() const
+	{
 		return d->m_stop;
 	}
 
-	QString task() const {
+	QString task() const
+	{
 		return d->m_task;
 	}
 
-	bool isBilled() const {
+	bool isBilled() const
+	{
 		return d->m_billed;
 	}
 
-	void setBilled(bool billed) {
+	void setBilled(bool billed)
+	{
 		d->m_billed = billed;
 	}
 
-	enum Time {
+	enum Time
+	{
 		Duration = 0,
 		Daily,
 		Weekly,
@@ -59,10 +68,17 @@ public:
 	void toXml(QXmlStreamWriter& xml) const;
 
 private:
-	class SessionData: public QSharedData {
+	class SessionData: public QSharedData
+	{
 	public:
 		SessionData(const QDate& date, const QTime& start, const QTime& stop, const QString& task, bool billed)
-		: m_date(date), m_start(start.addMSecs(-start.msec())), m_stop(stop.addMSecs(-stop.msec())), m_task(task), m_billed(billed), m_totals(Total + 1) {
+			: m_date(date)
+			, m_start(start.addMSecs(-start.msec()))
+			, m_stop(stop.addMSecs(-stop.msec()))
+			, m_task(task)
+			, m_billed(billed)
+			, m_totals(Total + 1)
+		{
 		}
 
 		QDate m_date;

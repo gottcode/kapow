@@ -18,9 +18,9 @@
 
 //-----------------------------------------------------------------------------
 
-SessionDelegate::SessionDelegate(QObject* parent) :
-	QStyledItemDelegate(parent),
-	m_ratio(1)
+SessionDelegate::SessionDelegate(QObject* parent)
+	: QStyledItemDelegate(parent)
+	, m_ratio(1)
 {
 	m_height = std::max(QDateEdit().sizeHint().height(), QLineEdit().sizeHint().height());
 }

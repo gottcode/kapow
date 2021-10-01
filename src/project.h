@@ -14,8 +14,10 @@ class SessionModel;
 #include <QTreeWidgetItem>
 #include <QXmlStreamWriter>
 
-class Project : public QObject, public QTreeWidgetItem {
+class Project : public QObject, public QTreeWidgetItem
+{
 	Q_OBJECT
+
 public:
 	Project(QTreeWidget* parent, const QString& project);
 	Project(QTreeWidgetItem* parent, const QString& project);
@@ -27,15 +29,18 @@ public:
 
 	bool isActive() const;
 
-	SessionModel* model() const {
+	SessionModel* model() const
+	{
 		return m_model;
 	}
 
-	FilterModel* filterModel() const {
+	FilterModel* filterModel() const
+	{
 		return m_filter_model;
 	}
 
-	int scrollValue() const {
+	int scrollValue() const
+	{
 		return m_scroll_value;
 	}
 

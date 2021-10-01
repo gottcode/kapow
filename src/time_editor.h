@@ -9,9 +9,11 @@
 
 #include <QTimeEdit>
 
-class TimeEditor : public QTimeEdit {
+class TimeEditor : public QTimeEdit
+{
 	Q_OBJECT
 	Q_PROPERTY(QTime time READ time WRITE setTime USER true)
+
 public:
 	TimeEditor(QWidget* parent = 0);
 };

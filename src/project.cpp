@@ -13,23 +13,26 @@
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
 Project::Project(QTreeWidget* parent, const QString& project)
-: QTreeWidgetItem(parent, QStringList(project)) {
+	: QTreeWidgetItem(parent, QStringList(project))
+{
 	init();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
 Project::Project(QTreeWidgetItem* parent, const QString& project)
-: QTreeWidgetItem(parent, QStringList(project)) {
+	: QTreeWidgetItem(parent, QStringList(project))
+{
 	init();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool Project::isActive() const {
+bool Project::isActive() const
+{
 	if (m_active) {
 		return true;
 	}
@@ -45,9 +48,10 @@ bool Project::isActive() const {
 	return false;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Project::setDecimalTotals(bool decimals) {
+void Project::setDecimalTotals(bool decimals)
+{
 	m_model->setDecimalTotals(decimals);
 	int count = childCount();
 	for (int i = 0; i < count; ++i) {
@@ -58,21 +62,24 @@ void Project::setDecimalTotals(bool decimals) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Project::setScrollValue(int value) {
+void Project::setScrollValue(int value)
+{
 	m_scroll_value = value;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-QString Project::time() const {
+QString Project::time() const
+{
 	return text(1);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Project::toXml(QXmlStreamWriter& xml) const {
+void Project::toXml(QXmlStreamWriter& xml) const
+{
 	xml.writeStartElement("project");
 	xml.writeAttribute("name", text(0));
 	if (isExpanded()) {
@@ -102,9 +109,10 @@ void Project::toXml(QXmlStreamWriter& xml) const {
 	xml.writeEndElement();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool Project::start(const QDateTime& current) {
+bool Project::start(const QDateTime& current)
+{
 	// Prevent starting timer inside of existing session
 	if (m_model->hasConflict(current)) {
 		return false;
@@ -119,9 +127,10 @@ bool Project::start(const QDateTime& current) {
 	return true;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool Project::stop(QDateTime current) {
+bool Project::stop(QDateTime current)
+{
 	// Prevent ending timer inside of or after existing session
 	if (current.isValid()) {
 		m_model->fixConflict(m_start_time, current);
@@ -140,15 +149,17 @@ bool Project::stop(QDateTime current) {
 	return success;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Project::setTask(const QString& task) {
+void Project::setTask(const QString& task)
+{
 	m_task = task;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Project::updateTime(const QDateTime& current) {
+void Project::updateTime(const QDateTime& current)
+{
 	if (m_active) {
 		QTime convert(0, 0, 0);
 		convert = convert.addSecs(m_start_time.secsTo(current));
@@ -164,15 +175,17 @@ void Project::updateTime(const QDateTime& current) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Project::billedStatusChanged(bool billed) {
+void Project::billedStatusChanged(bool billed)
+{
 	setForeground(0, QApplication::palette().color((billed && !m_active) ? QPalette::Disabled : QPalette::Normal, QPalette::Text));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Project::init() {
+void Project::init()
+{
 	setFlags(flags() | Qt::ItemIsEditable);
 	setTextAlignment(1, Qt::AlignRight | Qt::AlignVCenter);
 
@@ -183,4 +196,4 @@ void Project::init() {
 	m_scroll_value = -1;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

@@ -53,19 +53,19 @@
 
 #include <algorithm>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
-	QMainWindow(parent),
-	m_filename(filename),
-	m_valid(true),
-	m_blocked(false),
-	m_backups_enabled(backups_enabled),
-	m_decimals(true),
-	m_inline(true),
-	m_closetotray(false),
-	m_active_project(0),
-	m_active_model(0)
+Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
+	: QMainWindow(parent)
+	, m_filename(filename)
+	, m_valid(true)
+	, m_blocked(false)
+	, m_backups_enabled(backups_enabled)
+	, m_decimals(true)
+	, m_inline(true)
+	, m_closetotray(false)
+	, m_active_project(0)
+	, m_active_model(0)
 {
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
@@ -337,15 +337,17 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool Window::isValid() const {
+bool Window::isValid() const
+{
 	return m_valid;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool Window::event(QEvent* event) {
+bool Window::event(QEvent* event)
+{
 	if (event->type() == QEvent::WindowBlocked) {
 		m_blocked = true;
 	} else if (event->type() == QEvent::WindowUnblocked) {
@@ -354,9 +356,10 @@ bool Window::event(QEvent* event) {
 	return QMainWindow::event(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::closeEvent(QCloseEvent* event) {
+void Window::closeEvent(QCloseEvent* event)
+{
 	Settings settings;
 	settings.setValue("WindowGeometry", saveGeometry());
 	settings.setValue("SplitterSizes", m_contents->saveState());
@@ -401,16 +404,18 @@ void Window::closeEvent(QCloseEvent* event) {
 	m_tray_icon = 0;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::showEvent(QShowEvent* event) {
+void Window::showEvent(QShowEvent* event)
+{
 	QMainWindow::showEvent(event);
 	m_task->setFocus();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::about() {
+void Window::about()
+{
 	QMessageBox::about(this, tr("About"), QString("<p align='center'><big><b>%1 %2</b></big><br/>%3<br/><small>%4</small><br/><small>%5</small></p>")
 		.arg(tr("Kapow Punch Clock"), QCoreApplication::applicationVersion(),
 			tr("A program to help track spent time"),
@@ -419,9 +424,10 @@ void Window::about() {
 	);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::setDecimalTotals(bool decimals) {
+void Window::setDecimalTotals(bool decimals)
+{
 	m_decimals = decimals;
 	int count = m_projects->topLevelItemCount();
 	for (int i = 0; i < count; ++i) {
@@ -433,9 +439,10 @@ void Window::setDecimalTotals(bool decimals) {
 	Settings().setValue("DecimalTotals", m_decimals);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::setInlineEditing(bool edit) {
+void Window::setInlineEditing(bool edit)
+{
 	m_inline = edit;
 	if (!edit) {
 		m_details->closePersistentEditor(m_details->currentIndex());
@@ -444,23 +451,26 @@ void Window::setInlineEditing(bool edit) {
 	Settings().setValue("InlineEditing", edit);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::setCloseToTray(bool closetotray) {
+void Window::setCloseToTray(bool closetotray)
+{
 	m_closetotray = closetotray;
 	Settings().setValue("CloseToTray", closetotray);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::setLocaleClicked() {
+void Window::setLocaleClicked()
+{
 	LocaleDialog dialog(this);
 	dialog.exec();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::start() {
+void Window::start()
+{
 	if (!m_active_project->start(m_current_time)) {
 		QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
 		return;
@@ -479,9 +489,10 @@ void Window::start() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::stop() {
+void Window::stop()
+{
 	if (!m_active_project->stop(m_current_time)) {
 		QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
 	}
@@ -501,9 +512,10 @@ void Window::stop() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::cancel() {
+void Window::cancel()
+{
 	if (QMessageBox::question(this, tr("Question"), tr("Cancel this session?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_active_project->stop();
 		m_active_timers.removeAll(m_active_project);
@@ -523,23 +535,26 @@ void Window::cancel() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::taskChanged(const QString& task) {
+void Window::taskChanged(const QString& task)
+{
 	m_active_project->setTask(task);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::taskStart() {
+void Window::taskStart()
+{
 	if (m_start->isVisible()) {
 		start();
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::updateTime() {
+void Window::updateTime()
+{
 	m_current_time = QDateTime::currentDateTime();
 	int count = m_projects->topLevelItemCount();
 	for (int i = 0; i < count; ++i) {
@@ -556,9 +571,10 @@ void Window::updateTime() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::addProject() {
+void Window::addProject()
+{
 	bool ok;
 	QString name;
 	forever {
@@ -576,15 +592,17 @@ void Window::addProject() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::editProject() {
+void Window::editProject()
+{
 	m_projects->edit(m_projects->currentIndex());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::removeProject() {
+void Window::removeProject()
+{
 	if (QMessageBox::question(this, tr("Question"), tr("Remove selected project?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_remove_project->setEnabled(false);
 		m_remove_session->setEnabled(false);
@@ -592,9 +610,10 @@ void Window::removeProject() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::createReport() {
+void Window::createReport()
+{
 	int current = currentRow();
 	if (current == -1) {
 		return;
@@ -603,9 +622,10 @@ void Window::createReport() {
 	report.exec();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::viewReports() {
+void Window::viewReports()
+{
 	int current = currentRow();
 	if ((current == (m_active_model->rowCount() - 1)) || !m_active_model->isBilled(current)) {
 		current = -1;
@@ -614,9 +634,10 @@ void Window::viewReports() {
 	report.exec();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::projectActivated(QTreeWidgetItem* item) {
+void Window::projectActivated(QTreeWidgetItem* item)
+{
 	Project* project = dynamic_cast<Project*>(item);
 	if (!project) {
 		addProject(tr("Untitled"));
@@ -663,34 +684,38 @@ void Window::projectActivated(QTreeWidgetItem* item) {
 	updateWindowTitle(item->text(0));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::projectChanged(QTreeWidgetItem* item, int column) {
+void Window::projectChanged(QTreeWidgetItem* item, int column)
+{
 	if (column == 0) {
 		updateWindowTitle(item->text(0));
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::filterChanged(int index) {
+void Window::filterChanged(int index)
+{
 	m_active_project->filterModel()->setType(m_filter->itemData(index).toInt());
 	m_create_report->setEnabled(m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex()).isValid());
 	m_details->expandAll();
 	m_details->scrollToBottom();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::modelBilledStatusChanged() {
+void Window::modelBilledStatusChanged()
+{
 	sessionPressed(m_details->currentIndex());
 	m_view_reports->setEnabled(m_active_model->isBilled(0));
 	m_details->expandAll();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::sessionPressed(const QModelIndex& index) {
+void Window::sessionPressed(const QModelIndex& index)
+{
 	QModelIndex session = m_active_project->filterModel()->mapUnbilledToSource(index);
 	bool enabled = session.isValid();
 	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
@@ -698,23 +723,26 @@ void Window::sessionPressed(const QModelIndex& index) {
 	m_create_report->setEnabled(enabled);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::sessionsInserted(const QModelIndex&, int, int end) {
+void Window::sessionsInserted(const QModelIndex&, int, int end)
+{
 	m_details->setCurrentIndex(m_active_project->filterModel()->mapFromSource(m_active_model->index(end, 0)));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::sessionsScrolled(int value) {
+void Window::sessionsScrolled(int value)
+{
 	if (m_active_project) {
 		m_active_project->setScrollValue(value);
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::addSession() {
+void Window::addSession()
+{
 	Q_ASSERT(m_active_model != 0);
 	SessionDialog dialog(this);
 	forever {
@@ -732,9 +760,10 @@ void Window::addSession() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::editSession() {
+void Window::editSession()
+{
 	Q_ASSERT(m_active_model != 0);
 	QModelIndex index = m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex());
 	if (!index.isValid()) {
@@ -762,9 +791,10 @@ void Window::editSession() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::removeSession() {
+void Window::removeSession()
+{
 	Q_ASSERT(m_active_model != 0);
 	if (QMessageBox::question(this, tr("Question"), tr("Remove selected session?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_edit_session->setEnabled(false);
@@ -773,9 +803,10 @@ void Window::removeSession() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::toggleColumnHidden(int column) {
+void Window::toggleColumnHidden(int column)
+{
 	m_details->setColumnHidden(column, !m_details->isColumnHidden(column));
 	QStringList hidden;
 	for (int i = 3; i < 10; ++i) {
@@ -786,9 +817,10 @@ void Window::toggleColumnHidden(int column) {
 	Settings().setValue("HiddenColumns", hidden);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::save() {
+void Window::save()
+{
 	if (!m_valid) {
 		return;
 	}
@@ -832,17 +864,19 @@ void Window::save() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
+void Window::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+{
 	if (reason == QSystemTrayIcon::Trigger) {
 		toggleVisible();
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::toggleVisible() {
+void Window::toggleVisible()
+{
 	if (isVisible() && !m_blocked) {
 		m_toggle_visibility->setText(tr("&Restore"));
 		hide();
@@ -854,9 +888,10 @@ void Window::toggleVisible() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-int Window::currentRow() {
+int Window::currentRow()
+{
 	QModelIndex session = m_details->currentIndex();
 	if (session.parent().isValid()) {
 		session = session.parent();
@@ -865,9 +900,10 @@ int Window::currentRow() {
 	return session.isValid() ? session.row() : -1;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::loadData() {
+void Window::loadData()
+{
 	// Try to load time data
 	loadData(m_filename);
 	if (m_valid) {
@@ -905,9 +941,10 @@ void Window::loadData() {
 	loadData(m_filename);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::loadData(const QString& filename) {
+void Window::loadData(const QString& filename)
+{
 	// Open data file; create default project if it doesn't exist
 	QFile file(filename);
 	if (!file.exists()) {
@@ -1010,10 +1047,10 @@ void Window::loadData(const QString& filename) {
 		// Warn user that data is invalid
 		QMessageBox message(QMessageBox::Critical, tr("Error"), tr("Unable to read time data."), QMessageBox::Ok, this);
 		message.setInformativeText(QString("%1:%2:%3: %4")
-			.arg(path)
-			.arg(xml.lineNumber())
-			.arg(xml.columnNumber())
-			.arg(xml.errorString().toHtmlEscaped())
+				.arg(path)
+				.arg(xml.lineNumber())
+				.arg(xml.columnNumber())
+				.arg(xml.errorString().toHtmlEscaped())
 		);
 		message.exec();
 		return;
@@ -1033,9 +1070,10 @@ void Window::loadData(const QString& filename) {
 	m_projects->setCurrentItem(current);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::createDataBackup() {
+void Window::createDataBackup()
+{
 	// Create daily backup
 	QDate date = QDate::currentDate();
 	QString path = m_filename + ".bak-" + date.toString("yyyyMMdd");
@@ -1104,17 +1142,19 @@ void Window::createDataBackup() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::addProject(const QString& name) {
+void Window::addProject(const QString& name)
+{
 	Project* project = new Project(m_projects, name);
 	project->model()->setDecimalTotals(m_decimals);
 	m_projects->setCurrentItem(project);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::removeProject(QTreeWidgetItem* item) {
+void Window::removeProject(QTreeWidgetItem* item)
+{
 	for (int i = item->childCount() - 1; i >= 0; i--) {
 		removeProject(item->child(i));
 	}
@@ -1126,9 +1166,10 @@ void Window::removeProject(QTreeWidgetItem* item) {
 	item = 0;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::updateDetails() {
+void Window::updateDetails()
+{
 	Q_ASSERT(m_active_project != 0);
 	updateDisplay();
 	updateSessionButtons();
@@ -1136,16 +1177,18 @@ void Window::updateDetails() {
 	m_projects->resizeColumnToContents(1);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::updateDisplay() {
+void Window::updateDisplay()
+{
 	QString time = m_active_project->time();
 	m_display->setText(!time.isEmpty() ? time : "00:00:00");
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::updateSessionButtons() {
+void Window::updateSessionButtons()
+{
 	if (!m_active_project->time().isEmpty()) {
 		m_start->hide();
 		m_stop->show();
@@ -1159,9 +1202,10 @@ void Window::updateSessionButtons() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::updateTrayIcon() {
+void Window::updateTrayIcon()
+{
 	int count = m_active_timers.count();
 	if (count == 1) {
 		m_tray_icon->setIcon(m_active_icon);
@@ -1175,10 +1219,11 @@ void Window::updateTrayIcon() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::updateWindowTitle(const QString& project) {
+void Window::updateWindowTitle(const QString& project)
+{
 	setWindowFilePath(project);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

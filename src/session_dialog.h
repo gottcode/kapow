@@ -14,12 +14,15 @@
 #include <QLineEdit>
 #include <QTimeEdit>
 
-class SessionDialog : public QDialog {
+class SessionDialog : public QDialog
+{
 	Q_OBJECT
+
 public:
 	SessionDialog(QWidget* parent = 0);
 
-	Session session() const {
+	Session session() const
+	{
 		return m_session;
 	}
 
