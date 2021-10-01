@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef PATHS_H
-#define PATHS_H
+#ifndef KAPOW_PATHS_H
+#define KAPOW_PATHS_H
 
 class QString;
 
@@ -16,4 +16,4 @@ public:
 	static QString oldDataPath();
 };
 
-#endif
+#endif // KAPOW_PATHS_H

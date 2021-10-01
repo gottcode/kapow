@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef SESSION_DIALOG_H
-#define SESSION_DIALOG_H
+#ifndef KAPOW_SESSION_DIALOG_H
+#define KAPOW_SESSION_DIALOG_H
 
 #include "session.h"
 
@@ -39,4 +39,4 @@ private:
 	QLineEdit* m_task;
 };
 
-#endif
+#endif // KAPOW_SESSION_DIALOG_H

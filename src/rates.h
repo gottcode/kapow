@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef RATES_H
-#define RATES_H
+#ifndef KAPOW_RATES_H
+#define KAPOW_RATES_H
 
 #include <QCoreApplication>
 #include <QXmlStreamReader>
@@ -45,4 +45,4 @@ private:
 	bool m_prepend_symbol;
 };
 
-#endif
+#endif // KAPOW_RATES_H

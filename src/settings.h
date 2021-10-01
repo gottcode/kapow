@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef SETTINGS_H
-#define SETTINGS_H
+#ifndef KAPOW_SETTINGS_H
+#define KAPOW_SETTINGS_H
 
 #include <QSettings>
 #include <QSharedPointer>
@@ -36,4 +36,4 @@ private:
 	QSharedPointer<QSettings> m_settings;
 };
 
-#endif
+#endif // KAPOW_SETTINGS_H

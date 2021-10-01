@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef SESSION_DELEGATE_H
-#define SESSION_DELEGATE_H
+#ifndef KAPOW_SESSION_DELEGATE_H
+#define KAPOW_SESSION_DELEGATE_H
 
 #include <QStyledItemDelegate>
 
@@ -25,4 +25,4 @@ private:
 	QVector<int> m_alphas;
 };
 
-#endif
+#endif // KAPOW_SESSION_DELEGATE_H

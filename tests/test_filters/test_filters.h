@@ -30,4 +30,4 @@ private slots:
 	void mapUnbilled();
 };
 
-#endif
+#endif // KAPOW_TEST_FILTERS_H

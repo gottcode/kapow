@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef REPORT_H
-#define REPORT_H
+#ifndef KAPOW_REPORT_H
+#define KAPOW_REPORT_H
 
 class Contact;
 class Rates;
@@ -67,4 +67,4 @@ private:
 	Rates* m_rates;
 };
 
-#endif
+#endif // KAPOW_REPORT_H

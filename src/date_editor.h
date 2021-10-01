@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef DATE_EDITOR_H
-#define DATE_EDITOR_H
+#ifndef KAPOW_DATE_EDITOR_H
+#define KAPOW_DATE_EDITOR_H
 
 #include <QDateEdit>
 
@@ -16,4 +16,4 @@ public:
 	DateEditor(QWidget* parent = 0);
 };
 
-#endif
+#endif // KAPOW_DATE_EDITOR_H

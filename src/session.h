@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef SESSION_H
-#define SESSION_H
+#ifndef KAPOW_SESSION_H
+#define KAPOW_SESSION_H
 
 #include <QCoreApplication>
 #include <QDateTime>
@@ -77,4 +77,4 @@ private:
 
 bool operator==(const Session& lhs, const Session &rhs);
 
-#endif
+#endif // KAPOW_SESSION_H

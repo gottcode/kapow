@@ -36,4 +36,4 @@ private slots:
 	void removeSessions();
 };
 
-#endif
+#endif // KAPOW_TEST_SESSIONS_H

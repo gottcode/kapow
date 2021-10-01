@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef TIME_EDITOR_H
-#define TIME_EDITOR_H
+#ifndef KAPOW_TIME_EDITOR_H
+#define KAPOW_TIME_EDITOR_H
 
 #include <QTimeEdit>
 
@@ -16,4 +16,4 @@ public:
 	TimeEditor(QWidget* parent = 0);
 };
 
-#endif
+#endif // KAPOW_TIME_EDITOR_H

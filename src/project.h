@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef PROJECT_H
-#define PROJECT_H
+#ifndef KAPOW_PROJECT_H
+#define KAPOW_PROJECT_H
 
 #include <QDateTime>
 #include <QTreeWidgetItem>
@@ -59,4 +59,4 @@ private:
 	int m_scroll_value;
 };
 
-#endif
+#endif // KAPOW_PROJECT_H

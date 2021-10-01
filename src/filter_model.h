@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef FILTER_MODEL_H
-#define FILTER_MODEL_H
+#ifndef KAPOW_FILTER_MODEL_H
+#define KAPOW_FILTER_MODEL_H
 
 #include <QSortFilterProxyModel>
 class SessionModel;
@@ -38,4 +38,4 @@ private:
 	int m_type;
 };
 
-#endif
+#endif // KAPOW_FILTER_MODEL_H

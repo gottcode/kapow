@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef CONTACT_H
-#define CONTACT_H
+#ifndef KAPOW_CONTACT_H
+#define KAPOW_CONTACT_H
 
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>
@@ -58,4 +58,4 @@ private:
 	QString m_website;
 };
 
-#endif
+#endif // KAPOW_CONTACT_H

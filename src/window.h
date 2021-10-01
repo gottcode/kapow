@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef KAPOW_WINDOW_H
+#define KAPOW_WINDOW_H
 
 #include "contact.h"
 #include "rates.h"
@@ -129,4 +129,4 @@ private:
 	QIcon m_inactive_icon;
 };
 
-#endif
+#endif // KAPOW_WINDOW_H
