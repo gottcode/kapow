@@ -64,8 +64,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	, m_decimals(true)
 	, m_inline(true)
 	, m_closetotray(false)
-	, m_active_project(0)
-	, m_active_model(0)
+	, m_active_project(nullptr)
+	, m_active_model(nullptr)
 {
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
@@ -401,7 +401,7 @@ void Window::closeEvent(QCloseEvent* event)
 
 	// Remove tray icon so that app will quit
 	delete m_tray_icon;
-	m_tray_icon = 0;
+	m_tray_icon = nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -743,7 +743,7 @@ void Window::sessionsScrolled(int value)
 
 void Window::addSession()
 {
-	Q_ASSERT(m_active_model != 0);
+	Q_ASSERT(m_active_model);
 	SessionDialog dialog(this);
 	forever {
 		if (dialog.exec() == QDialog::Accepted) {
@@ -764,7 +764,7 @@ void Window::addSession()
 
 void Window::editSession()
 {
-	Q_ASSERT(m_active_model != 0);
+	Q_ASSERT(m_active_model);
 	QModelIndex index = m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex());
 	if (!index.isValid()) {
 		return;
@@ -795,7 +795,7 @@ void Window::editSession()
 
 void Window::removeSession()
 {
-	Q_ASSERT(m_active_model != 0);
+	Q_ASSERT(m_active_model);
 	if (QMessageBox::question(this, tr("Question"), tr("Remove selected session?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_edit_session->setEnabled(false);
 		m_remove_session->setEnabled(false);
@@ -969,10 +969,10 @@ void Window::loadData(const QString& filename)
 
 	// Parse data file
 	QStack<Project*> projects;
-	SessionModel* model = 0;
+	SessionModel* model = nullptr;
 	int filter = 0;
 	QTreeWidgetItem* item = m_projects->invisibleRootItem();
-	QTreeWidgetItem* current = 0;
+	QTreeWidgetItem* current = nullptr;
 
 	QXmlStreamReader xml(&file);
 	while (!xml.atEnd()) {
@@ -1025,7 +1025,7 @@ void Window::loadData(const QString& filename)
 				model = projects.top()->model();
 				item = projects.top();
 			} else {
-				model = 0;
+				model = nullptr;
 				item = m_projects->invisibleRootItem();
 			}
 		}
@@ -1060,11 +1060,11 @@ void Window::loadData(const QString& filename)
 	// Create default project if data file has none
 	if (m_projects->topLevelItemCount() == 0) {
 		addProject(tr("Untitled"));
-		current = 0;
+		current = nullptr;
 	}
 
 	// Select last used project
-	if (current == 0) {
+	if (!current) {
 		current = m_projects->topLevelItem(0);
 	}
 	m_projects->setCurrentItem(current);
@@ -1160,7 +1160,7 @@ void Window::removeProject(QTreeWidgetItem* item)
 	}
 	Project* project = dynamic_cast<Project*>(item);
 	if (project && project->model() == m_active_model)  {
-		m_active_model = 0;
+		m_active_model = nullptr;
 	}
 	delete item;
 	item = 0;
@@ -1170,7 +1170,7 @@ void Window::removeProject(QTreeWidgetItem* item)
 
 void Window::updateDetails()
 {
-	Q_ASSERT(m_active_project != 0);
+	Q_ASSERT(m_active_project);
 	updateDisplay();
 	updateSessionButtons();
 	updateTrayIcon();

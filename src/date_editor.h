@@ -15,7 +15,7 @@ class DateEditor : public QDateEdit
 	Q_PROPERTY(QDate date READ date WRITE setDate USER true)
 
 public:
-	explicit DateEditor(QWidget* parent = 0);
+	explicit DateEditor(QWidget* parent = nullptr);
 };
 
 #endif // KAPOW_DATE_EDITOR_H

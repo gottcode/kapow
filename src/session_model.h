@@ -17,7 +17,7 @@ class SessionModel : public QAbstractItemModel
 	Q_OBJECT
 
 public:
-	explicit SessionModel(QObject* parent = 0);
+	explicit SessionModel(QObject* parent = nullptr);
 
 	QList<int> billedRows() const
 	{

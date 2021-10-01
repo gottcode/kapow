@@ -98,7 +98,7 @@ void SessionDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, c
 {
 	QByteArray prop = editor->metaObject()->userProperty().name();
 	if (!model->setData(index, editor->property(prop), Qt::EditRole)) {
-		QMessageBox::warning(0, tr("Error"), tr("Session conflicts with other sessions."));
+		QMessageBox::warning(nullptr, tr("Error"), tr("Session conflicts with other sessions."));
 	}
 }
 

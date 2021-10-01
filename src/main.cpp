@@ -102,7 +102,7 @@ int main(int argc, char** argv)
 			// Create data location
 			QDir dir(path);
 			if (!dir.mkpath(dir.absolutePath())) {
-				QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to create time data location."));
+				QMessageBox::critical(nullptr, Window::tr("Error"), Window::tr("Unable to create time data location."));
 				return 1;
 			}
 
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 				}
 				dir.rmdir(oldpath);
 				if (!success) {
-					QMessageBox::warning(0, Window::tr("Error"), Window::tr("Unable to move time data location."));
+					QMessageBox::warning(nullptr, Window::tr("Error"), Window::tr("Unable to move time data location."));
 				}
 			}
 		}
@@ -125,7 +125,7 @@ int main(int argc, char** argv)
 	} else if (!QFile::exists(path + "/../")) {
 		QDir dir(path + "/../");
 		if (!dir.mkpath(dir.absolutePath())) {
-			QMessageBox::critical(0, Window::tr("Error"), Window::tr("Unable to create time data location."));
+			QMessageBox::critical(nullptr, Window::tr("Error"), Window::tr("Unable to create time data location."));
 			return 1;
 		}
 	}

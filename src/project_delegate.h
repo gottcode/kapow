@@ -12,7 +12,7 @@
 class ProjectDelegate : public QStyledItemDelegate
 {
 public:
-	explicit ProjectDelegate(QObject* parent = 0);
+	explicit ProjectDelegate(QObject* parent = nullptr);
 
 	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 	QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;

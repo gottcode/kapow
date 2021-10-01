@@ -31,7 +31,7 @@ class Window : public QMainWindow
 	Q_OBJECT
 
 public:
-	Window(const QString& filename, bool backups_enabled, QWidget* parent = 0);
+	Window(const QString& filename, bool backups_enabled, QWidget* parent = nullptr);
 
 	bool isValid() const;
 
