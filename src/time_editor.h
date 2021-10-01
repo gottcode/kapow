@@ -15,7 +15,7 @@ class TimeEditor : public QTimeEdit
 	Q_PROPERTY(QTime time READ time WRITE setTime USER true)
 
 public:
-	TimeEditor(QWidget* parent = 0);
+	explicit TimeEditor(QWidget* parent = 0);
 };
 
 #endif // KAPOW_TIME_EDITOR_H

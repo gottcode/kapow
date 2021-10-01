@@ -12,7 +12,7 @@
 class SessionDelegate : public QStyledItemDelegate
 {
 public:
-	SessionDelegate(QObject* parent = 0);
+	explicit SessionDelegate(QObject* parent = 0);
 
 	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 	void setDevicePixelRatio(int ratio);

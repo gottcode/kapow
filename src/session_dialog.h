@@ -19,7 +19,7 @@ class SessionDialog : public QDialog
 	Q_OBJECT
 
 public:
-	SessionDialog(QWidget* parent = 0);
+	explicit SessionDialog(QWidget* parent = 0);
 
 	Session session() const
 	{

@@ -13,7 +13,7 @@
 class Settings
 {
 public:
-	Settings();
+	explicit Settings();
 
 	void remove(const QString& key)
 	{

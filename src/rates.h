@@ -16,7 +16,7 @@ class Rates
 	Q_DECLARE_TR_FUNCTIONS(Rates)
 
 public:
-	Rates();
+	explicit Rates();
 
 	double hourly() const
 	{

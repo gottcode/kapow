@@ -14,7 +14,7 @@ class SessionModel;
 class FilterModel : public QSortFilterProxyModel
 {
 public:
-	FilterModel(SessionModel* model, QObject* parent = 0);
+	explicit FilterModel(SessionModel* model, QObject* parent = 0);
 
 	QModelIndex mapUnbilledToSource(const QModelIndex& proxy_index) const;
 

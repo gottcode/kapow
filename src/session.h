@@ -17,7 +17,7 @@ class Session
 	Q_DECLARE_TR_FUNCTIONS(Session)
 
 public:
-	Session();
+	explicit Session();
 	Session(const QDate& date, const QTime& start, const QTime& stop, const QString& task, bool billed);
 
 	bool isValid() const

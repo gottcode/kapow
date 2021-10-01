@@ -13,7 +13,7 @@
 class Contact
 {
 public:
-	Contact();
+	explicit Contact();
 
 	QString name() const
 	{
