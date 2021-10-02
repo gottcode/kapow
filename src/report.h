@@ -41,9 +41,9 @@ private slots:
 private:
 	void findGroups();
 	QString generateHtml() const;
-	void writeHtml(QString filename);
-	void writeICalendar(QString filename);
-	void writeOutlookCsv(QString filename);
+	void writeHtml(QString filename) const;
+	void writeICalendar(QString filename) const;
+	void writeOutlookCsv(QString filename) const;
 
 private:
 	QTextEdit* m_preview;

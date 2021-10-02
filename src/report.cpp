@@ -468,7 +468,7 @@ QString Report::generateHtml() const
 
 //-----------------------------------------------------------------------------
 
-void Report::writeHtml(QString filename)
+void Report::writeHtml(QString filename) const
 {
 	if (!filename.endsWith(".html") && !filename.endsWith(".htm")) {
 		filename.append(".html");
@@ -512,7 +512,7 @@ static void writeWrappedLine(const QByteArray& line, QIODevice* device)
 	}
 }
 
-void Report::writeICalendar(QString filename)
+void Report::writeICalendar(QString filename) const
 {
 	if (!filename.endsWith(".ics")) {
 		filename.append(".ics");
@@ -572,7 +572,7 @@ void Report::writeICalendar(QString filename)
 
 //-----------------------------------------------------------------------------
 
-void Report::writeOutlookCsv(QString filename)
+void Report::writeOutlookCsv(QString filename) const
 {
 	if (!filename.endsWith(".csv")) {
 		filename.append(".csv");
