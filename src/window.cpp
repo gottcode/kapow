@@ -319,7 +319,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 		action = column_menu->addAction(m_active_model->headerData(i, Qt::Horizontal).toString());
 		action->setCheckable(true);
 		action->setChecked(true);
-		connect(action, &QAction::triggered, [=] { toggleColumnHidden(i); });
+		connect(action, &QAction::triggered, this, [this, i] { toggleColumnHidden(i); });
 		column_actions.append(action);
 	}
 	m_details->header()->addActions(column_actions);
