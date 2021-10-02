@@ -12,7 +12,6 @@
 class TimeEditor : public QTimeEdit
 {
 	Q_OBJECT
-	Q_PROPERTY(QTime time READ time WRITE setTime USER true)
 
 public:
 	explicit TimeEditor(QWidget* parent = nullptr);

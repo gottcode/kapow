@@ -12,7 +12,6 @@
 class DateEditor : public QDateEdit
 {
 	Q_OBJECT
-	Q_PROPERTY(QDate date READ date WRITE setDate USER true)
 
 public:
 	explicit DateEditor(QWidget* parent = nullptr);
