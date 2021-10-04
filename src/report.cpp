@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -21,6 +21,7 @@
 #include <QHeaderView>
 #include <QHostInfo>
 #include <QLineEdit>
+#include <QMessageBox>
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QPushButton>
@@ -39,6 +40,7 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	, m_current_row(current)
 	, m_contact(contact)
 	, m_rates(rates)
+	, m_delete_button(nullptr)
 {
 	// Create contact information widgets
 	QWidget* contact_info_tab = new QWidget(this);
@@ -136,6 +138,8 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	QPushButton* export_button = buttons->addButton(tr("Export"), QDialogButtonBox::ActionRole);
 	QPushButton* print_button = buttons->addButton(tr("Print"), QDialogButtonBox::ActionRole);
 	if (m_data->isBilled(m_current_row)) {
+		m_delete_button = buttons->addButton(tr("Remove"), QDialogButtonBox::ActionRole);
+		connect(m_delete_button, &QPushButton::clicked, this, &Report::unbill);
 		buttons->addButton(QDialogButtonBox::Close);
 	} else {
 		buttons->addButton(QDialogButtonBox::Cancel);
@@ -145,6 +149,9 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	if (style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons)) {
 		export_button->setIcon(QIcon::fromTheme("document-export"));
 		print_button->setIcon(QIcon::fromTheme("document-print"));
+		if (m_delete_button) {
+			m_delete_button->setIcon(QIcon::fromTheme("user-trash"));
+		}
 	}
 	connect(buttons, &QDialogButtonBox::rejected, this, &Report::reject);
 	connect(reset_button, &QPushButton::clicked, this, &Report::reset);
@@ -214,6 +221,10 @@ void Report::groupSelected(int group)
 {
 	if (group == -1) {
 		return;
+	}
+
+	if (m_delete_button) {
+		m_delete_button->setEnabled(group == 0);
 	}
 
 	for (int i = 0; i < m_data->rowCount(); ++i) {
@@ -301,6 +312,24 @@ void Report::bill()
 {
 	m_data->setBilled(m_current_row, true);
 	QDialog::accept();
+}
+
+//-----------------------------------------------------------------------------
+
+void Report::unbill()
+{
+	if (QMessageBox::question(this, tr("Question"), tr("Remove newest report?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::No) {
+		return;
+	}
+
+	// Remove report
+	m_data->setBilled(m_groups->currentData().toList().last().toInt(), false);
+	m_groups->removeItem(m_groups->currentIndex());
+
+	// Hide dialog if last report removed
+	if (m_groups->count() == 0) {
+		reject();
+	}
 }
 
 //-----------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2013 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -16,6 +16,7 @@ class QCheckBox;
 class QComboBox;
 class QDoubleSpinBox;
 class QLineEdit;
+class QPushButton;
 class QTextEdit;
 class QTreeView;
 
@@ -37,6 +38,7 @@ private slots:
 	void reset();
 	void save();
 	void bill();
+	void unbill();
 
 private:
 	void findGroups();
@@ -67,6 +69,8 @@ private:
 
 	Contact* m_contact;
 	Rates* m_rates;
+
+	QPushButton* m_delete_button;
 };
 
 #endif // KAPOW_REPORT_H
