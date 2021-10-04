@@ -76,7 +76,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	m_backups_enabled(backups_enabled),
 	m_decimals(true),
 	m_inline(true),
-	m_closetotray(true),
+	m_closetotray(false),
 	m_active_project(0),
 	m_active_model(0)
 {
@@ -144,7 +144,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	Settings settings;
 	m_decimals = settings.value("DecimalTotals", true).toBool();
 	m_inline = settings.value("InlineEditing", true).toBool();
-	m_closetotray = settings.value("CloseToTray", true).toBool();
+	m_closetotray = settings.value("CloseToTray", false).toBool();
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Project"));
