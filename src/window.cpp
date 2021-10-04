@@ -376,12 +376,10 @@ void Window::closeEvent(QCloseEvent* event) {
 
 	bool visible = isVisible();
 
-	if (m_closetotray) {
-		if (visible) {
-			event->ignore();
-			toggleVisible();
-			return;
-		}
+	if (visible && m_closetotray) {
+		event->ignore();
+		toggleVisible();
+		return;
 	}
 
 	if (!m_active_timers.isEmpty()) {
