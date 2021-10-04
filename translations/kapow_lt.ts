@@ -461,6 +461,10 @@
         <source>Kapow Punch Clock</source>
         <translation>Kapow kontrolinis laikrodis</translation>
     </message>
+    <message>
+        <source>&amp;Close to Tray</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>

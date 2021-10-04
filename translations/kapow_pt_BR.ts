@@ -459,6 +459,10 @@
         <source>Kapow Punch Clock</source>
         <translation>Relógio de Ponto Kapow</translation>
     </message>
+    <message>
+        <source>&amp;Close to Tray</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>

@@ -5,7 +5,7 @@
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Applicatietaal selecteren:</translation>
+        <translation>Kies de programmataal:</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
@@ -17,14 +17,14 @@
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Herstart de applicatie om de taalwijziging toe te passen.</translation>
+        <translation>Herstart het programma om de taalwijziging toe te passen.</translation>
     </message>
 </context>
 <context>
     <name>Report</name>
     <message>
         <source>Time Sheet Report</source>
-        <translation>Tijdkaart-rapport</translation>
+        <translation>Tijdkaartrapport</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>N/A</source>
-        <translation>N.V.T.</translation>
+        <translation>n.v.t.</translation>
     </message>
     <message>
         <source>Prepend currency symbol</source>
@@ -84,7 +84,7 @@
     </message>
     <message>
         <source>Preview</source>
-        <translation>Voorbeeld</translation>
+        <translation>Voorvertoning</translation>
     </message>
     <message>
         <source>Export</source>
@@ -104,7 +104,7 @@
     </message>
     <message>
         <source>Outlook CSV (*.csv)</source>
-        <translation>Outlook CSV (*.csv)</translation>
+        <translation>Outlook (*.csv)</translation>
     </message>
     <message>
         <source>Export Report</source>
@@ -112,11 +112,11 @@
     </message>
     <message>
         <source>View Reports</source>
-        <translation>Rapporten weergeven</translation>
+        <translation>Rapporten bekijken</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation>Rapport creëren</translation>
+        <translation>Rapport opstellen</translation>
     </message>
     <message>
         <source>Phone: %1</source>
@@ -161,11 +161,11 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation>Foutmelding</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation>De sessie conflicteert met andere sessies.</translation>
+        <translation>De sessie botst met andere sessies.</translation>
     </message>
 </context>
 <context>
@@ -180,11 +180,11 @@
     </message>
     <message>
         <source>Start:</source>
-        <translation>Start:</translation>
+        <translation>Begintijd:</translation>
     </message>
     <message>
         <source>Stop:</source>
-        <translation>Stop:</translation>
+        <translation>Eindtijd:</translation>
     </message>
     <message>
         <source>Task:</source>
@@ -207,11 +207,11 @@
     </message>
     <message>
         <source>Start</source>
-        <translation>Start</translation>
+        <translation>Begintijd</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Eindtijd</translation>
     </message>
     <message>
         <source>Task</source>
@@ -246,11 +246,11 @@
     </message>
     <message>
         <source>Start</source>
-        <translation>Start</translation>
+        <translation>Starten</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Stoppen</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -274,7 +274,7 @@
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Verwijderen</translation>
+        <translation>Ve&amp;rwijderen</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Delete</source>
@@ -294,7 +294,7 @@
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp;Bewerken</translation>
+        <translation>B&amp;ewerken</translation>
     </message>
     <message>
         <source>Ctrl+Delete</source>
@@ -302,7 +302,7 @@
     </message>
     <message>
         <source>S&amp;ettings</source>
-        <translation>I&amp;nstellingen</translation>
+        <translation>Inst&amp;ellingen</translation>
     </message>
     <message>
         <source>Columns</source>
@@ -314,11 +314,11 @@
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Inline bewerken</translation>
+        <translation>&amp;Hier bewerken</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>Applicatie&amp;taal...</translation>
+        <translation>Programmataa&amp;l…</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -338,27 +338,27 @@
     </message>
     <message>
         <source>Timer</source>
-        <translation>Timer</translation>
+        <translation>Tijdklok</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Alles weergeven</translation>
+        <translation>Alles tonen</translation>
     </message>
     <message>
         <source>Show only unbilled</source>
-        <translation>Alleen ongefactureerde weergeven</translation>
+        <translation>Alleen ongefactureerde tonen</translation>
     </message>
     <message>
         <source>Show only this year</source>
-        <translation>Alleen dit jaar weergeven</translation>
+        <translation>Alleen dit jaar tonen</translation>
     </message>
     <message>
         <source>Show only this month</source>
-        <translation>Alleen deze maand weergeven</translation>
+        <translation>Alleen deze maand tonen</translation>
     </message>
     <message>
         <source>Show only this week</source>
-        <translation>Alleen deze week weergeven</translation>
+        <translation>Alleen deze week tonen</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
@@ -370,7 +370,7 @@
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation>De sessie conflicteert met andere sessies.</translation>
+        <translation>De sessie botst met andere sessies.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
@@ -378,7 +378,7 @@
     </message>
     <message>
         <source>Unable to read time data.</source>
-        <translation>De tijdgegevens kunnen niet worden gelezen.</translation>
+        <translation>De tijdgegevens kunnen niet worden uitgelezen.</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -390,7 +390,7 @@
     </message>
     <message>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Er lopen nog timers. Wilt u de timers stopzetten en afsluiten?</translation>
+        <translation>Er zijn nog lopende tijdklokken. Wilt u ze stopzetten en afsluiten?</translation>
     </message>
     <message>
         <source>About</source>
@@ -406,15 +406,15 @@
     </message>
     <message>
         <source>&amp;Create Report...</source>
-        <translation>Rapport &amp;creëren...</translation>
+        <translation>Rapport &amp;opstellen…</translation>
     </message>
     <message>
         <source>View R&amp;eports</source>
-        <translation>R&amp;apporten weergeven</translation>
+        <translation>Rapport&amp;en bekijken</translation>
     </message>
     <message>
         <source>Cancel this session?</source>
-        <translation>Wilt u deze sessie annuleren?</translation>
+        <translation>Wilt u deze sessie afbreken?</translation>
     </message>
     <message>
         <source>Add Project</source>
@@ -426,11 +426,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation>Foutmelding</translation>
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation>De tijdgegevenslocatie kan niet worden gecreëerd.</translation>
+        <translation>De tijdgegevenslocatie kan niet worden aangemaakt.</translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
@@ -438,7 +438,7 @@
     </message>
     <message>
         <source>A project with that name already exists.</source>
-        <translation>Er bestaat al een project met deze naam.</translation>
+        <translation>Er is al een project met deze naam.</translation>
     </message>
     <message>
         <source>Remove selected project?</source>
@@ -451,13 +451,17 @@
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>%n lopende timer</numerusform>
-            <numerusform>%n lopende timers</numerusform>
+            <numerusform>%n lopende tijdklok</numerusform>
+            <numerusform>%n lopende tijdklokken</numerusform>
         </translation>
     </message>
     <message>
         <source>Kapow Punch Clock</source>
-        <translation>Kapow Prikklok</translation>
+        <translation>Kapow-prikklok</translation>
+    </message>
+    <message>
+        <source>&amp;Close to Tray</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -468,7 +472,7 @@
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation>Instellingen opslaan in het opgegeven INI-bestand.</translation>
+        <translation>Sla de instellingen op in het opgegeven ini-bestand.</translation>
     </message>
     <message>
         <source>file</source>
@@ -476,7 +480,7 @@
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation>Geen automatische back-ups creëren van tijdgegevens.</translation>
+        <translation>Maak geen automatische back-ups van tijdgegevens.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>

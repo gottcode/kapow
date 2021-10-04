@@ -177,7 +177,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent) :
 	action->setCheckable(true);
 	action->setChecked(m_inline);
 	connect(action, SIGNAL(toggled(bool)), this, SLOT(setInlineEditing(bool)));
-	action = menu->addAction(tr("&Close to tray"));
+	action = menu->addAction(tr("&Close to Tray"));
 	action->setCheckable(true);
 	action->setChecked(m_closetotray);
 	connect(action, SIGNAL(toggled(bool)), this, SLOT(setCloseToTray(bool)));

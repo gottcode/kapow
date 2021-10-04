@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт</translation>
     </message>
     <message>
         <source>Print</source>
@@ -96,27 +96,27 @@
     </message>
     <message>
         <source>Web Page (*.html *.htm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Веб сторінка (*.html *.htm)</translation>
     </message>
     <message>
         <source>iCalendar (*.ics)</source>
-        <translation type="unfinished"></translation>
+        <translation>iCalendar (*.ics)</translation>
     </message>
     <message>
         <source>Outlook CSV (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Outlook CSV (*.csv)</translation>
     </message>
     <message>
         <source>Export Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати звіт</translation>
     </message>
     <message>
         <source>View Reports</source>
-        <translation type="unfinished"></translation>
+        <translation>Переглянути звіти</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити звіт</translation>
     </message>
     <message>
         <source>Phone: %1</source>
@@ -162,11 +162,11 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Помилка</translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сесія конфліктує з іншими сесіями.</translation>
     </message>
 </context>
 <context>
@@ -200,43 +200,43 @@
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Загалом</translation>
+        <translation>Всього</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Початок</translation>
+        <translation>Початок</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Зупинка</translation>
+        <translation>Зупинка</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Завдання</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Час</translation>
+        <translation>Час</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Щодня</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Щотижня</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Щомісяця</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Звіт</translation>
     </message>
 </context>
 <context>
@@ -259,7 +259,7 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Мінімізувати</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -271,7 +271,7 @@
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
@@ -279,7 +279,7 @@
     </message>
     <message>
         <source>Ctrl+Shift+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+Delete</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -299,7 +299,7 @@
     </message>
     <message>
         <source>Ctrl+Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Delete</translation>
     </message>
     <message>
         <source>S&amp;ettings</source>
@@ -363,23 +363,23 @@
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>Випущено за ліцензією &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сесія конфліктує з іншими сесіями.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Відновити</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо прочитати дані про час.</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -387,7 +387,7 @@
     </message>
     <message>
         <source>Unable to write time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо записати дані про час.</translation>
     </message>
     <message>
         <source>There are timers running. Stop timers and quit?</source>
@@ -407,11 +407,11 @@
     </message>
     <message>
         <source>&amp;Create Report...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Створення звіту...</translation>
     </message>
     <message>
         <source>View R&amp;eports</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Переглянути звіти</translation>
     </message>
     <message>
         <source>Cancel this session?</source>
@@ -431,11 +431,11 @@
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдається створити розташування даних часу</translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо перемістити розташування даних часу.</translation>
     </message>
     <message>
         <source>A project with that name already exists.</source>
@@ -461,28 +461,32 @@
         <source>Kapow Punch Clock</source>
         <translation>Kapow Punch Clock</translation>
     </message>
+    <message>
+        <source>&amp;Close to Tray</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустити годинник програми</translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберігайте налаштування в форматі INI у вказаному файлі.</translation>
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>файл</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не створювати автоматичні резервні копії даних часу.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл даних часу, який слід використовувати</translation>
     </message>
 </context>
 </TS>
