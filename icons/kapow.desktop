@@ -55,6 +55,7 @@ Comment[ru]=Следите за временем, затраченным на п
 Comment[sv]=Håll koll på tiden som du spenderar på projekt
 Comment[tr]=Projeler için harcanan zamanı takip edin
 Comment[uk]=Слідкуйте за часом, витраченим на проекти 
+TryExec=kapow
 Exec=kapow
 Icon=kapow
 Terminal=false
