@@ -242,6 +242,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_details->addAction(m_add_session);
 	m_details->addAction(m_edit_session);
 	m_details->addAction(m_remove_session);
+	m_details->addAction(actions_separator);
 	m_details->setContextMenuPolicy(Qt::ActionsContextMenu);
 	connect(m_details, &QTreeView::activated, this, &Window::editSession);
 	connect(m_details, &QTreeView::pressed, this, &Window::sessionPressed);
@@ -725,6 +726,11 @@ void Window::sessionPressed(const QModelIndex& index)
 	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
 	m_remove_session->setEnabled(enabled);
 	m_create_report->setEnabled(m_active_model->canBill());
+
+	m_details->removeAction(m_create_report);
+	if (!m_active_model->isBilled(m_active_project->filterModel()->mapToSource(index).row())) {
+		m_details->addAction(m_create_report);
+	}
 }
 
 //-----------------------------------------------------------------------------
