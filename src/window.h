@@ -56,6 +56,7 @@ private slots:
 	void editProject();
 	void removeProject();
 	void createReport();
+	void removeReport();
 	void viewReports();
 	void projectActivated(QTreeWidgetItem* item);
 	void projectChanged(QTreeWidgetItem* item, int column);
@@ -81,6 +82,7 @@ private:
 	void removeProject(QTreeWidgetItem* item);
 	void updateDetails();
 	void updateDisplay();
+	void updateReportActions();
 	void updateSessionButtons();
 	void updateTrayIcon();
 	void updateWindowTitle(const QString& project);
@@ -117,6 +119,7 @@ private:
 	QAction* m_add_project;
 	QAction* m_remove_project;
 	QAction* m_create_report;
+	QAction* m_remove_report;
 	QAction* m_view_reports;
 	QAction* m_add_session;
 	QAction* m_edit_session;

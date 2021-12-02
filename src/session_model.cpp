@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2008-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2008-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -20,6 +20,22 @@ SessionModel::SessionModel(QObject* parent)
 	, m_decimals(true)
 	, m_loaded(true)
 {
+}
+
+//-----------------------------------------------------------------------------
+
+bool SessionModel::isLastBilled(int pos) const
+{
+	if (m_billed.isEmpty() || pos > m_billed.last()) {
+		return false;
+	}
+
+	const int size = m_billed.size();
+	if ((size > 1) && (pos <= m_billed[size - 2])) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 //-----------------------------------------------------------------------------

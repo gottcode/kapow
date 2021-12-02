@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2010-2013 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2010-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -16,6 +16,7 @@ class FilterModel : public QSortFilterProxyModel
 public:
 	explicit FilterModel(SessionModel* model, QObject* parent = nullptr);
 
+	QModelIndex mapLastBilledToSource(const QModelIndex& proxy_index) const;
 	QModelIndex mapUnbilledToSource(const QModelIndex& proxy_index) const;
 
 	enum FilterType

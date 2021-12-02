@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2010-2013 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2010-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -20,6 +20,18 @@ FilterModel::FilterModel(SessionModel* model, QObject* parent)
 {
 	setSourceModel(model);
 	connect(model, &SessionModel::dataChanged, this, &FilterModel::invalidate);
+}
+
+//-----------------------------------------------------------------------------
+
+QModelIndex FilterModel::mapLastBilledToSource(const QModelIndex& proxy_index) const
+{
+	QModelIndex index = mapToSource(proxy_index);
+	if (m_model->isLastBilled(index.row())) {
+		return index;
+	} else {
+		return QModelIndex();
+	}
 }
 
 //-----------------------------------------------------------------------------

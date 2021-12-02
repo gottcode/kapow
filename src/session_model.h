@@ -34,6 +34,8 @@ public:
 		return (!m_billed.isEmpty() && pos <= m_billed.last());
 	}
 
+	bool isLastBilled(int pos) const;
+
 	void fixConflict(const QDateTime& current_start, QDateTime& current_stop) const;
 
 	bool hasConflict(const QDateTime& current) const;

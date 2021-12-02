@@ -141,6 +141,8 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	menu->addSeparator();
 	m_create_report = menu->addAction(tr("&Create Report..."), this, &Window::createReport);
 	m_create_report->setEnabled(false);
+	m_remove_report = menu->addAction(tr("Re&move Report"), this, &Window::removeReport);
+	m_remove_report->setEnabled(false);
 	m_view_reports = menu->addAction(tr("View R&eports"), this, &Window::viewReports);
 	m_view_reports->setEnabled(false);
 	menu->addSeparator();
@@ -629,6 +631,21 @@ void Window::createReport()
 
 //-----------------------------------------------------------------------------
 
+void Window::removeReport()
+{
+	const auto billed = m_active_model->billedRows();
+	if (billed.isEmpty()) {
+		return;
+	}
+
+	if (QMessageBox::question(this, tr("Question"), Report::tr("Remove newest report?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::No) {
+		return;
+	}
+	m_active_model->setBilled(billed.last(), false);
+}
+
+//-----------------------------------------------------------------------------
+
 void Window::viewReports()
 {
 	int current = currentRow();
@@ -703,9 +720,9 @@ void Window::projectChanged(QTreeWidgetItem* item, int column)
 void Window::filterChanged(int index)
 {
 	m_active_project->filterModel()->setType(m_filter->itemData(index).toInt());
-	m_create_report->setEnabled(m_active_model->canBill());
 	m_details->expandAll();
 	m_details->scrollToBottom();
+	updateReportActions();
 }
 
 //-----------------------------------------------------------------------------
@@ -725,11 +742,14 @@ void Window::sessionPressed(const QModelIndex& index)
 	bool enabled = session.isValid();
 	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
 	m_remove_session->setEnabled(enabled);
-	m_create_report->setEnabled(m_active_model->canBill());
+	updateReportActions();
 
 	m_details->removeAction(m_create_report);
+	m_details->removeAction(m_remove_report);
 	if (!m_active_model->isBilled(m_active_project->filterModel()->mapToSource(index).row())) {
 		m_details->addAction(m_create_report);
+	} else if (m_active_project->filterModel()->mapLastBilledToSource(index).isValid()) {
+		m_details->addAction(m_remove_report);
 	}
 }
 
@@ -1205,8 +1225,17 @@ void Window::updateDisplay()
 
 //-----------------------------------------------------------------------------
 
+void Window::updateReportActions()
+{
+	m_create_report->setEnabled(m_active_model->canBill());
+	m_remove_report->setEnabled(!m_active_model->billedRows().isEmpty());
+}
+
+//-----------------------------------------------------------------------------
+
 void Window::updateSessionButtons()
 {
+	updateReportActions();
 	if (!m_active_project->time().isEmpty()) {
 		m_start->hide();
 		m_stop->show();
@@ -1216,7 +1245,6 @@ void Window::updateSessionButtons()
 		m_stop->hide();
 		m_start->show();
 		m_cancel->setEnabled(false);
-		m_create_report->setEnabled(m_active_model->canBill());
 	}
 }
 
