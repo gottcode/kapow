@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2008-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2008-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -22,6 +22,11 @@ public:
 	QList<int> billedRows() const
 	{
 		return m_billed;
+	}
+
+	bool canBill() const
+	{
+		return !m_data.isEmpty() && !isBilled(m_data.size() - 1);
 	}
 
 	bool isBilled(int pos) const

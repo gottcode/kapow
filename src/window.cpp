@@ -614,9 +614,13 @@ void Window::removeProject()
 
 void Window::createReport()
 {
-	int current = currentRow();
-	if (current == -1) {
+	const int last = m_active_model->rowCount() - 2;
+	if (last < 0) {
 		return;
+	}
+	int current = currentRow();
+	if ((current == -1) || m_active_model->isBilled(current) || (current > last)) {
+		current = last;
 	}
 	Report report(m_active_model, current, &m_contact, &m_rates, this);
 	report.exec();
@@ -698,7 +702,7 @@ void Window::projectChanged(QTreeWidgetItem* item, int column)
 void Window::filterChanged(int index)
 {
 	m_active_project->filterModel()->setType(m_filter->itemData(index).toInt());
-	m_create_report->setEnabled(m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex()).isValid());
+	m_create_report->setEnabled(m_active_model->canBill());
 	m_details->expandAll();
 	m_details->scrollToBottom();
 }
@@ -720,7 +724,7 @@ void Window::sessionPressed(const QModelIndex& index)
 	bool enabled = session.isValid();
 	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
 	m_remove_session->setEnabled(enabled);
-	m_create_report->setEnabled(enabled);
+	m_create_report->setEnabled(m_active_model->canBill());
 }
 
 //-----------------------------------------------------------------------------
@@ -1198,7 +1202,7 @@ void Window::updateSessionButtons()
 		m_stop->hide();
 		m_start->show();
 		m_cancel->setEnabled(false);
-		m_create_report->setEnabled(m_active_project->filterModel()->mapUnbilledToSource(m_details->currentIndex()).isValid());
+		m_create_report->setEnabled(m_active_model->canBill());
 	}
 }
 
