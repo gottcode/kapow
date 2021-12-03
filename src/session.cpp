@@ -34,12 +34,12 @@ QString Session::total(Time time, bool decimals, bool unit) const
 	if (decimals) {
 		double hours = d->m_totals[time] / 3600.0;
 		if (!unit) {
-			result = QLocale().toString(hours, 'f', 1);
+			result = QLocale().toString(hours, 'f', 2);
 		} else {
 			if (hours == std::floor(hours)) {
 				result = tr("%n hour(s)", "", hours);
 			} else {
-				result = tr("%L1 hours").arg(hours, 0, 'f', 1);
+				result = tr("%L1 hours").arg(hours, 0, 'f', 2);
 			}
 		}
 	} else {
