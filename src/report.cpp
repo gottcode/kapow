@@ -444,7 +444,7 @@ QString Report::generateHtml() const
 
 	// Add billing information
 	QString hours = m_data->session(last).total(Session::Total, true);
-	double value = QLocale().toDouble(hours);
+	double value = m_data->session(last).total();
 	html += "<tr><td colspan=\"4\"></td><td colspan=\"2\"><hr></td>\n";
 	html += "<tr><td colspan=\"4\"></td><td>" + tr("Hours") + "</td><td align=\"right\">" + hours + "</td></tr>\n";
 	double hourly_rate = m_hourly_rate->value();

@@ -27,6 +27,13 @@ Session::Session(const QDate& date, const QTime& start, const QTime& stop, const
 
 //-----------------------------------------------------------------------------
 
+double Session::total() const
+{
+	return d->m_totals[Total] / 3600.0;
+}
+
+//-----------------------------------------------------------------------------
+
 QString Session::total(Time time, bool decimals, bool unit) const
 {
 	QString result;

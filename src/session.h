@@ -63,6 +63,7 @@ public:
 		Monthly,
 		Total
 	};
+	double total() const;
 	QString total(Time time, bool decimals, bool unit = false) const;
 	void updateTotals(const Session& previous = Session());
 	void toXml(QXmlStreamWriter& xml) const;
