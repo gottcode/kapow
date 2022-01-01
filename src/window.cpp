@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2008-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2008-2022 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -420,7 +420,7 @@ void Window::about()
 	QMessageBox::about(this, tr("About"), QString("<p align='center'><big><b>%1 %2</b></big><br/>%3<br/><small>%4</small><br/><small>%5</small></p>")
 		.arg(tr("Kapow Punch Clock"), QCoreApplication::applicationVersion(),
 			tr("A program to help track spent time"),
-			tr("Copyright &copy; 2008-%1 Graeme Gott").arg("2021"),
+			tr("Copyright &copy; 2008-%1 Graeme Gott").arg("2022"),
 			tr("Released under the <a href=%1>GPL 3</a> license").arg("\"http://www.gnu.org/licenses/gpl.html\""))
 	);
 }
