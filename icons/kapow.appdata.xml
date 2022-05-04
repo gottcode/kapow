@@ -88,6 +88,7 @@
   <provides>
     <binary>kapow</binary>
   </provides>
+  <launchable type="desktop-id">kapow.desktop</launchable>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
