@@ -1165,15 +1165,23 @@ void Window::addProject(const QString& name)
 
 void Window::removeProject(QTreeWidgetItem* item)
 {
+	if (!item) {
+		return;
+	}
+
+	// Recursively remove subprojects
 	for (int i = item->childCount() - 1; i >= 0; i--) {
 		removeProject(item->child(i));
 	}
+
+	// Unset active model before removing project
 	Project* project = dynamic_cast<Project*>(item);
-	if (project && project->model() == m_active_model)  {
+	if (project && project->model() == m_active_model) {
 		m_active_model = nullptr;
 	}
+
 	delete item;
-	item = 0;
+	item = nullptr;
 }
 
 //-----------------------------------------------------------------------------
