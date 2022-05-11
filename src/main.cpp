@@ -16,17 +16,6 @@
 
 int main(int argc, char** argv)
 {
-#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
-#if !defined(Q_OS_MAC)
-	if (!qEnvironmentVariableIsSet("QT_DEVICE_PIXEL_RATIO")
-			&& !qEnvironmentVariableIsSet("QT_AUTO_SCREEN_SCALE_FACTOR")
-			&& !qEnvironmentVariableIsSet("QT_SCALE_FACTOR")
-			&& !qEnvironmentVariableIsSet("QT_SCREEN_SCALE_FACTORS")) {
-		QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-	}
-#endif
-	QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
 	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
 	app.setApplicationDisplayName(Window::tr("Kapow Punch Clock"));

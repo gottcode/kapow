@@ -505,9 +505,6 @@ void Report::writeHtml(QString filename) const
 	QFile file(filename);
 	if (file.open(QFile::WriteOnly | QFile::Text)) {
 		QTextStream stream(&file);
-#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
-		stream.setCodec("UTF-8");
-#endif
 		stream << generateHtml();
 		file.close();
 	}
