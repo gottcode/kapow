@@ -142,6 +142,18 @@
         <source>Total</source>
         <translation>Total</translation>
     </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Question</source>
+        <translation>Pergunta</translation>
+    </message>
+    <message>
+        <source>Remove newest report?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Session</name>
@@ -461,6 +473,10 @@
     </message>
     <message>
         <source>&amp;Close to Tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Re&amp;move Report</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

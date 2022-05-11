@@ -4,13 +4,14 @@
 #
 # Translators:
 # dsafsadf <heneral@gmail.com>, 2021
+# zubr139, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2021-03-21 17:34+0000\n"
-"Last-Translator: dsafsadf <heneral@gmail.com>\n"
+"PO-Revision-Date: 2014-11-14 20:10+0000\n"
+"Last-Translator: zubr139, 2021\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/kapow/language/"
 "uk/)\n"
 "Language: uk\n"
@@ -40,6 +41,14 @@ msgid ""
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
 msgstr ""
+"Kapow — це програма, яка дозволяє легко відстежувати ваші години роботи, "
+"незалежно від того, чи працюєте ви над одним проектом чи кількома. Просто "
+"ввімкніть і вийміть годинник за допомогою кнопки Пуск/Стоп. Якщо ви зробили "
+"помилку в годиннику, ви можете повернутися назад і відредагувати будь-який "
+"із записів, двічі клацнувши відповідний сеанс. Kapow також дозволяє легко "
+"відстежувати години з моменту останнього виставлення рахунку клієнту, "
+"встановлюючи корисний прапорець «Оплачено» — підсумки відображатимуть вашу "
+"роботу після останнього сеансу, що виставлявся."
 
 #: ../kapow.desktop.in:4
 msgid "Punch Clock"
