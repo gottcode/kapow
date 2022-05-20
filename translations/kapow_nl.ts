@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Question</source>
@@ -152,7 +152,7 @@
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wilt u het recentste rapport verwijderen?</translation>
     </message>
 </context>
 <context>
@@ -322,11 +322,11 @@
     </message>
     <message>
         <source>&amp;Decimal Totals</source>
-        <translation>&amp;Aantal decimalen</translation>
+        <translation>Aantal &amp;decimalen</translation>
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Hier bewerken</translation>
+        <translation>H&amp;ier bewerken</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
@@ -477,7 +477,7 @@
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapport ver&amp;wijderen</translation>
     </message>
 </context>
 <context>

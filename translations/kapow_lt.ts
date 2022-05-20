@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Šalinti</translation>
     </message>
     <message>
         <source>Question</source>
@@ -152,7 +152,7 @@
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Šalinti naujausią ataskaitą?</translation>
     </message>
 </context>
 <context>
@@ -479,7 +479,7 @@
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Ša&amp;linti ataskaitą</translation>
     </message>
 </context>
 <context>

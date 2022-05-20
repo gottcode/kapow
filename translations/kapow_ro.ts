@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Înlătură</translation>
     </message>
     <message>
         <source>Question</source>
@@ -152,7 +152,7 @@
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Înlătură raportul recent?</translation>
     </message>
 </context>
 <context>
@@ -475,11 +475,11 @@
     </message>
     <message>
         <source>&amp;Close to Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>În&amp;chide în bară</translation>
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Înlătură raport</translation>
     </message>
 </context>
 <context>
