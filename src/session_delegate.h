@@ -22,7 +22,7 @@ public:
 private:
 	int m_height;
 	int m_ratio;
-	QVector<int> m_alphas;
+	QList<int> m_alphas;
 };
 
 #endif // KAPOW_SESSION_DELEGATE_H

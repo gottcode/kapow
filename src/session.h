@@ -87,7 +87,7 @@ private:
 		QTime m_stop;
 		QString m_task;
 		bool m_billed;
-		QVector<int> m_totals;
+		QList<int> m_totals;
 	};
 	QExplicitlySharedDataPointer<SessionData> d;
 };
