@@ -4,7 +4,7 @@
 
 SET SRCDIR=..\kapow
 SET APP=Kapow
-FOR /f %%i IN ('git describe') DO SET VERSION=%%i
+SET VERSION=1.6.0
 
 ECHO Copying executable
 MKDIR %SRCDIR%\%APP%

@@ -99,6 +99,22 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.6.0" date="2022-05-20">
+      <description>
+        <ul>
+          <li>Added optional closing to tray</li>
+          <li>Added removing last report</li>
+          <li>Always allow creating report if there are unbilled sessions</li>
+          <li>Always use exact value for totals in reports</li>
+          <li>Only save when timers are active</li>
+          <li>Prevent adding or editing session after start of running timer</li>
+          <li>Prevent starting or ending timer inside of existing session</li>
+          <li>Refactored code</li>
+          <li>Switched to Qt 6</li>
+          <li>Translation updates: Czech, Dutch, French, Lithuanian, Romanian, Ukrainian</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.10" date="2020-04-20">
       <description>
         <ul>

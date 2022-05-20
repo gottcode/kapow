@@ -1,3 +1,16 @@
+1.6.0
+-----
+* Added optional closing to tray.
+* Added removing last report.
+* Always allow creating report if there are unbilled sessions.
+* Always use exact value for totals in reports.
+* Only save when timers are active.
+* Prevent adding or editing session after start of running timer.
+* Prevent starting or ending timer inside of existing session.
+* Refactored code.
+* Switched to Qt 6.
+* Translation updates: Czech, Dutch, French, Lithuanian, Romanian, Ukrainian.
+
 1.5.10
 ------
 * FIXED: Did not load locales with underscores.
