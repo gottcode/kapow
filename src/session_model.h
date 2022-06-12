@@ -66,7 +66,7 @@ public:
 	QModelIndex parent(const QModelIndex& child) const override;
 	bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
 
-signals:
+Q_SIGNALS:
 	void billedStatusChanged(bool billed);
 
 private:

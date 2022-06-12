@@ -40,7 +40,7 @@ protected:
 	void closeEvent(QCloseEvent* event) override;
 	void showEvent(QShowEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	void about();
 	void setDecimalTotals(bool decimals);
 	void setInlineEditing(bool edit);

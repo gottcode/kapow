@@ -30,7 +30,7 @@ public:
 protected:
 	void hideEvent(QHideEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	void currencyChanged();
 	void generateText();
 	void groupSelected(int group);

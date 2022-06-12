@@ -517,7 +517,7 @@ static void writeWrappedLine(const QByteArray& line, QIODevice* device)
 	int end = line.count();
 	int start = 0;
 	int pos = 0;
-	while (true) {
+	Q_FOREVER {
 		pos = start + 74;
 		if (pos >= end) {
 			// Write unwrapped line or end of wrapped line

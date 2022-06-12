@@ -50,7 +50,7 @@ public:
 
 	void toXml(QXmlStreamWriter& xml) const;
 
-private slots:
+private Q_SLOTS:
 	void billedStatusChanged(bool billed);
 
 private:
