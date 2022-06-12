@@ -580,7 +580,7 @@ void Window::addProject()
 {
 	bool ok;
 	QString name;
-	forever {
+	Q_FOREVER {
 		name = QInputDialog::getText(this, tr("Add Project"), tr("Enter project name:"), QLineEdit::Normal, name, &ok);
 		if (ok && !name.isEmpty()) {
 			if (m_projects->findItems(name, Qt::MatchExactly).isEmpty()) {
@@ -775,7 +775,7 @@ void Window::addSession()
 {
 	Q_ASSERT(m_active_model);
 	SessionDialog dialog(this);
-	forever {
+	Q_FOREVER {
 		if (dialog.exec() == QDialog::Accepted) {
 			if (m_active_model->add(dialog.session())) {
 				m_edit_session->setEnabled(true);
@@ -804,7 +804,7 @@ void Window::editSession()
 		int pos = index.row();
 		SessionDialog dialog(this);
 		dialog.setSession(m_active_model->session(pos));
-		forever {
+		Q_FOREVER {
 			if (dialog.exec() == QDialog::Accepted) {
 				if (m_active_model->edit(pos, dialog.session())) {
 					save();

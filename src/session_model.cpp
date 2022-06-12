@@ -254,7 +254,7 @@ void SessionModel::setBilled(int pos, bool billed)
 void SessionModel::setDecimalTotals(bool decimals)
 {
 	m_decimals = decimals;
-	emit dataChanged(index(0, 0), index(rowCount(), columnCount()));
+	Q_EMIT dataChanged(index(0, 0), index(rowCount(), columnCount()));
 }
 
 //-----------------------------------------------------------------------------
@@ -625,8 +625,8 @@ void SessionModel::updateTotals()
 		current.updateTotals(previous);
 		previous = current;
 	}
-	emit dataChanged(index(0, 0), index(rowCount(), columnCount()));
-	emit billedStatusChanged(current.isBilled());
+	Q_EMIT dataChanged(index(0, 0), index(rowCount(), columnCount()));
+	Q_EMIT billedStatusChanged(current.isBilled());
 }
 
 //-----------------------------------------------------------------------------

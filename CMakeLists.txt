@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.0)
+cmake_minimum_required(VERSION 3.16)
 
 # Configure project
 project(kapow VERSION 1.6.0 LANGUAGES CXX)
@@ -14,13 +14,12 @@ if(UNIX AND NOT APPLE)
 	include(GNUInstallDirs)
 endif()
 
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-	add_compile_definitions(
-		QT_STRICT_ITERATORS
-		QT_NO_NARROWING_CONVERSIONS_IN_CONNECT
-		QT_DISABLE_DEPRECATED_BEFORE=0x060300
-	)
-endif()
+add_compile_definitions(
+	QT_NO_KEYWORDS
+	$<$<CONFIG:DEBUG>:QT_STRICT_ITERATORS>
+	$<$<CONFIG:DEBUG>:QT_NO_NARROWING_CONVERSIONS_IN_CONNECT>
+	$<$<CONFIG:DEBUG>:QT_DISABLE_DEPRECATED_BEFORE=0x060300>
+)
 
 # Create tests
 option(ENABLE_TESTS "Enable unit tests" OFF)
