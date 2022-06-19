@@ -78,6 +78,24 @@ target_link_libraries(kapow PRIVATE
 	Qt6::Widgets
 )
 
+# Optimize build
+option(ENABLE_LINK_TIME_OPTIMIZATION "Enable link time optimization" OFF)
+if(ENABLE_LINK_TIME_OPTIMIZATION)
+	include(CheckIPOSupported)
+	check_ipo_supported(RESULT result)
+	if(result)
+		set_target_properties(kapow PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
+	endif()
+endif()
+
+option(ENABLE_STRIP "Enable automatic stripping of builds" OFF)
+if(ENABLE_STRIP)
+	add_custom_command(TARGET kapow
+		POST_BUILD
+		COMMAND ${CMAKE_STRIP} $<TARGET_FILE:kapow>
+	)
+endif()
+
 # Install
 if(UNIX AND NOT APPLE)
 	install(TARGETS kapow RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
