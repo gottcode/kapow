@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2008-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2008-2022 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -27,11 +27,22 @@ int main(int argc, char** argv)
 	app.setDesktopFileName("kapow");
 #endif
 
+	const QString appdir = app.applicationDirPath();
+	const QStringList datadirs{
+#if defined(Q_OS_MAC)
+		appdir + "/../Resources"
+#elif defined(Q_OS_UNIX)
+		DATADIR,
+		appdir + "/../share/kapow"
+#else
+		appdir
+#endif
+	};
+
 	QString path;
 	bool backups_enabled = true;
 	{
 		// Handle portability
-		QString appdir = app.applicationDirPath();
 #if defined(Q_OS_MAC)
 		QFileInfo portable(appdir + "/../../../Data");
 #else
@@ -81,7 +92,7 @@ int main(int argc, char** argv)
 	Settings settings;
 	Q_UNUSED(settings);
 
-	LocaleDialog::loadTranslator("kapow_");
+	LocaleDialog::loadTranslator("kapow_", datadirs);
 
 	// Make sure data path exists
 	if (path.isEmpty()) {
