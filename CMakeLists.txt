@@ -66,7 +66,6 @@ qt6_add_executable(kapow
 	src/settings.cpp
 	src/time_editor.cpp
 	src/window.cpp
-	icons/icons.qrc
 	${translations_QM}
 )
 
@@ -98,6 +97,10 @@ endif()
 
 # Install
 if(UNIX AND NOT APPLE)
+	target_compile_definitions(kapow PRIVATE DATADIR="${CMAKE_INSTALL_FULL_DATADIR}/kapow")
+
+	target_sources(kapow PRIVATE icons/icons.qrc)
+
 	install(TARGETS kapow RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 	install(FILES ${translations_QM} DESTINATION ${CMAKE_INSTALL_DATADIR}/kapow/translations)
 	install(FILES doc/kapow.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 COMPONENT doc)
