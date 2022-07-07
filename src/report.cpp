@@ -93,7 +93,7 @@ Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, 
 	}
 
 	m_hourly_rate = new QDoubleSpinBox(data_tab);
-	m_hourly_rate->setRange(0.0, 100000.0);
+	m_hourly_rate->setRange(0.0, 10000000.0);
 	m_hourly_rate->setSpecialValueText(tr("N/A"));
 	connect(m_hourly_rate, &QDoubleSpinBox::valueChanged, this, &Report::generateText);
 	m_tax_rate = new QDoubleSpinBox(data_tab);
