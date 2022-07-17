@@ -28,16 +28,7 @@ int main(int argc, char** argv)
 #endif
 
 	const QString appdir = app.applicationDirPath();
-	const QStringList datadirs{
-#if defined(Q_OS_MAC)
-		appdir + "/../Resources"
-#elif defined(Q_OS_UNIX)
-		DATADIR,
-		appdir + "/../share/kapow"
-#else
-		appdir
-#endif
-	};
+	const QString datadir = QDir::cleanPath(appdir + "/" + KAPOW_DATADIR);
 
 	QString path;
 	bool backups_enabled = true;
@@ -92,7 +83,7 @@ int main(int argc, char** argv)
 	Settings settings;
 	Q_UNUSED(settings);
 
-	LocaleDialog::loadTranslator("kapow_", datadirs);
+	LocaleDialog::loadTranslator("kapow_", datadir);
 
 	// Make sure data path exists
 	if (path.isEmpty()) {
