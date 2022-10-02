@@ -514,7 +514,7 @@ void Report::writeHtml(QString filename) const
 
 static void writeWrappedLine(const QByteArray& line, QIODevice* device)
 {
-	int end = line.count();
+	int end = line.length();
 	int start = 0;
 	int pos = 0;
 	Q_FOREVER {

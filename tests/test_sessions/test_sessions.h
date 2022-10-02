@@ -13,7 +13,7 @@ class TestSessions : public QObject
 {
 	Q_OBJECT
 
-private slots:
+private Q_SLOTS:
 	void addSessions_data();
 	void addSessions();
 	void addConflictingSessions_data();

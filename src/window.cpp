@@ -135,8 +135,10 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Project"));
-	m_add_project = menu->addAction(tr("&Add"), this, qOverload<>(&Window::addProject), tr("Ctrl+Shift+N"));
-	m_remove_project = menu->addAction(tr("&Remove"), this, qOverload<>(&Window::removeProject), tr("Ctrl+Shift+Delete"));
+	m_add_project = menu->addAction(tr("&Add"), this, qOverload<>(&Window::addProject));
+	m_add_project->setShortcut(tr("Ctrl+Shift+N"));
+	m_remove_project = menu->addAction(tr("&Remove"), this, qOverload<>(&Window::removeProject));
+	m_remove_project->setShortcut(tr("Ctrl+Shift+Delete"));
 	m_remove_project->setEnabled(false);
 	menu->addSeparator();
 	m_create_report = menu->addAction(tr("&Create Report..."), this, &Window::createReport);
@@ -146,14 +148,17 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_view_reports = menu->addAction(tr("View R&eports"), this, &Window::viewReports);
 	m_view_reports->setEnabled(false);
 	menu->addSeparator();
-	QAction* quit_action = menu->addAction(tr("&Quit"), this, &Window::close, tr("Ctrl+Q"));
+	QAction* quit_action = menu->addAction(tr("&Quit"), this, &Window::close);
+	quit_action->setShortcut(tr("Ctrl+Q"));
 	quit_action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Session"));
-	m_add_session = menu->addAction(tr("&Add"), this, &Window::addSession, QKeySequence::New);
+	m_add_session = menu->addAction(tr("&Add"), this, &Window::addSession);
+	m_add_session->setShortcut(QKeySequence::New);
 	m_edit_session = menu->addAction(tr("&Edit"), this, &Window::editSession);
 	m_edit_session->setEnabled(false);
-	m_remove_session = menu->addAction(tr("&Remove"), this, &Window::removeSession, tr("Ctrl+Delete"));
+	m_remove_session = menu->addAction(tr("&Remove"), this, &Window::removeSession);
+	m_remove_session->setShortcut(tr("Ctrl+Delete"));
 	m_remove_session->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
