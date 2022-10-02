@@ -15,7 +15,7 @@ class TestFilters : public QObject
 {
 	Q_OBJECT
 
-private slots:
+private Q_SLOTS:
 	void checkFilters_data();
 	void checkFilters();
 	void addSessions_data();
