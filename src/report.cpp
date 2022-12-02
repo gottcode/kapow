@@ -471,19 +471,24 @@ QString Report::generateHtml() const
 				"</tr>\n").arg(columns[0], columns[1], columns[2], columns[3], columns[4]);
 	}
 
-	// Add billing information
-	QString hours = m_data->session(last).total(Session::Total, true);
-	double value = m_data->session(last).total();
-	html += "<tr><td colspan=\"4\"></td><td colspan=\"2\"><hr></td>\n";
+	// Add total hours
+	if (!Settings().value("DecimalTotals", true).toBool()) {
+		const QString total = m_data->session(last).total(Session::Total, false);
+		html += "<tr><td colspan=\"5\"></td><td align=\"right\"><b>" + total + "</b></td></tr>\n";
+	}
+	html += "<tr><td colspan=\"4\"></td><td colspan=\"2\"><hr></td></tr>\n";
+	const QString hours = m_data->session(last).total(Session::Total, true);
 	html += "<tr><td colspan=\"4\"></td><td>" + tr("Hours") + "</td><td align=\"right\">" + hours + "</td></tr>\n";
-	double hourly_rate = m_hourly_rate->value();
-	QString currency(m_hourly_rate->prefix() + "%L1" + m_hourly_rate->suffix());
-	if (hourly_rate) {
-		value *= hourly_rate;
-		double tax_rate = m_tax_rate->value() * 0.01;
-		if (tax_rate) {
-			html += "<tr><td colspan=\"4\"</td><td>" + tr("Subtotal") + "</td><td align=\"right\">" + QString(currency).arg(value, 0, 'f', 2) + "</td></tr>\n";
-			double tax = tax_rate * value;
+
+	// Add billing information
+	const double hourly_rate = m_hourly_rate->value();
+	if (!qFuzzyIsNull(hourly_rate)) {
+		const QString currency(m_hourly_rate->prefix() + "%L1" + m_hourly_rate->suffix());
+		double value = m_data->session(last).total() * hourly_rate;
+		const double tax_rate = m_tax_rate->value() * 0.01;
+		if (!qFuzzyIsNull(tax_rate)) {
+			html += "<tr><td colspan=\"4\"></td><td>" + tr("Subtotal") + "</td><td align=\"right\">" + QString(currency).arg(value, 0, 'f', 2) + "</td></tr>\n";
+			const double tax = tax_rate * value;
 			html += "<tr><td colspan=\"4\"></td><td>" + tr("Taxes") + "</td><td align=\"right\">" + QString(currency).arg(tax, 0, 'f', 2) + "</td></tr>\n";
 			value += tax;
 		}
