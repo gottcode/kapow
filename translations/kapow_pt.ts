@@ -136,7 +136,7 @@
     </message>
     <message>
         <source>Taxes</source>
-        <translation>Imposto</translation>
+        <translation>Impostos</translation>
     </message>
     <message>
         <source>Total</source>
@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <source>Question</source>
@@ -152,7 +152,7 @@
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover o relatório mais recente?</translation>
     </message>
 </context>
 <context>
@@ -235,7 +235,7 @@
     </message>
     <message>
         <source>Daily</source>
-        <translation>Diáriamente</translation>
+        <translation>Diariamente</translation>
     </message>
     <message>
         <source>Weekly</source>
@@ -274,7 +274,7 @@
     </message>
     <message>
         <source>&amp;Project</source>
-        <translation>&amp;Projeto</translation>
+        <translation>&amp;Projecto</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -326,7 +326,7 @@
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Edição Direta na Tabela</translation>
+        <translation>&amp;Edição Directa na Tabela</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
@@ -346,7 +346,7 @@
     </message>
     <message>
         <source>Project</source>
-        <translation>Projeto</translation>
+        <translation>Projecto</translation>
     </message>
     <message>
         <source>Timer</source>
@@ -358,7 +358,7 @@
     </message>
     <message>
         <source>Show only unbilled</source>
-        <translation>Mostrar apenas por faturar</translation>
+        <translation>Mostrar apenas por facturar</translation>
     </message>
     <message>
         <source>Show only this year</source>
@@ -450,11 +450,11 @@
     </message>
     <message>
         <source>A project with that name already exists.</source>
-        <translation>Já existe um projeto com esse nome.</translation>
+        <translation>Já existe um projecto com esse nome.</translation>
     </message>
     <message>
         <source>Remove selected project?</source>
-        <translation>Remover o projeto selecionado?</translation>
+        <translation>Remover o projecto selecionado?</translation>
     </message>
     <message>
         <source>Remove selected session?</source>
@@ -469,15 +469,15 @@
     </message>
     <message>
         <source>Kapow Punch Clock</source>
-        <translation>Relógio de Ponto Kapow</translation>
+        <translation>Kapow Punch Clock</translation>
     </message>
     <message>
         <source>&amp;Close to Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Fe&amp;char para a bandeja</translation>
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Re&amp;mover Relatório</translation>
     </message>
 </context>
 <context>

@@ -144,15 +144,15 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <source>Question</source>
-        <translation>Domande</translation>
+        <translation>Domanda</translation>
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovere il rapporto più recente?</translation>
     </message>
 </context>
 <context>
@@ -477,7 +477,7 @@
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Ri&amp;muovi Report</translation>
     </message>
 </context>
 <context>
