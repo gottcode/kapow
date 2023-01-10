@@ -1,3 +1,10 @@
+1.6.1
+-----
+* Allow higher hourly rate.
+* Improved Linux deployment.
+* Replaced deprecated code.
+* Translation updates: Italian, Portuguese.
+
 1.6.0
 -----
 * Added optional closing to tray.
