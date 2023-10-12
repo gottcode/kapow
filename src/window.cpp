@@ -390,7 +390,7 @@ void Window::closeEvent(QCloseEvent* event)
 
 		// Prompt user about running timers
 		if (QMessageBox::question(this, tr("Question"), tr("There are timers running. Stop timers and quit?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
-			for (Project* project : qAsConst(m_active_timers)) {
+			for (Project* project : std::as_const(m_active_timers)) {
 				project->stop(m_current_time);
 			}
 			m_active_timers.clear();
