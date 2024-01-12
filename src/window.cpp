@@ -148,7 +148,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	m_view_reports = menu->addAction(tr("View R&eports"), this, &Window::viewReports);
 	m_view_reports->setEnabled(false);
 	menu->addSeparator();
-	QAction* quit_action = menu->addAction(tr("&Quit"), this, &Window::close);
+	QAction* quit_action = menu->addAction(tr("&Quit"), this, &Window::quit);
 	quit_action->setShortcut(tr("Ctrl+Q"));
 	quit_action->setMenuRole(QAction::QuitRole);
 
@@ -430,6 +430,19 @@ void Window::about()
 			tr("Copyright &copy; 2008-%1 Graeme Gott").arg("2024"),
 			tr("Released under the <a href=%1>GPL 3</a> license").arg("\"http://www.gnu.org/licenses/gpl.html\""))
 	);
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::quit()
+{
+	const bool closetotray = m_closetotray;
+	m_closetotray = false;
+	if (close()) {
+		QApplication::quit();
+	} else {
+		m_closetotray = closetotray;
+	}
 }
 
 //-----------------------------------------------------------------------------
