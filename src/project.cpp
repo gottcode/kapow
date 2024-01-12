@@ -9,7 +9,7 @@
 #include "filter_model.h"
 #include "session_model.h"
 
-#include <QApplication>
+#include <QGuiApplication>
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
@@ -179,7 +179,7 @@ void Project::updateTime(const QDateTime& current)
 
 void Project::billedStatusChanged(bool billed)
 {
-	setForeground(0, QApplication::palette().color((billed && !m_active) ? QPalette::Disabled : QPalette::Normal, QPalette::Text));
+	setForeground(0, QGuiApplication::palette().color((billed && !m_active) ? QPalette::Disabled : QPalette::Normal, QPalette::Text));
 }
 
 //-----------------------------------------------------------------------------
