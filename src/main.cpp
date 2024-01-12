@@ -9,14 +9,14 @@
 #include "settings.h"
 #include "window.h"
 
-#include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QMessageBox>
+#include <QtSingleApplication>
 
 int main(int argc, char** argv)
 {
-	QApplication app(argc, argv);
+	QtSingleApplication app(argc, argv);
 	app.setApplicationName("Kapow");
 	app.setApplicationDisplayName(Window::tr("Kapow Punch Clock"));
 	app.setApplicationVersion(VERSIONSTR);
@@ -26,6 +26,10 @@ int main(int argc, char** argv)
 	app.setWindowIcon(QIcon::fromTheme("kapow", QIcon(":/kapow.png")));
 	app.setDesktopFileName("kapow");
 #endif
+
+	if (app.isRunning()) {
+		return !app.sendMessage("show");
+	}
 
 	const QString appdir = app.applicationDirPath();
 	const QString datadir = QDir::cleanPath(appdir + "/" + KAPOW_DATADIR);
@@ -134,6 +138,7 @@ int main(int argc, char** argv)
 
 	Window window(path, backups_enabled);
 	if (window.isValid()) {
+		Window::connect(&app, &QtSingleApplication::messageReceived, &window, &QMainWindow::show);
 		return app.exec();
 	} else {
 		return 1;

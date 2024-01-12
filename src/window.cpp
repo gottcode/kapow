@@ -439,7 +439,7 @@ void Window::quit()
 	const bool closetotray = m_closetotray;
 	m_closetotray = false;
 	if (close()) {
-		QApplication::quit();
+		QCoreApplication::quit();
 	} else {
 		m_closetotray = closetotray;
 	}
@@ -713,7 +713,7 @@ void Window::projectActivated(QTreeWidgetItem* item)
 	m_edit_session->setEnabled(false);
 	m_remove_session->setEnabled(false);
 
-	QApplication::processEvents();
+	QCoreApplication::processEvents();
 	int value = m_active_project->scrollValue();
 	if (value != -1) {
 		m_details->verticalScrollBar()->setValue(value);

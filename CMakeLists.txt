@@ -66,7 +66,13 @@ qt6_add_executable(kapow
 	src/settings.cpp
 	src/time_editor.cpp
 	src/window.cpp
+	src/3rdparty/qtsingleapplication/qtsingleapplication.cpp
+	src/3rdparty/qtsingleapplication/qtlocalpeer.cpp
 	${translations_QM}
+)
+
+target_include_directories(kapow PRIVATE
+	src/3rdparty/qtsingleapplication
 )
 
 target_link_libraries(kapow PRIVATE
