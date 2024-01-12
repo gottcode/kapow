@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaldır</translation>
     </message>
     <message>
         <source>Question</source>
@@ -152,7 +152,7 @@
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni raporlar kaldırılsın mı?</translation>
     </message>
 </context>
 <context>
@@ -160,6 +160,7 @@
     <message numerus="yes">
         <source>%n hour(s)</source>
         <translation>
+            <numerusform>%n saat</numerusform>
             <numerusform>%n saat</numerusform>
         </translation>
     </message>
@@ -172,11 +173,11 @@
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hata</translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oturum başka bir oturumla çakışıyor.</translation>
     </message>
 </context>
 <context>
@@ -210,43 +211,43 @@
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation type="unfinished">Toplam</translation>
+        <translation>Toplam</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarih</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished">Başlat</translation>
+        <translation>Başlama</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Bitir</translation>
+        <translation>Bitiş</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Görev</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished">Saat</translation>
+        <translation>Saat</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Günlük</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Haftalık</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation type="unfinished"></translation>
+        <translation>Aylık</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapor</translation>
     </message>
 </context>
 <context>
@@ -269,7 +270,7 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Küçült</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -381,11 +382,11 @@
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oturum başka oturumlarla çakışıyor.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Geri Yükle</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
@@ -463,6 +464,7 @@
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n zamanlayıcı çalışıyor</numerusform>
+            <numerusform>%n zamanlayıcı çalışıyor</numerusform>
         </translation>
     </message>
     <message>
@@ -471,34 +473,34 @@
     </message>
     <message>
         <source>&amp;Close to Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem Çekmecesine &amp;Kapat</translation>
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Raporu &amp;Kaldır</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarları belirtilen dosyada INI biçiminde sakla.</translation>
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>dosya</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaman verilerinin otomatik yedeklerini oluşturma.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanılacak zaman veri dosyası.</translation>
     </message>
 </context>
 </TS>

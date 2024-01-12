@@ -162,6 +162,7 @@
         <translation>
             <numerusform>%n hora</numerusform>
             <numerusform>%n horas</numerusform>
+            <numerusform>%n horas</numerusform>
         </translation>
     </message>
     <message>
@@ -270,7 +271,7 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimizar</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -464,6 +465,7 @@
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n temporizador ejecutándose</numerusform>
+            <numerusform>%n temporizadores ejecutándose</numerusform>
             <numerusform>%n temporizadores ejecutándose</numerusform>
         </translation>
     </message>
