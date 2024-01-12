@@ -42,6 +42,7 @@ protected:
 
 private Q_SLOTS:
 	void about();
+	void quit();
 	void setDecimalTotals(bool decimals);
 	void setInlineEditing(bool edit);
 	void setCloseToTray(bool closetotray);
