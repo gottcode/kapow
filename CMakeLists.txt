@@ -102,6 +102,8 @@ if(ENABLE_STRIP)
 endif()
 
 # Install
+target_sources(kapow PRIVATE icons/icons.qrc)
+
 if(APPLE)
 	set(datadir "../Resources")
 
@@ -132,8 +134,6 @@ elseif(WIN32)
 	_qt_internal_generate_win32_rc_file(kapow)
 else()
 	file(RELATIVE_PATH datadir ${CMAKE_INSTALL_FULL_BINDIR} ${CMAKE_INSTALL_FULL_DATADIR}/kapow)
-
-	target_sources(kapow PRIVATE icons/icons.qrc)
 
 	install(TARGETS kapow RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 	install(FILES ${translations_QM} DESTINATION ${CMAKE_INSTALL_DATADIR}/kapow/translations)
