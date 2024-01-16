@@ -1,3 +1,11 @@
+1.6.2
+-----
+* FIXED: Did not quit when close-to-tray was enabled.
+* FIXED: System tray icon did not work in Windows.
+* Only allow a single instance to run.
+* Replaced deprecated code.
+* Translation updates: Spanish, Turkish.
+
 1.6.1
 -----
 * Allow higher hourly rate.
