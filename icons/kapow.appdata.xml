@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>kapow.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
@@ -79,9 +79,11 @@
   <url type="homepage">https://gottcode.org/kapow/</url>
   <url type="bugtracker">https://gottcode.org/kapow/bugs/</url>
   <url type="donation">https://gottcode.org/tip/</url>
-  <url type="translate">https://www.transifex.com/projects/p/kapow/</url>
+  <url type="translate">https://www.transifex.com/gottcode/kapow/</url>
 
-  <developer_name>Graeme Gott</developer_name>
+  <developer id="org.gottcode">
+    <name translatable="no">Graeme Gott</name>
+  </developer>
   <update_contact>graeme@gottcode.org</update_contact>
 
   <translation type="qt">kapow</translation>
@@ -90,6 +92,12 @@
     <binary>kapow</binary>
   </provides>
   <launchable type="desktop-id">kapow.desktop</launchable>
+  <icon type="stock">kapow</icon>
+
+  <categories>
+    <category>Office</category>
+    <category>Calendar</category>
+  </categories>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
