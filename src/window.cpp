@@ -200,11 +200,11 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	actions_separator->setSeparator(true);
 
 	QMenu* context_menu = new QMenu(this);
-    // Add start and stop timer in the tray icon
-    context_menu->addAction(m_start_session);
-    context_menu->addAction(m_stop_session);
+	// Add start and stop timer in the tray icon
+	context_menu->addAction(m_start_session);
+	context_menu->addAction(m_stop_session);
 
-    context_menu->addSeparator();
+	context_menu->addSeparator();
 
 	context_menu->addAction(m_toggle_visibility);
 	context_menu->addAction(quit_action);
