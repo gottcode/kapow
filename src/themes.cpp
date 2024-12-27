@@ -19,6 +19,7 @@ ThemeManager::ThemeManager(QObject *parent)
 	this->darkPalette->setColor(QPalette::Highlight, QColor(42, 130, 218));
 	this->darkPalette->setColor(QPalette::HighlightedText, Qt::black);
 	this->darkPalette->setColor(QPalette::PlaceholderText, Qt::white);
+	this->darkPalette->setColor(QPalette::Link, QColor(42, 130, 218));
 
 	// Set white palette coloring
 	this->lightPalette = new QPalette();
