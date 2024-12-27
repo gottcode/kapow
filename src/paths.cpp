@@ -15,8 +15,11 @@
 
 QString Paths::dataPath()
 {
-	static QString path = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-	return path;
+#ifdef QT_DEBUG // Debugging won't interfere with the actual program data
+	return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + "/Debug";
+#else
+	return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+#endif
 }
 
 //-----------------------------------------------------------------------------
