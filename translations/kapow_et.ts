@@ -1,102 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<TS version="2.1" language="et" sourcelanguage="en">
 <context>
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Seleccione el idioma de la aplicación:</translation>
+        <translation>Vali rakenduse keel:</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Idioma del sistema&gt;</translation>
+        <translation>&lt;System Language&gt;</translation>
     </message>
     <message>
         <source>Note</source>
-        <translation>Nota</translation>
+        <translation>Märkus</translation>
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Reinicie la aplicación para el cambio de idioma surta efecto.</translation>
+        <translation>Selle muudatuse jõustamiseks palun käivita rakendus uuesti.</translation>
     </message>
 </context>
 <context>
     <name>Report</name>
     <message>
         <source>Time Sheet Report</source>
-        <translation>Informe de horas trabajadas</translation>
+        <translation>Ajaarvestuse aruanne</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nombre:</translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <source>Company:</source>
-        <translation>Empresa:</translation>
+        <translation>Firma:</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>Dirección:</translation>
+        <translation>Aadress:</translation>
     </message>
     <message>
         <source>Phone:</source>
-        <translation>Teléfono:</translation>
+        <translation>Telefon:</translation>
     </message>
     <message>
         <source>Fax:</source>
-        <translation>Fax:</translation>
+        <translation>Telefaks:</translation>
     </message>
     <message>
         <source>Email:</source>
-        <translation>Correo electrónico:</translation>
+        <translation>E-posti aadress:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation>Página web:</translation>
+        <translation>Veebisait:</translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation>N/D</translation>
+        <translation>n/a</translation>
     </message>
     <message>
         <source>Prepend currency symbol</source>
-        <translation>Anteponer símbolo de moneda</translation>
+        <translation>Lisa valuuta sümbol ette</translation>
     </message>
     <message>
         <source>Hourly rate:</source>
-        <translation>Tarifa por hora:</translation>
+        <translation>Tunnitariif:</translation>
     </message>
     <message>
         <source>Tax rate:</source>
-        <translation>Tasa de impuesto:</translation>
+        <translation>Maksumäär:</translation>
     </message>
     <message>
         <source>Currency symbol:</source>
-        <translation>Símbolo de moneda:</translation>
+        <translation>Valuutasümbol:</translation>
     </message>
     <message>
         <source>Contact Information</source>
-        <translation>Información de contacto</translation>
+        <translation>Kontaktteave</translation>
     </message>
     <message>
         <source>Data</source>
-        <translation>Datos</translation>
+        <translation>Andmed</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Previsualización</translation>
+        <translation>Eelvaade</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Exportar</translation>
+        <translation>Ekspordi</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Imprimir</translation>
+        <translation>Trüki</translation>
     </message>
     <message>
         <source>Web Page (*.html *.htm)</source>
-        <translation>Página web (*.html *.htm)</translation>
+        <translation>Veebileht (*.html *.htm)</translation>
     </message>
     <message>
         <source>iCalendar (*.ics)</source>
@@ -104,55 +104,55 @@
     </message>
     <message>
         <source>Outlook CSV (*.csv)</source>
-        <translation>CSV de Outlook (*.csv)</translation>
+        <translation>Outlook CSV (*.csv)</translation>
     </message>
     <message>
         <source>Export Report</source>
-        <translation>Exportar el informe</translation>
+        <translation>Ekspordi aruanne</translation>
     </message>
     <message>
         <source>View Reports</source>
-        <translation>Ver los informes</translation>
+        <translation>Vaata aruandeid</translation>
     </message>
     <message>
         <source>Create Report</source>
-        <translation>Crear informe</translation>
+        <translation>Koosta aruanne</translation>
     </message>
     <message>
         <source>Phone: %1</source>
-        <translation>Teléfono: %1</translation>
+        <translation>Telefon: %1</translation>
     </message>
     <message>
         <source>Fax: %1</source>
-        <translation>Fax: %1</translation>
+        <translation>Telefaks: %1</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation>Horas</translation>
+        <translation>Tunde</translation>
     </message>
     <message>
         <source>Subtotal</source>
-        <translation>Subtotal</translation>
+        <translation>Vahesumma</translation>
     </message>
     <message>
         <source>Taxes</source>
-        <translation>Impuestos</translation>
+        <translation>Maksud</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation>Total</translation>
+        <translation>Kokku</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemalda</translation>
     </message>
     <message>
         <source>Question</source>
-        <translation>Pregunta</translation>
+        <translation>Küsimus</translation>
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas eemaldame viimase aruande?</translation>
     </message>
 </context>
 <context>
@@ -160,94 +160,94 @@
     <message numerus="yes">
         <source>%n hour(s)</source>
         <translation>
-            <numerusform>%n hora</numerusform>
-            <numerusform>%n horas</numerusform>
+            <numerusform>%n tund</numerusform>
+            <numerusform>%n tundi</numerusform>
         </translation>
     </message>
     <message>
         <source>%L1 hours</source>
-        <translation>%L1 horas</translation>
+        <translation>%L1 tundi</translation>
     </message>
 </context>
 <context>
     <name>SessionDelegate</name>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>See sessioon on teiste sessioonidega vastuolus.</translation>
     </message>
 </context>
 <context>
     <name>SessionDialog</name>
     <message>
         <source>Add Session</source>
-        <translation>Añadir sesión</translation>
+        <translation>Lisa sessioon</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Fecha:</translation>
+        <translation>Kuupäev:</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Inicio:</translation>
+        <translation>Algus:</translation>
     </message>
     <message>
         <source>Stop:</source>
-        <translation>Fin:</translation>
+        <translation>Lõpp:</translation>
     </message>
     <message>
         <source>Task:</source>
-        <translation>Tarea:</translation>
+        <translation>Ülesanne:</translation>
     </message>
     <message>
         <source>Edit Session</source>
-        <translation>Editar sesión</translation>
+        <translation>Muuda sessiooni</translation>
     </message>
 </context>
 <context>
     <name>SessionModel</name>
     <message>
         <source>Total</source>
-        <translation>Total</translation>
+        <translation>Kokku</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation>Fecha</translation>
+        <translation>Kuupäev</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Iniciar</translation>
+        <translation>Algus</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Detener</translation>
+        <translation>Lõpp</translation>
     </message>
     <message>
         <source>Task</source>
-        <translation>Tarea</translation>
+        <translation>Ülesanne</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation>Horas</translation>
+        <translation>Tunde</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Diario</translation>
+        <translation>Päevas</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Semanalmente</translation>
+        <translation>Nädalas</translation>
     </message>
     <message>
         <source>Monthly</source>
-        <translation>Mensualmente</translation>
+        <translation>Kuus</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation>Reporte</translation>
+        <translation>Aruanne</translation>
     </message>
 </context>
 <context>
@@ -258,43 +258,43 @@
     </message>
     <message>
         <source>Start</source>
-        <translation>Iniciar</translation>
+        <translation>Alusta</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Detener</translation>
+        <translation>Lõpeta</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Katkesta</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;Minimizar</translation>
+        <translation>&amp;Minimeeri</translation>
     </message>
     <message>
         <source>&amp;Project</source>
-        <translation>&amp;Proyecto</translation>
+        <translation>&amp;Projekt</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;Añadir</translation>
+        <translation>&amp;Lisa</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
-        <translation>Ctrl+Mayús+N</translation>
+        <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Remover</translation>
+        <translation>&amp;Eemalda</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Delete</source>
-        <translation>Ctrl+Mayús+Supr</translation>
+        <translation>Ctrl+Shift+Delete</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Salir</translation>
+        <translation>&amp;Välju</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -302,205 +302,205 @@
     </message>
     <message>
         <source>&amp;Session</source>
-        <translation>&amp;Sesión</translation>
+        <translation>&amp;Sessioon</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp;Editar</translation>
+        <translation>&amp;Muuda</translation>
     </message>
     <message>
         <source>Ctrl+Delete</source>
-        <translation>Ctrl+Supr</translation>
+        <translation>Ctrl+Delete</translation>
     </message>
     <message>
         <source>S&amp;ettings</source>
-        <translation>&amp;Configuración</translation>
+        <translation>S&amp;eadistused</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation>Columnas</translation>
+        <translation>Veerud</translation>
     </message>
     <message>
         <source>&amp;Decimal Totals</source>
-        <translation>&amp;Totales decimales</translation>
+        <translation>Ajaarvestuse summad kümnen&amp;dsüsteemis</translation>
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>&amp;Edición en la misma línea</translation>
+        <translation>Muuda k&amp;irjet avamata</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Idioma de la aplicación…</translation>
+        <translation>Rakenduse kee&amp;l</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>Ay&amp;uda</translation>
+        <translation>&amp;Abiteave</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Acerca de</translation>
+        <translation>R&amp;akenduse teave</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>Acerca de &amp;Qt</translation>
+        <translation>&amp;Qt teave</translation>
     </message>
     <message>
         <source>Project</source>
-        <translation>Proyecto</translation>
+        <translation>Projekt</translation>
     </message>
     <message>
         <source>Timer</source>
-        <translation>Temporizador</translation>
+        <translation>Taimer</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Mostrar todo</translation>
+        <translation>Näita kõiki</translation>
     </message>
     <message>
         <source>Show only unbilled</source>
-        <translation>Mostrar solo no facturados</translation>
+        <translation>Näita neid, kus arve on tegemata</translation>
     </message>
     <message>
         <source>Show only this year</source>
-        <translation>Mostrar solo este año</translation>
+        <translation>Näita selle aasta kirjeid</translation>
     </message>
     <message>
         <source>Show only this month</source>
-        <translation>Mostrar solo este mes</translation>
+        <translation>Näita selle kuu kirjeid</translation>
     </message>
     <message>
         <source>Show only this week</source>
-        <translation>Mostrar solo esta semana</translation>
+        <translation>Näita selle nädala kirjeid</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2008-%1 Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2008-%1 Graeme Gott</translation>
+        <translation>Autoriõigused &amp;copy; 2008-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Publicado bajo la licencia &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Avaldatud &lt;a href=%1&gt;GPL 3&lt;/a&gt; litsentsi alusel</translation>
     </message>
     <message>
         <source>Session conflicts with other sessions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessiooni vastuolud teiste sessioonidega.</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Taasta</translation>
     </message>
     <message>
         <source>Unable to read time data.</source>
-        <translation>No se pudieron leer los datos del tiempo.</translation>
+        <translation>Ajaandmete lugemine ei õnnestu.</translation>
     </message>
     <message>
         <source>Untitled</source>
-        <translation>Sin título</translation>
+        <translation>Ilma nimeta</translation>
     </message>
     <message>
         <source>Unable to write time data.</source>
-        <translation>No se pudieron escribir los datos del tiempo.</translation>
+        <translation>Ajaandmete salvestamine ei õnnestu.</translation>
     </message>
     <message>
         <source>There are timers running. Stop timers and quit?</source>
-        <translation>Hay temporizadores en ejecución. ¿Quiere detenerlos y salir?</translation>
+        <translation>Taimerid on töös. Kas peatame taimerid ja lõpetame töö?</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Rakenduse teave</translation>
     </message>
     <message>
         <source>A program to help track spent time</source>
-        <translation>Un programa para ayudar a rastrear tiempo consumido</translation>
+        <translation>Programm ajaarvestuse haldamiseks</translation>
     </message>
     <message>
         <source>Question</source>
-        <translation>Pregunta</translation>
+        <translation>Küsimus</translation>
     </message>
     <message>
         <source>&amp;Create Report...</source>
-        <translation>&amp;Crear el informe…</translation>
+        <translation>&amp;Koosta aruanne...</translation>
     </message>
     <message>
         <source>View R&amp;eports</source>
-        <translation>Ver los in&amp;formes</translation>
+        <translation>Vaata aruand&amp;eid</translation>
     </message>
     <message>
         <source>Cancel this session?</source>
-        <translation>¿Quiere cancelar esta sesión?</translation>
+        <translation>Kas katkestame selle sessiooni?</translation>
     </message>
     <message>
         <source>Add Project</source>
-        <translation>Añadir un proyecto</translation>
+        <translation>Lisa projekt</translation>
     </message>
     <message>
         <source>Enter project name:</source>
-        <translation>Escriba el nombre del proyecto:</translation>
+        <translation>Sisesta projekti nimi</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Unable to create time data location.</source>
-        <translation>No se pudo crear la ubicación de datos del tiempo.</translation>
+        <translation>Ajaandmete salvestamise asukoha loomine ei õnnestu.</translation>
     </message>
     <message>
         <source>Unable to move time data location.</source>
-        <translation>No se pudo mover la ubicación de datos del tiempo.</translation>
+        <translation>Ajaandmete salvestamise asukoha teisaldamine ei õnnestu.</translation>
     </message>
     <message>
         <source>A project with that name already exists.</source>
-        <translation>Ya existe un proyecto con ese nombre.</translation>
+        <translation>Sellise nimega projekt on juba olemas.</translation>
     </message>
     <message>
         <source>Remove selected project?</source>
-        <translation>¿Quiere eliminar el proyecto seleccionado?</translation>
+        <translation>Kas kustutame valitud projekti?</translation>
     </message>
     <message>
         <source>Remove selected session?</source>
-        <translation>¿Quiere eliminar la sesión seleccionada?</translation>
+        <translation>Kas kustutame valitud sessiooni?</translation>
     </message>
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
-            <numerusform>%n temporizador ejecutándose</numerusform>
-            <numerusform>%n temporizadores ejecutándose</numerusform>
+            <numerusform>%n taimer on töös</numerusform>
+            <numerusform>%n taimerit on töös</numerusform>
         </translation>
     </message>
     <message>
         <source>Kapow Punch Clock</source>
-        <translation>Reloj de control Kapow</translation>
+        <translation>Kapow - sinu tööaja arvestus</translation>
     </message>
     <message>
         <source>&amp;Close to Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sulge süsteemisalve</translation>
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee&amp;malda aruanne</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"></translation>
+        <translation>Tööaja arvestuse programm</translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvesta seadistused määratud faili ini-vormingus.</translation>
     </message>
     <message>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>fail</translation>
     </message>
     <message>
         <source>Do not create automatic backups of time data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ära tee andmetest automaatset varukoopiat.</translation>
     </message>
     <message>
         <source>The time data file to use.</source>
-        <translation>El archivo temporal a usar.</translation>
+        <translation>Kasutatav ajaandmete fail.</translation>
     </message>
 </context>
 </TS>
