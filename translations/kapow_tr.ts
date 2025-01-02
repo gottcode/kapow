@@ -161,7 +161,6 @@
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n saat</numerusform>
-            <numerusform>%n saat</numerusform>
         </translation>
     </message>
     <message>
@@ -464,7 +463,6 @@
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n zamanlayıcı çalışıyor</numerusform>
-            <numerusform>%n zamanlayıcı çalışıyor</numerusform>
         </translation>
     </message>
     <message>
@@ -484,7 +482,7 @@
     <name>main</name>
     <message>
         <source>Punch clock program</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Store settings as INI format in specified file.</source>

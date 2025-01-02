@@ -3,28 +3,28 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Oprea Nicolae <jaff2002@yahoo.com>, 2015
+# Priit Jõerüüt <transifex@joeruut.com>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Kapow\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
-"PO-Revision-Date: 2017-09-23 20:29+0000\n"
-"Last-Translator: Oprea Nicolae <jaff2002@yahoo.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/gottcode/kapow/language/ro/)\n"
+"PO-Revision-Date: 2014-11-14 20:10+0000\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2024\n"
+"Language-Team: Estonian (http://app.transifex.com/gottcode/kapow/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
-msgstr "Kapow Punch Clock"
+msgstr "Kapow - sinu tööaja arvestus"
 
 #: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Ţineţi evidenţa timpului petrecut pe proiecte"
+msgstr "Pea arvet erinevatele projektidele kulutatud aja üle"
 
 #: ../kapow.appdata.xml.in.h:3
 msgid ""
@@ -35,8 +35,8 @@ msgid ""
 "Kapow also allows you to easily keep track of the hours since you last "
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
-msgstr "Kapow este un program de ceas stimul conceput pentru a ţine evidenţa orelor dvs., indiferent dacă lucraţi pe un proiect sau mai multe. Pur şi simplu cronometraţi cu butonul Start/Stop. Dacă faceţi o greşeală în orele dvs., vă puteţi întoarce şi edita oricare dintre intrări dînd dublu-clic pe sesiunea în cauză. Kapow, de asemenea, vă permite să păstraţi cu uşurinţă evidenţa orelor de cînd aţi facturat în trecut un client, bifînd căsuţa ajutătoare \"Taxat\" - totalurile vor reflecta munca, după ultima sesiune facturată."
+msgstr "Kapow on tööaja arvestuse programm, mis on mõeldud väga lihtsaks töötundide arvestamiseks ühe või enama projekti kontekstis. Lihtsalt käivita ja peata taimer nii, nagu vaja on. Kui tekkis mõni viga, siis klõpsates antud sessiooni salvestatud andmetele saad neid kergesti muuta. Lisaks on sul mugav pidada arvet kliendile esitatud arvete üle - andmetes on vastav märkekast ning siis kõik summad kajastavad eelmisest arvest kulunud aega."
 
 #: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
-msgstr "Punch Clock"
+msgstr "Tööaja arvestus"
