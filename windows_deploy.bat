@@ -4,7 +4,7 @@
 
 SET SRCDIR=..\kapow
 SET APP=Kapow
-SET VERSION=1.6.2
+SET VERSION=1.6.3
 
 ECHO Copying executable
 MKDIR %SRCDIR%\%APP%
