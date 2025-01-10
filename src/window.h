@@ -9,6 +9,7 @@
 
 #include "contact.h"
 #include "rates.h"
+#include "themes.h"
 class Project;
 class SessionModel;
 
@@ -43,6 +44,7 @@ protected:
 private Q_SLOTS:
 	void about();
 	void quit();
+	void setDarkMode(bool is_dark_mdoe);
 	void setDecimalTotals(bool decimals);
 	void setInlineEditing(bool edit);
 	void setCloseToTray(bool closetotray);
@@ -103,6 +105,7 @@ private:
 	QPushButton* m_cancel;
 	QComboBox* m_filter;
 	QTreeView* m_details;
+	bool m_dark_mode;
 	bool m_decimals;
 	bool m_inline;
 	bool m_closetotray;
@@ -133,6 +136,8 @@ private:
 	QSystemTrayIcon* m_tray_icon;
 	QIcon m_active_icon;
 	QIcon m_inactive_icon;
+
+	ThemeManager* m_theme_manager;
 };
 
 #endif // KAPOW_WINDOW_H
