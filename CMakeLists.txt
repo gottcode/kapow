@@ -39,6 +39,26 @@ endif()
 
 # Create program
 qt_add_executable(kapow
+	# Headers
+	src/contact.h
+	src/date_editor.h
+	src/filter_model.h
+	src/locale_dialog.h
+	src/paths.h
+	src/project.h
+	src/project_delegate.h
+	src/rates.h
+	src/report.h
+	src/session.h
+	src/session_delegate.h
+	src/session_dialog.h
+	src/session_model.h
+	src/settings.h
+	src/time_editor.h
+	src/window.h
+	src/3rdparty/qtsingleapplication/qtsingleapplication.h
+	src/3rdparty/qtsingleapplication/qtlocalpeer.h
+	# Sources
 	src/contact.cpp
 	src/date_editor.cpp
 	src/filter_model.cpp
@@ -58,6 +78,7 @@ qt_add_executable(kapow
 	src/window.cpp
 	src/3rdparty/qtsingleapplication/qtsingleapplication.cpp
 	src/3rdparty/qtsingleapplication/qtlocalpeer.cpp
+	# Resources
 	${translations_QM}
 )
 
