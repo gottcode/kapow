@@ -158,8 +158,9 @@ else()
 	install(FILES ${translations_QM} DESTINATION ${CMAKE_INSTALL_DATADIR}/kapow/translations)
 	install(FILES doc/kapow.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 COMPONENT doc)
 	install(DIRECTORY icons/hicolor DESTINATION ${CMAKE_INSTALL_DATADIR}/icons)
-	install(FILES icons/kapow.appdata.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
-	install(FILES icons/kapow.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+
+	include(cmake/TranslateMetainfo.cmake)
+	process_and_install_metainfo(Kapow ${CMAKE_SOURCE_DIR}/icons/po)
 endif()
 
 set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS KAPOW_DATADIR="${datadir}")

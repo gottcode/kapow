@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>kapow.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+
+  <name>Kapow Punch Clock</name>
+  <summary>Keep track of time spent on projects</summary>
+  <description>
+    <p>Kapow is a punch clock program designed to easily keep track of your hours, whether you're working on one project or many. Simply clock in and out with the Start/Stop button. If you make a mistake in your hours, you can go back and edit any of the entries by double-clicking on the session in question. Kapow also allows you to easily keep track of the hours since you last billed a client, by providing a helpful "Billed" check box--the totals will reflect your work after the last billed session.</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gottcode.org/kapow/screenshots/kapow.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://gottcode.org/kapow/screenshots/report1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://gottcode.org/kapow/screenshots/report2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://gottcode.org/kapow/screenshots/report3.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://gottcode.org/kapow/</url>
+  <url type="bugtracker">https://gottcode.org/kapow/bugs/</url>
+  <url type="donation">https://gottcode.org/tip/</url>
+  <url type="translate">https://www.transifex.com/gottcode/kapow/</url>
+
+  <developer id="org.gottcode">
+    <name translatable="no">Graeme Gott</name>
+  </developer>
+  <update_contact>graeme@gottcode.org</update_contact>
+
+  <translation type="qt">kapow</translation>
+
+  <provides>
+    <binary>kapow</binary>
+  </provides>
+  <launchable type="desktop-id">kapow.desktop</launchable>
+  <icon type="stock">kapow</icon>
+
+  <categories>
+    <category>Office</category>
+    <category>Calendar</category>
+  </categories>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.6.3" date="2025-01-06">
+      <description>
+        <ul>
+          <li>Improved deployment</li>
+          <li>Translation updates: Estonian, Romanian</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.6.2" date="2024-01-16">
+      <description>
+        <ul>
+          <li>FIXED: Did not quit when close-to-tray was enabled</li>
+          <li>FIXED: System tray icon did not work in Windows</li>
+          <li>Only allow a single instance to run</li>
+          <li>Replaced deprecated code</li>
+          <li>Translation updates: Spanish, Turkish</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.6.1" date="2023-01-10">
+      <description>
+        <ul>
+          <li>Allow higher hourly rate</li>
+          <li>Improved Linux deployment</li>
+          <li>Replaced deprecated code</li>
+          <li>Translation updates: Italian, Portuguese</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.6.0" date="2022-05-20">
+      <description>
+        <ul>
+          <li>Added optional closing to tray</li>
+          <li>Added removing last report</li>
+          <li>Always allow creating report if there are unbilled sessions</li>
+          <li>Always use exact value for totals in reports</li>
+          <li>Only save when timers are active</li>
+          <li>Prevent adding or editing session after start of running timer</li>
+          <li>Prevent starting or ending timer inside of existing session</li>
+          <li>Refactored code</li>
+          <li>Switched to Qt 6</li>
+          <li>Translation updates: Czech, Dutch, French, Lithuanian, Romanian, Ukrainian</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.10" date="2020-04-20">
+      <description>
+        <ul>
+          <li>FIXED: Did not load locales with underscores</li>
+          <li>Improved Windows deployment</li>
+          <li>Translation updates: Italian</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.9" date="2019-08-07">
+      <description>
+        <ul>
+          <li>FIXED: Window icon didn't work in Wayland</li>
+          <li>Improved loading locales</li>
+          <li>Improved Windows deployment</li>
+          <li>Replaced deprecated code</li>
+          <li>Translation updates: Czech, French</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.8" date="2018-07-20">
+      <description>
+        <ul>
+          <li>FIXED: Automatic high DPI support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.7" date="2018-06-24">
+      <description>
+        <ul>
+          <li>FIXED: Crash when adding projects</li>
+          <li>FIXED: Crash when removing projects with multiple subprojects</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.6" date="2018-05-29">
+      <description>
+        <ul>
+          <li>Extra warnings only shown in debug build</li>
+          <li>Improved Linux deployment</li>
+          <li>Improved macOS deployment</li>
+          <li>Improved Windows deployment</li>
+          <li>Translation updates: Danish, Portuguese</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

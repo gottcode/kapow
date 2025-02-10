@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Kapow Punch Clock
+GenericName=Punch Clock
+Comment=Keep track of time spent on projects
+TryExec=kapow
+Exec=kapow
+Icon=kapow
+Terminal=false
+Type=Application
+Categories=Qt;Office;Calendar;
