@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Jonas Bohdén <jonas.bohden@gmail.com>, 2017
 msgid ""
@@ -11,23 +11,22 @@ msgstr ""
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
 "PO-Revision-Date: 2017-10-27 13:07+0000\n"
 "Last-Translator: Jonas Bohdén <jonas.bohden@gmail.com>\n"
-"Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/kapow/"
-"language/sv_SE/)\n"
-"Language: sv\n"
+"Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/kapow/language/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
+#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
 msgstr "Kapow Stämpelklocka"
 
-#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
+#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
 msgstr "Håll koll på tiden som du spenderar på projekt"
 
-#: ../kapow.appdata.xml.in:10
+#: ../kapow.appdata.xml.in.h:3
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -36,16 +35,8 @@ msgid ""
 "Kapow also allows you to easily keep track of the hours since you last "
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
-msgstr ""
-"Kapow är ett stämpelklocksprogram som är enkelt utformat för att hålla koll "
-"på dina timmar, oavsett om du arbetar på ett eller flera projekt. Stämpla "
-"helt enkelt in och ut med Start/Stopp-knappen. Om du gör ett misstag i dina "
-"timmar, kan du gå tillbaka och redigera någon av posterna genom att "
-"dubbelklicka på den aktuella sessionen. Kapow låter dig även enkelt hålla "
-"koll på timmarna sedan du senast fakturerade en kund, genom att "
-"tillhandahålla en användbar \"Fakturerat\"-kryssruta. Summan kommer att "
-"återspegla ditt arbete efter den senast fakturerade sessionen."
+msgstr "Kapow är ett stämpelklocksprogram som är enkelt utformat för att hålla koll på dina timmar, oavsett om du arbetar på ett eller flera projekt. Stämpla helt enkelt in och ut med Start/Stopp-knappen. Om du gör ett misstag i dina timmar, kan du gå tillbaka och redigera någon av posterna genom att dubbelklicka på den aktuella sessionen. Kapow låter dig även enkelt hålla koll på timmarna sedan du senast fakturerade en kund, genom att tillhandahålla en användbar \"Fakturerat\"-kryssruta. Summan kommer att återspegla ditt arbete efter den senast fakturerade sessionen."
 
-#: ../kapow.desktop.in:4
+#: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
 msgstr "Stämpelklocka"
