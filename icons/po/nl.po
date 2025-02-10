@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Heimen Stoffels <vistausss@fastmail.com>, 2021
 # Heimen Stoffels <vistausss@fastmail.com>, 2017
@@ -14,21 +14,21 @@ msgstr ""
 "PO-Revision-Date: 2021-06-16 17:29+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/kapow/language/nl/)\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
+#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
 msgstr "Kapow-prikklok"
 
-#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
+#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
 msgstr "Houd de tijd bij die u spendeert aan projecten"
 
-#: ../kapow.appdata.xml.in:10
+#: ../kapow.appdata.xml.in.h:3
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -37,15 +37,8 @@ msgid ""
 "Kapow also allows you to easily keep track of the hours since you last "
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
-msgstr ""
-"Kapow is een prikklokprogramma, ontworpen om gemakkelijk uw uren bij te "
-"kunnen houden, of u nu werkt aan één of aan meerdere projecten. Klok in en "
-"uit met de Start/Stop-knop. Als u een fout maakt, dan kunt u teruggaan en "
-"elke invoer bewerken door te dubbelklikken op de bijbehorende sessie. Kapow "
-"laat u tevens gemakkelijk bijhouden wanneer u voor het laatst een cliënt "
-"hebt gefactureerd middels het selectievakje ‘Gefactureerd’. Het totaal geeft "
-"uw werkuren aan sinds de laatst gefactureerde sessie."
+msgstr "Kapow is een prikklokprogramma, ontworpen om gemakkelijk uw uren bij te kunnen houden, of u nu werkt aan één of aan meerdere projecten. Klok in en uit met de Start/Stop-knop. Als u een fout maakt, dan kunt u teruggaan en elke invoer bewerken door te dubbelklikken op de bijbehorende sessie. Kapow laat u tevens gemakkelijk bijhouden wanneer u voor het laatst een cliënt hebt gefactureerd middels het selectievakje ‘Gefactureerd’. Het totaal geeft uw werkuren aan sinds de laatst gefactureerde sessie."
 
-#: ../kapow.desktop.in:4
+#: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
 msgstr "Prikklok"

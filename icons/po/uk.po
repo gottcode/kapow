@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # dsafsadf <heneral@gmail.com>, 2021
 # zubr139, 2021
@@ -12,26 +12,22 @@ msgstr ""
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
 "PO-Revision-Date: 2014-11-14 20:10+0000\n"
 "Last-Translator: zubr139, 2021\n"
-"Language-Team: Ukrainian (http://www.transifex.com/gottcode/kapow/language/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (http://www.transifex.com/gottcode/kapow/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
+#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
 msgstr "Kapow Punch Clock"
 
-#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
+#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
-msgstr "Слідкуйте за часом, витраченим на проекти "
+msgstr "Слідкуйте за часом, витраченим на проекти"
 
-#: ../kapow.appdata.xml.in:10
+#: ../kapow.appdata.xml.in.h:3
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -40,16 +36,8 @@ msgid ""
 "Kapow also allows you to easily keep track of the hours since you last "
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
-msgstr ""
-"Kapow — це програма, яка дозволяє легко відстежувати ваші години роботи, "
-"незалежно від того, чи працюєте ви над одним проектом чи кількома. Просто "
-"ввімкніть і вийміть годинник за допомогою кнопки Пуск/Стоп. Якщо ви зробили "
-"помилку в годиннику, ви можете повернутися назад і відредагувати будь-який "
-"із записів, двічі клацнувши відповідний сеанс. Kapow також дозволяє легко "
-"відстежувати години з моменту останнього виставлення рахунку клієнту, "
-"встановлюючи корисний прапорець «Оплачено» — підсумки відображатимуть вашу "
-"роботу після останнього сеансу, що виставлявся."
+msgstr "Kapow — це програма, яка дозволяє легко відстежувати ваші години роботи, незалежно від того, чи працюєте ви над одним проектом чи кількома. Просто ввімкніть і вийміть годинник за допомогою кнопки Пуск/Стоп. Якщо ви зробили помилку в годиннику, ви можете повернутися назад і відредагувати будь-який із записів, двічі клацнувши відповідний сеанс. Kapow також дозволяє легко відстежувати години з моменту останнього виставлення рахунку клієнту, встановлюючи корисний прапорець «Оплачено» — підсумки відображатимуть вашу роботу після останнього сеансу, що виставлявся."
 
-#: ../kapow.desktop.in:4
+#: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
 msgstr ""

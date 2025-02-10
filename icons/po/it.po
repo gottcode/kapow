@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Patrizio Bellan <patrizio.bellan@gmail.com>, 2017
 msgid ""
@@ -11,23 +11,22 @@ msgstr ""
 "POT-Creation-Date: 2014-11-14 20:20+0000\n"
 "PO-Revision-Date: 2017-09-21 14:01+0000\n"
 "Last-Translator: Patrizio Bellan <patrizio.bellan@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/gottcode/kapow/language/"
-"it/)\n"
-"Language: it\n"
+"Language-Team: Italian (http://www.transifex.com/gottcode/kapow/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../kapow.appdata.xml.in:6 ../kapow.desktop.in:3
+#: ../kapow.appdata.xml.in.h:1 ../kapow.desktop.in.h:1
 msgid "Kapow Punch Clock"
 msgstr "Kapow, il timbra cartellino"
 
-#: ../kapow.appdata.xml.in:7 ../kapow.desktop.in:5
+#: ../kapow.appdata.xml.in.h:2 ../kapow.desktop.in.h:3
 msgid "Keep track of time spent on projects"
 msgstr "Tieni traccia del tempo speso nel progetto"
 
-#: ../kapow.appdata.xml.in:10
+#: ../kapow.appdata.xml.in.h:3
 msgid ""
 "Kapow is a punch clock program designed to easily keep track of your hours, "
 "whether you're working on one project or many. Simply clock in and out with "
@@ -36,16 +35,8 @@ msgid ""
 "Kapow also allows you to easily keep track of the hours since you last "
 "billed a client, by providing a helpful \"Billed\" check box--the totals "
 "will reflect your work after the last billed session."
-msgstr ""
-"Kapow è un programma \"timbra cartellino\",  dal design semplice,  creata "
-"per aiutarti a tener traccia delle ore di lavoro su uno o molti progetti. E' "
-"un semplice orologio di inizio e fine grazie ad un pulsante di Start e Stop. "
-"Se commetti un errore quando registri le tue ore, puoi tranquillamente "
-"editare i dati cliccando due volte il nome della sessione. Kapow ti aiuta a "
-"tenera traccia delle ore fatturate ad un cliente, grazie all'utilissima "
-"check box \"Fatturato\" che ti mostra il tuo ammontare, partendo dall'ultima "
-"fatturazione"
+msgstr "Kapow è un programma \"timbra cartellino\",  dal design semplice,  creata per aiutarti a tener traccia delle ore di lavoro su uno o molti progetti. E' un semplice orologio di inizio e fine grazie ad un pulsante di Start e Stop. Se commetti un errore quando registri le tue ore, puoi tranquillamente editare i dati cliccando due volte il nome della sessione. Kapow ti aiuta a tenera traccia delle ore fatturate ad un cliente, grazie all'utilissima check box \"Fatturato\" che ti mostra il tuo ammontare, partendo dall'ultima fatturazione."
 
-#: ../kapow.desktop.in:4
+#: ../kapow.desktop.in.h:2
 msgid "Punch Clock"
 msgstr "Timbra Cartellino"
