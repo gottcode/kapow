@@ -41,12 +41,6 @@
     <binary>kapow</binary>
   </provides>
   <launchable type="desktop-id">kapow.desktop</launchable>
-  <icon type="stock">kapow</icon>
-
-  <categories>
-    <category>Office</category>
-    <category>Calendar</category>
-  </categories>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
