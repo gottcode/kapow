@@ -5,7 +5,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Configure project
-project(kapow VERSION 1.6.3 LANGUAGES CXX)
+project(kapow VERSION 1.6.4 LANGUAGES CXX)
 
 set(project_copyright "2008-2025 Graeme Gott")
 
