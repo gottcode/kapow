@@ -160,7 +160,7 @@ else()
 	install(DIRECTORY icons/hicolor DESTINATION ${CMAKE_INSTALL_DATADIR}/icons)
 
 	include(cmake/TranslateMetainfo.cmake)
-	process_and_install_metainfo(Kapow ${CMAKE_SOURCE_DIR}/icons/po)
+	process_and_install_metainfo(PO_DIR ${CMAKE_SOURCE_DIR}/icons/po)
 endif()
 
 set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS KAPOW_DATADIR="${datadir}")
