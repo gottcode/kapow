@@ -61,12 +61,15 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	, m_valid(true)
 	, m_blocked(false)
 	, m_backups_enabled(backups_enabled)
+	, m_dark_mode(true)
 	, m_decimals(true)
 	, m_inline(true)
 	, m_closetotray(false)
 	, m_active_project(nullptr)
 	, m_active_model(nullptr)
 {
+	m_theme_manager = new ThemeManager();
+
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
 
@@ -129,6 +132,7 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 
 	// Load settings
 	Settings settings;
+	m_dark_mode = settings.value("DarkMode", true).toBool();
 	m_decimals = settings.value("DecimalTotals", true).toBool();
 	m_inline = settings.value("InlineEditing", true).toBool();
 	m_closetotray = settings.value("CloseToTray", false).toBool();
@@ -163,7 +167,15 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
 	QMenu* column_menu = menu->addMenu(tr("Columns"));
-	QAction* action = menu->addAction(tr("&Decimal Totals"));
+	menu->addSeparator();
+
+	QAction *action = menu->addAction(tr("&Dark Mode"));
+	action->setCheckable(true);
+	action->setChecked(m_dark_mode);
+	connect(action, &QAction::toggled, this, &Window::setDarkMode);
+	Window::setDarkMode(m_dark_mode); // Set the dark/light mode on startup
+	menu->addSeparator();
+	action = menu->addAction(tr("&Decimal Totals"));
 	action->setCheckable(true);
 	action->setChecked(m_decimals);
 	connect(action, &QAction::toggled, this, &Window::setDecimalTotals);
@@ -188,6 +200,12 @@ Window::Window(const QString& filename, bool backups_enabled, QWidget* parent)
 	actions_separator->setSeparator(true);
 
 	QMenu* context_menu = new QMenu(this);
+	// Add start and stop timer in the tray icon
+	context_menu->addAction(m_start_session);
+	context_menu->addAction(m_stop_session);
+
+	context_menu->addSeparator();
+
 	context_menu->addAction(m_toggle_visibility);
 	context_menu->addAction(quit_action);
 
@@ -443,6 +461,15 @@ void Window::quit()
 	} else {
 		m_closetotray = closetotray;
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::setDarkMode(bool is_dark_mode)
+{
+	m_dark_mode = is_dark_mode;
+	m_theme_manager->setTheme(qApp, m_dark_mode);
+	Settings().setValue("DarkMode", m_dark_mode);
 }
 
 //-----------------------------------------------------------------------------

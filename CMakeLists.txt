@@ -80,6 +80,7 @@ qt_add_executable(kapow
 	src/3rdparty/qtsingleapplication/qtlocalpeer.cpp
 	# Resources
 	${translations_QM}
+	src/themes.h src/themes.cpp
 )
 
 target_include_directories(kapow PRIVATE
