@@ -59,8 +59,6 @@ qt_add_executable(kapow
 	src/settings.h
 	src/time_editor.h
 	src/window.h
-	src/3rdparty/qtsingleapplication/qtsingleapplication.h
-	src/3rdparty/qtsingleapplication/qtlocalpeer.h
 	# Sources
 	src/contact.cpp
 	src/date_editor.cpp
@@ -79,14 +77,8 @@ qt_add_executable(kapow
 	src/settings.cpp
 	src/time_editor.cpp
 	src/window.cpp
-	src/3rdparty/qtsingleapplication/qtsingleapplication.cpp
-	src/3rdparty/qtsingleapplication/qtlocalpeer.cpp
 	# Resources
 	${translations_QM}
-)
-
-target_include_directories(kapow PRIVATE
-	src/3rdparty/qtsingleapplication
 )
 
 target_link_libraries(kapow PRIVATE
@@ -96,6 +88,23 @@ target_link_libraries(kapow PRIVATE
 	Qt6::PrintSupport
 	Qt6::Widgets
 )
+
+# Make single instance
+find_package(KDSingleApplication-qt6)
+if(TARGET KDAB::kdsingleapplication)
+	target_link_libraries(kapow PRIVATE KDAB::kdsingleapplication)
+else()
+	message(STATUS "Using 3rdparty KDSingleApplication")
+
+	target_compile_definitions(kapow PRIVATE KDSINGLEAPPLICATION_STATIC_BUILD)
+
+	target_include_directories(kapow PRIVATE src/3rdparty/kdsingleapplication)
+
+	target_sources(kapow PRIVATE
+		src/3rdparty/kdsingleapplication/kdsingleapplication.cpp
+		src/3rdparty/kdsingleapplication/kdsingleapplication_localsocket.cpp
+	)
+endif()
 
 # Create translations
 file(GLOB translations_SRCS translations/*.ts)

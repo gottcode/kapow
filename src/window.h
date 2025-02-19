@@ -35,6 +35,9 @@ public:
 
 	bool isValid() const;
 
+public Q_SLOTS:
+	void raiseWindow();
+
 protected:
 	bool event(QEvent* event) override;
 	void closeEvent(QCloseEvent* event) override;

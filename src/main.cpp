@@ -9,14 +9,16 @@
 #include "settings.h"
 #include "window.h"
 
+#include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QMessageBox>
-#include <QtSingleApplication>
+
+#include <KDSingleApplication>
 
 int main(int argc, char** argv)
 {
-	QtSingleApplication app(argc, argv);
+	QApplication app(argc, argv);
 	app.setApplicationName("Kapow");
 	app.setApplicationDisplayName(Window::tr("Kapow Punch Clock"));
 	app.setApplicationVersion(VERSIONSTR);
@@ -27,8 +29,10 @@ int main(int argc, char** argv)
 	app.setDesktopFileName("kapow");
 #endif
 
-	if (app.isRunning()) {
-		return !app.sendMessage("show");
+	KDSingleApplication kdsa("org.gottcode.Kapow");
+	if (!kdsa.isPrimaryInstance()) {
+		kdsa.sendMessage("show");
+		return 0;
 	}
 
 	const QString appdir = app.applicationDirPath();
@@ -144,7 +148,7 @@ int main(int argc, char** argv)
 	// Create window
 	Window window(path, backups_enabled, start_minimized);
 	if (window.isValid()) {
-		Window::connect(&app, &QtSingleApplication::messageReceived, &window, &QMainWindow::show);
+		Window::connect(&kdsa, &KDSingleApplication::messageReceived, &window, &Window::raiseWindow);
 		return app.exec();
 	} else {
 		return 1;

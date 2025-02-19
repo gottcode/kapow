@@ -394,6 +394,15 @@ bool Window::isValid() const
 
 //-----------------------------------------------------------------------------
 
+void Window::raiseWindow()
+{
+	show();
+	activateWindow();
+	raise();
+}
+
+//-----------------------------------------------------------------------------
+
 bool Window::event(QEvent* event)
 {
 	if (event->type() == QEvent::WindowBlocked) {
