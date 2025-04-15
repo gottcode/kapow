@@ -36,6 +36,7 @@ int main(int argc, char** argv)
 
 	QString path;
 	bool backups_enabled = true;
+	bool start_minimized = false;
 	{
 		// Handle portability
 #if defined(Q_OS_MAC)
@@ -63,6 +64,8 @@ int main(int argc, char** argv)
 			QCoreApplication::translate("main", "file")));
 		parser.addOption(QCommandLineOption("no-backups",
 			QCoreApplication::translate("main", "Do not create automatic backups of time data.")));
+		parser.addOption(QCommandLineOption("tray",
+			QCoreApplication::translate("main", "Start minimized in system tray.")));
 		parser.addPositionalArgument("file", QCoreApplication::translate("main", "The time data file to use."), "[file]");
 		parser.process(app);
 
@@ -73,6 +76,8 @@ int main(int argc, char** argv)
 		if (parser.isSet("no-backups")) {
 			backups_enabled = false;
 		}
+
+		start_minimized = parser.isSet("tray");
 
 		QStringList files = parser.positionalArguments();
 		if (!files.isEmpty()) {
@@ -136,7 +141,8 @@ int main(int argc, char** argv)
 		}
 	}
 
-	Window window(path, backups_enabled);
+	// Create window
+	Window window(path, backups_enabled, start_minimized);
 	if (window.isValid()) {
 		Window::connect(&app, &QtSingleApplication::messageReceived, &window, &QMainWindow::show);
 		return app.exec();

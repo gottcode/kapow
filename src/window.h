@@ -31,7 +31,7 @@ class Window : public QMainWindow
 	Q_OBJECT
 
 public:
-	Window(const QString& filename, bool backups_enabled, QWidget* parent = nullptr);
+	Window(const QString& filename, bool backups_enabled, bool start_in_tray = false, QWidget* parent = nullptr);
 
 	bool isValid() const;
 
@@ -46,6 +46,7 @@ private Q_SLOTS:
 	void setDecimalTotals(bool decimals);
 	void setInlineEditing(bool edit);
 	void setCloseToTray(bool closetotray);
+	void setStartMinimized(bool minimized);
 	void setLocaleClicked();
 	void start();
 	void stop();
@@ -93,6 +94,11 @@ private:
 	bool m_valid;
 	bool m_blocked;
 	bool m_backups_enabled;
+	bool m_decimals;
+	bool m_inline;
+	bool m_closetotray;
+	bool m_startminimized;
+	bool m_initial_show;
 
 	QSplitter* m_contents;
 	QTreeWidget* m_projects;
@@ -103,9 +109,6 @@ private:
 	QPushButton* m_cancel;
 	QComboBox* m_filter;
 	QTreeView* m_details;
-	bool m_decimals;
-	bool m_inline;
-	bool m_closetotray;
 	Contact m_contact;
 	Rates m_rates;
 
