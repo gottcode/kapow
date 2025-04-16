@@ -322,8 +322,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 
 	// Start in tray if requested
 	if (start_minimized_flag || m_start_minimized) {
-		hide();
-		m_toggle_visibility->setText(tr("&Restore"));
+		minimizeToTray();
 	} else {
 		show();
 	}
@@ -389,7 +388,7 @@ void Window::closeEvent(QCloseEvent* event)
 
 	if (visible && m_closetotray) {
 		event->ignore();
-		toggleVisible();
+		minimizeToTray();
 		return;
 	}
 
@@ -947,13 +946,9 @@ void Window::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 void Window::toggleVisible()
 {
 	if (isVisible() && !m_blocked) {
-		m_toggle_visibility->setText(tr("&Restore"));
-		hide();
+		minimizeToTray();
 	} else {
-		m_toggle_visibility->setText(tr("&Minimize"));
-		show();
-		raise();
-		activateWindow();
+		restoreFromTray();
 	}
 }
 
@@ -1241,6 +1236,24 @@ void Window::removeProject(QTreeWidgetItem* item)
 
 	delete item;
 	item = nullptr;
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::minimizeToTray()
+{
+	m_toggle_visibility->setText(tr("&Restore"));
+	hide();
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::restoreFromTray()
+{
+	m_toggle_visibility->setText(tr("&Minimize"));
+	show();
+	raise();
+	activateWindow();
 }
 
 //-----------------------------------------------------------------------------

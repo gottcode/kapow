@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2008-2017 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2008-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -82,6 +82,8 @@ private:
 	void createDataBackup();
 	void addProject(const QString& name);
 	void removeProject(QTreeWidgetItem* item);
+	void minimizeToTray();
+	void restoreFromTray();
 	void updateDetails();
 	void updateDisplay();
 	void updateReportActions();
