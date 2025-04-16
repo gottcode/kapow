@@ -351,7 +351,7 @@ void Report::findGroups()
 			if (billed.contains(i)) {
 				QString from = m_data->data(m_data->index(rows.first().toInt(), 0)).toString();
 				QString to = m_data->data(m_data->index(rows.last().toInt(), 0)).toString();
-				m_groups->insertItem(0, QString("%1 - %2").arg(from).arg(to), rows);
+				m_groups->insertItem(0, QString("%1 - %2").arg(from, to), rows);
 				if ((i >= m_current_row) && (m_current_row >= rows.first().toInt())) {
 					current_group = m_groups->count();
 				}
