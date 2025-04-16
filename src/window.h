@@ -97,7 +97,6 @@ private:
 	bool m_decimals;
 	bool m_inline;
 	bool m_closetotray;
-	bool m_startminimized;
 	bool m_initial_show;
 
 	QSplitter* m_contents;
