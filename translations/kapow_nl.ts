@@ -479,6 +479,10 @@
         <source>Re&amp;move Report</source>
         <translation>Rapport ver&amp;wijderen</translation>
     </message>
+    <message>
+        <source>&amp;Start Minimized</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
@@ -501,6 +505,10 @@
     <message>
         <source>The time data file to use.</source>
         <translation>Het te gebruiken tijdgegevensbestand.</translation>
+    </message>
+    <message>
+        <source>Start minimized in system tray.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

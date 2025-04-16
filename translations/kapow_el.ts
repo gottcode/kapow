@@ -479,6 +479,10 @@
         <source>Re&amp;move Report</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&amp;Start Minimized</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
@@ -501,6 +505,10 @@
     <message>
         <source>The time data file to use.</source>
         <translation>Το αρχείο δεδομένων χρόνου που θα χρησιμοποιηθεί.</translation>
+    </message>
+    <message>
+        <source>Start minimized in system tray.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

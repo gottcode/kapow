@@ -477,6 +477,10 @@
         <source>Re&amp;move Report</source>
         <translation>Raporu &amp;Kaldır</translation>
     </message>
+    <message>
+        <source>&amp;Start Minimized</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
@@ -499,6 +503,10 @@
     <message>
         <source>The time data file to use.</source>
         <translation>Kullanılacak zaman veri dosyası.</translation>
+    </message>
+    <message>
+        <source>Start minimized in system tray.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
