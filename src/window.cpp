@@ -125,6 +125,25 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_stop->setMinimumWidth(button_width);
 	m_cancel->setMinimumWidth(button_width);
 
+	m_tray_start_session = new QAction(tr("Start"), this);
+	m_tray_start_session->setEnabled(true);
+	connect(m_tray_start_session, &QAction::triggered, this, &Window::start);
+
+	m_tray_stop_session = new QAction(tr("Stop"), this);
+	m_tray_stop_session->setEnabled(false);
+	m_tray_stop_session->setVisible(false);
+	connect(m_tray_stop_session, &QAction::triggered, this, &Window::stopRunningProject);
+
+	m_tray_stop_all_session = new QAction(tr("Stop All"), this);
+	m_tray_stop_all_session->setEnabled(false);
+	m_tray_stop_all_session->setVisible(false);
+	connect(m_tray_stop_all_session, &QAction::triggered, this, &Window::stopAll);
+
+	m_tray_cancel_session = new QAction(tr("Cancel"), this);
+	m_tray_cancel_session->setEnabled(false);
+	m_tray_cancel_session->setVisible(false);
+	connect(m_tray_cancel_session, &QAction::triggered, this, &Window::cancelRunningProject);
+
 	m_toggle_visibility = new QAction(tr("&Minimize"), this);
 	connect(m_toggle_visibility, &QAction::triggered, this, &Window::toggleVisible);
 
@@ -194,6 +213,11 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	actions_separator->setSeparator(true);
 
 	QMenu* context_menu = new QMenu(this);
+	context_menu->addAction(m_tray_start_session);
+	context_menu->addAction(m_tray_stop_session);
+	context_menu->addAction(m_tray_stop_all_session);
+	context_menu->addAction(m_tray_cancel_session);
+	context_menu->addSeparator();
 	context_menu->addAction(m_toggle_visibility);
 	context_menu->addAction(quit_action);
 
@@ -370,8 +394,10 @@ bool Window::event(QEvent* event)
 {
 	if (event->type() == QEvent::WindowBlocked) {
 		m_blocked = true;
+		updateTrayActions();
 	} else if (event->type() == QEvent::WindowUnblocked) {
 		m_blocked = false;
+		updateTrayActions();
 	}
 	return QMainWindow::event(event);
 }
@@ -525,6 +551,8 @@ void Window::start()
 	m_stop_session->setEnabled(true);
 	m_cancel_session->setEnabled(true);
 
+	updateTrayActions();
+
 	if (!m_save_timer->isActive()) {
 		m_save_timer->start();
 	}
@@ -547,9 +575,52 @@ void Window::stop()
 	m_stop_session->setEnabled(false);
 	m_cancel_session->setEnabled(false);
 
+	updateTrayActions();
+
 	if (m_active_timers.isEmpty()) {
 		m_save_timer->stop();
 		save();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::stopRunningProject()
+{
+	if (showRunningProject()) {
+		stop();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::stopAll()
+{
+	const bool visible = isVisible();
+	if (!visible) {
+		show();
+	}
+	if (QMessageBox::question(this, tr("Question"), tr("Stop all timers?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
+		for (Project* project : std::as_const(m_active_timers)) {
+			project->stop(m_current_time);
+		}
+		m_active_timers.clear();
+		m_remove_project->setEnabled(true);
+		updateDetails();
+		m_task->clear();
+		m_task->setFocus();
+
+		m_start_session->setEnabled(true);
+		m_stop_session->setEnabled(false);
+		m_cancel_session->setEnabled(false);
+
+		updateTrayActions();
+
+		m_save_timer->stop();
+		save();
+	}
+	if (!visible) {
+		hide();
 	}
 }
 
@@ -569,9 +640,27 @@ void Window::cancel()
 		m_stop_session->setEnabled(false);
 		m_cancel_session->setEnabled(false);
 
+		updateTrayActions();
+
 		if (m_active_timers.isEmpty()) {
 			m_save_timer->stop();
 			save();
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::cancelRunningProject()
+{
+	if (showRunningProject()) {
+		const bool visible = isVisible();
+		if (!visible) {
+			show();
+		}
+		cancel();
+		if (!visible) {
+			hide();
 		}
 	}
 }
@@ -1258,6 +1347,19 @@ void Window::restoreFromTray()
 
 //-----------------------------------------------------------------------------
 
+bool Window::showRunningProject()
+{
+	if (m_active_timers.size() != 1) {
+		return false;
+	}
+
+	m_projects->setCurrentItem(m_active_timers.first());
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void Window::updateDetails()
 {
 	Q_ASSERT(m_active_project);
@@ -1298,6 +1400,44 @@ void Window::updateSessionButtons()
 		m_start->show();
 		m_cancel->setEnabled(false);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::updateTrayActions()
+{
+	// Disable actions
+	m_tray_start_session->setEnabled(false);
+	m_tray_stop_session->setEnabled(false);
+	m_tray_stop_all_session->setEnabled(false);
+	m_tray_cancel_session->setEnabled(false);
+	m_toggle_visibility->setEnabled(false);
+
+	// Don't allow interaction if dialog is open
+	if (m_blocked) {
+		return;
+	}
+
+	// Hide disabled actions
+	m_tray_start_session->setVisible(false);
+	m_tray_stop_session->setVisible(false);
+	m_tray_stop_all_session->setVisible(false);
+	m_tray_cancel_session->setVisible(false);
+
+	// Enable and show actions based on timers
+	if (m_active_timers.isEmpty()) {
+		m_tray_start_session->setEnabled(true);
+		m_tray_start_session->setVisible(true);
+	} else if (m_active_timers.size() == 1) {
+		m_tray_stop_session->setEnabled(true);
+		m_tray_stop_session->setVisible(true);
+		m_tray_cancel_session->setEnabled(true);
+		m_tray_cancel_session->setVisible(true);
+	} else {
+		m_tray_stop_all_session->setEnabled(true);
+		m_tray_stop_all_session->setVisible(true);
+	}
+	m_toggle_visibility->setEnabled(true);
 }
 
 //-----------------------------------------------------------------------------

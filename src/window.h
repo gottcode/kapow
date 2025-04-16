@@ -50,7 +50,10 @@ private Q_SLOTS:
 	void setLocaleClicked();
 	void start();
 	void stop();
+	void stopRunningProject();
+	void stopAll();
 	void cancel();
+	void cancelRunningProject();
 	void taskChanged(const QString& task);
 	void taskStart();
 	void updateTime();
@@ -84,10 +87,12 @@ private:
 	void removeProject(QTreeWidgetItem* item);
 	void minimizeToTray();
 	void restoreFromTray();
+	bool showRunningProject();
 	void updateDetails();
 	void updateDisplay();
 	void updateReportActions();
 	void updateSessionButtons();
+	void updateTrayActions();
 	void updateTrayIcon();
 	void updateWindowTitle(const QString& project);
 
@@ -132,6 +137,10 @@ private:
 	QAction* m_start_session;
 	QAction* m_stop_session;
 	QAction* m_cancel_session;
+	QAction* m_tray_start_session;
+	QAction* m_tray_stop_session;
+	QAction* m_tray_stop_all_session;
+	QAction* m_tray_cancel_session;
 	QAction* m_toggle_visibility;
 
 	QSystemTrayIcon* m_tray_icon;
