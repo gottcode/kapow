@@ -231,7 +231,7 @@ void Report::groupSelected(int group)
 		m_details->setRowHidden(i, QModelIndex(), true);
 	}
 
-	QList<QVariant> rows = m_groups->itemData(group).toList();
+	const QList<QVariant> rows = m_groups->itemData(group).toList();
 	for (const QVariant& row : rows) {
 		m_details->setRowHidden(row.toInt(), QModelIndex(), false);
 	}

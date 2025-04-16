@@ -110,7 +110,7 @@ int main(int argc, char** argv)
 			QString oldpath = Paths::oldDataPath();
 			if (!oldpath.isEmpty()) {
 				QDir olddir(oldpath);
-				QStringList files = olddir.entryList(QDir::Files);
+				const QStringList files = olddir.entryList(QDir::Files);
 				bool success = true;
 				for (const QString& file : files) {
 					success &= QFile::rename(olddir.absoluteFilePath(file), dir.absoluteFilePath(file));

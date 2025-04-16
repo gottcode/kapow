@@ -280,7 +280,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 
 	// Add tray icon
 	m_active_icon = QIcon(":/kapow.png");
-	QList<QSize> sizes = m_active_icon.availableSizes();
+	const QList<QSize> sizes = m_active_icon.availableSizes();
 	for (const QSize& size : sizes) {
 		m_inactive_icon.addPixmap(m_active_icon.pixmap(size, QIcon::Disabled));
 	}
@@ -350,7 +350,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_details->header()->setStretchLastSection(false);
 
 	// Restore hidden columns
-	QStringList hidden = settings.value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8" << "9").toStringList();
+	const QStringList hidden = settings.value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8" << "9").toStringList();
 	for (const QString& column : hidden) {
 		int i = column.toInt();
 		m_details->setColumnHidden(i, true);
@@ -993,7 +993,7 @@ void Window::loadData()
 		}
 
 		// Try to load time data from any backup
-		QStringList backups = QFileInfo(m_filename).dir().entryList(QStringList(m_filename + ".bak-"),
+		const QStringList backups = QFileInfo(m_filename).dir().entryList(QStringList(m_filename + ".bak-"),
 				QDir::Files,
 				QDir::Name | QDir::IgnoreCase | QDir::Reversed);
 		for (const QString& backup : backups) {
@@ -1169,7 +1169,7 @@ void Window::createDataBackup()
 	QString current_month = date.addMonths(-1).addYears(-1).toString("yyyyMM");
 	int current_year = 0;
 	QDir dir = QFileInfo(m_filename).dir();
-	QStringList backups = dir.entryList(QStringList(m_filename + ".bak-"), QDir::Files, QDir::Name | QDir::IgnoreCase);
+	const QStringList backups = dir.entryList(QStringList(m_filename + ".bak-"), QDir::Files, QDir::Name | QDir::IgnoreCase);
 	for (const QString& backup : backups) {
 		// Keep one backup a day for the last 7 days
 		if (days.contains(backup)) {
