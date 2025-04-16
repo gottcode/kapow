@@ -64,6 +64,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	, m_decimals(true)
 	, m_inline(true)
 	, m_closetotray(false)
+	, m_start_minimized(false)
 	, m_active_project(nullptr)
 	, m_active_model(nullptr)
 {
@@ -132,7 +133,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_decimals = settings.value("DecimalTotals", true).toBool();
 	m_inline = settings.value("InlineEditing", true).toBool();
 	m_closetotray = settings.value("CloseToTray", false).toBool();
-	bool start_minimized_setting = settings.value("StartMinimized", false).toBool();
+	m_start_minimized = settings.value("StartMinimized", false).toBool();
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Project"));
@@ -178,7 +179,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	connect(action, &QAction::toggled, this, &Window::setCloseToTray);
 	action = menu->addAction(tr("&Start Minimized"));
 	action->setCheckable(true);
-	action->setChecked(start_minimized_setting);
+	action->setChecked(m_start_minimized);
 	connect(action, &QAction::toggled, this, &Window::setStartMinimized);
 	menu->addSeparator();
 	menu->addAction(tr("Application &Language..."), this, &Window::setLocaleClicked);
@@ -320,7 +321,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_contents->restoreState(settings.value("SplitterSizes").toByteArray());
 
 	// Start in tray if requested
-	if (start_minimized_flag || start_minimized_setting) {
+	if (start_minimized_flag || m_start_minimized) {
 		hide();
 		m_toggle_visibility->setText(tr("&Restore"));
 	} else {
@@ -496,6 +497,7 @@ void Window::setCloseToTray(bool closetotray)
 
 void Window::setStartMinimized(bool minimized)
 {
+	m_start_minimized = minimized;
 	Settings().setValue("StartMinimized", minimized);
 }
 

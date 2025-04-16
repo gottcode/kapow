@@ -97,7 +97,7 @@ private:
 	bool m_decimals;
 	bool m_inline;
 	bool m_closetotray;
-	bool m_initial_show;
+	bool m_start_minimized;
 
 	QSplitter* m_contents;
 	QTreeWidget* m_projects;
