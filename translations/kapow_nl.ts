@@ -481,6 +481,14 @@
     </message>
     <message>
         <source>&amp;Start Minimized</source>
+        <translation>Geminimaliseerd op&amp;starten</translation>
+    </message>
+    <message>
+        <source>Stop All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop all timers?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -508,7 +516,7 @@
     </message>
     <message>
         <source>Start minimized in system tray.</source>
-        <translation type="unfinished"></translation>
+        <translation>Start Kapow geminimaliseerd in het systeemvak.</translation>
     </message>
 </context>
 </TS>

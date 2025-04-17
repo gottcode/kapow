@@ -481,6 +481,14 @@
     </message>
     <message>
         <source>&amp;Start Minimized</source>
+        <translation>&amp;Käivita minimeerituna</translation>
+    </message>
+    <message>
+        <source>Stop All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop all timers?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -508,7 +516,7 @@
     </message>
     <message>
         <source>Start minimized in system tray.</source>
-        <translation type="unfinished"></translation>
+        <translation>Käivita minimeerituna süsteemisalve</translation>
     </message>
 </context>
 </TS>

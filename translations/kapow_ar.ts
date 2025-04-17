@@ -491,6 +491,14 @@
         <source>&amp;Start Minimized</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Stop All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop all timers?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
