@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2013-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2013-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -34,6 +34,8 @@ private Q_SLOTS:
 	void editSessionsMaximumDateTime();
 	void removeSessions_data();
 	void removeSessions();
+	void takeSessions_data();
+	void takeSessions();
 };
 
 #endif // KAPOW_TEST_SESSIONS_H

@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2008-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2008-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -52,6 +52,7 @@ public:
 	bool add(const Session& session);
 	bool edit(int row, const Session& session);
 	bool remove(int row);
+	bool take(SessionModel* model, int row);
 	void setBilled(int row, bool billed);
 	void setDecimalTotals(bool decimals);
 	void setMaximumDateTime(const QDateTime& max);
@@ -70,6 +71,11 @@ Q_SIGNALS:
 	void billedStatusChanged(bool billed);
 
 private:
+	bool canRemove(int pos) const
+	{
+		return (pos < m_data.count()) && !isBilled(pos);
+	}
+
 	void updateTotals();
 
 private:

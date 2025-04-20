@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2013-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2013-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -909,6 +909,165 @@ void TestSessions::removeSessions()
 	QCOMPARE(model.rowCount() - 1, result.count());
 	for (int i = 0; i < result.count(); ++i) {
 		QCOMPARE(model.session(i), result.at(i));
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void TestSessions::takeSessions_data()
+{
+	QTest::addColumn<QList<Session>>("source");
+	QTest::addColumn<QList<Session>>("dest");
+	QTest::addColumn<QList<int>>("take");
+	QTest::addColumn<QList<Session>>("source_result");
+	QTest::addColumn<QList<Session>>("dest_result");
+
+	QTest::newRow("Move to empty model")
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", false)
+		}
+		<< QList<Session>{}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", false)
+		};
+	QTest::newRow("Move after")
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Taken session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Dest session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Source session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Taken session.", false)
+		};
+	QTest::newRow("Move before")
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", false),
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", false),
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		};
+	QTest::newRow("Move between")
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Taken session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Source session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Taken session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		};
+	QTest::newRow("Prevent moving into billed")
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Dest session.", true),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", false)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Dest session.", true),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		};
+	QTest::newRow("Prevent taking billed session")
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", true)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(12, 30, 0), QTime(13, 45, 0), "Source session.", false),
+			Session(QDate(2025, 4, 20), QTime(14, 0, 0), QTime(14, 45, 0), "Taken session.", true)
+		}
+		<< QList<Session>{
+			Session(QDate(2025, 4, 20), QTime(16, 30, 0), QTime(17, 45, 0), "Dest session.", false),
+			Session(QDate(2025, 4, 20), QTime(18, 0, 0), QTime(20, 15, 0), "Dest session.", false)
+		};
+}
+
+void TestSessions::takeSessions()
+{
+	SessionModel source_model, dest_model;
+
+	QFETCH(QList<Session>, source);
+	for (const Session& session : source) {
+		source_model.add(session);
+	}
+
+	QFETCH(QList<Session>, dest);
+	for (const Session& session : dest) {
+		dest_model.add(session);
+	}
+
+	QFETCH(QList<int>, take);
+	for (int row : take) {
+		dest_model.take(&source_model, row);
+	}
+
+	QFETCH(QList<Session>, source_result);
+	QCOMPARE(source_model.rowCount() - 1, source_result.count());
+	for (int i = 0; i < source_result.count(); ++i) {
+		QCOMPARE(source_model.session(i), source_result.at(i));
+	}
+
+	QFETCH(QList<Session>, dest_result);
+	QCOMPARE(dest_model.rowCount() - 1, dest_result.count());
+	for (int i = 0; i < dest_result.count(); ++i) {
+		QCOMPARE(dest_model.session(i), dest_result.at(i));
 	}
 }
 

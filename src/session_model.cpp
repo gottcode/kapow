@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2008-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2008-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -216,7 +216,7 @@ bool SessionModel::edit(int pos, const Session& session)
 
 bool SessionModel::remove(int pos)
 {
-	if (pos >= m_data.count() || isBilled(pos)) {
+	if (!canRemove(pos)) {
 		return false;
 	}
 
@@ -227,6 +227,25 @@ bool SessionModel::remove(int pos)
 
 	// Increase totals for sessions
 	updateTotals();
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
+bool SessionModel::take(SessionModel* model, int pos)
+{
+	if (!model || !model->canRemove(pos)) {
+		return false;
+	}
+
+	// Attempt to add session
+	if (!add(model->session(pos))) {
+		return false;
+	}
+
+	// Remove session from source
+	model->remove(pos);
 
 	return true;
 }
