@@ -73,6 +73,7 @@ private Q_SLOTS:
 	void addSession();
 	void editSession();
 	void removeSession();
+	void moveSession();
 	void toggleColumnHidden(int column);
 	void save();
 	void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
@@ -134,6 +135,7 @@ private:
 	QAction* m_add_session;
 	QAction* m_edit_session;
 	QAction* m_remove_session;
+	QAction* m_move_session;
 	QAction* m_start_session;
 	QAction* m_stop_session;
 	QAction* m_cancel_session;

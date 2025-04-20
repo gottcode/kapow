@@ -181,6 +181,8 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_remove_session = menu->addAction(tr("&Remove"), this, &Window::removeSession);
 	m_remove_session->setShortcut(tr("Ctrl+Delete"));
 	m_remove_session->setEnabled(false);
+	m_move_session = menu->addAction(tr("&Move To..."), this, &Window::moveSession);
+	m_move_session->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
 	QMenu* column_menu = menu->addMenu(tr("Columns"));
@@ -279,6 +281,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_details->addAction(m_add_session);
 	m_details->addAction(m_edit_session);
 	m_details->addAction(m_remove_session);
+	m_details->addAction(m_move_session);
 	m_details->addAction(actions_separator);
 	m_details->setContextMenuPolicy(Qt::ActionsContextMenu);
 	connect(m_details, &QTreeView::activated, this, &Window::editSession);
@@ -736,6 +739,7 @@ void Window::removeProject()
 	if (QMessageBox::question(this, tr("Question"), tr("Remove selected project?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_remove_project->setEnabled(false);
 		m_remove_session->setEnabled(false);
+		m_move_session->setEnabled(false);
 		removeProject(m_projects->currentItem());
 	}
 }
@@ -821,6 +825,7 @@ void Window::projectActivated(QTreeWidgetItem* item)
 	m_view_reports->setEnabled(m_active_model->isBilled(0));
 	m_edit_session->setEnabled(false);
 	m_remove_session->setEnabled(false);
+	m_move_session->setEnabled(false);
 
 	QCoreApplication::processEvents();
 	int value = m_active_project->scrollValue();
@@ -869,6 +874,7 @@ void Window::sessionPressed(const QModelIndex& index)
 	bool enabled = session.isValid();
 	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
 	m_remove_session->setEnabled(enabled);
+	m_move_session->setEnabled(enabled);
 	updateReportActions();
 
 	m_details->removeAction(m_create_report);
@@ -907,6 +913,7 @@ void Window::addSession()
 			if (m_active_model->add(dialog.session())) {
 				m_edit_session->setEnabled(true);
 				m_remove_session->setEnabled(true);
+				m_move_session->setEnabled(true);
 				break;
 			} else {
 				QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
@@ -956,7 +963,67 @@ void Window::removeSession()
 	if (QMessageBox::question(this, tr("Question"), tr("Remove selected session?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_edit_session->setEnabled(false);
 		m_remove_session->setEnabled(false);
+		m_move_session->setEnabled(false);
 		m_active_model->remove(m_active_project->filterModel()->mapToSource(m_details->currentIndex()).row());
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::moveSession()
+{
+	// Prompt for destination project
+	QDialog dialog(this);
+	dialog.setWindowTitle(tr("Move Session"));
+
+	QTreeView* view = new QTreeView(&dialog);
+	view->setSelectionMode(QAbstractItemView::SingleSelection);
+	view->setSelectionBehavior(QAbstractItemView::SelectRows);
+	view->setEditTriggers(QAbstractItemView::NoEditTriggers);
+	view->setModel(m_projects->model());
+	view->setColumnHidden(1, true);
+	view->setHeaderHidden(true);
+	view->expandAll();
+	view->setCurrentIndex(m_projects->currentIndex());
+
+	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
+	connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+	connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+	QVBoxLayout* layout = new QVBoxLayout(&dialog);
+	layout->addWidget(view);
+	layout->addWidget(buttons);
+
+	// Disable OK button if current project is selected
+	QPushButton* button = buttons->button(QDialogButtonBox::Ok);
+	button->setText(tr("Move"));
+	button->setEnabled(false);
+
+	connect(view->selectionModel(), &QItemSelectionModel::currentChanged, this, [button, this](const QModelIndex& index) {
+		Project* project = dynamic_cast<Project*>(m_projects->itemFromIndex(index));
+		button->setEnabled(project != m_active_project);
+	});
+
+	if (dialog.exec() == QDialog::Rejected) {
+		return;
+	}
+
+	// Fetch model of destination project
+	const QModelIndex current = view->currentIndex();
+	Project* project = dynamic_cast<Project*>(m_projects->itemFromIndex(current));
+	if (!project || (project == m_active_project)) {
+		return;
+	}
+
+	// Fetch selected session
+	const int row = m_active_project->filterModel()->mapToSource(m_details->currentIndex()).row();
+
+	// Move session
+	if (project->model()->take(m_active_model, row)) {
+		// Switch to destination project
+		m_projects->setCurrentItem(project);
+	} else {
+		QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
 	}
 }
 
