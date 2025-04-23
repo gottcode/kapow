@@ -181,7 +181,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_remove_session = menu->addAction(tr("&Remove"), this, &Window::removeSession);
 	m_remove_session->setShortcut(tr("Ctrl+Delete"));
 	m_remove_session->setEnabled(false);
-	m_move_session = menu->addAction(tr("&Move To..."), this, &Window::moveSession);
+	m_move_session = menu->addAction(tr("&Move To..."), this, &Window::moveSessions);
 	m_move_session->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("S&ettings"));
@@ -972,11 +972,14 @@ void Window::removeSession()
 
 //-----------------------------------------------------------------------------
 
-void Window::moveSession()
+void Window::moveSessions()
 {
+	// Fetch selected sessions
+	const QList<int> rows = selectedUnbilledRows();
+
 	// Prompt for destination project
 	QDialog dialog(this);
-	dialog.setWindowTitle(tr("Move Session"));
+	dialog.setWindowTitle(tr("Move Session(s)", "", rows.size()));
 
 	QTreeView* view = new QTreeView(&dialog);
 	view->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -1017,15 +1020,12 @@ void Window::moveSession()
 		return;
 	}
 
-	// Fetch selected session
-	const int row = m_active_project->filterModel()->mapToSource(m_details->currentIndex()).row();
-
-	// Move session
-	if (project->model()->take(m_active_model, row)) {
+	// Move sessions
+	if (project->model()->take(m_active_model, rows)) {
 		// Switch to destination project
 		m_projects->setCurrentItem(project);
 	} else {
-		QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
+		QMessageBox::warning(this, tr("Error"), tr("Could not move session(s) because of conflicts.", "", rows.size()));
 	}
 }
 

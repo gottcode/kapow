@@ -236,6 +236,43 @@ bool SessionModel::take(SessionModel* model, int pos)
 
 //-----------------------------------------------------------------------------
 
+bool SessionModel::take(SessionModel* model, QList<int> rows)
+{
+	if (!model) {
+		return false;
+	}
+
+	// Make sure sessions are sorted newest to oldest
+	std::sort(rows.begin(), rows.end(), std::greater<int>());
+
+	// Fetch sessions from source if they can be moved
+	QList<Session> sessions;
+	for (int pos : std::as_const(rows)) {
+		if (!model->canRemove(pos)) {
+			return false;
+		}
+
+		sessions.append(model->session(pos));
+		if (findPosition(sessions.last()) == -1) {
+			return false;
+		}
+	}
+
+	// Add sessions
+	for (const Session& session : std::as_const(sessions)) {
+		add(session);
+	}
+
+	// Remove sessions from source
+	for (int pos : std::as_const(rows)) {
+		model->remove(pos);
+	}
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void SessionModel::setBilled(int pos, bool billed)
 {
 	Q_ASSERT(pos < m_data.count());

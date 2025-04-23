@@ -53,6 +53,7 @@ public:
 	bool edit(int row, const Session& session);
 	bool remove(int row);
 	bool take(SessionModel* model, int row);
+	bool take(SessionModel* model, QList<int> rows);
 	void setBilled(int row, bool billed);
 	void setDecimalTotals(bool decimals);
 	void setMaximumDateTime(const QDateTime& max);

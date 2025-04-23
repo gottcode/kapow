@@ -73,7 +73,7 @@ private Q_SLOTS:
 	void addSession();
 	void editSession();
 	void removeSession();
-	void moveSession();
+	void moveSessions();
 	void toggleColumnHidden(int column);
 	void save();
 	void trayIconActivated(QSystemTrayIcon::ActivationReason reason);

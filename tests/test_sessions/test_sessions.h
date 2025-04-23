@@ -36,6 +36,8 @@ private Q_SLOTS:
 	void removeSessions();
 	void takeSessions_data();
 	void takeSessions();
+	void takeMultipleSessions_data();
+	void takeMultipleSessions();
 };
 
 #endif // KAPOW_TEST_SESSIONS_H
