@@ -52,6 +52,7 @@ public:
 	bool add(const Session& session);
 	bool edit(int row, const Session& session);
 	bool remove(int row);
+	int remove(QList<int> rows);
 	bool take(SessionModel* model, int row);
 	bool take(SessionModel* model, QList<int> rows);
 	void setBilled(int row, bool billed);

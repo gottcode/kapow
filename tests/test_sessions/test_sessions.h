@@ -34,6 +34,8 @@ private Q_SLOTS:
 	void editSessionsMaximumDateTime();
 	void removeSessions_data();
 	void removeSessions();
+	void removeMultipleSessions_data();
+	void removeMultipleSessions();
 	void takeSessions_data();
 	void takeSessions();
 	void takeMultipleSessions_data();

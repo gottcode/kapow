@@ -15,6 +15,13 @@
 
 //-----------------------------------------------------------------------------
 
+static void sortNewestToOldest(QList<int>& rows)
+{
+	std::sort(rows.begin(), rows.end(), std::greater<int>());
+}
+
+//-----------------------------------------------------------------------------
+
 SessionModel::SessionModel(QObject* parent)
 	: QAbstractItemModel(parent)
 	, m_decimals(true)
@@ -217,6 +224,20 @@ bool SessionModel::remove(int pos)
 
 //-----------------------------------------------------------------------------
 
+int SessionModel::remove(QList<int> rows)
+{
+	sortNewestToOldest(rows);
+
+	int result = 0;
+	for (int row : std::as_const(rows)) {
+		result += remove(row);
+	}
+
+	return result;
+}
+
+//-----------------------------------------------------------------------------
+
 bool SessionModel::take(SessionModel* model, int pos)
 {
 	if (!model || !model->canRemove(pos)) {
@@ -242,8 +263,7 @@ bool SessionModel::take(SessionModel* model, QList<int> rows)
 		return false;
 	}
 
-	// Make sure sessions are sorted newest to oldest
-	std::sort(rows.begin(), rows.end(), std::greater<int>());
+	sortNewestToOldest(rows);
 
 	// Fetch sessions from source if they can be moved
 	QList<Session> sessions;

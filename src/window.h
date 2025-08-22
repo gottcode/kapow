@@ -72,7 +72,7 @@ private Q_SLOTS:
 	void sessionsScrolled(int value);
 	void addSession();
 	void editSession();
-	void removeSession();
+	void removeSessions();
 	void moveSessions();
 	void toggleColumnHidden(int column);
 	void save();

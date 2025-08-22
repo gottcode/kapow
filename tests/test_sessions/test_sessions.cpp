@@ -949,6 +949,127 @@ void TestSessions::removeSessions()
 
 //-----------------------------------------------------------------------------
 
+void TestSessions::removeMultipleSessions_data()
+{
+	QTest::addColumn<QList<Session>>("sessions");
+	QTest::addColumn<QList<int>>("rows");
+	QTest::addColumn<QList<Session>>("result");
+
+	QTest::newRow("Remove one session")
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Remove two sessions in a row")
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			1,
+			2
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		};
+	QTest::newRow("Remove two sessions")
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			1,
+			3
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Remove three sessions")
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(18, 0, 0), QTime(20, 15, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(21, 0, 0), QTime(22, 15, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			3,
+			1,
+			4
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Prevent removing from billed")
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(11, 30, 0), QTime(11, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			0,
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(11, 30, 0), QTime(11, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+	QTest::newRow("Prevent removing billed session")
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		}
+		<< QList<int>{
+			0,
+			1
+		}
+		<< QList<Session>{
+			Session(QDate(2013, 2, 18), QTime(12, 30, 0), QTime(13, 45, 0), "Test session.", false),
+			Session(QDate(2013, 2, 18), QTime(14, 0, 0), QTime(14, 45, 0), "Test session.", true),
+			Session(QDate(2013, 2, 18), QTime(16, 30, 0), QTime(17, 45, 0), "Test session.", false)
+		};
+}
+
+void TestSessions::removeMultipleSessions()
+{
+	SessionModel model;
+
+	QFETCH(QList<Session>, sessions);
+	for (const Session& session : sessions) {
+		model.add(session);
+	}
+
+	QFETCH(QList<int>, rows);
+	model.remove(rows);
+
+	QFETCH(QList<Session>, result);
+	QCOMPARE(model.rowCount() - 1, result.count());
+	for (int i = 0; i < result.count(); ++i) {
+		QCOMPARE(model.session(i), result.at(i));
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void TestSessions::takeSessions_data()
 {
 	QTest::addColumn<QList<Session>>("source");

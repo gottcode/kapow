@@ -178,7 +178,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_add_session->setShortcut(QKeySequence::New);
 	m_edit_session = menu->addAction(tr("&Edit"), this, &Window::editSession);
 	m_edit_session->setEnabled(false);
-	m_remove_session = menu->addAction(tr("&Remove"), this, &Window::removeSession);
+	m_remove_session = menu->addAction(tr("&Remove"), this, &Window::removeSessions);
 	m_remove_session->setShortcut(tr("Ctrl+Delete"));
 	m_remove_session->setEnabled(false);
 	m_move_session = menu->addAction(tr("&Move To..."), this, &Window::moveSessions);
@@ -959,14 +959,15 @@ void Window::editSession()
 
 //-----------------------------------------------------------------------------
 
-void Window::removeSession()
+void Window::removeSessions()
 {
 	Q_ASSERT(m_active_model);
-	if (QMessageBox::question(this, tr("Question"), tr("Remove selected session?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
+	const QList<int> rows = selectedUnbilledRows();
+	if (QMessageBox::question(this, tr("Question"), tr("Remove selected session(s)?", "", rows.size()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
 		m_edit_session->setEnabled(false);
 		m_remove_session->setEnabled(false);
 		m_move_session->setEnabled(false);
-		m_active_model->remove(m_active_project->filterModel()->mapToSource(m_details->currentIndex()).row());
+		m_active_model->remove(rows);
 	}
 }
 
