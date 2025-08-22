@@ -273,7 +273,7 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_details->setRootIsDecorated(false);
 	m_details->setItemsExpandable(false);
 	m_details->setIndentation(0);
-	m_details->setSelectionMode(QAbstractItemView::SingleSelection);
+	m_details->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	m_details->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_details->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 	m_details->header()->setSectionsClickable(false);
@@ -870,9 +870,11 @@ void Window::modelBilledStatusChanged()
 
 void Window::sessionPressed(const QModelIndex& index)
 {
+	const int rows = selectedUnbilledRows().size();
+
 	QModelIndex session = m_active_project->filterModel()->mapUnbilledToSource(index);
-	bool enabled = session.isValid();
-	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4));
+	const bool enabled = session.isValid() && rows;
+	m_edit_session->setEnabled(enabled && (!m_inline || session.column() < 4) && (rows == 1));
 	m_remove_session->setEnabled(enabled);
 	m_move_session->setEnabled(enabled);
 	updateReportActions();
@@ -1118,6 +1120,32 @@ int Window::currentRow()
 	}
 	session = m_active_project->filterModel()->mapToSource(session);
 	return session.isValid() ? session.row() : -1;
+}
+
+//-----------------------------------------------------------------------------
+
+QList<int> Window::selectedUnbilledRows() const
+{
+	QList<int> rows;
+
+	const QModelIndexList selected = m_details->selectionModel()->selectedIndexes();
+	for (const QModelIndex& index : selected) {
+		const QModelIndex session = m_active_project->filterModel()->mapUnbilledToSource(index);
+
+		// Don't list any sessions at all if even one of them is billed
+		if (!session.isValid()) {
+			rows.clear();
+			break;
+		}
+
+		// Add to list of selected rows only once
+		const int row = session.row();
+		if (!rows.contains(row)) {
+			rows.append(row);
+		}
+	}
+
+	return rows;
 }
 
 //-----------------------------------------------------------------------------

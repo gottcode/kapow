@@ -81,6 +81,7 @@ private Q_SLOTS:
 
 private:
 	int currentRow();
+	QList<int> selectedUnbilledRows() const;
 	void loadData();
 	void loadData(const QString& filename);
 	void createDataBackup();
