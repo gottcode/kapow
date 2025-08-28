@@ -485,11 +485,11 @@
     </message>
     <message>
         <source>Stop All</source>
-        <translation type="unfinished"></translation>
+        <translation>Peata kõik</translation>
     </message>
     <message>
         <source>Stop all timers?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas peatame kõik taimerid?</translation>
     </message>
 </context>
 <context>

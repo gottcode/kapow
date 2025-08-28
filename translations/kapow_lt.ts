@@ -163,6 +163,7 @@
             <numerusform>%n valanda</numerusform>
             <numerusform>%n valandos</numerusform>
             <numerusform>%n valandų</numerusform>
+            <numerusform>%n valandų</numerusform>
         </translation>
     </message>
     <message>
@@ -467,6 +468,7 @@
             <numerusform>%n aktyvus laikmatis</numerusform>
             <numerusform>%n aktyvūs laikmačiai</numerusform>
             <numerusform>%n aktyvių laikmačių</numerusform>
+            <numerusform>%n aktyvių laikmačių</numerusform>
         </translation>
     </message>
     <message>
@@ -483,15 +485,15 @@
     </message>
     <message>
         <source>&amp;Start Minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Paleisti suskleistą</translation>
     </message>
     <message>
         <source>Stop All</source>
-        <translation type="unfinished"></translation>
+        <translation>Stabdyti visus</translation>
     </message>
     <message>
         <source>Stop all timers?</source>
-        <translation type="unfinished"></translation>
+        <translation>Stabdyti visus laikmačius?</translation>
     </message>
 </context>
 <context>
@@ -518,7 +520,7 @@
     </message>
     <message>
         <source>Start minimized in system tray.</source>
-        <translation type="unfinished"></translation>
+        <translation>Paleisti suskleistą sistemos dėkle.</translation>
     </message>
 </context>
 </TS>

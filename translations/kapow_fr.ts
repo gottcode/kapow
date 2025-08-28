@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Veuillez relancer l&apos;application pour que la modification prenne effet. </translation>
+        <translation>Veuillez relancer l&apos;application pour que la modification de la langue prenne effet. </translation>
     </message>
 </context>
 <context>
@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Question</source>
@@ -152,7 +152,7 @@
     </message>
     <message>
         <source>Remove newest report?</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le dernier rapport ? </translation>
     </message>
 </context>
 <context>
@@ -161,6 +161,7 @@
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n heure</numerusform>
+            <numerusform>%n heures</numerusform>
             <numerusform>%n heures</numerusform>
         </translation>
     </message>
@@ -326,7 +327,7 @@
     </message>
     <message>
         <source>&amp;Inline Editing</source>
-        <translation>Mod&amp;ifiation en ligne</translation>
+        <translation>Mod&amp;ification en ligne</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
@@ -465,6 +466,7 @@
         <translation>
             <numerusform>%n minuteur en cours</numerusform>
             <numerusform>%n minuteurs en cours</numerusform>
+            <numerusform>%n minuteurs en cours</numerusform>
         </translation>
     </message>
     <message>
@@ -473,23 +475,23 @@
     </message>
     <message>
         <source>&amp;Close to Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Placer dans la barre</translation>
     </message>
     <message>
         <source>Re&amp;move Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Su&amp;pprimer le rapport</translation>
     </message>
     <message>
         <source>&amp;Start Minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Démarrer minimisé</translation>
     </message>
     <message>
         <source>Stop All</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrêter tout</translation>
     </message>
     <message>
         <source>Stop all timers?</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrêter tous les minuteurs ? </translation>
     </message>
 </context>
 <context>
@@ -516,7 +518,7 @@
     </message>
     <message>
         <source>Start minimized in system tray.</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarrage minimisé dans la barre des tâches. </translation>
     </message>
 </context>
 </TS>
