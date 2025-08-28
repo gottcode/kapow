@@ -76,6 +76,7 @@ private:
 		return (pos < m_data.count()) && !isBilled(pos);
 	}
 
+	int findPosition(const Session& session) const;
 	void updateTotals();
 
 private:

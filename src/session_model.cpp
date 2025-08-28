@@ -101,70 +101,54 @@ void SessionModel::endLoad()
 
 bool SessionModel::add(const QDateTime& start, const QDateTime& stop, const QString& task)
 {
+	// Prevent adding invalid sessions
 	if (stop < start) {
 		return false;
 	}
 
+	// Add single session if it does not cross midnight
 	if (start.date() == stop.date()) {
 		return add(Session(start.date(), start.time(), stop.time(), task, false));
-	} else {
-		if (!add(Session(start.date(), start.time(), QTime(23, 59, 59), task, false))) {
-			return false;
-		}
-		QDate date = start.date();
-		while ((date = date.addDays(1)) != stop.date()) {
-			if (!add(Session(date, QTime(0, 0, 0), QTime(23, 59, 59), task, false))) {
-				return false;
-			}
-		}
-		if (!add(Session(stop.date(), QTime(0, 0, 0), stop.time(), task, false))) {
-			return false;
-		}
-		return true;
 	}
+
+	QList<Session> sessions;
+
+	// Split session at first midnight
+	sessions.append(Session(start.date(), start.time(), QTime(23, 59, 59), task, false));
+	if (findPosition(sessions.last()) == -1) {
+		return false;
+	}
+
+	// Split full days between start date and stop date
+	QDate date = start.date();
+	while ((date = date.addDays(1)) != stop.date()) {
+		sessions.append(Session(date, QTime(0, 0, 0), QTime(23, 59, 59), task, false));
+		if (findPosition(sessions.last()) == -1) {
+			return false;
+		}
+	}
+
+	// Split session from last midnight
+	sessions.append(Session(stop.date(), QTime(0, 0, 0), stop.time(), task, false));
+	if (findPosition(sessions.last()) == -1) {
+		return false;
+	}
+
+	// Add the split sessions
+	for (const Session& session : std::as_const(sessions)) {
+		add(session);
+	}
+
+	return true;
 }
 
 //-----------------------------------------------------------------------------
 
 bool SessionModel::add(const Session& session)
 {
-	if (!session.isValid()) {
-		return false;
-	}
-
-	// Prevent intersecting current running timer
-	if (m_max_datetime.isValid()) {
-		if ((QDateTime(session.date(), session.start()) >= m_max_datetime) || (QDateTime(session.date(), session.stop()) >= m_max_datetime)) {
-			return false;
-		}
-	}
-
-	// Find session position
-	int pos = 0;
-	for (pos = m_data.count(); pos > 0; --pos) {
-		const Session& current = m_data.at(pos - 1);
-		if (session.date() > current.date() || (session.date() == current.date() && session.stop() > current.stop())) {
-			break;
-		}
-	}
-	pos = std::max(pos, 0);
-
-	// Prevent intersecting sessions
-	if (pos > 0) {
-		Session current = m_data.at(pos - 1);
-		if (QDateTime(session.date(), session.start()) < QDateTime(current.date(), current.stop())) {
-			return false;
-		}
-	}
-	if (pos < m_data.count()) {
-		Session current = m_data.at(pos);
-		if (QDateTime(session.date(), session.stop()) > QDateTime(current.date(), current.start())) {
-			return false;
-		}
-	}
-
-	// Prevent adding to billed
-	if (isBilled(pos)) {
+	// Find position of session
+	const int pos = findPosition(session);
+	if (pos == -1) {
 		return false;
 	}
 
@@ -632,6 +616,53 @@ bool SessionModel::setData(const QModelIndex& index, const QVariant& value, int 
 	} else {
 		return QAbstractItemModel::setData(index, value, role);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+int SessionModel::findPosition(const Session& session) const
+{
+	if (!session.isValid()) {
+		return -1;
+	}
+
+	// Prevent intersecting current running timer
+	if (m_max_datetime.isValid()) {
+		if ((QDateTime(session.date(), session.start()) >= m_max_datetime) || (QDateTime(session.date(), session.stop()) >= m_max_datetime)) {
+			return -1;
+		}
+	}
+
+	// Find session position
+	int pos = 0;
+	for (pos = m_data.count(); pos > 0; --pos) {
+		const Session& current = m_data.at(pos - 1);
+		if (session.date() > current.date() || (session.date() == current.date() && session.stop() > current.stop())) {
+			break;
+		}
+	}
+	pos = std::max(pos, 0);
+
+	// Prevent intersecting sessions
+	if (pos > 0) {
+		const Session& current = m_data.at(pos - 1);
+		if (QDateTime(session.date(), session.start()) < QDateTime(current.date(), current.stop())) {
+			return -1;
+		}
+	}
+	if (pos < m_data.count()) {
+		const Session& current = m_data.at(pos);
+		if (QDateTime(session.date(), session.stop()) > QDateTime(current.date(), current.start())) {
+			return -1;
+		}
+	}
+
+	// Prevent adding to billed
+	if (isBilled(pos)) {
+		return -1;
+	}
+
+	return pos;
 }
 
 //-----------------------------------------------------------------------------

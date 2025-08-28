@@ -110,6 +110,41 @@ void TestSessions::addConflictingSessions_data()
 		<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
 		<< QDateTime(QDate(2013, 2, 18), QTime(13, 30, 0))
 		<< QString("Conflict session.");
+	QTest::newRow("Prevent overlap session start from previous day")
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 17), QTime(11, 0, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
+		<< QString("Conflict session.");
+	QTest::newRow("Prevent overlap session end into next day")
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 0, 0))
+		<< QDateTime(QDate(2013, 2, 19), QTime(14, 0, 0))
+		<< QString("Conflict session.");
+	QTest::newRow("Prevent overlap entire session from previous day")
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 17), QTime(11, 0, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(14, 0, 0))
+		<< QString("Conflict session.");
+	QTest::newRow("Prevent overlap entire session into next day")
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 18), QTime(11, 0, 0))
+		<< QDateTime(QDate(2013, 2, 19), QTime(14, 0, 0))
+		<< QString("Conflict session.");
+	QTest::newRow("Prevent overlap entire session across multiple days")
+		<< QDateTime(QDate(2013, 2, 18), QTime(12, 30, 0))
+		<< QDateTime(QDate(2013, 2, 18), QTime(13, 45, 0))
+		<< QString("Test session.")
+		<< QDateTime(QDate(2013, 2, 17), QTime(11, 0, 0))
+		<< QDateTime(QDate(2013, 2, 19), QTime(14, 0, 0))
+		<< QString("Conflict session.");
 }
 
 void TestSessions::addConflictingSessions()
