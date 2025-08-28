@@ -456,10 +456,6 @@
         <source>Remove selected project?</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Remove selected session?</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
@@ -490,6 +486,35 @@
     <message>
         <source>Stop all timers?</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Move To...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Remove selected session(s)?</source>
+        <translation>
+            <numerusform>Remove selected session?</numerusform>
+            <numerusform>Remove selected sessions?</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>Move Session(s)</source>
+        <translation>
+            <numerusform>Move Session</numerusform>
+            <numerusform>Move Sessions</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Could not move session(s) because of conflicts.</source>
+        <translation>
+            <numerusform>Could not move session because of conflicts.</numerusform>
+            <numerusform>Could not move sessions because of conflicts.</numerusform>
+        </translation>
     </message>
 </context>
 <context>

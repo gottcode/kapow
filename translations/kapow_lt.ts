@@ -163,7 +163,6 @@
             <numerusform>%n valanda</numerusform>
             <numerusform>%n valandos</numerusform>
             <numerusform>%n valandų</numerusform>
-            <numerusform>%n valandų</numerusform>
         </translation>
     </message>
     <message>
@@ -458,16 +457,11 @@
         <source>Remove selected project?</source>
         <translation>Šalinti pasirinktą projektą?</translation>
     </message>
-    <message>
-        <source>Remove selected session?</source>
-        <translation>Šalinti pasirinktą seansą?</translation>
-    </message>
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n aktyvus laikmatis</numerusform>
             <numerusform>%n aktyvūs laikmačiai</numerusform>
-            <numerusform>%n aktyvių laikmačių</numerusform>
             <numerusform>%n aktyvių laikmačių</numerusform>
         </translation>
     </message>
@@ -494,6 +488,38 @@
     <message>
         <source>Stop all timers?</source>
         <translation>Stabdyti visus laikmačius?</translation>
+    </message>
+    <message>
+        <source>&amp;Move To...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Remove selected session(s)?</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>Move Session(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Could not move session(s) because of conflicts.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>

@@ -162,7 +162,6 @@
         <translation>
             <numerusform>%n heure</numerusform>
             <numerusform>%n heures</numerusform>
-            <numerusform>%n heures</numerusform>
         </translation>
     </message>
     <message>
@@ -457,15 +456,10 @@
         <source>Remove selected project?</source>
         <translation>Supprimer le projet sélectionné ? </translation>
     </message>
-    <message>
-        <source>Remove selected session?</source>
-        <translation>Supprimer la session sélectionnée ? </translation>
-    </message>
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n minuteur en cours</numerusform>
-            <numerusform>%n minuteurs en cours</numerusform>
             <numerusform>%n minuteurs en cours</numerusform>
         </translation>
     </message>
@@ -492,6 +486,35 @@
     <message>
         <source>Stop all timers?</source>
         <translation>Arrêter tous les minuteurs ? </translation>
+    </message>
+    <message>
+        <source>&amp;Move To...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Remove selected session(s)?</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>Move Session(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Could not move session(s) because of conflicts.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>

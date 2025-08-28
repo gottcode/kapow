@@ -457,10 +457,6 @@
         <source>Remove selected project?</source>
         <translation>Вилучити вибраний проект?</translation>
     </message>
-    <message>
-        <source>Remove selected session?</source>
-        <translation>Вилучити вибраний сеанс?</translation>
-    </message>
     <message numerus="yes">
         <source>%n timer(s) running</source>
         <translation>
@@ -492,6 +488,38 @@
     <message>
         <source>Stop all timers?</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Move To...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Remove selected session(s)?</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>Move Session(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Could not move session(s) because of conflicts.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
