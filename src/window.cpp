@@ -916,6 +916,7 @@ void Window::addSession()
 				m_edit_session->setEnabled(true);
 				m_remove_session->setEnabled(true);
 				m_move_session->setEnabled(true);
+				save();
 				break;
 			} else {
 				QMessageBox::warning(this, tr("Error"), tr("Session conflicts with other sessions."));
