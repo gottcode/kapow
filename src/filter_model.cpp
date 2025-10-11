@@ -50,8 +50,14 @@ QModelIndex FilterModel::mapUnbilledToSource(const QModelIndex& proxy_index) con
 
 void FilterModel::setType(int type)
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(6,10,0))
+	beginFilterChange();
+	m_type = type;
+	endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
 	m_type = type;
 	invalidateFilter();
+#endif
 }
 
 //-----------------------------------------------------------------------------
