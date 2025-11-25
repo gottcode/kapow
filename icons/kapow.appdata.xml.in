@@ -28,7 +28,7 @@
   <url type="homepage">https://gottcode.org/kapow/</url>
   <url type="bugtracker">https://gottcode.org/kapow/bugs/</url>
   <url type="donation">https://gottcode.org/tip/</url>
-  <url type="translate">https://www.transifex.com/gottcode/kapow/</url>
+  <url type="translate">https://app.transifex.com/gottcode/kapow/</url>
 
   <developer id="org.gottcode">
     <name translatable="no">Graeme Gott</name>
