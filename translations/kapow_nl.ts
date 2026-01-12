@@ -489,31 +489,31 @@
     </message>
     <message>
         <source>&amp;Move To...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaatsen &amp;naar…</translation>
     </message>
     <message numerus="yes">
         <source>Remove selected session(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Wilt u de geselecteerde sessie verwijderen?</numerusform>
+            <numerusform>Wilt u de geselecteerde sessies verwijderen?</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Sessie verplaatsen</numerusform>
+            <numerusform>Sessies verplaatsen</numerusform>
         </translation>
     </message>
     <message>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaatsen</translation>
     </message>
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>De sessies kan wegens conflicten niet worden verplaatst.</numerusform>
+            <numerusform>De sessies kunnen wegens conflicten niet worden verplaatst.</numerusform>
         </translation>
     </message>
 </context>

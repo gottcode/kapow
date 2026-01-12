@@ -163,6 +163,7 @@
             <numerusform>%n година</numerusform>
             <numerusform>%n години</numerusform>
             <numerusform>%n годин</numerusform>
+            <numerusform>%n годин</numerusform>
         </translation>
     </message>
     <message>
@@ -463,6 +464,7 @@
             <numerusform>Працює %n таймер</numerusform>
             <numerusform>Працюють %n таймери</numerusform>
             <numerusform>Працюють %n таймерів</numerusform>
+            <numerusform>Працюють %n таймерів</numerusform>
         </translation>
     </message>
     <message>
@@ -499,11 +501,13 @@
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -516,6 +520,7 @@
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>

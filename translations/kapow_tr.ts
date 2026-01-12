@@ -161,6 +161,7 @@
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n saat</numerusform>
+            <numerusform>%n saat</numerusform>
         </translation>
     </message>
     <message>
@@ -459,6 +460,7 @@
         <source>%n timer(s) running</source>
         <translation>
             <numerusform>%n zamanlayıcı çalışıyor</numerusform>
+            <numerusform>%n zamanlayıcı çalışıyor</numerusform>
         </translation>
     </message>
     <message>
@@ -493,11 +495,13 @@
         <source>Remove selected session(s)?</source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -508,6 +512,7 @@
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>

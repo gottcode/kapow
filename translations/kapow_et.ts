@@ -489,31 +489,31 @@
     </message>
     <message>
         <source>&amp;Move To...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Teisalda asukohta...</translation>
     </message>
     <message numerus="yes">
         <source>Remove selected session(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Kas eemaldad valitud sessiooni?</numerusform>
+            <numerusform>Kas eemaldad valitud sessioonid?</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Teisalda sessioon</numerusform>
+            <numerusform>Teisalda sessioonid</numerusform>
         </translation>
     </message>
     <message>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Teisalda</translation>
     </message>
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Andmekonfliktide tõttu ei õnnestunud sessiooni teisaldamine.</numerusform>
+            <numerusform>Andmekonfliktide tõttu ei õnnestunud sessioonide teisaldamine.</numerusform>
         </translation>
     </message>
 </context>

@@ -162,6 +162,7 @@
         <translation>
             <numerusform>%n heure</numerusform>
             <numerusform>%n heures</numerusform>
+            <numerusform>%n heures</numerusform>
         </translation>
     </message>
     <message>
@@ -461,6 +462,7 @@
         <translation>
             <numerusform>%n minuteur en cours</numerusform>
             <numerusform>%n minuteurs en cours</numerusform>
+            <numerusform>%n minuteurs en cours</numerusform>
         </translation>
     </message>
     <message>
@@ -489,31 +491,34 @@
     </message>
     <message>
         <source>&amp;Move To...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dé&amp;placer vers...</translation>
     </message>
     <message numerus="yes">
         <source>Remove selected session(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Supprimer la session sélectionnée ? </numerusform>
+            <numerusform>Supprimer les sessions sélectionnées ? </numerusform>
+            <numerusform>Supprimer les sessions sélectionnées ? </numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Déplacer la session</numerusform>
+            <numerusform>Déplacer les sessions</numerusform>
+            <numerusform>Déplacer les sessions</numerusform>
         </translation>
     </message>
     <message>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacer</translation>
     </message>
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Déplacement de la session impossible en raison de conflits. </numerusform>
+            <numerusform>Déplacement des sessions impossible en raison de conflits. </numerusform>
+            <numerusform>Déplacement de session impossible en raison de conflits. </numerusform>
         </translation>
     </message>
 </context>

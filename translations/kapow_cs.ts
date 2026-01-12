@@ -163,6 +163,7 @@
             <numerusform>Jedna hodina</numerusform>
             <numerusform>%n hodiny</numerusform>
             <numerusform>%n hodin</numerusform>
+            <numerusform>%n hodin</numerusform>
         </translation>
     </message>
     <message>
@@ -463,6 +464,7 @@
             <numerusform>Spuštěná %n časomíra</numerusform>
             <numerusform>Spuštěné %n časomíry</numerusform>
             <numerusform>Spuštěných %n časomír</numerusform>
+            <numerusform>Spuštěné %n časomíry</numerusform>
         </translation>
     </message>
     <message>
@@ -499,11 +501,13 @@
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -516,6 +520,7 @@
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>

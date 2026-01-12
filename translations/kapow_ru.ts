@@ -163,6 +163,7 @@
             <numerusform>%n час</numerusform>
             <numerusform>%т часов</numerusform>
             <numerusform>%n часов</numerusform>
+            <numerusform>%n часов</numerusform>
         </translation>
     </message>
     <message>
@@ -463,6 +464,7 @@
             <numerusform>%n таймер работает</numerusform>
             <numerusform>%n таймеров работает</numerusform>
             <numerusform>%n таймеров работает</numerusform>
+            <numerusform>%n таймеров работает</numerusform>
         </translation>
     </message>
     <message>
@@ -499,11 +501,13 @@
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -516,6 +520,7 @@
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>

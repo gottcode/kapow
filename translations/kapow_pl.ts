@@ -163,6 +163,7 @@
             <numerusform>%n godzina</numerusform>
             <numerusform>%n godziny</numerusform>
             <numerusform>%n godzin</numerusform>
+            <numerusform>%n godzin</numerusform>
         </translation>
     </message>
     <message>
@@ -463,6 +464,7 @@
             <numerusform>%n uruchomiony czasomierz</numerusform>
             <numerusform>%n uruchomione czasomierze</numerusform>
             <numerusform>%n uruchomionych czasomierzy</numerusform>
+            <numerusform>%n uruchomionych czasomierzy</numerusform>
         </translation>
     </message>
     <message>
@@ -499,11 +501,13 @@
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -516,6 +520,7 @@
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>

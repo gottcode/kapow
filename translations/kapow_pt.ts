@@ -162,6 +162,7 @@
         <translation>
             <numerusform>%n hora</numerusform>
             <numerusform>%n houras</numerusform>
+            <numerusform>%n horas</numerusform>
         </translation>
     </message>
     <message>
@@ -461,6 +462,7 @@
         <translation>
             <numerusform>%n contador a decorrer</numerusform>
             <numerusform>%n contadores a decorrer</numerusform>
+            <numerusform>%n contadores a decorrer</numerusform>
         </translation>
     </message>
     <message>
@@ -496,11 +498,13 @@
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
@@ -512,6 +516,7 @@
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>

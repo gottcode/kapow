@@ -163,6 +163,7 @@
             <numerusform>%n valanda</numerusform>
             <numerusform>%n valandos</numerusform>
             <numerusform>%n valandų</numerusform>
+            <numerusform>%n valandų</numerusform>
         </translation>
     </message>
     <message>
@@ -463,6 +464,7 @@
             <numerusform>%n aktyvus laikmatis</numerusform>
             <numerusform>%n aktyvūs laikmačiai</numerusform>
             <numerusform>%n aktyvių laikmačių</numerusform>
+            <numerusform>%n aktyvių laikmačių</numerusform>
         </translation>
     </message>
     <message>
@@ -491,34 +493,37 @@
     </message>
     <message>
         <source>&amp;Move To...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Perkelti į...</translation>
     </message>
     <message numerus="yes">
         <source>Remove selected session(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Šalinti pasirinktą seansą?</numerusform>
+            <numerusform>Šalinti pasirinktus seansus?</numerusform>
+            <numerusform>Šalinti pasirinktus seansus?</numerusform>
+            <numerusform>Šalinti pasirinktus seansus?</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>Move Session(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Perkelti seansą</numerusform>
+            <numerusform>Perkelti seansus</numerusform>
+            <numerusform>Perkelti seansus</numerusform>
+            <numerusform>Perkelti seansus</numerusform>
         </translation>
     </message>
     <message>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Perkelti</translation>
     </message>
     <message numerus="yes">
         <source>Could not move session(s) because of conflicts.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Nepavyko perkelti seanso dėl konfliktų.</numerusform>
+            <numerusform>Nepavyko perkelti seansų dėl konfliktų.</numerusform>
+            <numerusform>Nepavyko perkelti seansų dėl konfliktų.</numerusform>
+            <numerusform>Nepavyko perkelti seansų dėl konfliktų.</numerusform>
         </translation>
     </message>
 </context>
