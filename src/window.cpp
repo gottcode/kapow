@@ -25,6 +25,7 @@
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDateTime>
+#include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
