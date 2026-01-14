@@ -25,7 +25,7 @@ class Report : public QDialog
 	Q_OBJECT
 
 public:
-	Report(SessionModel* data, int current, Contact* contact, Rates* rates, QWidget* parent = nullptr);
+	Report(SessionModel* sessions, int current, Contact* contact, Rates* rates, QWidget* parent = nullptr);
 
 protected:
 	void hideEvent(QHideEvent* event) override;

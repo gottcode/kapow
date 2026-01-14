@@ -34,9 +34,9 @@
 
 //-----------------------------------------------------------------------------
 
-Report::Report(SessionModel* data, int current, Contact* contact, Rates* rates, QWidget* parent)
+Report::Report(SessionModel* sessions, int current, Contact* contact, Rates* rates, QWidget* parent)
 	: QDialog(parent)
-	, m_data(data)
+	, m_data(sessions)
 	, m_current_row(current)
 	, m_contact(contact)
 	, m_rates(rates)
@@ -459,8 +459,7 @@ QString Report::generateHtml() const
 		QStringList columns;
 		for (int column = 0; column < 5; ++column) {
 			QModelIndex index = m_data->index(row, column);
-			QString data = m_data->data(index).toString().simplified();
-			columns.append(data);
+			columns.append(m_data->data(index).toString().simplified());
 		}
 		html += QString("<tr>"
 				"<td width=\"0%\" align=\"right\">%1</td>"
