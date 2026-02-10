@@ -50,6 +50,23 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.7.0" date="2026-02-10">
+      <description>
+        <ul>
+          <li>FIXED: Did not save time data immediately when adding session</li>
+          <li>Added option and command-line flag to start minimized</li>
+          <li>Added starting and stopping sessions from system tray</li>
+          <li>Added moving sessions between projects</li>
+          <li>Added removing multiple sessions at once</li>
+          <li>Show total as hours in report</li>
+          <li>Show decimal totals as two digits</li>
+          <li>Replaced shadowed variable names</li>
+          <li>Switched to KDSingleApplication</li>
+          <li>Updated link to translations</li>
+          <li>Translation updates: Dutch, Estonian, French, Lithuanian</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.6.4" date="2025-02-14">
       <description>
         <ul>

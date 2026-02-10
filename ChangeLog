@@ -1,3 +1,17 @@
+NEWS 1.7.0
+----------
+* FIXED: Did not save time data immediately when adding session.
+* Added option and command-line flag to start minimized.
+* Added starting and stopping sessions from system tray.
+* Added moving sessions between projects.
+* Added removing multiple sessions at once.
+* Show total as hours in report.
+* Show decimal totals as two digits.
+* Replaced shadowed variable names.
+* Switched to KDSingleApplication.
+* Updated link to translations.
+* Translation updates: Dutch, Estonian, French, Lithuanian.
+
 1.6.4
 -----
 * Improved code for building translations.
