@@ -76,7 +76,7 @@ void SessionDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
 
 //-----------------------------------------------------------------------------
 
-void SessionDelegate::setDevicePixelRatio(int ratio)
+void SessionDelegate::setDevicePixelRatio(qreal ratio)
 {
 	m_ratio = ratio;
 
