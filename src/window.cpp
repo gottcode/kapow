@@ -290,9 +290,9 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	connect(m_details->verticalScrollBar(), &QScrollBar::valueChanged, this, &Window::sessionsScrolled);
 	m_details->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-	SessionDelegate* delegate = new SessionDelegate(m_details);
-	delegate->setDevicePixelRatio(devicePixelRatio());
-	m_details->setItemDelegate(delegate);
+	m_delegate = new SessionDelegate(m_details);
+	m_delegate->setDevicePixelRatio(devicePixelRatioF());
+	m_details->setItemDelegate(m_delegate);
 
 	QVBoxLayout* details_layout = new QVBoxLayout(details);
 	details_layout->setContentsMargins(0, 0, 0, 0);
@@ -405,6 +405,11 @@ void Window::raiseWindow()
 
 bool Window::event(QEvent* event)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6,6,0)
+	if (event->type() == QEvent::DevicePixelRatioChange) {
+		m_delegate->setDevicePixelRatio(devicePixelRatioF());
+	}
+#endif
 	if (event->type() == QEvent::WindowBlocked) {
 		m_blocked = true;
 		updateTrayActions();

@@ -10,6 +10,7 @@
 #include "contact.h"
 #include "rates.h"
 class Project;
+class SessionDelegate;
 class SessionModel;
 
 #include <QDateTime>
@@ -120,6 +121,7 @@ private:
 	QPushButton* m_cancel;
 	QComboBox* m_filter;
 	QTreeView* m_details;
+	SessionDelegate* m_delegate;
 	Contact m_contact;
 	Rates m_rates;
 

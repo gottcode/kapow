@@ -15,13 +15,13 @@ public:
 	explicit SessionDelegate(QObject* parent = nullptr);
 
 	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
-	void setDevicePixelRatio(int ratio);
+	void setDevicePixelRatio(qreal ratio);
 	void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const override;
 	QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
 private:
 	int m_height;
-	int m_ratio;
+	qreal m_ratio;
 	QList<int> m_alphas;
 };
 
