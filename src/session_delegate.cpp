@@ -96,7 +96,7 @@ void SessionDelegate::setDevicePixelRatio(qreal ratio)
 
 void SessionDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const
 {
-	QByteArray prop = editor->metaObject()->userProperty().name();
+	const char* prop = editor->metaObject()->userProperty().name();
 	if (!model->setData(index, editor->property(prop), Qt::EditRole)) {
 		QMessageBox::warning(nullptr, tr("Error"), tr("Session conflicts with other sessions."));
 	}
