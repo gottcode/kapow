@@ -373,8 +373,13 @@ Window::Window(const QString& filename, bool backups_enabled, bool start_minimiz
 	m_details->header()->addActions(column_actions);
 	m_details->header()->setContextMenuPolicy(Qt::ActionsContextMenu);
 	m_details->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+	m_details->header()->setSectionResizeMode(0, QHeaderView::Fixed);
+	m_details->header()->setSectionResizeMode(1, QHeaderView::Fixed);
+	m_details->header()->setSectionResizeMode(2, QHeaderView::Fixed);
 	m_details->header()->setSectionResizeMode(3, QHeaderView::Stretch);
 	m_details->header()->setStretchLastSection(false);
+
+	updateColumnWidths();
 
 	// Restore hidden columns
 	const QStringList hidden = settings.value("HiddenColumns", QStringList() << "5" << "6" << "7" << "8" << "9").toStringList();
@@ -416,6 +421,8 @@ bool Window::event(QEvent* event)
 	} else if (event->type() == QEvent::WindowUnblocked) {
 		m_blocked = false;
 		updateTrayActions();
+	} else if (event->type() == QEvent::FontChange || event->type() == QEvent::StyleChange) {
+		updateColumnWidths();
 	}
 	return QMainWindow::event(event);
 }
@@ -1468,6 +1475,17 @@ bool Window::showRunningProject()
 	m_projects->setCurrentItem(m_active_timers.first());
 
 	return true;
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::updateColumnWidths()
+{
+	m_details->setColumnWidth(0, DateEditor().minimumSizeHint().width());
+
+	const int width = TimeEditor().minimumSizeHint().width();
+	m_details->setColumnWidth(1, width);
+	m_details->setColumnWidth(2, width);
 }
 
 //-----------------------------------------------------------------------------

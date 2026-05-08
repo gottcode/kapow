@@ -94,6 +94,7 @@ private:
 	void minimizeToTray();
 	void restoreFromTray();
 	bool showRunningProject();
+	void updateColumnWidths();
 	void updateDetails();
 	void updateDisplay();
 	void updateReportActions();
