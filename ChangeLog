@@ -1,5 +1,12 @@
-NEWS 1.7.0
-----------
+1.7.1
+-----
+* FIXED: Columns did not have enough room for editing.
+* FIXED: Did not handle device pixel ratio changing.
+* Document policy prohibiting the use of AI.
+* Use strict mode to disable unsafe Qt APIs.
+
+1.7.0
+-----
 * FIXED: Did not save time data immediately when adding session.
 * Added option and command-line flag to start minimized.
 * Added starting and stopping sessions from system tray.

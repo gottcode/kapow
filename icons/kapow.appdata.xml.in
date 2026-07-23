@@ -50,6 +50,16 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.7.1" date="2026-07-23">
+      <description>
+        <ul>
+          <li>FIXED: Columns did not have enough room for editing</li>
+          <li>FIXED: Did not handle device pixel ratio changing</li>
+          <li>Document policy prohibiting the use of AI</li>
+          <li>Use strict mode to disable unsafe Qt APIs</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.7.0" date="2026-02-10">
       <description>
         <ul>

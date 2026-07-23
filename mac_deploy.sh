@@ -2,7 +2,7 @@
 
 APP='Kapow'
 BUNDLE="$APP.app"
-VERSION='1.7.0'
+VERSION='1.7.1'
 
 # Locate deployment script
 BIN_DIR=$(pwd)
