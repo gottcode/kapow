@@ -29,6 +29,7 @@
   <url type="bugtracker">https://gottcode.org/kapow/bugs/</url>
   <url type="donation">https://gottcode.org/tip/</url>
   <url type="translate">https://app.transifex.com/gottcode/kapow/</url>
+  <url type="vcs-browser">https://codeberg.org/gottcode/kapow</url>
 
   <developer id="org.gottcode">
     <name translatable="no">Graeme Gott</name>
