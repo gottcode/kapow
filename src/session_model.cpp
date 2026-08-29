@@ -737,3 +737,5 @@ void SessionModel::updateTotals()
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_session_model.cpp"

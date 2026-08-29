@@ -691,3 +691,5 @@ void TestFilters::mapUnbilled()
 //-----------------------------------------------------------------------------
 
 QTEST_MAIN(TestFilters)
+
+#include "moc_test_filters.cpp"

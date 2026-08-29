@@ -80,3 +80,5 @@ void SessionDialog::hideEvent(QHideEvent* event)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_session_dialog.cpp"

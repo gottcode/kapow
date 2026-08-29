@@ -629,3 +629,5 @@ void Report::writeOutlookCsv(QString filename) const
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_report.cpp"

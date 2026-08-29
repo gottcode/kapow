@@ -1430,3 +1430,5 @@ void TestSessions::takeMultipleSessions()
 //-----------------------------------------------------------------------------
 
 QTEST_MAIN(TestSessions)
+
+#include "moc_test_sessions.cpp"

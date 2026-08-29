@@ -15,3 +15,5 @@ TimeEditor::TimeEditor(QWidget* parent)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_time_editor.cpp"

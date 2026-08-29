@@ -1595,3 +1595,5 @@ void Window::updateWindowTitle(const QString& project)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_window.cpp"

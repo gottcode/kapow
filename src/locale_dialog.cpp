@@ -151,3 +151,5 @@ void LocaleDialog::accept()
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_locale_dialog.cpp"

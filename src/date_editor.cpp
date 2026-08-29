@@ -15,3 +15,5 @@ DateEditor::DateEditor(QWidget* parent)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_date_editor.cpp"
